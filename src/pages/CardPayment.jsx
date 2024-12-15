@@ -28,6 +28,8 @@ export default function CardPayment() {
       </div>
       <div className="padding" >
       <div className="row"></div>
+      <div className="container-fluid d-flex justify-content-center">
+          <div className="col-sm-8 col-md-6"></div>
     </div>
   )
 }
