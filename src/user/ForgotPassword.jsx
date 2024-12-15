@@ -5,6 +5,11 @@ export default function ForgotPassword() {
     const [email, setEmail] = useState('');
     const [otpSent, setOtpSent] = useState(false);
 
+    const handlesentotpmethod = async (e) => {
+        e.preventDefault();
+    
+        
+      };
 
   return (
     <div>
