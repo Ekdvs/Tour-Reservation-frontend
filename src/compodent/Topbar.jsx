@@ -36,6 +36,8 @@ export default function Topbar() {
                 <div className="dropdown-menu rounded">
                   <a href="/My_Profile" className="dropdown-item"><i className="fas fa-user-alt me-2"></i> My Profile</a>
                   <a href="/" className="dropdown-item"><i className="fas fa-comment-alt me-2"></i> Inbox</a>
+                  <a href="/" className="dropdown-item"><i className="fas fa-bell me-2"></i> Notifications</a>
+                  <a href="/" className="dropdown-item"><i className="fas fa-cog me-2"></i> Account Settings</a>
                   
     </div>
   )
