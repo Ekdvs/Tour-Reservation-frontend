@@ -26,7 +26,20 @@ export default function Login() {
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign IN</h5>
-            
+            <form onSubmit={hadleSignIn}>
+            <div className="form-group mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+            </form>
           </div>
         </div>
       </div>
