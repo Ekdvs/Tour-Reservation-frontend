@@ -23,6 +23,12 @@ export default function Topbar() {
               <a className="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="#">
                 <i className="fab fa-youtube fw-normal"></i>
               </a>
+              </div>
+          </div>
+          <div className="col-lg-4 text-center text-lg-end">
+            <div className="d-inline-flex align-items-center" style={{ height: '45px' }}>
+              <a href="/Register"><small className="me-3 text-light"><i className="fa fa-user me-2"></i>Register</small></a>
+              
     </div>
   )
 }
