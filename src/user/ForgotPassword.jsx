@@ -7,6 +7,19 @@ export default function ForgotPassword() {
 
     const handlesentotpmethod = async (e) => {
         e.preventDefault();
+        try {
+            const response = await axios.post('', {
+              userEmail: email,
+            });
+      
+            if (response.data === "OTP sent") {
+              setOtpSent(true); // This could trigger the OTP input page
+              alert("OTP sent to your email address.");
+            }
+          } catch (error) {
+            console.error('Error sending OTP:', error);
+            alert('Failed to send OTP. Please try again.');
+          }
     
         
       };
