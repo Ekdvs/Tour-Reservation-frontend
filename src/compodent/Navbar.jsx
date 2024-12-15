@@ -6,8 +6,13 @@ export default function Navbar() {
       <Header/>
       <div class="container-fluid position-relative p-0"></div>
       <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-                <a href="" class="navbar-brand p-0"></a>
+                <a href="" class="navbar-brand p-0">
                 <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Ceylon <br></br>Paradice</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+      </nav>
     </div>
   )
 }
