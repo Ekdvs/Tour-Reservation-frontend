@@ -3,26 +3,17 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 export default function ForgotPassword() {
-    const [email, setEmail] = useState('');
-    const [otpSent, setOtpSent] = useState('');
+    const [userEmail, setUserEmail] = useState('');
     const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
 
     const handlesentotpmethod = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8080/user/sendotpcode', {
-              userEmail: email,
-            });
-      
-            if (response.data === "OTP sent") {
-              setOtpSent(true); // This could trigger the OTP input page
-              alert("OTP sent to your email address.");
-            }
-          } catch (error) {
-            console.error('Error sending OTP:', error);
-            alert('Failed to send OTP. Please try again.');
+        
+        if (!userEmail) {
+            setMessage({ text: 'Please fill in all fields.', class: 'alert alert-warning' });
+            return;
           }
     
         
@@ -56,8 +47,8 @@ export default function ForgotPassword() {
                         name="email"
                         id="email"
                         placeholder="name@example.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={userEmail}
+                        onChange={(e) => setUserEmail(e.target.value)}
                         required
                       />
               </div>
