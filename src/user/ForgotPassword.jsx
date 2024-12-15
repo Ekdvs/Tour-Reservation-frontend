@@ -15,6 +15,23 @@ export default function ForgotPassword() {
             setMessage({ text: 'Please fill in all fields.', class: 'alert alert-warning' });
             return;
           }
+          try {
+            const response = await axios.post('http://localhost:8080/user/sendotpcode', {
+              userEmail,
+              
+            });
+      
+            if (response.data === 'OTP sent successfully') {
+                setMessage({ text: 'OTP sent to your email. Please check your inbox.', class: 'alert alert-success' });
+                localStorage.setItem('userEmail', userEmail);
+                
+                setTimeout(() => navigate('/VerifyOTP'), 2000);
+            } else {
+                setMessage({ text: response.data || 'Failed to send OTP.', class: 'alert alert-danger' });
+            }
+          } catch (error) {
+            setMessage({ text: 'Failed to send OTP. Please try again.', class: 'alert alert-danger' });
+          }
     
         
       };
