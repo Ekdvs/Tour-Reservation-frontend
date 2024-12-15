@@ -19,7 +19,7 @@ export default function Footer() {
         <i className="fas fa-share fa-2x text-white me-2"></i>
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-facebook-f"></i></a>
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-twitter"></i></a>
-        <a className="btn-square btn btn-primary rounded-circle mx-1" href=""></a>
+        <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-instagram"></i></a>
        
         </div>
 
