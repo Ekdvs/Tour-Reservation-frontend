@@ -1,72 +1,75 @@
-import React from 'react'
-import Topbar from '../compodent/Topbar'
-import Navbar from '../compodent/Navbar'
-import Footer from '../compodent/Footer'
+import React, { useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Topbar from '../components/Topbar';
+import Navbar from '../components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Register() {
-    const [password, setPassword] = useState('');
-    const [repeatPassword, setRepeatPassword] = useState('');
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [userEmail, setUserEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const navigate = useNavigate();
+  const [password, setPassword] = useState('');
+  const [repeatPassword, setRepeatPassword] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [userEmail, setUserEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const navigate = useNavigate();
 
-    const handleRegister=async(e)=>{
-        e.PreventDefault();
-        if (firstName && lastName && userEmail && password && repeatPassword) {
-            if (password !== repeatPassword) {
-              setMessage({ text: 'Passwords do not match!', class: 'alert alert-danger' });
-              return;
-            }
-      
-            try {
-              const response = await axios.post('http://localhost:8080/user/register', {
-                firstName,
-                lastName,
-                userEmail,
-                password,
-              });
-      
-              if (response.data === 'User already registered as a user') {
-                setMessage({ text: response.data, class: 'alert alert-danger' });
-              } else {
-                setMessage({ text: 'Registration successful!', class: 'alert alert-success' });
-                setTimeout(() => navigate('/login'), 2000);
-              }
-            } catch (error) {
-              setMessage({ text: 'Error occurred, registration failed.', class: 'alert alert-danger' });
-            }
-          } else {
-            setMessage({ text: 'All fields are required. Please fill them out.', class: 'alert alert-warning' });
-          }
-        
+  const handleRegister = async (e) => {
+    e.preventDefault();
 
-    };
+    if (firstName && lastName && userEmail && password && repeatPassword) {
+      if (password !== repeatPassword) {
+        setMessage({ text: 'Passwords do not match!', class: 'alert alert-danger' });
+        return;
+      }
+
+      try {
+        const response = await axios.post('http://localhost:8080/user/register', {
+          firstName,
+          lastName,
+          userEmail,
+          password,
+        });
+
+        if (response.data === 'User already registered as a user') {
+          setMessage({ text: response.data, class: 'alert alert-danger' });
+        } else {
+          setMessage({ text: 'Registration successful!', class: 'alert alert-success' });
+          setTimeout(() => navigate('/login'), 2000);
+        }
+      } catch (error) {
+        setMessage({ text: 'Error occurred, registration failed.', class: 'alert alert-danger' });
+      }
+    } else {
+      setMessage({ text: 'All fields are required. Please fill them out.', class: 'alert alert-warning' });
+    }
+  };
+
   return (
     <>
-      <Topbar/>
-      <Navbar/>
+      <Topbar />
+      <Navbar />
+      
+      <div className="container-fluid bg-primary text-white text-center py-5">
+        <h3 className="display-3 mb-4">Register</h3>
+        <ol className="breadcrumb justify-content-center">
+          <li className="breadcrumb-item">
+            <a href="/" className="text-white">Home</a>
+          </li>
+          <li className="breadcrumb-item">
+            <a href="/Contact" className="text-white">Pages</a>
+          </li>
+          <li className="breadcrumb-item active">Register</li>
+        </ol>
+      </div>
 
-      <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style={{ maxWidth: '900px' }}>
-                <h3 class="text-white display-3 mb-4">Our Services</h3>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/Services">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Register</li>
-                </ol>    
-            </div>
-        </div>
-        <div className="container my-5">
-        {message && <div className={message.class}>{message.text}
-        </div>}
+      <div className="container my-5">
+        {message && <div className={message.class}>{message.text}</div>}
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign Up</h5>
             <form onSubmit={handleRegister}>
-            <div className="mb-3">
+              <div className="mb-3">
                 <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
                   type="text"
@@ -128,11 +131,7 @@ export default function Register() {
             </div>
           </div>
         </div>
-        </div>
-      
-
-      <Footer/>
-
+      </div>
     </>
-  )
+  );
 }
