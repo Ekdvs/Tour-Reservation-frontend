@@ -46,6 +46,10 @@ export default function CardPayment() {
                       src="https://img.icons8.com/color/36/000000/visa.png"
                       alt="Visa"
                     />
+                    <img
+                      src="https://img.icons8.com/color/36/000000/mastercard.png"
+                      alt="Mastercard"
+                    />
     </div>
   )
 }
