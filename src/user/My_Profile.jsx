@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
-    const userEmail = localStorage.getItem("userEmail") // Replace with dynamic email if needed
+    const userEmail = localStorage.getItem("userEmail"); // Replace with dynamic email if needed
     const [profileData, setProfileData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
-
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
@@ -50,31 +51,33 @@ const Profile = () => {
     if (!profileData) return <div>Loading...</div>;
 
     return (
-        <div className="container">
-            <h1 className="my-4">Profile</h1>
+        <div className="container py-5">
+            <h1 className="my-4 text-center">Profile</h1>
 
             {/* Basic Info */}
-            <div className="card">
+            <div className="card shadow-lg">
                 <div className="card-body">
                     <div className="d-flex justify-content-between align-items-center mb-3">
                         <h2>Basic Info</h2>
                         {!isEditing ? (
-                            <button className="btn btn-link" onClick={() => setIsEditing(true)}>
+                            <button className="btn btn-outline-primary" onClick={() => setIsEditing(true)}>
                                 Edit
                             </button>
                         ) : (
-                            <button className="btn btn-link" onClick={handleSave}>
+                            <button className="btn btn-outline-success" onClick={handleSave}>
                                 Save
                             </button>
+                            
                         )}
+                        
                     </div>
 
                     {["firstName", "lastName", "phoneNumber", "title", "gender", "country"].map((field) => (
                         <div className="mb-3 row" key={field}>
-                            <label className="col-sm-4 text-capitalize">{field}:</label>
+                            <label className="col-sm-4 col-form-label text-capitalize">{field}:</label>
                             <div className="col-sm-6">
                                 {!isEditing ? (
-                                    profileData[field] || "Not Set"
+                                    <p className="form-control-plaintext">{profileData[field] || "Not Set"}</p>
                                 ) : (
                                     <input
                                         type="text"
@@ -87,6 +90,9 @@ const Profile = () => {
                             </div>
                         </div>
                     ))}
+                    <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
+                        Change Password
+                    </button>
                 </div>
             </div>
         </div>
