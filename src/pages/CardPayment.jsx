@@ -26,6 +26,8 @@ export default function CardPayment() {
           </ol>
         </div>
       </div>
+      <div className="padding" >
+      <div className="row"></div>
     </div>
   )
 }
