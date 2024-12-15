@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from "react";
 import Topbar from "../components/Topbar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,15 +8,17 @@ export default function CardPayment() {
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [cardHolder, setCardHolder] = useState("");
+
   const handlePayment = (e) => {
     e.preventDefault();
     alert("Payment Successful!");
   };
+
   return (
     <div>
-      <Topbar/>
-      <Navbar/>
-      <div className="container-fluid bg-breadcrumb">
+        <Topbar/>
+        <Navbar/>
+        <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">Online Payment</h3>
           <ol className="breadcrumb justify-content-center mb-0">
@@ -26,13 +28,19 @@ export default function CardPayment() {
           </ol>
         </div>
       </div>
-      <div className="padding" >
+
+        
+        
+    <div className="padding" >
       <div className="row">
-      <div className="container-fluid d-flex justify-content-center">
+      
+        <div className="container-fluid d-flex justify-content-center">
           <div className="col-sm-8 col-md-6">
-          <div className="card">
+           
+            <div className="card">
             <div className="bg">
-            <div className="card-header">
+                
+              <div className="card-header">
                 
                 <div className="row">
                     
@@ -93,7 +101,7 @@ export default function CardPayment() {
                         onChange={(e) => setExpiry({ ...expiry, month: e.target.value })}
                         required
                         >
-                          <option value="" disabled>
+                        <option value="" disabled>
                             Month
                         </option>
                         {Array.from({ length: 12 }, (_, i) => (
@@ -102,6 +110,7 @@ export default function CardPayment() {
                             </option>
                         ))}
                         </select>
+
                         {/* Year Dropdown */}
                         <select
                         id="cc-exp-year"
@@ -109,15 +118,16 @@ export default function CardPayment() {
                         value={expiry.year}
                         onChange={(e) => setExpiry({ ...expiry, year: e.target.value })}
                         required
-                        ><option value="" disabled>
-                        Year
-                    </option>
-                    {Array.from({ length: 10 }, (_, i) => (
-                        <option key={i} value={new Date().getFullYear() + i}>
-                        {new Date().getFullYear() + i}
+                        >
+                        <option value="" disabled>
+                            Year
                         </option>
-                    ))}
-                    </select>
+                        {Array.from({ length: 10 }, (_, i) => (
+                            <option key={i} value={new Date().getFullYear() + i}>
+                            {new Date().getFullYear() + i}
+                            </option>
+                        ))}
+                        </select>
                     </div>
                     </div>
 
@@ -169,6 +179,7 @@ export default function CardPayment() {
         </div>
       </div>
     </div>
+    <Footer/>
     </div>
-  )
+  );
 }
