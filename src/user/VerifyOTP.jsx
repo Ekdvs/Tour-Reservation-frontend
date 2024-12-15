@@ -11,7 +11,7 @@ export default function VerifyOTP() {
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
 
-        // Validate email and OTP
+        
         if (!email.trim()) {
             setMessage({ text: 'Email is missing. Please try again.', className: 'alert alert-danger' });
             return;
@@ -22,7 +22,7 @@ export default function VerifyOTP() {
         }
 
         try {
-            // Send OTP verification request to the backend as query parameters
+           
             const response = await axios.post(
                 `http://localhost:8080/user/verify-code?userEmail=${encodeURIComponent(email)}&recoveryCode=${encodeURIComponent(otp)}`
             );
@@ -34,7 +34,7 @@ export default function VerifyOTP() {
                     className: 'alert alert-success',
                 });
 
-                // Redirect to the change password page after 2 seconds
+                
                 setTimeout(() => navigate('/ChangePassword'), 2000);
             } else {
                 setMessage({
@@ -43,10 +43,10 @@ export default function VerifyOTP() {
                 });
             }
         } catch (error) {
-            // Handle backend errors
+            
             const errorMessage =
                 error.response?.data?.message ||
-                'An error occurred. Please try again.'; // Default message
+                'An error occurred. Please try again.'; 
 
             setMessage({
                 text: errorMessage,
@@ -62,7 +62,7 @@ export default function VerifyOTP() {
                     <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
                         <div className="bg-white p-4 p-md-5 rounded shadow-sm">
                             <h3>Enter OTP</h3>
-                            {/* Display success/error messages */}
+                            
                             {message && (
                                 <div className={message.className} role="alert">
                                     {message.text}
