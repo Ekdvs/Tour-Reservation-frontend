@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="col-md-6 col-lg-6 col-xl-3">
       <div className="footer-item d-flex flex-column">
         <h4 className="mb-4 text-white">Get In Touch</h4>
-
+        <a href="">123 Kandy Colombo Main Street, Kelaniya, Sri Lanka </a>
 
       </div>
 
