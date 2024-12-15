@@ -23,7 +23,9 @@ export default function Register() {
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign Up</h5>
-            
+            <form onSubmit={handleRegister}>
+                
+            </form>
             <div className="text-center mt-3">
               <a href="/login">Already a Member?</a>
             </div>
