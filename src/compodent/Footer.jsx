@@ -5,7 +5,9 @@ export default function Footer() {
     <div>
       <Header/>
       <div className="container-fluid footer py-5">
+      <div className="container py-5">
         
+      </div>
       </div>
 
     </div>
