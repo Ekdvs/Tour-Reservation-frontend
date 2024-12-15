@@ -57,6 +57,17 @@ export default function Register() {
                   placeholder="Enter your email"
                 />
               </div>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter your password"
+                />
+              </div>
             </form>
             <div className="text-center mt-3">
               <a href="/login">Already a Member?</a>
