@@ -1,8 +1,8 @@
 import React from 'react'
-import Topbar from '../compodents/Topbar'
-import Navbar from '../compodents/Navbar'
+import Topbar from '../compodent/Topbar'
+import Navbar from '../compodent/Navbar'
 import Subscribe from './Subscribe'
-import Footer from '../compodents/Footer'
+import Footer from '../compodent/Footer'
 
 
 export default function Home() {
@@ -77,8 +77,8 @@ export default function Home() {
 
             <div className="container">
                 <div className="position-relative rounded-pill w-100 mx-auto p-5" style={{ background: 'rgba(19, 53, 123, 0.8)' }}                >
-                    <input className="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Thailand"/>
-                    <button type="button" className="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style={{ top: '50%', right: '46px', transform: 'translateY(-50%)' }}
+                    <input className="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Eg: Sri lanka"/>
+                    <button type="button" className="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style={{ top: '700%', right: '46px', transform: 'translateY(-50%)' }}
                     >Search</button>
                 </div>
             </div>
