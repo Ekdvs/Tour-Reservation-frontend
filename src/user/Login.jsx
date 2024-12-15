@@ -51,6 +51,11 @@ export default function Login() {
                   required
                 />
               </div>
+              <div className="d-grid">
+                <button type="submit" className="btn btn-primary rounded-pill">
+                  Sign In
+                </button>
+              </div>
             </form>
           </div>
         </div>
