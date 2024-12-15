@@ -11,31 +11,45 @@ export default function VerifyOTP() {
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
 
+        // Validate email and OTP
+        if (!email.trim()) {
+            setMessage({ text: 'Email is missing. Please try again.', className: 'alert alert-danger' });
+            return;
+        }
         if (!otp.trim()) {
             setMessage({ text: 'OTP cannot be empty.', className: 'alert alert-warning' });
             return;
         }
 
         try {
-            // Send OTP verification request to the backend
-            const response = await axios.post('http://localhost:8080/user/verify-code', {
-                userEmail: email,
-                recoveryCode: otp,
-            });
+            // Send OTP verification request to the backend as query parameters
+            const response = await axios.post(
+                `http://localhost:8080/user/verify-code?userEmail=${encodeURIComponent(email)}&recoveryCode=${encodeURIComponent(otp)}`
+            );
 
-            if (response.status === 200 && response.data === true) {
-                // OTP verified successfully
-                setMessage({ text: 'OTP verified successfully! Redirecting...', className: 'alert alert-success' });
+            // Check backend response
+            if (response.status === 200 && response.data.success) {
+                setMessage({
+                    text: 'OTP verified successfully! Redirecting...',
+                    className: 'alert alert-success',
+                });
 
                 // Redirect to the change password page after 2 seconds
                 setTimeout(() => navigate('/ChangePassword'), 2000);
             } else {
-                // Handle incorrect OTP
-                setMessage({ text: 'Invalid OTP. Please try again.', className: 'alert alert-danger' });
+                setMessage({
+                    text: response.data.message || 'Invalid OTP. Please try again.',
+                    className: 'alert alert-danger',
+                });
             }
         } catch (error) {
+            // Handle backend errors
+            const errorMessage =
+                error.response?.data?.message ||
+                'An error occurred. Please try again.'; // Default message
+
             setMessage({
-                text: error.response?.data || 'An error occurred. Please try again.',
+                text: errorMessage,
                 className: 'alert alert-danger',
             });
         }
@@ -48,6 +62,7 @@ export default function VerifyOTP() {
                     <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
                         <div className="bg-white p-4 p-md-5 rounded shadow-sm">
                             <h3>Enter OTP</h3>
+                            {/* Display success/error messages */}
                             {message && (
                                 <div className={message.className} role="alert">
                                     {message.text}
