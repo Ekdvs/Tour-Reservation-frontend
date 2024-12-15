@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Footer from '../compodent/Footer'; // Ensure this is correctly implemented in your project
+import Footer from '../compodent/Footer'; 
 
 export default function ForgotPassword() {
     const [userEmail, setUserEmail] = useState('');
-    const [message, setMessage] = useState(null); // Used to show feedback messages to the user
+    const [message, setMessage] = useState(null); 
     const navigate = useNavigate();
 
     const handleSendOtpMethod = async (e) => {
@@ -23,7 +23,7 @@ export default function ForgotPassword() {
                 setMessage({ text: response.data, className: 'alert alert-success' });
                 localStorage.setItem('userEmail', userEmail);
 
-                // Navigate to the Verify OTP page after 2 seconds
+                
                 setTimeout(() => navigate('/VerifyOTP'), 2000);
             } else {
                 setMessage({ text: response.data || 'Unexpected error occurred.', className: 'alert alert-danger' });

@@ -32,15 +32,15 @@ export default function ChangePassword() {
     }
 
     try {
-      // Send the password update request with the email as part of the URL
+      
       const response = await axios.post(`http://localhost:8080/user/update-password/${userEmail}`, {
-        Password, // Send new password in the body
+        Password, 
       });
 
       // Check response from backend
       if (response.data === "Password updated successfully.") {
         setMessage({ text: 'Password changed successfully!', className: 'alert alert-success' });
-        setTimeout(() => navigate('/My_Profile'), 2000); // Redirect after 2 seconds
+        setTimeout(() => navigate('/My_Profile'), 2000); 
       } else {
         setMessage({ text: response.data || 'Failed to update password. Please try again.', className: 'alert alert-danger' });
       }
