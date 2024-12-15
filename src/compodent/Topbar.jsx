@@ -8,6 +8,9 @@ export default function Topbar() {
         <div className="row gx-0">
           <div className="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
             <div className="d-inline-flex align-items-center" style={{ height: '45px' }}></div>
+            <a className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"  href="https://twitter.com" target="_blank" >
+                <i className="fab fa-twitter fw-normal"></i>
+            </a>
     </div>
   )
 }
