@@ -15,7 +15,10 @@ export default function Footer() {
         <a href=""> <i class="fas fa-envelope me-2"></i> info@example.com</a>
         <a href=""><i class="fas fa-phone me-2"></i> +9471 897 4153</a>
         <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +9477 326 0660</a>
-     
+        <div className="d-flex align-items-center">
+
+        </div>
+
       </div>
 
       </div>
