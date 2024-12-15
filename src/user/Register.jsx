@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Topbar from '../components/Topbar';
-import Navbar from '../components/Navbar';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Topbar from '../compodent/Topbar';
+import Navbar from '../compodent/Navbar';
 
 export default function Register() {
   const [password, setPassword] = useState('');
@@ -47,8 +48,8 @@ export default function Register() {
 
   return (
     <>
-      <Topbar />
-      <Navbar />
+      <Topbar/>
+      <Navbar/>
       
       <div className="container-fluid bg-primary text-white text-center py-5">
         <h3 className="display-3 mb-4">Register</h3>
