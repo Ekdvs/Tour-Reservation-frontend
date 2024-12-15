@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const [password, setPassword] = useState('');
@@ -11,6 +12,10 @@ export default function Register() {
     const [userEmail, setUserEmail] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
+
+    const handleRegister=async(e)=>{
+        
+    }
   return (
     <>
       <Topbar/>
@@ -94,6 +99,7 @@ export default function Register() {
               <a href="/login">Already a Member?</a>
             </div>
           </div>
+        </div>
         </div>
       
 
