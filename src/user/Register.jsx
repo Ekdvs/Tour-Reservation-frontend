@@ -4,6 +4,13 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function Register() {
+    const [password, setPassword] = useState('');
+    const [repeatPassword, setRepeatPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [userEmail, setUserEmail] = useState('');
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
   return (
     <>
       <Topbar/>
