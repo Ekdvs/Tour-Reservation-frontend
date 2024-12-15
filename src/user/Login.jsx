@@ -18,6 +18,22 @@ export default function SignIn() {
       setMessage({ text: 'Please fill in all fields.', class: 'alert alert-warning' });
       return;
     }
+    try {
+        const response = await axios.post('http://localhost:8080/user/login', {
+          userEmail,
+          password,
+        });
+  
+        if (response.data === 'Login successful') {
+          setMessage({ text: 'Login successful!', class: 'alert alert-success' });
+          
+          setTimeout(() => navigate('/My_Profile'),);
+        } else {
+          setMessage({ text: response.data, class: 'alert alert-danger' });
+        }
+      } catch (error) {
+        setMessage({ text: 'Login failed. Please try again.', class: 'alert alert-danger' });
+      }
 
     
   };
