@@ -1,7 +1,8 @@
 import React from 'react'
-import Topbar from '../components/Topbar'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Topbar from '../compodent/Topbar'
+import Navbar from '../compodent/Navbar'
+import Footer from '../compodent/Footer'
+
 export default function Blog() {
   return (
     <div>
