@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function Log_Out() {
+    const navigate=useNavigate();
+    useEffect(()=>{
+        
+    });
+
   return (
     <div>
       <div className="logout-container">
