@@ -68,6 +68,17 @@ export default function Register() {
                   placeholder="Enter your password"
                 />
               </div>
+              <div className="mb-3">
+                <label htmlFor="repeatPassword" className="form-label">Re-enter Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  id="repeatPassword"
+                  value={repeatPassword}
+                  onChange={(e) => setRepeatPassword(e.target.value)}
+                  placeholder="Re-enter your password"
+                />
+              </div>
             </form>
             <div className="text-center mt-3">
               <a href="/login">Already a Member?</a>
