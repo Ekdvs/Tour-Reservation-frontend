@@ -5,6 +5,7 @@ export default function Header() {
     <div>
         <head>
             <meta charSet="utf-8"></meta>
+            <title>Travela - Tourism Website Template</title>
         </head>
       
     </div>
