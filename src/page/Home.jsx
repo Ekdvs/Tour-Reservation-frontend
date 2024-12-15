@@ -8,6 +8,7 @@ export default function Home() {
     <div>
       <Topbar/>
       <Navbar/>
+      <h1>welcome</h1>
       <Footer/>
     </div>
   )
