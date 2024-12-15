@@ -20,7 +20,9 @@ export default function Footer() {
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-facebook-f"></i></a>
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-twitter"></i></a>
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-instagram"></i></a>
-       
+        <a className="btn-square btn btn-primary rounded-circle mx-1" href=""></a>
+
+
         </div>
 
       </div>
