@@ -21,6 +21,8 @@ export default function Navbar() {
                     <ActiveNavLink to="/Blog" className="nav-item nav-link">Blog</ActiveNavLink>
                     <div class="nav-item dropdown">
                             <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="/Destination" class="dropdown-item">Destination</a>
       </nav>
     </div>
   )
