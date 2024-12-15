@@ -12,6 +12,9 @@ export default function Navbar() {
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse"><br></br>
+                    <div class="navbar-nav ms-auto py-0">
+                    <ActiveNavLink to="/" className="nav-item nav-link">Home</ActiveNavLink>
       </nav>
     </div>
   )
