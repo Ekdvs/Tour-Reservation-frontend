@@ -9,6 +9,7 @@ import Log_Out from "./user/Log_Out";
 import Login from "./user/Login";
 import ForgotPassword from "./user/ForgotPassword";
 import VerifyOTP from "./user/VerifyOTP";
+import PasswordChange from "./user/PasswordChange";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route exact path='/Login' element={<Login/>}/>
         <Route exact path='/ForgotPassword' element={<ForgotPassword/>}/>
         <Route exact path='/VerifyOTP' element={<VerifyOTP/>}/>
+        <Route exact path='/PasswordChange' element={<PasswordChange/>}/>
         
         </Routes>
       </Router>
