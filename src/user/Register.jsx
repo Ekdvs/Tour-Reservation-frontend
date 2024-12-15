@@ -46,6 +46,17 @@ export default function Register() {
                   placeholder="Enter your last name"
                 />
               </div>
+              <div className="mb-3">
+                <label htmlFor="userEmail" className="form-label">Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="userEmail"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  placeholder="Enter your email"
+                />
+              </div>
             </form>
             <div className="text-center mt-3">
               <a href="/login">Already a Member?</a>
