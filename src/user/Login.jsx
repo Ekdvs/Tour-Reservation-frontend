@@ -10,7 +10,18 @@ export default function SignIn() {
   const [message, setMessage] = useState('');
 
   const navigate = useNavigate();
-  
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    if (!userEmail || !password) {
+      setMessage({ text: 'Please fill in all fields.', class: 'alert alert-warning' });
+      return;
+    }
+
+    
+  };
+
   return (
     <div>
       <Topbar/>
@@ -33,7 +44,7 @@ export default function SignIn() {
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign IN</h5>
-            <form onSubmit={hadleSignIn}>
+            <form onSubmit={handleSignIn}>
             <div className="form-group mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
                 <input
