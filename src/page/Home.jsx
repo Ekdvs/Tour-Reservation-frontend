@@ -2,6 +2,8 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default function Home() {
   return (
