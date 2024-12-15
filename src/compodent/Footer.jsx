@@ -17,6 +17,7 @@ export default function Footer() {
         <a href="" className="mb-3"><i className="fas fa-print me-2"></i> +9477 326 0660</a>
         <div className="d-flex align-items-center">
         <i className="fas fa-share fa-2x text-white me-2"></i>
+        <a className="btn-square btn btn-primary rounded-circle mx-1" href=""></a>
         </div>
 
       </div>
