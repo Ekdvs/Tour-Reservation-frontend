@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
 export default function VerifyOTP() {
-    
+    const [otp, setOtp] = useState('');
+  const [email, setEmail] = useState('');
+  const [otpVerified, setOtpVerified] = useState(false);
   return (
     <div>
         <div className="bg-light py-3 py-md-5">
