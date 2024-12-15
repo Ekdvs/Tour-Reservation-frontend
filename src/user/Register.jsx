@@ -51,18 +51,17 @@ export default function Register() {
       <Topbar/>
       <Navbar/>
       
-      <div className="container-fluid bg-primary text-white text-center py-5">
-        <h3 className="display-3 mb-4">Register</h3>
-        <ol className="breadcrumb justify-content-center">
-          <li className="breadcrumb-item">
-            <a href="/" className="text-white">Home</a>
-          </li>
-          <li className="breadcrumb-item">
-            <a href="/Contact" className="text-white">Pages</a>
-          </li>
-          <li className="breadcrumb-item active">Register</li>
-        </ol>
-      </div>
+            <div class="container-fluid bg-breadcrumb">
+                  <div class="container text-center py-5" style={{maxWidth:"900px"}}>
+                      <h3 class="text-white display-3 mb-4">Register</h3>
+                      <ol class="breadcrumb justify-content-center mb-0">
+                          <li class="breadcrumb-item"><a href="/">Home</a></li>
+                          <li class="breadcrumb-item"><a href="/Contact">Pages</a></li>
+                          <li class="breadcrumb-item active text-white">Register</li>
+                      </ol>    
+                  </div>
+              </div>
+     
 
       <div className="container my-5">
         
