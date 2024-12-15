@@ -118,6 +118,16 @@ export default function CardPayment() {
                         </option>
                     ))}
                     </select>
+                    </div>
+                    </div>
+
+                    </div>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="form-group">
+                      <label htmlFor="cc-cvc" className="control-label">
+                        CARD / CVC
+                      </label>
     </div>
   )
 }
