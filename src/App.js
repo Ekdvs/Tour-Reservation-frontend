@@ -4,6 +4,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./pages/Home";
+import Register from "./user/Register";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
         
         <Route exact path='/' element={<Home/>}/>
+        <Route exact path='/Register' element={<Register/>}/>
         
 
         </Routes>
