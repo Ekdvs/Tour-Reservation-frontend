@@ -16,7 +16,7 @@ export default function Footer() {
         <a href=""><i className="fas fa-phone me-2"></i> +9471 897 4153</a>
         <a href="" className="mb-3"><i className="fas fa-print me-2"></i> +9477 326 0660</a>
         <div className="d-flex align-items-center">
-
+        <i className="fas fa-share fa-2x text-white me-2"></i>
         </div>
 
       </div>
