@@ -69,10 +69,10 @@ Put the script at the [bottom](https://developer.yahoo.com/performance/rules.htm
 
 ### Usage
 
-Wrap your items (`div`, `a`, `img`, `span`, `li` etc.) with a container element (`div`, `ul` etc.). Only the class `owl-carousel` is mandatory to apply proper styles:
+Wrap your items (`div`, `a`, `img`, `span`, `li` etc.) with a container element (`div`, `ul` etc.). Only the className `owl-carousel` is mandatory to apply proper styles:
 
 ```html
-<div class="owl-carousel owl-theme">
+<div className="owl-carousel owl-theme">
   <div> Your Content </div>
   <div> Your Content </div>
   <div> Your Content </div>
@@ -82,7 +82,7 @@ Wrap your items (`div`, `a`, `img`, `span`, `li` etc.) with a container element 
   <div> Your Content </div>
 </div>
 ```
-**NOTE:** The `owl-theme` class is optional, but without it, you will need to style navigation features on your own.
+**NOTE:** The `owl-theme` className is optional, but without it, you will need to style navigation features on your own.
 
 
 Call the [plugin](https://learn.jquery.com/plugins/) function and your carousel is ready.

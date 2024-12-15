@@ -258,7 +258,7 @@ a {
 // causes specificity issues in many other styles that are too complex to fix.
 // See https://github.com/twbs/bootstrap/issues/19402
 
-a:not([href]):not([class]) {
+a:not([href]):not([className]) {
   &,
   &:hover {
     color: inherit;
@@ -531,7 +531,7 @@ legend {
 
 // 1. Correct the outline style in Safari.
 // 2. This overrides the extra rounded corners on search inputs in iOS so that our
-//    `.form-control` class can properly style them. Note that this cannot simply
+//    `.form-control` className can properly style them. Note that this cannot simply
 //    be added to `.form-control` as it's not specific enough. For details, see
 //    https://github.com/twbs/bootstrap/issues/11586.
 

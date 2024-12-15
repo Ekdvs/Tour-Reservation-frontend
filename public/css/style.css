@@ -453,14 +453,14 @@
 
 
 /*** Destination Start ***/
-.destination .tab-class .tab-content .tab-pane .destination-img {
+.destination .tab-className .tab-content .tab-pane .destination-img {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
     z-index: 1;
 }
 
-.destination .tab-class .tab-content .tab-pane .destination-img .destination-overlay {
+.destination .tab-className .tab-content .tab-pane .destination-img .destination-overlay {
     position: absolute;
     bottom: -100%;
     left: 0;
@@ -468,7 +468,7 @@
     transition: 0.5s;
 }
 
-.destination .tab-class .tab-content .tab-pane .destination-img .search-icon {
+.destination .tab-className .tab-content .tab-pane .destination-img .search-icon {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -483,39 +483,39 @@
 
 }
 
-.destination .tab-class .tab-content .tab-pane .destination-img .search-icon a i {
+.destination .tab-className .tab-content .tab-pane .destination-img .search-icon a i {
     opacity: 0;
     transition: 0.5s;
 }
 
-.destination .tab-class .nav-item {
+.destination .tab-className .nav-item {
     padding: 0 0 20px 0;
 }
-.destination .tab-class .nav-item a.active {
+.destination .tab-className .nav-item a.active {
     background: var(--bs-primary) !important;
 }
 
-.destination .tab-class .nav-item a.active span {
+.destination .tab-className .nav-item a.active span {
     color: var(--bs-white) !important;
 }
 
-.destination .tab-class .tab-content .destination-img:hover .search-icon {
+.destination .tab-className .tab-content .destination-img:hover .search-icon {
     background: rgba(19, 53, 123, 0.4);
 }
 
-.destination .tab-class .tab-content .destination-img:hover .destination-overlay {
+.destination .tab-className .tab-content .destination-img:hover .destination-overlay {
     bottom: 0;
 }
 
-.destination .tab-class .tab-content .destination-img:hover .search-icon a i {
+.destination .tab-className .tab-content .destination-img:hover .search-icon a i {
     opacity: 1;
 }
 
-.destination .tab-class .tab-content .destination-img img {
+.destination .tab-className .tab-content .destination-img img {
     transition: 0.5s;
 }
 
-.destination .tab-class .tab-content .destination-img:hover img {
+.destination .tab-className .tab-content .destination-img:hover img {
     transform: scale(1.2);
 }
 /*** Destination End ***/
@@ -641,14 +641,14 @@
 
 
 /*** Explore Tour Start ***/
-.ExploreTour .tab-class .nav-item {
+.ExploreTour .tab-className .nav-item {
     padding: 0 0 20px 0;
 }
-.ExploreTour .tab-class .nav-item a.active {
+.ExploreTour .tab-className .nav-item a.active {
     background: var(--bs-primary) !important;
 }
 
-.ExploreTour .tab-class .nav-item a.active span {
+.ExploreTour .tab-className .nav-item a.active span {
     color: var(--bs-white) !important;
 }
 
@@ -870,14 +870,14 @@
     background: rgba(19, 53, 123, 0.8);
 }
 
-.gallery .tab-class .nav-item {
+.gallery .tab-className .nav-item {
     padding: 0 0 20px 0;
 }
-.gallery .tab-class .nav-item a.active {
+.gallery .tab-className .nav-item a.active {
     background: var(--bs-primary) !important;
 }
 
-.gallery .tab-class .nav-item a.active span {
+.gallery .tab-className .nav-item a.active span {
     color: var(--bs-white) !important;
 }
 

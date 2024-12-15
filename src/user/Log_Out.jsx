@@ -28,7 +28,7 @@ export default function Log_Out() {
 
   return (
     <div>
-      <div className="logout-container">
+      <div classNameName="logout-container">
       <h2>Logging out...</h2>
       <p>You are being logged out. Please wait.</p>
     </div>

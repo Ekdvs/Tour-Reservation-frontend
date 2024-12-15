@@ -18,7 +18,7 @@
   border-color: $table-border-color;
 
   // Target th & td
-  // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `.table` class.
+  // We need the child combinator to prevent styles leaking to nested tables which doesn't have a `.table` className.
   // We use the universal selectors here to simplify the selector (else we would need 6 different selectors).
   // Another advantage is that this generates less code and makes the selector less specific making it easier to override.
   // stylelint-disable-next-line selector-max-universal
@@ -45,7 +45,7 @@
 
 
 //
-// Change placement of captions with a class
+// Change placement of captions with a className
 //
 
 .caption-top {
@@ -105,7 +105,7 @@
 
 // Active table
 //
-// The `.table-active` class can be added to highlight rows or cells
+// The `.table-active` className can be added to highlight rows or cells
 
 .table-active {
   --#{$variable-prefix}table-accent-bg: var(--#{$variable-prefix}table-active-bg);
@@ -135,7 +135,7 @@
 
 // Responsive tables
 //
-// Generate series of `.table-responsive-*` classes for configuring the screen
+// Generate series of `.table-responsive-*` classNamees for configuring the screen
 // size of where your table will overflow.
 
 @each $breakpoint in map-keys($grid-breakpoints) {
