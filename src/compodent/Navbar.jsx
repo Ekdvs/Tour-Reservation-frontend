@@ -25,6 +25,8 @@ export default function Navbar() {
                                 <a href="/Destination" class="dropdown-item">Destination</a>
                                 <a href="Explore_Tour" class="dropdown-item">Explore Tour</a>
                                 <a href="/Travel_Booking" class="dropdown-item">Travel Booking</a>
+                                <a href="/Our_Gallery" class="dropdown-item">Our Gallery</a>
+                                <a href="/Travel_Guides" class="dropdown-item">Travel Guides</a>
       </nav>
     </div>
   )
