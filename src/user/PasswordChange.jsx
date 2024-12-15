@@ -1,110 +1,83 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import Topbar from '../compodent/Topbar';
-import Navbar from '../compodent/Navbar';
-import Footer from '../compodent/Footer';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
-export default function ChangePassword() {
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const navigate = useNavigate();
+export default function VerifyOTP() {
+    const [otp, setOtp] = useState('');
+    const [email, setEmail] = useState(localStorage.getItem('userEmail') || ''); // Fetch stored email
+    const [message, setMessage] = useState(null); // For success/error messages
+    const navigate = useNavigate();
 
-  const handleChangePassword = async (e) => {
-    e.preventDefault();
+    const handleOtpSubmit = async (e) => {
+        e.preventDefault();
 
-    if (!newPassword || !confirmPassword) {
-      setMessage({ text: 'Please fill in all fields.', className: 'alert alert-warning' });
-      return;
-    }
+        if (!otp.trim()) {
+            setMessage({ text: 'OTP cannot be empty.', className: 'alert alert-warning' });
+            return;
+        }
 
-    if (newPassword !== confirmPassword) {
-      setMessage({ text: 'Passwords do not match.', className: 'alert alert-danger' });
-      return;
-    }
+        try {
+            // Send OTP verification request to the backend
+            const response = await axios.post('http://localhost:8080/user/verify-code', {
+                userEmail: email,
+                recoveryCode: otp,
+            });
 
-    const userEmail = localStorage.getItem('userEmail');
-    if (!userEmail) {
-      setMessage({ text: 'User email not found. Please log in again.', className: 'alert alert-danger' });
-      return;
-    }
+            if (response.status === 200 && response.data === true) {
+                // OTP verified successfully
+                setMessage({ text: 'OTP verified successfully! Redirecting...', className: 'alert alert-success' });
 
-    try {
-      const response = await axios.post('http://localhost:8080/user/updateuserpassword', null, {
-        params: {
-          userEmail,
-          newPassword,
-        },
-      });
+                // Redirect to the change password page after 2 seconds
+                setTimeout(() => navigate('/PasswordChange'), 2000);
+            } else {
+                // Handle incorrect OTP
+                setMessage({ text: 'Invalid OTP. Please try again.', className: 'alert alert-danger' });
+            }
+        } catch (error) {
+            setMessage({
+                text: error.response?.data || 'An error occurred. Please try again.',
+                className: 'alert alert-danger',
+            });
+        }
+    };
 
-      if (response.data) {
-        setMessage({ text: 'Password changed successfully!', className: 'alert alert-success' });
-        setTimeout(() => navigate('/My_Profile'), 2000); // Redirect to My_Profile page after success
-      } else {
-        setMessage({ text: 'Failed to update password. Please try again.', className: 'alert alert-danger' });
-      }
-    } catch (error) {
-      setMessage({ text: 'An error occurred. Please try again.', className: 'alert alert-danger' });
-    }
-  };
-
-  return (
-    <div>
-      <Topbar />
-      <Navbar />
-      <div className="container-fluid bg-primary text-white text-center py-5">
-        <h3 className="display-3 mb-4">Change Password</h3>
-        <ol className="breadcrumb justify-content-center">
-          <li className="breadcrumb-item">
-            <a href="/" className="text-white">Home</a>
-          </li>
-          <li className="breadcrumb-item">
-            <a href="/My_Profile" className="text-white">Profile</a>
-          </li>
-          <li className="breadcrumb-item active">Change Password</li>
-        </ol>
-      </div>
-
-      <div className="container my-5">
-        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
-          <div className="card-body">
-            <h5 className="card-title text-center">Change Password</h5>
-            {message && <div className={message.className}>{message.text}</div>}
-            <form onSubmit={handleChangePassword}>
-              <div className="form-group mb-3">
-                <label htmlFor="newPassword" className="form-label">New Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="newPassword"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                  placeholder="Enter new password"
-                  required
-                />
-              </div>
-              <div className="form-group mb-3">
-                <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="confirmPassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Confirm new password"
-                  required
-                />
-              </div>
-              <div className="d-grid">
-                <button type="submit" className="btn btn-primary rounded-pill">Update Password</button>
-              </div>
-            </form>
-          </div>
+    return (
+        <div className="bg-light py-3 py-md-5">
+            <div className="container">
+                <div className="row justify-content-md-center">
+                    <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+                        <div className="bg-white p-4 p-md-5 rounded shadow-sm">
+                            <h3>Enter OTP</h3>
+                            {message && (
+                                <div className={message.className} role="alert">
+                                    {message.text}
+                                </div>
+                            )}
+                            <form onSubmit={handleOtpSubmit}>
+                                <div className="mb-3">
+                                    <label htmlFor="otp" className="form-label">
+                                        OTP <span className="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="otp"
+                                        value={otp}
+                                        onChange={(e) => setOtp(e.target.value)}
+                                        placeholder="Enter OTP"
+                                        required
+                                    />
+                                </div>
+                                <div className="d-grid">
+                                    <button className="btn btn-lg btn-primary" type="submit">
+                                        Verify OTP
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
+    );
 }
