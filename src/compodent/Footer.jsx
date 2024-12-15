@@ -1,6 +1,53 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Footer() {
+  const userEmail = localStorage.getItem("userEmail") // Replace with dynamic email if needed
+    const [profileData, setProfileData] = useState(null);
+    const [isEditing, setIsEditing] = useState(false);
+
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        phoneNumber: "",
+        title: "",
+        gender: "",
+        country: "",
+    });
+
+    useEffect(() => {
+        // Fetch profile data from the backend
+        axios.get(`http://localhost:8080/user/${userEmail}`)
+            .then((response) => {
+                setProfileData(response.data);
+                setFormData({
+                    firstName: response.data.firstName,
+                    lastName: response.data.lastName,
+                    phoneNumber: response.data.phoneNumber,
+                    title: response.data.title,
+                    gender: response.data.gender,
+                    country: response.data.country,
+                });
+            })
+            .catch((error) => console.error("Error fetching profile:", error));
+    }, [userEmail]);
+
+    const handleSave = () => {
+        // Send updated data to backend
+        axios.put(`http://localhost:8080/user/${userEmail}`, formData)
+            .then((response) => {
+                setProfileData(response.data);
+                setIsEditing(false);
+            })
+            .catch((error) => console.error("Error saving profile:", error));
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    if (!profileData) return <div>Loading...</div>;
   return (
     <div>
       <div className="container">
