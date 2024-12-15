@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
+import Footer from '../compodent/Footer';
 
 export default function Register() {
   const [password, setPassword] = useState('');
@@ -133,6 +134,7 @@ export default function Register() {
           </div>
         </div>
       </div>
+      <Footer/>
     </>
   );
 }
