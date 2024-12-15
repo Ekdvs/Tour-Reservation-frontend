@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function ForgotPassword() {
     const [email, setEmail] = useState('');
-    const [otpSent, setOtpSent] = useState(false);
+    const [otpSent, setOtpSent] = useState('');
+    const [message, setMessage] = useState('');
+
+    const navigate = useNavigate();
 
     const handlesentotpmethod = async (e) => {
         e.preventDefault();
