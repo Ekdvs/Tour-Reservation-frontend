@@ -60,6 +60,10 @@ export default function Login() {
             <div className="text-center mt-3">
               <a href="/ForgotPassword" className="text-decoration-none">Forgot Password?</a>
             </div>
+            <div className="text-center mt-3">
+              <span>Don't have an account? </span>
+              <a href="/register" className="text-decoration-none">Sign Up</a>
+            </div>
           </div>
         </div>
       </div>
