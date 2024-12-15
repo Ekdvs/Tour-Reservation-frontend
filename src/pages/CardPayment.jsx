@@ -32,6 +32,15 @@ export default function CardPayment() {
           <div className="col-sm-8 col-md-6">
           <div className="card">
             <div className="bg">
+            <div className="card-header">
+                
+                <div className="row">
+                    
+
+                  <div className="col-md-6">
+                    
+                    <span>CREDIT/DEBIT CARD PAYMENT</span>
+                  </div>
     </div>
   )
 }
