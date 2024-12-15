@@ -15,6 +15,8 @@ export default function Navbar() {
                 <div class="collapse navbar-collapse" id="navbarCollapse"><br></br>
                     <div class="navbar-nav ms-auto py-0">
                     <ActiveNavLink to="/" className="nav-item nav-link">Home</ActiveNavLink>
+                    <ActiveNavLink to="/About" className="nav-item nav-link">About</ActiveNavLink>
+                    <ActiveNavLink to="/Services" className="nav-item nav-link">Services</ActiveNavLink>
       </nav>
     </div>
   )
