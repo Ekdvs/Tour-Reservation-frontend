@@ -71,6 +71,16 @@ export default function Travel_Booking() {
                                         <label for="select1">Destination</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select bg-white border-0" id="SelectPerson">
+                                            <option value="1">Persons 1</option>
+                                            <option value="2">Persons 2</option>
+                                            <option value="3">Persons 3</option>
+                                        </select>
+                                        <label for="SelectPerson">Persons</label>
+                                    </div>
+                                </div>
 
                             </div>
                         </form>
