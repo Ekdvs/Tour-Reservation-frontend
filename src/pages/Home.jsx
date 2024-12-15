@@ -1,8 +1,9 @@
 import React from 'react'
-import Topbar from '../components/Topbar'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Topbar from '../compodents/Topbar'
+import Navbar from '../compodents/Navbar'
 import Subscribe from './Subscribe'
+import Footer from '../compodents/Footer'
+
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
       <div className="carousel-header">
                 <div id="carouselId" className="carousel slide" data-bs-ride="carousel">
                     <ol className="carousel-indicators">
-                        <li data-bs-target="#carouselId" data-bs-slide-to="0" className="active"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" className="active"></li>
                         <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
                         <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
                     </ol>
@@ -81,6 +82,9 @@ export default function Home() {
                     >Search</button>
                 </div>
             </div>
+        </div>
+        <div>
+        
         </div>
         
        <Subscribe/>
