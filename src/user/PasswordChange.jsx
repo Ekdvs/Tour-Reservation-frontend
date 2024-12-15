@@ -40,7 +40,7 @@ export default function ChangePassword() {
       // Check response from backend
       if (response.data === "Password updated successfully.") {
         setMessage({ text: 'Password changed successfully!', className: 'alert alert-success' });
-        setTimeout(() => navigate('/My_Profile'), 2000); 
+        setTimeout(() => navigate('/Login'), 2000); 
       } else {
         setMessage({ text: response.data || 'Failed to update password. Please try again.', className: 'alert alert-danger' });
       }
