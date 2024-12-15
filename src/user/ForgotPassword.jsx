@@ -22,7 +22,7 @@ export default function ForgotPassword() {
             const response = await axios.post('http://localhost:8080/user/sendotpcode', { userEmail });
 
             if (response.status === 200) {
-                setMessage({ text: response.data, className: 'alert alert-success' });
+                setMessage({ text: 'Check Your Gmail Account!', className: 'alert alert-success' });
                 localStorage.setItem('userEmail', userEmail);
 
                 
