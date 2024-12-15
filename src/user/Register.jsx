@@ -14,8 +14,36 @@ export default function Register() {
     const navigate = useNavigate();
 
     const handleRegister=async(e)=>{
+        e.PreventDefault();
+        if (firstName && lastName && userEmail && password && repeatPassword) {
+            if (password !== repeatPassword) {
+              setMessage({ text: 'Passwords do not match!', class: 'alert alert-danger' });
+              return;
+            }
+      
+            try {
+              const response = await axios.post('http://localhost:8080/user/register', {
+                firstName,
+                lastName,
+                userEmail,
+                password,
+              });
+      
+              if (response.data === 'User already registered as a user') {
+                setMessage({ text: response.data, class: 'alert alert-danger' });
+              } else {
+                setMessage({ text: 'Registration successful!', class: 'alert alert-success' });
+                setTimeout(() => navigate('/login'), 2000);
+              }
+            } catch (error) {
+              setMessage({ text: 'Error occurred, registration failed.', class: 'alert alert-danger' });
+            }
+          } else {
+            setMessage({ text: 'All fields are required. Please fill them out.', class: 'alert alert-warning' });
+          }
         
-    }
+
+    };
   return (
     <>
       <Topbar/>
