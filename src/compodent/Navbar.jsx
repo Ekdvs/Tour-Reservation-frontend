@@ -17,6 +17,8 @@ export default function Navbar() {
                     <ActiveNavLink to="/" className="nav-item nav-link">Home</ActiveNavLink>
                     <ActiveNavLink to="/About" className="nav-item nav-link">About</ActiveNavLink>
                     <ActiveNavLink to="/Services" className="nav-item nav-link">Services</ActiveNavLink>
+                    <ActiveNavLink to="/Packages" className="nav-item nav-link">Packages</ActiveNavLink>
+                    <ActiveNavLink to="/Blog" className="nav-item nav-link">Blog</ActiveNavLink>
       </nav>
     </div>
   )
