@@ -79,6 +79,7 @@ export default function Register() {
                   placeholder="Re-enter your password"
                 />
               </div>
+              <button type="submit" className="btn btn-primary w-100">Sign Up</button>
             </form>
             <div className="text-center mt-3">
               <a href="/login">Already a Member?</a>
