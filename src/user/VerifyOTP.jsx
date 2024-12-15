@@ -4,6 +4,12 @@ export default function VerifyOTP() {
     const [otp, setOtp] = useState('');
   const [email, setEmail] = useState('');
   const [otpVerified, setOtpVerified] = useState(false);
+
+  const handleOtpSubmit = async (e) => {
+    e.preventDefault();
+
+  
+  };
   return (
     <div>
         <div className="bg-light py-3 py-md-5">
