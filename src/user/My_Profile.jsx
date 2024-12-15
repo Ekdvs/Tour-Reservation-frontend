@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Topbar from "../compodent/Topbar";
+import Navbar from "../compodent/Navbar";
 
 const Profile = () => {
     const userEmail = localStorage.getItem("userEmail"); // Replace with dynamic email if needed
@@ -51,6 +53,18 @@ const Profile = () => {
     if (!profileData) return <div>Loading...</div>;
 
     return (
+        <div><Topbar/>
+        <Navbar/>
+        <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style={{maxWidth:"900px"}}>
+                <h3 class="text-white display-3 mb-4">My Profile</h3>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/Contact">Pages</a></li>
+                    <li class="breadcrumb-item active text-white">My Profile</li>
+                </ol>    
+            </div>
+        </div>
         <div className="container py-5">
             <h1 className="my-4 text-center">Profile</h1>
 
@@ -95,6 +109,7 @@ const Profile = () => {
                     </button>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
