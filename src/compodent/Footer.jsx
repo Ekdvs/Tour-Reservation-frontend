@@ -22,7 +22,24 @@ export default function Footer() {
                         )}
                     </div>
 
-                    
+                    {["firstName", "lastName", "phoneNumber", "title", "gender", "country"].map((field) => (
+                        <div className="mb-3 row" key={field}>
+                            <label className="col-sm-4 text-capitalize">{field}:</label>
+                            <div className="col-sm-6">
+                                {!isEditing ? (
+                                    profileData[field] || "Not Set"
+                                ) : (
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        name={field}
+                                        value={formData[field]}
+                                        onChange={handleChange}
+                                    />
+                                )}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
