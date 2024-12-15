@@ -27,7 +27,7 @@ export default function SignIn() {
         if (response.data === 'Login successful') {
           setMessage({ text: 'Login successful!', class: 'alert alert-success' });
           
-          setTimeout(() => navigate('/My_Profile'),);
+          setTimeout(() => navigate('/My_Profile'),2000);
         } else {
           setMessage({ text: response.data, class: 'alert alert-danger' });
         }
