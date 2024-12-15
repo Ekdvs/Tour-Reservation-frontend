@@ -53,18 +53,17 @@ export default function ChangePassword() {
     <div>
       <Topbar />
       <Navbar />
-      <div className="container-fluid bg-primary text-white text-center py-5">
-        <h3 className="display-3 mb-4">Change Password</h3>
-        <ol className="breadcrumb justify-content-center">
-          <li className="breadcrumb-item">
-            <a href="/" className="text-white">Home</a>
-          </li>
-          <li className="breadcrumb-item">
-            <a href="/My_Profile" className="text-white">Profile</a>
-          </li>
-          <li className="breadcrumb-item active">Change Password</li>
-        </ol>
-      </div>
+      <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style={{maxWidth:"900px"}}>
+                <h3 class="text-white display-3 mb-4">Change Password</h3>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/My_Profile">Profile</a></li>
+                    <li class="breadcrumb-item active text-white">Change Password</li>
+                </ol>    
+            </div>
+        </div>
+      
 
       <div className="container my-5">
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>

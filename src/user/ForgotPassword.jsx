@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../compodent/Footer'; 
+import Topbar from '../compodent/Topbar';
+import Navbar from '../compodent/Navbar';
 
 export default function ForgotPassword() {
     const [userEmail, setUserEmail] = useState('');
@@ -38,6 +40,22 @@ export default function ForgotPassword() {
     };
 
     return (
+      
+       <div>
+         <Topbar/>
+              <Navbar/>
+              
+                    <div class="container-fluid bg-breadcrumb">
+                          <div class="container text-center py-5" style={{maxWidth:"900px"}}>
+                              <h3 class="text-white display-3 mb-4">Password Reset</h3>
+                              <ol class="breadcrumb justify-content-center mb-0">
+                                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                  <li class="breadcrumb-item"><a href="/Contact">Pages</a></li>
+                                  <li class="breadcrumb-item active text-white">Password Reset</li>
+                              </ol>    
+                          </div>
+                      </div>
+        
         <div className="bg-light py-3 py-md-5">
             <div className="container">
                 <div className="row justify-content-md-center">
@@ -54,9 +72,9 @@ export default function ForgotPassword() {
                             </h3>
                             <form onSubmit={handleSendOtpMethod}>
                                 <div className="mb-3">
-                                    <label htmlFor="email" className="form-label">
-                                        Email:
-                                    </label>
+                                <label htmlFor="email" className="form-label" style={{ fontSize: '18px', color: 'black', fontWeight: 'normal' }}>
+                                    Email:
+                                </label>
                                     <input
                                         type="email"
                                         className="form-control"
@@ -88,6 +106,7 @@ export default function ForgotPassword() {
                 </div>
             </div>
             <Footer />
+        </div>
         </div>
     );
 }
