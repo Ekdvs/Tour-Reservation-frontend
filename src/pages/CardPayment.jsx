@@ -57,6 +57,11 @@ export default function CardPayment() {
                   </div>
                 </div>
               </div>
+              <div className="card-body" style={{ height: "350px" }}>
+                <div className="form-group">
+                  <label htmlFor="cc-number" className="control-label">
+                    CARD NUMBER
+                  </label>
     </div>
   )
 }
