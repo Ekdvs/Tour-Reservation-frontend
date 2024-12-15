@@ -57,6 +57,9 @@ export default function Login() {
                 </button>
               </div>
             </form>
+            <div className="text-center mt-3">
+              <a href="/ForgotPassword" className="text-decoration-none">Forgot Password?</a>
+            </div>
           </div>
         </div>
       </div>
