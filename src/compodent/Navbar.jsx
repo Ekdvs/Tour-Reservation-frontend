@@ -27,6 +27,10 @@ export default function Navbar() {
                                 <a href="/Travel_Booking" class="dropdown-item">Travel Booking</a>
                                 <a href="/Our_Gallery" class="dropdown-item">Our Gallery</a>
                                 <a href="/Travel_Guides" class="dropdown-item">Travel Guides</a>
+                                <a href="/Testimonial" class="dropdown-item">Testimonial</a>
+                                <a href="/Pageerror" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div>
       </nav>
     </div>
   )
