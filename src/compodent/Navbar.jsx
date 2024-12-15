@@ -31,6 +31,10 @@ export default function Navbar() {
                                 <a href="/Pageerror" class="dropdown-item">404 Page</a>
                             </div>
                         </div>
+                        <a href="/Contact" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="/Travel_Booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                </div>
       </nav>
     </div>
   )
