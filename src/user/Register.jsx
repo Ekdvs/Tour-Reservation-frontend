@@ -42,7 +42,7 @@ export default function Register() {
         setMessage({ text: 'Error occurred, registration failed.', className: 'alert alert-danger' });
       }
     } else {
-      setMessage({ text: 'All fields are required. Please fill them out.', className: 'alert alert-warning' });
+      setMessage({ text: 'All fields are required. Please fill them out.', className: 'alert alert-danger' });
     }
   };
 
@@ -51,83 +51,84 @@ export default function Register() {
       <Topbar/>
       <Navbar/>
       
-      <div classNameName="container-fluid bg-primary text-white text-center py-5">
-        <h3 classNameName="display-3 mb-4">Register</h3>
-        <ol classNameName="breadcrumb justify-content-center">
-          <li classNameName="breadcrumb-item">
-            <a href="/" classNameName="text-white">Home</a>
+      <div className="container-fluid bg-primary text-white text-center py-5">
+        <h3 className="display-3 mb-4">Register</h3>
+        <ol className="breadcrumb justify-content-center">
+          <li className="breadcrumb-item">
+            <a href="/" className="text-white">Home</a>
           </li>
-          <li classNameName="breadcrumb-item">
-            <a href="/Contact" classNameName="text-white">Pages</a>
+          <li className="breadcrumb-item">
+            <a href="/Contact" className="text-white">Pages</a>
           </li>
-          <li classNameName="breadcrumb-item active">Register</li>
+          <li className="breadcrumb-item active">Register</li>
         </ol>
       </div>
 
-      <div classNameName="container my-5">
-        {message && <div classNameName={message.className}>{message.text}</div>}
-        <div classNameName="card mx-auto" style={{ maxWidth: '500px' }}>
-          <div classNameName="card-body">
-            <h5 classNameName="card-title text-center">Sign Up</h5>
+      <div className="container my-5">
+        
+        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+          <div className="card-body">
+            <h5 className="card-title text-center">Sign Up</h5>
+            {message && <div className={message.className}>{message.text}</div>}
             <form onSubmit={handleRegister}>
-              <div classNameName="mb-3">
-                <label htmlFor="firstName" classNameName="form-label">First Name</label>
+              <div className="mb-3">
+                <label htmlFor="firstName" className="form-label">First Name</label>
                 <input
                   type="text"
-                  classNameName="form-control"
+                  className="form-control"
                   id="firstName"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   placeholder="Enter your first name"
                 />
               </div>
-              <div classNameName="mb-3">
-                <label htmlFor="lastName" classNameName="form-label">Last Name</label>
+              <div className="mb-3">
+                <label htmlFor="lastName" className="form-label">Last Name</label>
                 <input
                   type="text"
-                  classNameName="form-control"
+                  className="form-control"
                   id="lastName"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
                   placeholder="Enter your last name"
                 />
               </div>
-              <div classNameName="mb-3">
-                <label htmlFor="userEmail" classNameName="form-label">Email</label>
+              <div className="mb-3">
+                <label htmlFor="userEmail" className="form-label">Email</label>
                 <input
                   type="email"
-                  classNameName="form-control"
+                  className="form-control"
                   id="userEmail"
                   value={userEmail}
                   onChange={(e) => setUserEmail(e.target.value)}
                   placeholder="Enter your email"
                 />
               </div>
-              <div classNameName="mb-3">
-                <label htmlFor="password" classNameName="form-label">Password</label>
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
                 <input
                   type="password"
-                  classNameName="form-control"
+                  className="form-control"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                 />
               </div>
-              <div classNameName="mb-3">
-                <label htmlFor="repeatPassword" classNameName="form-label">Re-enter Password</label>
+              <div className="mb-3">
+                <label htmlFor="repeatPassword" className="form-label">Re-enter Password</label>
                 <input
                   type="password"
-                  classNameName="form-control"
+                  className="form-control"
                   id="repeatPassword"
                   value={repeatPassword}
                   onChange={(e) => setRepeatPassword(e.target.value)}
                   placeholder="Re-enter your password"
                 />
               </div>
-              <button type="submit" classNameName="btn btn-primary w-100">Sign Up</button>
+              <button type="submit" className="btn btn-primary w-100">Sign Up</button>
             </form>
-            <div classNameName="text-center mt-3">
+            <div className="text-center mt-3">
               <a href="/login">Already a Member?</a>
             </div>
           </div>

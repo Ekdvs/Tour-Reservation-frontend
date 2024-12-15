@@ -42,7 +42,7 @@ export default function ForgotPassword() {
   return (
     <div>
         <div>
-        <Navbar/>
+       
        
         </div>
         
@@ -56,7 +56,7 @@ export default function ForgotPassword() {
             <div className="col-12">
               <div className="mb-5">
                 <h2 className="h3">Password Reset</h2>
-                {message && <div classNameName={message.className}>{message.text}
+                {message && <div className={message.className}>{message.text}
               </div>}
                 <h3 className="fs-6 fw-normal text-secondary m-0">Provide the email address associated with your account to recover your password.</h3>
               </div>
@@ -65,10 +65,10 @@ export default function ForgotPassword() {
           <form onSubmit={handlesentotpmethod}>
             <div className="row gy-3 gy-md-4 overflow-hidden">
               <div className="col-12">
-                <label for="email" className="form-labe">Email <span className="text-danger">*</span></label>
+                <label for="email" className="form-labe">Email &nbsp;&nbsp; : <span className="text-danger"></span></label>
                 <input
                         type="email"
-                        classNameName="form-control"
+                        className="form-control"
                         name="email"
                         id="email"
                         placeholder="name@example.com"

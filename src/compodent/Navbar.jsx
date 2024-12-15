@@ -24,11 +24,11 @@ export default function Navbar() {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarCollapse"><br></br>
                     <div className="navbar-nav ms-auto py-0">
-                    <ActiveNavLink to="/" classNameName="nav-item nav-link">Home</ActiveNavLink>
-                    <ActiveNavLink to="/About" classNameName="nav-item nav-link">About</ActiveNavLink>
-                    <ActiveNavLink to="/Services" classNameName="nav-item nav-link">Services</ActiveNavLink>
-                    <ActiveNavLink to="/Packages" classNameName="nav-item nav-link">Packages</ActiveNavLink>
-                    <ActiveNavLink to="/Blog" classNameName="nav-item nav-link">Blog</ActiveNavLink>
+                    <ActiveNavLink to="/" className="nav-item nav-link">Home</ActiveNavLink>
+                    <ActiveNavLink to="/About" className="nav-item nav-link">About</ActiveNavLink>
+                    <ActiveNavLink to="/Services" className="nav-item nav-link">Services</ActiveNavLink>
+                    <ActiveNavLink to="/Packages" className="nav-item nav-link">Packages</ActiveNavLink>
+                    <ActiveNavLink to="/Blog" className="nav-item nav-link">Blog</ActiveNavLink>
                         <div className="nav-item dropdown">
                             <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div className="dropdown-menu m-0">

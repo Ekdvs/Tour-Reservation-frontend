@@ -43,30 +43,31 @@ export default function SignIn() {
     <div>
       <Topbar/>
       <Navbar/>
-      <div classNameName="container-fluid bg-primary text-white text-center py-5">
-        <h3 classNameName="display-3 mb-4">Login</h3>
-        <ol classNameName="breadcrumb justify-content-center">
-          <li classNameName="breadcrumb-item">
-            <a href="/" classNameName="text-white">Home</a>
+      <div className="container-fluid bg-primary text-white text-center py-5">
+        <h3 className="display-3 mb-4">Login</h3>
+        <ol className="breadcrumb justify-content-center">
+          <li className="breadcrumb-item">
+            <a href="/" className="text-white">Home</a>
           </li>
-          <li classNameName="breadcrumb-item">
-            <a href="/Contact" classNameName="text-white">Pages</a>
+          <li className="breadcrumb-item">
+            <a href="/Contact" className="text-white">Pages</a>
           </li>
-          <li classNameName="breadcrumb-item active">Login</li>
+          <li className="breadcrumb-item active">Login</li>
         </ol>
       </div>
 
-      <div classNameName="container my-5">
-        {message && <div classNameName={message.className}>{message.text}</div>}
-        <div classNameName="card mx-auto" style={{ maxWidth: '500px' }}>
-          <div classNameName="card-body">
-            <h5 classNameName="card-title text-center">Sign IN</h5>
+      <div className="container my-5">
+        
+        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+          <div className="card-body">
+            <h5 className="card-title text-center">Sign IN</h5>
+            {message && <div className={message.className}>{message.text}</div>}
             <form onSubmit={handleSignIn}>
-            <div classNameName="form-group mb-3">
-                <label htmlFor="email" classNameName="form-label">Email</label>
+            <div className="form-group mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
                 <input
                   type="email"
-                  classNameName="form-control"
+                  className="form-control"
                   id="email"
                   value={userEmail}
                   onChange={(e) => setUserEmail(e.target.value)}
@@ -74,11 +75,11 @@ export default function SignIn() {
                   required
                 />
               </div>
-              <div classNameName="form-group mb-3">
-                <label htmlFor="password" classNameName="form-label">Password</label>
+              <div className="form-group mb-3">
+                <label htmlFor="password" className="form-label">Password</label>
                 <input
                   type="password"
-                  classNameName="form-control"
+                  className="form-control"
                   id="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -86,18 +87,18 @@ export default function SignIn() {
                   required
                 />
               </div>
-              <div classNameName="d-grid">
-                <button type="submit" classNameName="btn btn-primary rounded-pill">
+              <div className="d-grid">
+                <button type="submit" className="btn btn-primary rounded-pill">
                   Sign In
                 </button>
               </div>
             </form>
-            <div classNameName="text-center mt-3">
-              <a href="/ForgotPassword" classNameName="text-decoration-none">Forgot Password?</a>
+            <div className="text-center mt-3">
+              <a href="/ForgotPassword" className="text-decoration-none">Forgot Password?</a>
             </div>
-            <div classNameName="text-center mt-3">
+            <div className="text-center mt-3">
               <span>Don't have an account? </span>
-              <a href="/register" classNameName="text-decoration-none">Sign Up</a>
+              <a href="/register" className="text-decoration-none">Sign Up</a>
             </div>
           </div>
         </div>
