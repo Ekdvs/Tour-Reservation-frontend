@@ -8,7 +8,17 @@ export default function Home() {
     <div>
       <Topbar/>
       <Navbar/>
-      <h1>welcome</h1>
+      <div className='carousel-header'>
+        <div id="carouselId" className="carousel slide" data-bs-ride="carousel">
+        <ol className="carousel-indicators">
+            <li data-bs-target="#carouselId" data-bs-slide-to="0" className="active"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+            <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+        </ol>
+
+        </div>
+
+      </div>
       <Footer/>
     </div>
   )
