@@ -31,6 +31,20 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+            <div className="carousel-item">
+                            <img src="img/carousel-1.jpg" className="img-fluid" alt="Image"/>
+                            <div className="carousel-caption">
+                                <div className="p-3" style={{ maxWidth: '900px' }}>
+                                    <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}> Explore The World</h4>
+                                    <h1 className="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Travel</h1>
+                                    <p className="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    </p>
+                                    <div className="d-flex align-items-center justify-content-center">
+                                        <a className="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="/">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
         </div>
 
