@@ -35,7 +35,7 @@ export default function VerifyOTP() {
                 });
 
                 
-                setTimeout(() => navigate('/ChangePassword'), 2000);
+                setTimeout(() => navigate('/PasswordChange'), 2000);
             } else {
                 setMessage({
                     text: response.data.message || 'Invalid OTP. Please try again.',

@@ -6,7 +6,7 @@ import Footer from '../compodent/Footer';
 import { useNavigate } from 'react-router-dom';
 
 export default function ChangePassword() {
-  const [newPassword, setNewPassword] = useState('');
+  const [Password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
@@ -14,12 +14,13 @@ export default function ChangePassword() {
   const handleChangePassword = async (e) => {
     e.preventDefault();
 
-    if (!newPassword || !confirmPassword) {
+    // Validate password fields
+    if (!Password || !confirmPassword) {
       setMessage({ text: 'Please fill in all fields.', className: 'alert alert-warning' });
       return;
     }
 
-    if (newPassword !== confirmPassword) {
+    if (Password !== confirmPassword) {
       setMessage({ text: 'Passwords do not match.', className: 'alert alert-danger' });
       return;
     }
@@ -31,18 +32,17 @@ export default function ChangePassword() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/user/updateuserpassword', null, {
-        params: {
-          userEmail,
-          newPassword,
-        },
+      // Send the password update request with the email as part of the URL
+      const response = await axios.post(`http://localhost:8080/user/update-password/${userEmail}`, {
+        Password, // Send new password in the body
       });
 
-      if (response.data) {
+      // Check response from backend
+      if (response.data === "Password updated successfully.") {
         setMessage({ text: 'Password changed successfully!', className: 'alert alert-success' });
-        setTimeout(() => navigate('/My_Profile'), 2000); // Redirect to My_Profile page after success
+        setTimeout(() => navigate('/My_Profile'), 2000); // Redirect after 2 seconds
       } else {
-        setMessage({ text: 'Failed to update password. Please try again.', className: 'alert alert-danger' });
+        setMessage({ text: response.data || 'Failed to update password. Please try again.', className: 'alert alert-danger' });
       }
     } catch (error) {
       setMessage({ text: 'An error occurred. Please try again.', className: 'alert alert-danger' });
@@ -77,9 +77,9 @@ export default function ChangePassword() {
                 <input
                   type="password"
                   className="form-control"
-                  id="newPassword"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
+                  id="Password"
+                  value={Password}
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter new password"
                   required
                 />
