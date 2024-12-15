@@ -15,7 +15,7 @@ export default function Register() {
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="/Services">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Services</li>
+                    <li class="breadcrumb-item active text-white">Register</li>
                 </ol>    
             </div>
         </div>
