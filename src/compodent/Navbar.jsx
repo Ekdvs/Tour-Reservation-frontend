@@ -23,6 +23,8 @@ export default function Navbar() {
                             <a href="/" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0">
                                 <a href="/Destination" class="dropdown-item">Destination</a>
+                                <a href="Explore_Tour" class="dropdown-item">Explore Tour</a>
+                                <a href="/Travel_Booking" class="dropdown-item">Travel Booking</a>
       </nav>
     </div>
   )
