@@ -33,8 +33,8 @@ export default function ForgotPassword() {
             <div class="col-12">
               <hr class="mt-5 mb-4 border-secondary-subtle"/>
               <div class="d-flex gap-4 justify-content-end">
-                <a href="#!" class="link-secondary text-decoration-none">Login</a>
-                <a href="#!" class="link-secondary text-decoration-none">Register</a>
+                <a href="/Login" class="link-secondary text-decoration-none">Login</a>
+                <a href="/Register" class="link-secondary text-decoration-none">New Register</a>
               </div>
             </div>
           </div>
