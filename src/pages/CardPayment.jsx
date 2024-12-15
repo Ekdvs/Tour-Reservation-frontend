@@ -4,6 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export default function CardPayment() {
+  const [cardNumber, setCardNumber] = useState("");
   return (
     <div>
       <Topbar/>
