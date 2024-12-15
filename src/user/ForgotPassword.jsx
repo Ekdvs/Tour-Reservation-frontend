@@ -8,7 +8,7 @@ export default function ForgotPassword() {
     const handlesentotpmethod = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('', {
+            const response = await axios.post('http://localhost:8080/user/sendotpcode', {
               userEmail: email,
             });
       
@@ -26,6 +26,7 @@ export default function ForgotPassword() {
 
   return (
     <div>
+        
         <div class="bg-light py-3 py-md-5">
   <div class="container">
     <div class="row justify-content-md-center">
@@ -35,6 +36,8 @@ export default function ForgotPassword() {
             <div class="col-12">
               <div class="mb-5">
                 <h2 class="h3">Password Reset</h2>
+                {message && <div className={message.class}>{message.text}
+              </div>}
                 <h3 class="fs-6 fw-normal text-secondary m-0">Provide the email address associated with your account to recover your password.</h3>
               </div>
             </div>
