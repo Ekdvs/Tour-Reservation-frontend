@@ -22,6 +22,7 @@ export default function Blog() {
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style={{ maxWidth: '900px' }}>
                     <h5 class="section-title px-3">Our Blog</h5>
+                    <h1 class="mb-4">Popular Travel Blogs</h1>
     </div>
   )
 }
