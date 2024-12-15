@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 export default function ForgotPassword() {
+    const [email, setEmail] = useState('');
+    const [otpSent, setOtpSent] = useState(false);
+
+
   return (
     <div>
         <div class="bg-light py-3 py-md-5">
