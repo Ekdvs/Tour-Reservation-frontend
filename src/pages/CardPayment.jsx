@@ -6,7 +6,8 @@ import Footer from "../components/Footer";
 export default function CardPayment() {
   return (
     <div>
-     <Topbar/> 
+      <Topbar/>
+      <Navbar/>
     </div>
   )
 }
