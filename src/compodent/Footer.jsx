@@ -25,7 +25,7 @@ export default function Footer() {
       </div>
       </div>
       <div className="footer-item d-flex flex-column">
-        
+      <h4 class="mb-4 text-white">Company</h4>
       </div>
       </div>
       </div>
