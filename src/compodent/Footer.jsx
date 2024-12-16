@@ -21,12 +21,11 @@ export default function Footer() {
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-twitter"></i></a>
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-instagram"></i></a>
         <a className="btn-square btn btn-primary rounded-circle mx-1" href=""><i className="fab fa-linkedin-in"></i></a>
-
-
         </div>
-
       </div>
-
+      </div>
+      <div className="footer-item d-flex flex-column">
+        
       </div>
       </div>
       </div>
