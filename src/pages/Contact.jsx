@@ -21,7 +21,7 @@ export default function Contact() {
             </div>
         </div>
 
-
+      <Subscribe/>
       <Footer/>
       
     </div>
