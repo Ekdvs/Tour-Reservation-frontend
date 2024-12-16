@@ -29,6 +29,7 @@ export default function Footer() {
       <a href=""><i className="fas fa-angle-right me-2"></i> About</a>
       <a href=""><i className="fas fa-angle-right me-2"></i> Careers</a>
       <a href=""><i className="fas fa-angle-right me-2"></i> Blog</a>
+      <a href=""><i className="fas fa-angle-right me-2"></i> Press</a>
 
 
       </div>
