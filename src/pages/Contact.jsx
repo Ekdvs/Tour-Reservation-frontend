@@ -55,7 +55,11 @@ export default function Contact() {
                         <form>
                             <div class="row g-3">
                                 <div class="col-md-6">
-                                   
+                                <div class="form-floating">
+                                        <input type="text" class="form-control border-0" id="name" placeholder="Your Name"/>
+                                        <label for="name">Your Name</label>
+                                    </div>
+
                                 </div>
                                 
                             </div>
