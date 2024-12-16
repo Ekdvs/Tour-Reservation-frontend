@@ -49,17 +49,7 @@ export default function Footer() {
                         <div class="footer-item">
                             <div class="row gy-3 gx-2 mb-4">
                                 <div class="col-xl-6">
-                                    <form>
-                                        <div class="form-floating">
-                                            <select class="form-select bg-dark border" id="select1">
-                                                <option value="1">Arabic</option>
-                                                <option value="2">German</option>
-                                                <option value="3">Greek</option>
-                                                <option value="3">New York</option>
-                                            </select>
-                                            <label for="select1">English</label>
-                                        </div>
-                                    </form>
+                                    
                                 </div>
                                
                             </div>
