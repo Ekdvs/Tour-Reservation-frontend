@@ -27,6 +27,7 @@ export default function Footer() {
       <div className="footer-item d-flex flex-column">
       <h4 class="mb-4 text-white">Company</h4>
       <a href=""><i className="fas fa-angle-right me-2"></i> About</a>
+      <a href=""><i className="fas fa-angle-right me-2"></i> Careers</a>
 
 
 
