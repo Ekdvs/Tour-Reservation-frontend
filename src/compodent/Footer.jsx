@@ -32,10 +32,12 @@ export default function Footer() {
       <a href=""><i className="fas fa-angle-right me-2"></i> Press</a>
       <a href=""><i className="fas fa-angle-right me-2"></i> Gift Cards</a>
       <a href=""><i className="fas fa-angle-right me-2"></i> Magazine</a>
-
-
       </div>
       </div>
+
+
+
+      
       </div>
       </div>
 
