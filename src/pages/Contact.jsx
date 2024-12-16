@@ -10,6 +10,8 @@ export default function Contact() {
     <div>
       <Topbar/>
       <Navbar/>
+
+      <Footer/>
       
     </div>
   )
