@@ -14,6 +14,7 @@ import My_Profile from "./user/My_Profile";
 import Blog from "./pages/Blog";
 import CardPayment from "./pages/CardPayment";
 import Contact from "./pages/Contact";
+import Services from "./pages/Services";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route exact path='/Blog' element={<Blog/>}/>
         <Route exact path='/CardPayment' element={<CardPayment/>}/>
         <Route exact path='/Contact' element={<Contact/>}/>
+        <Route exact path='/Services' element={<Services/>}/>
         
         </Routes>
       </Router>
