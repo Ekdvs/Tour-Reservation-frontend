@@ -5,7 +5,9 @@ export default function Pageerror() {
   return (
     <div>
         <Topbar/>
+        <Navbar/>
         
+
       
     </div>
   )
