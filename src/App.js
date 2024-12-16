@@ -13,6 +13,7 @@ import PasswordChange from "./user/PasswordChange";
 import My_Profile from "./user/My_Profile";
 import Blog from "./pages/Blog";
 import CardPayment from "./pages/CardPayment";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route exact path='/My_Profile' element={<My_Profile/>}/>
         <Route exact path='/Blog' element={<Blog/>}/>
         <Route exact path='/CardPayment' element={<CardPayment/>}/>
+        <Route exact path='/Contact' element={<Contact/>}/>
         
         </Routes>
       </Router>
