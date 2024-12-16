@@ -27,7 +27,19 @@ export default function Services() {
                 <div class="row g-4">
                     <div class="col-lg-6">
                         <div class="row g-4">
-                            
+                        <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                    <div class="service-content text-end">
+                                        <h5 class="mb-4">WorldWide Tours</h5>
+                                        <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
+                                        </p>
+                                    </div>
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-globe fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <div class="col-12">
