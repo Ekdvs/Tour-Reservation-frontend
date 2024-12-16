@@ -16,7 +16,7 @@ export default function SignIn() {
     e.preventDefault();
 
     if (!userEmail || !password) {
-      setMessage({ text: 'Please fill in all fields.', class: 'alert alert-warning' });
+      setMessage({ text: 'Please fill in all fields.', className: 'alert alert-warning' });
       return;
     }
     try {
@@ -26,14 +26,14 @@ export default function SignIn() {
         });
   
         if (response.data === 'Login successful') {
-          setMessage({ text: 'Login successful!', class: 'alert alert-success' });
+          setMessage({ text: 'Login successful!', className: 'alert alert-success' });
           localStorage.setItem('userEmail', userEmail);
           setTimeout(() => navigate('/My_Profile'),2000);
         } else {
-          setMessage({ text: response.data, class: 'alert alert-danger' });
+          setMessage({ text: response.data, className: 'alert alert-danger' });
         }
       } catch (error) {
-        setMessage({ text: 'Login failed. Please try again.', class: 'alert alert-danger' });
+        setMessage({ text: 'Login failed. Please try again.', className: 'alert alert-danger' });
       }
 
     
@@ -43,24 +43,24 @@ export default function SignIn() {
     <div>
       <Topbar/>
       <Navbar/>
-      <div className="container-fluid bg-primary text-white text-center py-5">
-        <h3 className="display-3 mb-4">Login</h3>
-        <ol className="breadcrumb justify-content-center">
-          <li className="breadcrumb-item">
-            <a href="/" className="text-white">Home</a>
-          </li>
-          <li className="breadcrumb-item">
-            <a href="/Contact" className="text-white">Pages</a>
-          </li>
-          <li className="breadcrumb-item active">Login</li>
-        </ol>
-      </div>
+      <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style={{maxWidth:"900px"}}>
+                <h3 class="text-white display-3 mb-4">Login</h3>
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/Contact">Pages</a></li>
+                    <li class="breadcrumb-item active text-white">Login</li>
+                </ol>    
+            </div>
+        </div>
+      
 
       <div className="container my-5">
-        {message && <div className={message.class}>{message.text}</div>}
+        
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign IN</h5>
+            {message && <div className={message.className}>{message.text}</div>}
             <form onSubmit={handleSignIn}>
             <div className="form-group mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
