@@ -1,0 +1,47 @@
+.padding{
+
+    padding: 5rem ;
+    background-color: rgb(228, 243, 203);
+}
+.bg{
+    background-color: #7eacdb;
+    border-radius: 10px;
+}
+
+
+
+.form-control:focus {
+   box-shadow: 10px 0px 0px 0px #ffffff !important;
+   border-color: #170faf;
+}
+.form-control:active {
+    box-shadow: 10px 0px 0px 0px #ffffff !important;
+    border-color: #3211dc;
+ }
+ .btnpayment {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: 100%;
+    background-color: #3a34ec;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnpayment:hover {
+    background-color: #eb1a28;
+  }
+  
+  .btnpayment:active {
+    background-color: #0d0245;
+    transform: scale(0.98);
+  }
+  
+  .btnpayment:focus {
+    outline: none;
+    box-shadow: 0 0 5px #18C2C0;
+  }
