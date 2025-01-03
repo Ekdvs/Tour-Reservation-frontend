@@ -32,6 +32,9 @@ export default function About() {
                                 position: 'relative'
                             }}
                         >
+                            <img src="img/about.jpg" className="img-fluid w-100 h-100" alt="Sri Lanka" style={{ objectFit: 'cover', borderRadius: '10px' }} />
+                        </div>
+                    </div>
     </div>
     )
 }
