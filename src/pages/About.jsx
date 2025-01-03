@@ -4,3 +4,8 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function About() {
+    return (
+        <div>
+            <Topbar/>
+            <Navbar/>
+            
