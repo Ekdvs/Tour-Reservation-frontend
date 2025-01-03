@@ -16,4 +16,7 @@ export default function Home() {
                         <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
                         <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
                     </ol>
-                    
+                    <div className="carousel-inner" role="listbox">
+                        <div className="carousel-item active">
+                            <img src="img/carousel-2.jpg" className="img-fluid" alt="Image"/>
+                            
