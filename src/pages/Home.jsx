@@ -62,4 +62,11 @@ export default function Home() {
                         <span className="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
                         <span className="visually-hidden">Next</span>
                     </button>
+                    </div>
+                    
+                </div>
+                
+        <div className="container-fluid search-bar position-relative" style={{ top: '-50%', transform: 'translateY(-50%)' }}>
+
+            
                                     
