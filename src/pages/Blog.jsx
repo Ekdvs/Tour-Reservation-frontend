@@ -73,3 +73,9 @@ export default function Blog() {
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="blog-item">
+                            <div class="blog-img">
+                                <div class="blog-img-inner">
+                                    <img class="img-fluid w-100 rounded-top" src="img/blog-3.jpg" alt="Image"/>
+                                    
