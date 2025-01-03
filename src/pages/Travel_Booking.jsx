@@ -39,4 +39,8 @@ export default function Travel_Booking() {
                     <div class="col-lg-6">
                         <h1 class="text-white mb-3">Book A Tour Deals</h1>
                         <p class="text-white mb-4">Get <span class="text-warning">50% Off</span> On Your First Adventure Trip With Travela. Get More Deal Offers Here.</p>
-                        
+                        <form onSubmit={handleBooking}>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        
