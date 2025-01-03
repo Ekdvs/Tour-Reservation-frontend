@@ -18,3 +18,8 @@ export default function Blog() {
                 </ol>
             </div>
         </div>
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style={{ maxWidth: '900px' }}>
+                    <h5 class="section-title px-3">Our Blog</h5>
+                    
