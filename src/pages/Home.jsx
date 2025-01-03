@@ -23,5 +23,10 @@ export default function Home() {
                                 <div className="p-3" style={{ maxWidth: '900px' }}>
                                     <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}>Explore The World</h4>
                                     <h1 className="display-2 text-capitalize text-white mb-4">Let's The Sri Lanka Together!</h1>
-                                    
-                                    
+                                    <div className="d-flex align-items-center justify-content-center">
+                                        <a className="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="/">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
