@@ -53,4 +53,10 @@ export default function Travel_Booking() {
                                         <label for="email">Your Email</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-white border-0" id="datetime" placeholder="Date & Time" data-target="#date3" data-toggle="datetimepicker" />
+                                        <label for="datetime">Date & Time</label>
+                                    </div>
+                                </div>
                                 
