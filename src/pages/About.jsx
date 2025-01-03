@@ -4,7 +4,7 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function About() {
-  return (
+    return (
     <div>
         <Topbar/>
         <Navbar/>
@@ -18,6 +18,10 @@ export default function About() {
                 </ol>
             </div>
         </div>
+        <div className="container-fluid about py-5" style={{ background: '#f7f8fa' }}>
+            <div className="container py-5">
+                <div className="row g-5 align-items-center">
+                    <div className="col-lg-5">
     </div>
     )
 }
