@@ -19,4 +19,9 @@ export default function Home() {
                     <div className="carousel-inner" role="listbox">
                         <div className="carousel-item active">
                             <img src="img/carousel-2.jpg" className="img-fluid" alt="Image"/>
-                            
+                            <div className="carousel-caption">
+                                <div className="p-3" style={{ maxWidth: '900px' }}>
+                                    <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}>Explore The World</h4>
+                                    <h1 className="display-2 text-capitalize text-white mb-4">Let's The Sri Lanka Together!</h1>
+                                    
+                                    
