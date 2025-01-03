@@ -58,4 +58,8 @@ export default function Home() {
                         <span className="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
                         <span className="visually-hidden">Previous</span>
                     </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span className="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
                                     
