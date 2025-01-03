@@ -56,6 +56,10 @@ export default function About() {
                             <div className="col-sm-6">
                                 <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
                             </div>
+                            <div className="col-sm-6">
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                            </div>
+                        </div>
     </div>
     )
 }
