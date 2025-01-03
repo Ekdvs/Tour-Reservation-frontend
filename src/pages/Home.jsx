@@ -78,3 +78,8 @@ export default function Home() {
         <div>
         
         </div>
+        <Subscribe/>
+        <Footer/>
+    </div>
+    )
+}
