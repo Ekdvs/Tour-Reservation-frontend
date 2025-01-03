@@ -43,5 +43,9 @@ export default function Home() {
                         </div>
                         <div className="carousel-item">
                             <img src="img/carousel-3.jpg" className="img-fluid" alt="Image"/>
-                            
+                            <div className="carousel-caption">
+                                <div className="p-3" style={{ maxWidth: '900px' }}>
+                                    <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}> Explore The World</h4>
+                                    <h1 className="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
+                                    
                                     
