@@ -37,6 +37,7 @@ export default function About() {
                     </div>
                     <div className="col-lg-7" style={{ background: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(img/about-img-1.png)', backgroundSize: 'cover', height: '100vh', width: '100%', borderRadius: '15px' }}>
                         <h5 className="section-about-title pe-3">About Us</h5>
+                        <h1 className="mb-4 text-dark">Welcome to <span className="text-primary">Travela</span></h1>
                         
     </div>
     )
