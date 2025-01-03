@@ -40,7 +40,10 @@ export default function About() {
                         <h1 className="mb-4 text-dark">Welcome to <span className="text-primary">Travela</span></h1>
                         <p className="mb-4 text-dark" style={{ fontSize: '18px', lineHeight: '1.8' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, dolorum, doloribus sunt dicta, officia voluptatibus libero necessitatibus natus impedit quam ullam assumenda? Id atque iste consectetur. Commodi odit ab saepe!</p>
                         <p className="mb-4 text-dark" style={{ fontSize: '18px', lineHeight: '1.8' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quos voluptatem suscipit neque enim, doloribus ipsum rem eos distinctio, dignissimos nisi saepe nulla? Libero numquam perferendis provident placeat molestiae quia?</p>
-                        
+                        <div className="row gy-2 gx-4 mb-4">
+                            <div className="col-sm-6">
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>First class Flights</p>
+                            </div>
     </div>
     )
 }
