@@ -47,4 +47,10 @@ export default function Travel_Booking() {
                                         <label for="name">Your Name</label>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control bg-white border-0" id="email" placeholder="Your Email"/>
+                                        <label for="email">Your Email</label>
+                                    </div>
+                                </div>
                                 
