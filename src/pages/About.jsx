@@ -35,6 +35,9 @@ export default function About() {
                             <img src="img/about.jpg" className="img-fluid w-100 h-100" alt="Sri Lanka" style={{ objectFit: 'cover', borderRadius: '10px' }} />
                         </div>
                     </div>
+                    <div className="col-lg-7" style={{ background: 'linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(img/about-img-1.png)', backgroundSize: 'cover', height: '100vh', width: '100%', borderRadius: '15px' }}>
+                        <h5 className="section-about-title pe-3">About Us</h5>
+                        
     </div>
     )
 }
