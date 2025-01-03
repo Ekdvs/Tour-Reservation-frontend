@@ -47,6 +47,9 @@ export default function About() {
                             <div className="col-sm-6">
                                 <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
                             </div>
+                            <div className="col-sm-6">
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                            </div>
     </div>
     )
 }
