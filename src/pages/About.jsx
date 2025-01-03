@@ -44,6 +44,9 @@ export default function About() {
                             <div className="col-sm-6">
                                 <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>First class Flights</p>
                             </div>
+                            <div className="col-sm-6">
+                                <p className="mb-0"><i className="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                            </div>
     </div>
     )
 }
