@@ -41,4 +41,7 @@ export default function Home() {
                                 </div>
                             </div>
                         </div>
+                        <div className="carousel-item">
+                            <img src="img/carousel-3.jpg" className="img-fluid" alt="Image"/>
+                            
                                     
