@@ -8,4 +8,6 @@ export default function About() {
         <div>
             <Topbar/>
             <Navbar/>
-            
+            <div className="container-fluid bg-breadcrumb">
+            <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
+                
