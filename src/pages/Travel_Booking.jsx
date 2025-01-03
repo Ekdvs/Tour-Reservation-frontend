@@ -63,4 +63,7 @@ export default function Travel_Booking() {
                                     <div class="form-floating">
                                         <select class="form-select bg-white border-0" id="select1">
                                             <option value="1">Destination 1</option>
-                                            
+                                            <option value="2">Destination 2</option>
+                                            <option value="3">Destination 3</option>
+                                        </select>
+                                        
