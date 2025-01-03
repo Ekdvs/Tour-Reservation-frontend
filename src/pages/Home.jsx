@@ -5,3 +5,8 @@ import Footer from "../compodent/Footer";
 import Subscribe from './Subscribe'
 
 export default function Home() {
+    return (
+        <div>
+          <Topbar/>
+          <Navbar/>
+          
