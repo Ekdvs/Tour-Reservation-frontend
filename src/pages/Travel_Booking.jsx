@@ -24,4 +24,9 @@ export default function Travel_Booking() {
                 </ol>
             </div>
             </div>
-            
+            <div class="container-fluid booking py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6">
+                        <h5 class="section-booking-title pe-3">Booking</h5>
+                        
