@@ -45,4 +45,8 @@ export default function Blog() {
                             <div class="blog-content border border-top-0 rounded-bottom p-4">
                                 <p class="mb-3">Posted By: Royal Hamblin </p>
                                 <a href="#" class="h4">Adventures Trip</a>
-                                
+                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
+                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
+                            </div>
+                        </div>
+                    </div>
