@@ -59,4 +59,8 @@ export default function Travel_Booking() {
                                         <label for="datetime">Date & Time</label>
                                     </div>
                                 </div>
-                                
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select bg-white border-0" id="select1">
+                                            <option value="1">Destination 1</option>
+                                            
