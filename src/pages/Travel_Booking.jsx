@@ -34,3 +34,5 @@ export default function Travel_Booking() {
                         </p>
                         <p class="text-white mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur maxime ullam esse fuga blanditiis accusantium pariatur quis sapiente, veniam doloribus praesentium? Repudiandae iste voluptatem fugiat doloribus quasi quo iure officia.
                         </p>
+                        <a href="/" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Read More</a>
+                    </div>
