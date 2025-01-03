@@ -22,6 +22,16 @@ export default function About() {
             <div className="container py-5">
                 <div className="row g-5 align-items-center">
                     <div className="col-lg-5">
+                    <div
+                            className="h-100"
+                            style={{
+                                width: '500px',
+                                height: '500px',
+                                border: '50px solid',
+                                borderColor: 'transparent #13357B transparent #13357B',
+                                position: 'relative'
+                            }}
+                        >
     </div>
     )
 }
