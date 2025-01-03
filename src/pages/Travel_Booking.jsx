@@ -10,3 +10,4 @@ export default function Travel_Booking() {
         e.preventDefault();
         navigate("/Cardpayment");
       };
+      
