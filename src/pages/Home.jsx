@@ -9,4 +9,6 @@ export default function Home() {
         <div>
           <Topbar/>
           <Navbar/>
-          
+          <div className="carousel-header">
+                <div id="carouselId" className="carousel slide" data-bs-ride="carousel">
+                    
