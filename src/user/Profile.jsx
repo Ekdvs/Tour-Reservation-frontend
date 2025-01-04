@@ -29,7 +29,8 @@ export default function Profile() {
                     lastName: response.data.lastName,
                     phoneNumber: response.data.phoneNumber,
                     title: response.data.title,
-                    
+                    gender: response.data.gender,
+                   
                     
                 });
             })
