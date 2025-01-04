@@ -6,6 +6,8 @@ import SignIn from "./user/SignIn";
 import ForgotPassword from './user/ForgotPassword';
 import VerifyOTP from './user/VerifyOTP';
 import ChangePassword from './user/ChangePassword';
+import Profile from './user/Profile';
+import Home from './user/picture2';
 
 
 function App() {
@@ -19,7 +21,9 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPassword/>} />
           <Route path="/VerifyOTP" element={<VerifyOTP/>} />
           <Route path="/PasswordChange" element={<ChangePassword/>} />
-          
+          <Route path="/Profile" element={<Profile/>} />
+          <Route path="/new" element={<Home/>} />
+
         </Routes>
       </Router>
     </div>
