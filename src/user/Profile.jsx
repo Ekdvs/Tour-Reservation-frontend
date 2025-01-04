@@ -31,13 +31,18 @@ export default function Profile() {
                     title: response.data.title,
                     gender: response.data.gender,
                     country: response.data.country,
-                    profilePicture: response.data.profilePicture || null,
-                   
-                    
+                    profilePicture: response.data.profilePicture || null,   
                 });
             })
             .catch((error) => console.error("Error fetching profile:", error));
     }, [userEmail]);
+
+    const handleSave = () => {
+        
+
+        
+    };
+
   return (
     <div>
       <Topbar/>
