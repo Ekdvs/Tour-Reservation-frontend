@@ -4,6 +4,8 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function Register() {
+    const [password, setPassword] = useState('');
+    
   return (
     <div>
         <Topbar/>
