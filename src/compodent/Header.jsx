@@ -15,10 +15,11 @@ export default function Header() {
             <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
             <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>
 
-            
+             <link href="css/bootstrap.min.css" rel="stylesheet"/>
 
-       
-        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+             <link href="css/style.css" rel="stylesheet"/>
+                <link href="css/payment.css" rel="stylesheet"></link>
+                <link href="css/ForgotPassword.css" rel="stylesheet"></link>
 
         
 
