@@ -39,5 +39,6 @@ export default function AdminTravelGuidePage() {
   const fetchTravelGuides = async () => {
     setLoading(true);
     try {
+        const response = await axios.get(`${API_BASE_URL}/user/allUsers`);
 
 }
