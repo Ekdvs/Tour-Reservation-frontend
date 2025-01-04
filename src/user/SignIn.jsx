@@ -18,6 +18,45 @@ export default function SignIn() {
                 </ol>    
             </div>
         </div>
+
+        <div className="container my-5">
+        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+          <div className="card-body">
+            <h5 className="card-title text-center">Sign In</h5>
+            <form onSubmit={handleSignIn}>
+              <div className="form-group mb-3">
+                <label htmlFor="email" className="form-label">Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+
+              <div className="form-group mb-3">
+                
+
+              <div className="d-grid">
+                <button type="submit" className="btn btn-primary rounded-pill">
+                  Sign In
+                </button>
+              </div>
+            </form>
+
+            <div className="text-center mt-3">
+              <a href="/ForgotPassword" className="text-decoration-none">Forgot Password?</a>
+            </div>
+            <div className="text-center mt-3">
+              <span>Don't have an account? </span>
+              <a href="/register" className="text-decoration-none">Sign Up</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <Footer/>
       
     </div>
