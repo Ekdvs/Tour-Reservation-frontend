@@ -32,16 +32,7 @@ export default function ForgotPassword() {
                                         <label htmlFor="email" className="form-label" style={{ fontSize: '18px', color: 'black', fontWeight: 'normal' }}>
                                             Email:
                                         </label>
-                                        <input
-                                            type="email"
-                                            className="form-control"
-                                            id="email"
-                                            aria-label="Email address for password recovery"
-                                            placeholder="name@example.com"
-                                            value={userEmail}
-                                            onChange={(e) => setUserEmail(e.target.value)}
-                                            required
-                                        />
+                                        
                                     </div>
                                     <div className="d-grid">
                                         <button type="submit" className="btn btn-lg btn-primary">
