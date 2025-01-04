@@ -2,12 +2,13 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import { useNavigate } from 'react-router-dom';
 
 export default function Profile() {
     const userEmail = localStorage.getItem("userEmail"); // Replace with dynamic email if needed
     const [profileData, setProfileData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
-    
+    const navigate = useNavigate();
   return (
     <div>
       <Topbar/>
