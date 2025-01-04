@@ -101,7 +101,7 @@ export default function Profile() {
       </div>
       <div className="container py-5">
         <h1 className="my-4 text-center">Profile</h1>
-
+        
         <div className="card shadow-lg">
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center mb-3">
