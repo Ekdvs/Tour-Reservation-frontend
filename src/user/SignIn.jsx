@@ -15,7 +15,7 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/; // Password must have at least 1 uppercase, 1 number, and 8 characters
+  
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -30,10 +30,7 @@ export default function SignIn() {
       return;
     }
 
-    if (!passwordRegex.test(password)) {
-      toast.error('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');
-      return;
-    }
+   
 
     try {
       const response = await axios.post('http://localhost:8080/user/login', {
@@ -44,7 +41,7 @@ export default function SignIn() {
       if (response.data === 'Login successful') {
         toast.success('Login successful!');
         localStorage.setItem('userEmail', userEmail);
-        setTimeout(() => navigate('/My_Profile'), 2000);
+        setTimeout(() => navigate('/Profile'), 2000);
       } else {
         toast.error(response.data);
       }

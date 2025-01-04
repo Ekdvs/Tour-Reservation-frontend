@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import eye icons
+import { FaEye, FaEyeSlash } from 'react-icons/fa';  
 
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
@@ -20,13 +20,13 @@ export default function Register() {
   const [showRepeatPassword, setShowRepeatPassword] = useState(false); 
   const navigate = useNavigate();
 
-  // Email validation
+ 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-  // Password validation (at least 8 characters, 1 uppercase, 1 number)
+
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
-  // Name validation regex
+
   const nameRegex = /^[a-zA-Z]+$/;
 
   const handleRegister = async (e) => {
@@ -37,31 +37,31 @@ export default function Register() {
       return;
     }
 
-    // Validate first name (only alphabetic characters)
+
     if (!nameRegex.test(firstName)) {
       toast.error('First name should only contain alphabetic characters.');
       return;
     }
 
-    // Validate last name (only alphabetic characters)
+
     if (!nameRegex.test(lastName)) {
       toast.error('Last name should only contain alphabetic characters.');
       return;
     }
 
-    // Validate email format
+
     if (!emailRegex.test(userEmail)) {
       toast.error('Please enter a valid email address.');
       return;
     }
 
-    // Validate password strength
+
     if (!passwordRegex.test(password)) {
       toast.error('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');
       return;
     }
 
-    // Validate if passwords match
+
     if (password !== repeatPassword) {
       toast.error('Passwords do not match!');
       return;
