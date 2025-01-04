@@ -54,7 +54,11 @@ export default function Profile() {
             headers: {
                 "Content-Type": "multipart/form-data", // Specify the content type for form data
             }
+        }).then((response) => {
+            setProfileData(response.data);
+            setIsEditing(false);
         })
+        .catch((error) => console.error("Error saving profile:", error));
 
     };
 
