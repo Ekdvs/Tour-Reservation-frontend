@@ -137,4 +137,7 @@ export default function AdminTravelGuidePage() {
             </tr>
         </thead>
         <tbody>
+        {(searchResult ? [searchResult] : travelGuides).map((guide, index) => (
+            <tr key={guide.userId}>
+
 }
