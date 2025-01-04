@@ -33,7 +33,12 @@ export default function ForgotPassword() {
 
         }
         catch(error){
-            
+            const errorMessage =
+                error.response?.status === 400
+                    ? 'Invalid email address. Please try again.'
+                    : 'Failed to send OTP. Please try again.';
+            toast.error(errorMessage);
+
         }
 
         
