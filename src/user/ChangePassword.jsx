@@ -29,6 +29,13 @@ export default function ChangePassword() {
         return;
       }
 
+      if (!validatePassword(Password)) {
+        toast.warning(
+          'Password must be at least 8 characters long and include letters, numbers, and special characters.'
+        );
+        return;
+      }
+
     
   };
   return (
