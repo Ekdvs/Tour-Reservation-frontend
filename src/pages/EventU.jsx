@@ -14,4 +14,9 @@ const EventShowPage = () => {
             console.error("Error fetching events:", error);
             }
         };
+        useEffect(() => {
+            fetchEvents();
+            }, []);
+            
         
+
