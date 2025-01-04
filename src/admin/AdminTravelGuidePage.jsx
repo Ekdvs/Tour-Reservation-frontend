@@ -22,8 +22,10 @@ export default function AdminTravelGuidePage() {
     ) : (
         <p>No user selected</p>
       )}
-
     </Modal.Body>
+    <Modal.Footer>
+        
+    </Modal.Footer>
     </Modal>
 
     )
