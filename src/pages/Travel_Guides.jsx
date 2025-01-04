@@ -15,6 +15,10 @@ export default function Travel_Guides() {
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="/">Pages</a></li>
                     <li class="breadcrumb-item active text-white">Guides</li>
-                </ol>    
+                </ol>
             </div>
-        </div>
+            </div>
+        <div class="container-fluid guide py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style={{maxwidth: "900px"}}>
+                    
