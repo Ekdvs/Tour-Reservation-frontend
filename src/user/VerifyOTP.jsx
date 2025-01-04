@@ -81,9 +81,8 @@ export default function VerifyOTP() {
                             )}
                             <form onSubmit={handleOtpSubmit}>
                                 <div className="mb-3">
-                                    <label htmlFor="otp" className="form-label">
-                                        OTP <span className="text-danger">*</span>
-                                    </label>
+                                <p className="text-dark">Enter OTP CODE</p>
+
                                     <input
                                         type="text"
                                         className="form-control"
