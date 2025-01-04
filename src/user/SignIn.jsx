@@ -4,6 +4,7 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export default function SignIn() {
   const [userEmail, setUserEmail] = useState('');
@@ -38,6 +39,7 @@ export default function SignIn() {
        userEmail, password });
       if(responce.data==='Login successful')
       {
+        toast.success('Login successful');
         localStorage.setItem('userToken', responce.data.token);
         sessionStorage.setItem('userToken', responce.data.token);
         navigate('/');
