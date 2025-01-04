@@ -16,56 +16,91 @@ export default function Register() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
+  // Email validation 
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+  // Password validation (at least 8 characters, 1 uppercase, 1 number)
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
+
+  // Name validation regex 
+  const nameRegex = /^[a-zA-Z]+$/;
+
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    if (firstName && lastName && userEmail && password && repeatPassword) {
-      if (password !== repeatPassword) {
-        setMessage({ text: 'Passwords do not match!', className: 'alert alert-danger' });
-        return;
-      }
-
-      try {
-        const response = await axios.post('http://localhost:8080/user/register', {
-          firstName,
-          lastName,
-          userEmail,
-          password,
-        });
-
-        if (response.data === 'User already registered as a user') {
-          setMessage({ text: response.data, className: 'alert alert-danger' });
-        } else {
-          setMessage({ text: 'Registration successful!', className: 'alert alert-success' });
-          setTimeout(() => navigate('/login'), 2000);
-        }
-      } catch (error) {
-        setMessage({ text: 'Error occurred, registration failed.', className: 'alert alert-danger' });
-      }
-    } else {
+    if (!firstName || !lastName || !userEmail || !password || !repeatPassword) {
       setMessage({ text: 'All fields are required. Please fill them out.', className: 'alert alert-danger' });
+      return;
+    }
+
+    // Validate first name (only alphabetic characters)
+    if (!nameRegex.test(firstName)) {
+      setMessage({ text: 'First name should only contain alphabetic characters.', className: 'alert alert-danger' });
+      return;
+    }
+
+    // Validate last name (only alphabetic characters)
+    if (!nameRegex.test(lastName)) {
+      setMessage({ text: 'Last name should only contain alphabetic characters.', className: 'alert alert-danger' });
+      return;
+    }
+
+    // Validate email format
+    if (!emailRegex.test(userEmail)) {
+      setMessage({ text: 'Please enter a valid email address.', className: 'alert alert-danger' });
+      return;
+    }
+
+    // Validate password strength
+    if (!passwordRegex.test(password)) {
+      setMessage({
+        text: 'Password must be at least 8 characters long, contain at least one uppercase letter and one number.',
+        className: 'alert alert-danger',
+      });
+      return;
+    }
+
+    // Validate if passwords match
+    if (password !== repeatPassword) {
+      setMessage({ text: 'Passwords do not match!', className: 'alert alert-danger' });
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:8080/user/register', {
+        firstName,
+        lastName,
+        userEmail,
+        password,
+      });
+
+      if (response.data === 'User already registered as a user') {
+        setMessage({ text: response.data, className: 'alert alert-danger' });
+      } else {
+        setMessage({ text: 'Registration successful!', className: 'alert alert-success' });
+        setTimeout(() => navigate('/login'), 2000);
+      }
+    } catch (error) {
+      setMessage({ text: 'Error occurred, registration failed.', className: 'alert alert-danger' });
     }
   };
 
   return (
     <>
-      <Topbar/>
-      <Navbar/>
-      
-            <div class="container-fluid bg-breadcrumb">
-                  <div class="container text-center py-5" style={{maxWidth:"900px"}}>
-                      <h3 class="text-white display-3 mb-4">Register</h3>
-                      <ol class="breadcrumb justify-content-center mb-0">
-                          <li class="breadcrumb-item"><a href="/">Home</a></li>
-                          <li class="breadcrumb-item"><a href="/Contact">Pages</a></li>
-                          <li class="breadcrumb-item active text-white">Register</li>
-                      </ol>    
-                  </div>
-              </div>
-     
+      <Topbar />
+      <Navbar />
+      <div className="container-fluid bg-breadcrumb">
+        <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
+          <h3 className="text-white display-3 mb-4">Register</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item"><a href="/Contact">Pages</a></li>
+            <li className="breadcrumb-item active text-white">Register</li>
+          </ol>
+        </div>
+      </div>
 
       <div className="container my-5">
-        
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign Up</h5>
@@ -134,7 +169,7 @@ export default function Register() {
           </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }
