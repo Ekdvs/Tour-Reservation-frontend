@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
@@ -6,21 +7,18 @@ import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios'; 
 
-
-
 export default function ChangePassword() {
   const [Password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for confirm password visibility
   const navigate = useNavigate();
 
-
   const validatePassword = (password) => {
-    
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
     return passwordPattern.test(password);
   };
 
-  
   const handleChangePassword = async (e) => {
     e.preventDefault();
 
@@ -91,29 +89,47 @@ export default function ChangePassword() {
                 <label htmlFor="Password" className="form-label">
                   New Password
                 </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="Password"
-                  value={Password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter new password"
-                  required
-                />
+                <div className="input-group">
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    className="form-control"
+                    id="Password"
+                    value={Password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter new password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </div>
               <div className="form-group mb-3">
                 <label htmlFor="confirmPassword" className="form-label">
                   Confirm Password
                 </label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="confirmPassword"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
-                  placeholder="Confirm new password"
-                  required
-                />
+                <div className="input-group">
+                  <input
+                    type={showConfirmPassword ? 'text' : 'password'}
+                    className="form-control"
+                    id="confirmPassword"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Confirm new password"
+                    required
+                  />
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                  >
+                    {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </div>
               <div className="d-grid">
                 <button type="submit" className="btn btn-primary rounded-pill">
