@@ -54,4 +54,5 @@ export default function Travel_Guides() {
                                     </div>
                                     <div class="guide-icon rounded-pill p-2">
                                     <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                
+                                    <a class="btn btn-square btn-primary rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                    
