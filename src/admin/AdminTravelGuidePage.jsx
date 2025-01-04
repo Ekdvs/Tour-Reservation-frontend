@@ -49,6 +49,8 @@ export default function AdminTravelGuidePage() {
         }
       };
     
-    
+    // Search travel guide by email
+  const searchTravelGuideByEmail = async () => {
+
 
 }
