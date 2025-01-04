@@ -153,6 +153,15 @@ export default function CardPayment() {
                     value={cardHolder}
                     onChange={(e) => setCardHolder(e.target.value)}
                     />
+                    </div><br></br>
+                <div className="form-control">
+                    <input
+                    value="MAKE PAYMENT"
+                    type="button"
+                    className="btnpayment"
+                    style={{ fontSize: ".8rem" }}
+                    onClick={handlePayment}
+                    />
 
 
 
