@@ -4,6 +4,8 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function SignIn() {
+  const [userEmail, setUserEmail] = useState('');
+  
   return (
     <div>
       <Topbar/>
