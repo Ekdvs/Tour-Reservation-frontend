@@ -95,7 +95,8 @@ export default function AdminTravelGuidePage() {
     return (
     <div className="container mt-4">
         <ToastContainer/>
-        
+        <h2 className="text-center">Admin Travel Guide Management</h2>
+
     </div>
 
 }
