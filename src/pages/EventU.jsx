@@ -34,9 +34,10 @@ const EventShowPage = () => {
                         <p className="card-text event-description">
                         {event.description}
                         </p>
-
-            
+                        <p>
+                            <strong>Date:</strong> {event.eventDate} <br />
                 
+                        
 
         
 
