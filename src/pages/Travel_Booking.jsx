@@ -79,4 +79,12 @@ export default function Travel_Booking() {
                                         <label for="SelectPerson">Persons</label>
                                     </div>
                                 </div>
-                                
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select class="form-select bg-white border-0" id="CategoriesSelect">
+                                            <option value="1">Kids</option>
+                                            <option value="2">1</option>
+                                            <option value="3">2</option>
+                                            <option value="3">3</option>
+                                        </select>
+                                        
