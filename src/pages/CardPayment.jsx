@@ -146,6 +146,13 @@ export default function CardPayment() {
                     <label htmlFor="card-holder" className="control-label">
                     CARD HOLDER NAME
                     </label>
+                    <input
+                    id="card-holder"
+                    type="text"
+                    className="input-lg form-control"
+                    value={cardHolder}
+                    onChange={(e) => setCardHolder(e.target.value)}
+                    />
 
 
 
