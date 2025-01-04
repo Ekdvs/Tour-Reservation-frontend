@@ -10,7 +10,7 @@ import axios from 'axios';
 export default function ChangePassword() {
   const [Password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showPassword, setShowPassword] = useState(false); 
   const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for confirm password visibility
   const navigate = useNavigate();
 
