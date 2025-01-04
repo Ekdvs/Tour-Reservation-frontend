@@ -54,7 +54,7 @@ return (
     </div>
 );
 };
-                        
+export default EventShowPage;
 
         
 
