@@ -15,7 +15,7 @@ export default function VerifyOTP() {
     const [otpSentTime, setOtpSentTime] = useState(null); // Timestamp of OTP sent time
     const navigate = useNavigate();
 
-    // Check if OTP is valid (6-digit OTP)
+   
     const isValidOtp = (otp) => {
         const otpPattern = /^[0-9]{6}$/; 
         return otpPattern.test(otp);
