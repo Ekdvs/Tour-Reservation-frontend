@@ -141,6 +141,8 @@ export default function AdminTravelGuidePage() {
             <tr key={guide.userId}>
                 <td>{index + 1}</td>
                 <td>{guide.firstName} {guide.lastName}</td>
+                <td>{guide.userEmail}</td>
 
+                
 
 }
