@@ -19,6 +19,23 @@ export default function Register() {
                   </div>
             </div>
 
+            <div className="container my-5">
+        
+        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+          <div className="card-body">
+            <h5 className="card-title text-center">Sign Up</h5>
+            {message && <div className={message.className}>{message.text}</div>}
+            <form onSubmit={handleRegister}>
+              
+              <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+            </form>
+            <div className="text-center mt-3">
+              <a href="/login">Already a Member?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
         <Footer/>
 
       
