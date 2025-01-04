@@ -44,7 +44,7 @@ export default function Profile() {
         form.append('phoneNumber', formData.phoneNumber);
         form.append('title', formData.title);
         form.append('gender', formData.gender);
-
+        form.append('country', formData.country);
 
     };
 
