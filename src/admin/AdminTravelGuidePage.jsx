@@ -105,7 +105,14 @@ export default function AdminTravelGuidePage() {
             value={searchEmail}
             onChange={(e) => setSearchEmail(e.target.value)}
           />
-<Button variant="primary" onClick={searchTravelGuideByEmail}>Search</Button>
+        <Button variant="primary" onClick={searchTravelGuideByEmail}>Search</Button>
+        </Form.Group>
+        {searchResult === null && searchEmail && (
+            <div className="mt-3">
+            <h5>No travel guide found with that email address</h5>
+          </div>
+        )}
+
     </div>
 
 }
