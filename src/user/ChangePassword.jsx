@@ -43,6 +43,14 @@ export default function ChangePassword() {
       }
 
       try{
+        const response = await axios.post(
+            `http://localhost:8080/user/update-password/${userEmail}`,
+            { Password }
+          );
+          if (response.data === 'Password updated successfully.') {
+            toast.success('Password changed successfully! Redirecting...');
+            setTimeout(() => navigate('/Login'), 2000); // Redirect after success
+          }
 
       }
       catch(error){
