@@ -8,3 +8,8 @@ export default function CardPayment() {
     const [expiry, setExpiry] = useState("");
     const [cvc, setCvc] = useState("");
     const [cardHolder, setCardHolder] = useState("");
+    const handlePayment = (e) => {
+        e.preventDefault();
+        alert("Payment Successful!");
+    };
+    
