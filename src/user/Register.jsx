@@ -61,7 +61,7 @@ export default function Register() {
       return;
     }
 
-    // Validate if passwords match
+
     if (password !== repeatPassword) {
       toast.error('Passwords do not match!');
       return;
