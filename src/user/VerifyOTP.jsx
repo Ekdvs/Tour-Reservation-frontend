@@ -19,6 +19,29 @@ export default function VerifyOTP() {
                 </ol>   
             </div>
         </div>
+        <div className="container my-5">
+        <div className="row justify-content-md-center">
+            <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
+                <div className="bg-white p-4 p-md-5 rounded shadow-sm">
+                    <h3>Enter OTP</h3>
+
+                    {message && (
+                        <div className={message.className} role="alert">
+                            {message.text}
+                        </div>
+                    )}
+                    <form onSubmit={handleOtpSubmit}>
+                        
+                        <div className="d-grid">
+                            <button className="btn btn-lg btn-primary" type="submit">
+                                Verify OTP
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            </div> 
+        </div>
 
       <Footer/>
     </div>
