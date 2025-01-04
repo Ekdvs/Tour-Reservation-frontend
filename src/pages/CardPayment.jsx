@@ -62,5 +62,16 @@ export default function CardPayment() {
                     <label htmlFor="cc-number" className="control-label">
                     CARD NUMBER
                     </label>
+                    <input
+                    id="cc-number"
+                    type="tel"
+                    className="input-lg form-control cc-number"
+                    autoComplete="cc-number"
+                    placeholder="xxxx xxxx xxxx xxxx"
+                    value={cardNumber}
+                    onChange={(e) => setCardNumber(e.target.value)}
+                    required
+                    />
+                </div>
 
 
