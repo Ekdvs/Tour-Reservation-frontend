@@ -61,7 +61,12 @@ export default function Profile() {
                                 {!isEditing ? (
                                    
                                 ) : (
-                                    
+                                    <input
+                                        type="file"
+                                        className="form-control"
+                                        name="profilePicture"
+                                        onChange={handleFileChange}
+                                    />
                                 )}
                             </div>
                         </div> 
