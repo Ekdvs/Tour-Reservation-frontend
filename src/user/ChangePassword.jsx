@@ -24,6 +24,11 @@ export default function ChangePassword() {
         return;
       }
 
+    if (Password !== confirmPassword) {
+        toast.error('Passwords do not match.');
+        return;
+      }
+
     
   };
   return (
