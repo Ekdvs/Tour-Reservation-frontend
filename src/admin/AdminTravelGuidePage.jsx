@@ -31,4 +31,6 @@ export default function AdminTravelGuidePage() {
         const [travelGuides, setTravelGuides] = useState([]);
         const [searchEmail, setSearchEmail] = useState("");
         const [searchResult, setSearchResult] = useState(null);
+        const [showModal, setShowModal] = useState(false);
+
 }
