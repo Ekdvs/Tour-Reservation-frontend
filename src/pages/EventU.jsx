@@ -29,6 +29,11 @@ const EventShowPage = () => {
                         alt={event.eventName}
                         className="card-img-top event-image"
                         />
+                        <div className="card-body">
+                        <h5 className="card-title event-title">{event.eventName}</h5>
+                        <p className="card-text event-description">
+                        {event.description}
+                        </p>
 
             
                 
