@@ -38,7 +38,7 @@ export default function Travel_Guides() {
                     <img
                       src="img/guide-1.jpg"
                       class="img-fluid w-100 rounded-top"
-                      alt="Image"
+                      alt="Travel Guide 1"
                     />
                   </div>
                   <div class="guide-icon rounded-pill p-2">
