@@ -18,6 +18,15 @@ export default function Profile() {
         country: "",
         profilePicture: "", 
     });
+
+    useEffect(() => {
+        
+        axios.get(`http://localhost:8080/user/${userEmail}`)
+            .then((response) => {
+               
+            })
+            .catch((error) => console.error("Error fetching profile:", error));
+    }, [userEmail]);
   return (
     <div>
       <Topbar/>
