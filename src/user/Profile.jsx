@@ -59,7 +59,12 @@ export default function Profile() {
                             <label className="col-sm-4 col-form-label">Profile Picture:</label>
                             <div className="col-sm-6">
                                 {!isEditing ? (
-                                   
+                                    <img
+                                        src={profileData.profilePicture || "default-profile-picture.jpg"}
+                                        alt="Profile"
+                                        className="img-fluid"
+                                        style={{ width: 100, height: 100, borderRadius: "50%" }}
+                                    />
                                 ) : (
                                     <input
                                         type="file"
