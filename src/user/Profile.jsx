@@ -50,6 +50,12 @@ export default function Profile() {
             form.append('profilePicture', formData.profilePicture);
         }
 
+        axios.put(`http://localhost:8080/user/${userEmail}`, form, {
+            headers: {
+                "Content-Type": "multipart/form-data", // Specify the content type for form data
+            }
+        })
+
     };
 
   return (
