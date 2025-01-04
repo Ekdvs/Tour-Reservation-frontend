@@ -23,7 +23,10 @@ export default function Profile() {
         
         axios.get(`http://localhost:8080/user/${userEmail}`)
             .then((response) => {
-               
+                setProfileData(response.data);
+                setFormData({
+                     
+                });
             })
             .catch((error) => console.error("Error fetching profile:", error));
     }, [userEmail]);
