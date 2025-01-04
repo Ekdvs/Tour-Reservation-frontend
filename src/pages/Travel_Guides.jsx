@@ -41,4 +41,8 @@ export default function Travel_Guides() {
                                 <div class="guide-title text-center rounded-bottom p-4">
                                 <div class="guide-title-inner">
                                     <h4 class="mt-3">Full Name</h4>
-                                    
+                                    <p class="mb-0">Designation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
