@@ -41,4 +41,10 @@ export default function CardPayment() {
                     <div className="col-md-6">
                     <span>CREDIT/DEBIT CARD PAYMENT</span>
                     </div>
+                    <div className="col-md-6 text-right" style={{ marginTop: "-5px" }}>
+                    <img
+                    src="https://img.icons8.com/color/36/000000/visa.png"
+                    alt="Visa"
+                    />
+                    
 
