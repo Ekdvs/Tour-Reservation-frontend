@@ -130,6 +130,7 @@ export default function AdminTravelGuidePage() {
         <thead>
             <tr>
                 <th>#</th>
+                <th>Name</th>
 
 
 }
