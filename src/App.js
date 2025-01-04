@@ -6,6 +6,7 @@ import SignIn from "./user/SignIn";
 import ForgotPassword from './user/ForgotPassword';
 import VerifyOTP from './user/VerifyOTP';
 import ChangePassword from './user/ChangePassword';
+import Profile from './user/Profile';
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPassword/>} />
           <Route path="/VerifyOTP" element={<VerifyOTP/>} />
           <Route path="/PasswordChange" element={<ChangePassword/>} />
-          
+          <Route path="/Profile" element={<Profile/>} />
+
         </Routes>
       </Router>
     </div>
