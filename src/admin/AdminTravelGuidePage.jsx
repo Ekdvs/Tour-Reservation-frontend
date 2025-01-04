@@ -136,5 +136,5 @@ export default function AdminTravelGuidePage() {
                 <th>Actions</th>
             </tr>
         </thead>
-
+        <tbody>
 }
