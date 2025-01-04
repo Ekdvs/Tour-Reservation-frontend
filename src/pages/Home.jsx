@@ -18,7 +18,7 @@ export default function Home() {
                     </ol>
                     <div className="carousel-inner" role="listbox">
                         <div className="carousel-item active">
-                            <img src="img/carousel-2.jpg" className="img-fluid" alt="Image"/>
+                            <img src="img/carousel-2.jpg" className="img-fluid" alt="Explore The World"/>
                             <div className="carousel-caption">
                                 <div className="p-3" style={{ maxWidth: '900px' }}>
                                     <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}>Explore The World</h4>
@@ -30,7 +30,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="img/carousel-1.jpg" className="img-fluid" alt="Image"/>
+                            <img src="img/carousel-1.jpg" className="img-fluid" alt="Find Your Perfect Tour"/>
                             <div className="carousel-caption">
                                 <div className="p-3" style={{ maxWidth: '900px' }}>
                                     <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}> Explore The World</h4>
@@ -42,7 +42,7 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src="img/carousel-3.jpg" className="img-fluid" alt="Image"/>
+                            <img src="img/carousel-3.jpg" className="img-fluid" alt="You Like To Go?"/>
                             <div className="carousel-caption">
                                 <div className="p-3" style={{ maxWidth: '900px' }}>
                                     <h4 className="text-white text-uppercase fw-bold mb-4" style={{ letterSpacing: '3px' }}> Explore The World</h4>
