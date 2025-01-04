@@ -2,13 +2,18 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import { useNavigate } from 'react-router-dom';
 
 export default function VerifyOTP() {
     const [otp, setOtp] = useState('');
-    const [email] = useState(localStorage.getItem('userEmail') || ''); // Fetch stored email
-    const [message, setMessage] = useState(null); // For success/error messages
+    const [email] = useState(localStorage.getItem('userEmail') || ''); 
+    const [message, setMessage] = useState(null); 
     const navigate = useNavigate();
 
+    const isValidOtp = (otp) => {
+        const otpPattern = /^[0-9]{6}$/; 
+        return otpPattern.test(otp);
+    };
     
     
   return (
