@@ -30,6 +30,12 @@ export default function ForgotPassword() {
         }
 
         try{
+            if(response.status === 200)
+            {
+                toast.success('OTP sent successfully. Please check your email.');
+                localStorage.setItem('userEmail', userEmail);
+                navigate('/ResetPassword');
+            }
 
         }
         catch(error){
