@@ -17,7 +17,7 @@ export default function Profile() {
     title: "",
     gender: "",
     country: "",
-    profilePicture: "",
+   
   });
 
   useEffect(() => {
@@ -31,7 +31,7 @@ export default function Profile() {
           title: response.data.title,
           gender: response.data.gender,
           country: response.data.country,
-          profilePicture: response.data.profilePicture || null,
+          
         });
       })
       .catch((error) => console.error("Error fetching profile:", error));
@@ -46,19 +46,7 @@ export default function Profile() {
     form.append('gender', formData.gender);
     form.append('country', formData.country);
 
-    if (formData.profilePicture) {
-      form.append('profilePicture', formData.profilePicture);
-    }
-
-    axios.put(`http://localhost:8080/user/${userEmail}`, form, {
-      headers: {
-        "Content-Type": "multipart/form-data",
-      }
-    }).then((response) => {
-      setProfileData(response.data);
-      setIsEditing(false);
-    })
-    .catch((error) => console.error("Error saving profile:", error));
+    
   };
 
   const handleChange = (e) => {
@@ -66,10 +54,7 @@ export default function Profile() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setFormData({ ...formData, profilePicture: file });
-  };
+  
 
   if (!profileData) return <div>Loading...</div>;
 
@@ -163,26 +148,7 @@ export default function Profile() {
                 )}
               </div>
             </div>
-            <div className="mb-3 row">
-              <label className="col-sm-4 col-form-label">Profile Picture:</label>
-              <div className="col-sm-6">
-                {!isEditing ? (
-                  <img
-                    src={profileData.profilePicture || "default-profile-picture.jpg"}
-                    alt="Profile"
-                    className="img-fluid"
-                    style={{ width: 100, height: 100, borderRadius: "50%" }}
-                  />
-                ) : (
-                  <input
-                    type="file"
-                    className="form-control"
-                    name="profilePicture"
-                    onChange={handleFileChange}
-                  />
-                )}
-              </div>
-            </div>
+            
             <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
               Change Password
             </button>
