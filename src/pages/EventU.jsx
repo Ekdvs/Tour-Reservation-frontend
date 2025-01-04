@@ -36,7 +36,9 @@ const EventShowPage = () => {
                         </p>
                         <p>
                             <strong>Date:</strong> {event.eventDate} <br />
-                
+                            <strong>Time:</strong> {event.eventTime} <br />
+                            <strong>Venue:</strong> {event.eventVenue} <br />
+                            
                         
 
         
