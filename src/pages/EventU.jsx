@@ -7,3 +7,11 @@ const EventShowPage = () => {
     const API_BASE_URL = "http://localhost:8080/event";
      // Fetch all events
     const fetchEvents = async () => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/getAllEvents`);
+            setEvents(response.data);
+            } catch (error) {
+            console.error("Error fetching events:", error);
+            }
+        };
+        
