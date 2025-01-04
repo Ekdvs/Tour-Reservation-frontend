@@ -140,5 +140,7 @@ export default function AdminTravelGuidePage() {
         {(searchResult ? [searchResult] : travelGuides).map((guide, index) => (
             <tr key={guide.userId}>
                 <td>{index + 1}</td>
+                <td>{guide.firstName} {guide.lastName}</td>
+
 
 }
