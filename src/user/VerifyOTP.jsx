@@ -3,6 +3,7 @@ import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function VerifyOTP() {
     const [otp, setOtp] = useState('');
@@ -31,8 +32,15 @@ export default function VerifyOTP() {
             return;
         }
 
-        try
+        try 
         {
+            const response = await axios.post(
+                `http://localhost:8080/user/verify-code?userEmail=${encodeURIComponent(email)}&recoveryCode=${encodeURIComponent(otp)}`
+            );
+            if (response.status === 200 && response.data.success) {
+                toast.success('OTP verified successfully! Redirecting...');  // Success toast message
+                setTimeout(() => navigate('/PasswordChange'), 2000);
+            }
 
         }
 
