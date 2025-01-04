@@ -134,7 +134,14 @@ export default function CardPayment() {
                         type="tel"
                         className="input-lg form-control cc-cvc"
                         autoComplete="off"
-                        
+                        placeholder="xxx"
+                        value={cvc}
+                        onChange={(e) => setCvc(e.target.value)}
+                        required
+                        />
+                    </div>
+                    </div>
+                </div>
 
 
 
