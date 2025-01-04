@@ -9,8 +9,8 @@ export default function Travel_Booking() {
     const handleBooking = (e) => {
         e.preventDefault();
         navigate("/Cardpayment");
-      };
-      return (
+    };
+    return (
         <div>
             <Topbar/>
             <Navbar/>
