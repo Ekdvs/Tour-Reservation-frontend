@@ -39,7 +39,7 @@ export default function Profile() {
 
     const handleSave = () => {
         const form = new FormData();
-
+        form.append('firstName', formData.firstName);
         
     };
 
