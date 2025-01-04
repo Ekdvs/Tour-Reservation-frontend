@@ -55,6 +55,6 @@ export default function AdminTravelGuidePage() {
         toast.warning("Please enter an email address");
         return;
       }
-  
+      setLoading(true);
 
 }
