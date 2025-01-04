@@ -24,7 +24,7 @@ export default function AdminTravelGuidePage() {
       )}
     </Modal.Body>
     <Modal.Footer>
-        
+    <Button variant="secondary" onClick={onClose}>Close</Button>
     </Modal.Footer>
     </Modal>
 
