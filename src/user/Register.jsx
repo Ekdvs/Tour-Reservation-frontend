@@ -9,6 +9,7 @@ export default function Register() {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [userEmail, setUserEmail] = useState('');
+    const [message, setMessage] = useState('');
     
   return (
     <div>
