@@ -35,16 +35,19 @@ export default function SignIn() {
     }
 
     try {
-      const responce=await  axios.post('http://localhost:5000/api/login', {
-       userEmail, password });
-      if(responce.data==='Login successful')
-      {
-        toast.success('Login successful');
-        localStorage.setItem('userToken', responce.data.token);
-        sessionStorage.setItem('userToken', responce.data.token);
-        navigate('/');
+      const response = await axios.post('http://localhost:8080/user/login', {
+        userEmail,
+        password,
+      });
+
+      if (response.data === 'Login successful') {
+        toast.success('Login successful!');
+        localStorage.setItem('userEmail', userEmail);
+        setTimeout(() => navigate('/My_Profile'), 2000);
+      } else {
+        toast.error(response.data);
       }
-    }
+    } 
     catch (error) {
       console.error('Login failed. Please try again.', error);
     }
