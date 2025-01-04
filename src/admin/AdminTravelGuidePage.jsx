@@ -82,6 +82,8 @@ export default function AdminTravelGuidePage() {
             fetchTravelGuides();} 
             catch (error) {
                 toast.error("Error deleting travel guide");
-              }
+              }};
+
+    const handleViewHistory = (guide) => {
           
 }
