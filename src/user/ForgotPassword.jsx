@@ -34,7 +34,7 @@ export default function ForgotPassword() {
             {
                 toast.success('OTP sent successfully. Please check your email.');
                 localStorage.setItem('userEmail', userEmail);
-                navigate('/ResetPassword');
+                setTimeout(() => navigate('/VerifyOTP'), 2000);
             }
 
         }
