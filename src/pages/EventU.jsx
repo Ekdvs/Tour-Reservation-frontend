@@ -38,7 +38,8 @@ const EventShowPage = () => {
                             <strong>Date:</strong> {event.eventDate} <br />
                             <strong>Time:</strong> {event.eventTime} <br />
                             <strong>Venue:</strong> {event.eventVenue} <br />
-                            
+                            <strong>Ticket Price:</strong> ${event.oneTicketPrice} <br />
+                        </p>
                         
 
         
