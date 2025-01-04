@@ -50,7 +50,14 @@ export default function ForgotPassword() {
                                     </div>
                                 </form>
                                 <hr className="mt-5 mb-4 border-secondary-subtle" />
-                                
+                                <div className="d-flex gap-4 justify-content-end">
+                                    <a href="/Login" className="link-secondary text-decoration-none">
+                                        Login
+                                    </a>
+                                    <a href="/Register" className="link-secondary text-decoration-none">
+                                        New Register
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
