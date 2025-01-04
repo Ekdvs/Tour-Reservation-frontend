@@ -4,7 +4,9 @@ import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
 import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import axios
+import axios from 'axios'; 
+
+
 
 export default function ChangePassword() {
   const [Password, setPassword] = useState('');
