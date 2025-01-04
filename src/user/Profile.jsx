@@ -14,7 +14,8 @@ export default function Profile() {
         lastName: "",
         phoneNumber: "",
         title: "",
-          
+        gender: "",
+        
     });
   return (
     <div>
