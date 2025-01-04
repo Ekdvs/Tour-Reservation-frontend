@@ -38,4 +38,8 @@ color: #333;
     font-size: 1rem;
     }
 }
+@media (max-width: 576px) {
+    .event-card {
+    margin-bottom: 15px;
+    }
 
