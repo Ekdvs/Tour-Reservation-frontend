@@ -46,7 +46,8 @@ export default function ChangePassword() {
 
       }
       catch(error){
-        
+        toast.error('An error occurred. Please try again.');
+    }
       }
 
     
