@@ -9,6 +9,11 @@ export default function ForgotPassword() {
 
     const [userEmail, setUserEmail] = useState('');
     const navigate = useNavigate();
+
+    const isValidEmail = (email) => {
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
+    };
     
   return (
     <div>
