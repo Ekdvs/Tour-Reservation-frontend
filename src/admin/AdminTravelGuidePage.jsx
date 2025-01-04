@@ -58,5 +58,11 @@ export default function AdminTravelGuidePage() {
       setLoading(true);
       try {
         const response = await axios.get(`${API_BASE_URL}/user/getUserByEmail/${searchEmail}`);
-        
+        if (response.data && response.data.userRole === "travelGuide") {
+            setSearchResult(response.data);
+          } else {
+            setSearchResult(null);
+            toast.error("Travel guide not found");
+          }
+    
 }
