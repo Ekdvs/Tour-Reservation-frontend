@@ -12,6 +12,21 @@ export default function Register() {
     const [userEmail, setUserEmail] = useState('');
     const [message, setMessage] = useState('');
     const navigate = useNavigate();
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+    
+        if (firstName && lastName && userEmail && password && repeatPassword) {
+          if (password !== repeatPassword) {
+            setMessage({ text: 'Passwords do not match!', className: 'alert alert-danger' });
+            return;
+          }
+    
+          
+        } else {
+          setMessage({ text: 'All fields are required. Please fill them out.', className: 'alert alert-danger' });
+        }
+      };
   return (
     <div>
         <Topbar/>
