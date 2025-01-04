@@ -17,6 +17,11 @@ const EventShowPage = () => {
         useEffect(() => {
             fetchEvents();
             }, []);
+            return (
+                <div className="container mt-5">
+                <h2 className="text-center mb-4">Upcoming Events</h2>
             
+                
+
         
 
