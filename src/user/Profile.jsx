@@ -17,11 +17,11 @@ export default function Profile() {
     title: "",
     gender: "",
     country: "",
-   
   });
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/user/${userEmail}`)
+    axios
+      .get(`http://localhost:8080/user/${userEmail}`)
       .then((response) => {
         setProfileData(response.data);
         setFormData({
@@ -31,30 +31,25 @@ export default function Profile() {
           title: response.data.title,
           gender: response.data.gender,
           country: response.data.country,
-          
         });
       })
       .catch((error) => console.error("Error fetching profile:", error));
   }, [userEmail]);
 
   const handleSave = () => {
-    const form = new FormData();
-    form.append('firstName', formData.firstName);
-    form.append('lastName', formData.lastName);
-    form.append('phoneNumber', formData.phoneNumber);
-    form.append('title', formData.title);
-    form.append('gender', formData.gender);
-    form.append('country', formData.country);
-
-    
+    axios
+      .put(`http://localhost:8080/user/${userEmail}`, formData)
+      .then((response) => {
+        setProfileData(response.data);
+        setIsEditing(false);
+      })
+      .catch((error) => console.error("Error saving profile:", error));
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
-  
 
   if (!profileData) return <div>Loading...</div>;
 
@@ -148,7 +143,6 @@ export default function Profile() {
                 )}
               </div>
             </div>
-            
             <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
               Change Password
             </button>
