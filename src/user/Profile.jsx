@@ -25,7 +25,8 @@ export default function Profile() {
             .then((response) => {
                 setProfileData(response.data);
                 setFormData({
-                     
+                    firstName: response.data.firstName,
+                    
                 });
             })
             .catch((error) => console.error("Error fetching profile:", error));
