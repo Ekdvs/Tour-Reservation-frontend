@@ -2,7 +2,7 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
-import { ToastContainer } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
 export default function ChangePassword() {
@@ -18,6 +18,11 @@ export default function ChangePassword() {
 
   const handleChangePassword = async (e) => {
     e.preventDefault();
+
+    if (!Password || !confirmPassword) {
+        toast.warning('Please fill in all fields.');
+        return;
+      }
 
     
   };
