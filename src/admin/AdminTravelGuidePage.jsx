@@ -29,5 +29,5 @@ export default function AdminTravelGuidePage() {
     </Modal>);
     const AdminTravelGuidePage = () => {
         const [travelGuides, setTravelGuides] = useState([]);
-
+        const [searchEmail, setSearchEmail] = useState("");
 }
