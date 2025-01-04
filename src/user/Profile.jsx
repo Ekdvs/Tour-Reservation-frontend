@@ -4,7 +4,7 @@ import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast, ToastContainer,  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function Profile() {
@@ -88,7 +88,7 @@ export default function Profile() {
     <div>
       <Topbar />
       <Navbar />
-      <ToastContainer />
+      
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">My Profile</h3>
