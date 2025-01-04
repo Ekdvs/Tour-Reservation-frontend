@@ -4,6 +4,7 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 import { ToastContainer } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 export default function ForgotPassword() {
 
@@ -30,6 +31,9 @@ export default function ForgotPassword() {
         }
 
         try{
+            const response = await axios.post('http://localhost:8080/user/sendotpcode', { userEmail });
+
+           
             if(response.status === 200)
             {
                 toast.success('OTP sent successfully. Please check your email.');
