@@ -87,10 +87,13 @@ export default function AdminTravelGuidePage() {
     const handleViewHistory = (guide) => {
         setSelectedUser(guide); 
         setShowModal(true);
-  };
-  useEffect(() => {
-    fetchTravelGuides();
-  }, []);
-  return (
+     };
+     useEffect(() => {
+       fetchTravelGuides();
+      }, []);
+    return (
+    <div className="container mt-4">
+        
+    </div>
 
 }
