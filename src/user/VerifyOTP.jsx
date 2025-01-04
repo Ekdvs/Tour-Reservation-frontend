@@ -22,7 +22,11 @@ export default function VerifyOTP() {
             toast.error('Email is missing. Please try again.');  // Toast message for missing email
             return;
         }
-       
+        if (!otp.trim()) {
+            toast.warning('OTP cannot be empty.');  // Toast message for empty OTP
+            return;
+        }
+        
 
         
     };
