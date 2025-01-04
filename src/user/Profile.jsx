@@ -65,11 +65,13 @@ export default function Profile() {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-    
+
     const handleFileChange = (e) => {
         const file = e.target.files[0]; // Get the selected file
         setFormData({ ...formData, profilePicture: file });
     };
+
+    if (!profileData) return <div>Loading...</div>;
 
 
   return (
