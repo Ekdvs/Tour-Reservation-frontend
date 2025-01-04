@@ -20,6 +20,11 @@ const EventShowPage = () => {
             return (
                 <div className="container mt-5">
                 <h2 className="text-center mb-4">Upcoming Events</h2>
+                <div className="row">
+                    {events.map((event) => (
+                    <div key={event.eventId} className="col-md-4 mb-4">
+                        <div className="card shadow-lg rounded-lg event-card">
+                            
             
                 
 
