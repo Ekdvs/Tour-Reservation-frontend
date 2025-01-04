@@ -88,6 +88,8 @@ export default function AdminTravelGuidePage() {
         setSelectedUser(guide); 
         setShowModal(true);
   };
-
+  useEffect(() => {
+    fetchTravelGuides();
+  }, []);
    
 }
