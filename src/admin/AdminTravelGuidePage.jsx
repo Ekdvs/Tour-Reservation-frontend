@@ -146,6 +146,7 @@ export default function AdminTravelGuidePage() {
                 <td className="d-flex justify-content-center">
                 <Button variant="danger" size="sm" onClick={() => deleteTravelGuide(guide.userId)}>Delete</Button>
                 {" "}
+                <Button variant="info" size="sm" onClick={() => handleViewHistory(guide)}>View History</Button>
 
 
 
