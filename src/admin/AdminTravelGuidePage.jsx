@@ -127,6 +127,9 @@ export default function AdminTravelGuidePage() {
     <Spinner animation="border" className="d-block mx-auto" />
   ) : (
     <Table striped bordered hover responsive>
-    <thead>
+        <thead>
+            <tr>
+                <th>#</th>
+
 
 }
