@@ -3,6 +3,7 @@ import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function Profile() {
     const userEmail = localStorage.getItem("userEmail"); // Replace with dynamic email if needed
