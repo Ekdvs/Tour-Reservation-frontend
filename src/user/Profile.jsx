@@ -38,7 +38,7 @@ export default function Profile() {
     }, [userEmail]);
 
     const handleSave = () => {
-        
+        const form = new FormData();
 
         
     };
