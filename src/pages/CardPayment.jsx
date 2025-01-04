@@ -73,5 +73,12 @@ export default function CardPayment() {
                     required
                     />
                 </div>
+                <div className="row">
+                <div className="col-md-6">
+                    <div className="form-group">
+                    <label htmlFor="cc-exp" className="control-label">
+                        CARD EXPIRY
+                    </label>
+                    
 
 
