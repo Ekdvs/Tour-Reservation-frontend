@@ -11,6 +11,8 @@ export default function Profile() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: "",
+        lastName: "",
+        
          
     });
   return (
