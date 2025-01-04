@@ -26,7 +26,7 @@ export default function AdminTravelGuidePage() {
     <Modal.Footer>
     <Button variant="secondary" onClick={onClose}>Close</Button>
     </Modal.Footer>
-    </Modal>
+    </Modal>);
+    const AdminTravelGuidePage = () => {
 
-    )
 }
