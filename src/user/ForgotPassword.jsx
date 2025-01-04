@@ -3,11 +3,12 @@ import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 import { ToastContainer } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 export default function ForgotPassword() {
 
     const [userEmail, setUserEmail] = useState('');
-    
+    const navigate = useNavigate();
     
   return (
     <div>
