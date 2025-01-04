@@ -17,6 +17,16 @@ export default function SignIn() {
   const handleSignIn = async (e) => {
     e.preventDefault();
 
+    if (!userEmail || !password) {
+      toast.error('All fields are required. Please fill them out.');
+      return;
+    }
+
+    if (!emailRegex.test(userEmail)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
     
   };
   return (
