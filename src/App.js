@@ -6,12 +6,15 @@ import SignIn from "./user/SignIn";
 import ForgotPassword from './user/ForgotPassword';
 import VerifyOTP from './user/VerifyOTP';
 import ChangePassword from './user/ChangePassword';
+import Blog from './pages/Blog';
+import Contact from './pages/Contact';
+import About from './pages/About';
 
 
 function App() {
   return (
     <div>
-     <Router>
+    <Router>
         <Routes>
 
           <Route path="/login" element={<SignIn/>} />
@@ -19,7 +22,10 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPassword/>} />
           <Route path="/VerifyOTP" element={<VerifyOTP/>} />
           <Route path="/PasswordChange" element={<ChangePassword/>} />
-          
+          <Route path="/Blog" Component={Blog} />
+          <Route path="/Contact" Component={Contact} />
+          <Route path="/About" Component={About} />
+
         </Routes>
       </Router>
     </div>
