@@ -41,6 +41,9 @@ export default function VerifyOTP() {
                 toast.success('OTP verified successfully! Redirecting...');  // Success toast message
                 setTimeout(() => navigate('/PasswordChange'), 2000);
             }
+            else {
+                toast.error(response.data.message || 'Invalid OTP. Please try again.');  // Error toast message
+            }
 
         }
 
