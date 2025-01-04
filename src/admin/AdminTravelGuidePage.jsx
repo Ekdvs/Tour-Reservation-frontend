@@ -63,6 +63,10 @@ export default function AdminTravelGuidePage() {
           } else {
             setSearchResult(null);
             toast.error("Travel guide not found");
-          }
-    
+          }} 
+        
+          catch (error) {
+            toast.error("Error during search");
+            setSearchResult(null);
+          } 
 }
