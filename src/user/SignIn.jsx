@@ -5,6 +5,7 @@ import Footer from '../compodent/Footer'
 
 export default function SignIn() {
   const [userEmail, setUserEmail] = useState('');
+  const [password, setPassword] = useState('');
   
   return (
     <div>
