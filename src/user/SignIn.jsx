@@ -12,7 +12,8 @@ export default function SignIn() {
   const navigate = useNavigate();
 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-  
+  const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/; // Password must have at least 1 uppercase, 1 number, and 8 characters
+
   return (
     <div>
       <Topbar/>
