@@ -99,6 +99,13 @@ export default function AdminTravelGuidePage() {
         <br />
       <div className="mb-4 search-container">
       <Form.Group className="d-flex w-50">
+      <Form.Control
+            type="email"
+            placeholder="Search travel guide by email"
+            value={searchEmail}
+            onChange={(e) => setSearchEmail(e.target.value)}
+          />
+
     </div>
 
 }
