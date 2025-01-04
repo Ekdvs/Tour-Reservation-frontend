@@ -44,25 +44,33 @@ export default function Travel_Guides() {
                   <div class="guide-icon rounded-pill p-2">
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://facebook.com"}
+                      onClick={() =>
+                        (window.location.href = "https://facebook.com")
+                      }
                     >
                       <i class="fab fa-facebook-f"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://twitter.com"}
+                      onClick={() =>
+                        (window.location.href = "https://twitter.com")
+                      }
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://instagram.com"}
+                      onClick={() =>
+                        (window.location.href = "https://instagram.com")
+                      }
                     >
                       <i class="fab fa-instagram"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://linkedin.com"}
+                      onClick={() =>
+                        (window.location.href = "https://linkedin.com")
+                      }
                     >
                       <i class="fab fa-linkedin-in"></i>
                     </button>
@@ -89,25 +97,33 @@ export default function Travel_Guides() {
                   <div class="guide-icon rounded-pill p-2">
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://facebook.com"}
+                      onClick={() =>
+                        (window.location.href = "https://facebook.com")
+                      }
                     >
                       <i class="fab fa-facebook-f"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://twitter.com"}
+                      onClick={() =>
+                        (window.location.href = "https://twitter.com")
+                      }
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://instagram.com"}
+                      onClick={() =>
+                        (window.location.href = "https://instagram.com")
+                      }
                     >
                       <i class="fab fa-instagram"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://linkedin.com"}
+                      onClick={() =>
+                        (window.location.href = "https://linkedin.com")
+                      }
                     >
                       <i class="fab fa-linkedin-in"></i>
                     </button>
@@ -134,25 +150,33 @@ export default function Travel_Guides() {
                   <div class="guide-icon rounded-pill p-2">
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://facebook.com"}
+                      onClick={() =>
+                        (window.location.href = "https://facebook.com")
+                      }
                     >
                       <i class="fab fa-facebook-f"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://twitter.com"}
+                      onClick={() =>
+                        (window.location.href = "https://twitter.com")
+                      }
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://instagram.com"}
+                      onClick={() =>
+                        (window.location.href = "https://instagram.com")
+                      }
                     >
                       <i class="fab fa-instagram"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://linkedin.com"}
+                      onClick={() =>
+                        (window.location.href = "https://linkedin.com")
+                      }
                     >
                       <i class="fab fa-linkedin-in"></i>
                     </button>
@@ -179,25 +203,33 @@ export default function Travel_Guides() {
                   <div class="guide-icon rounded-pill p-2">
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://facebook.com"}
+                      onClick={() =>
+                        (window.location.href = "https://facebook.com")
+                      }
                     >
                       <i class="fab fa-facebook-f"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://twitter.com"}
+                      onClick={() =>
+                        (window.location.href = "https://twitter.com")
+                      }
                     >
                       <i class="fab fa-twitter"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://instagram.com"}
+                      onClick={() =>
+                        (window.location.href = "https://instagram.com")
+                      }
                     >
                       <i class="fab fa-instagram"></i>
                     </button>
                     <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      onClick={() => window.location.href="https://linkedin.com"}
+                      onClick={() =>
+                        (window.location.href = "https://linkedin.com")
+                      }
                     >
                       <i class="fab fa-linkedin-in"></i>
                     </button>
