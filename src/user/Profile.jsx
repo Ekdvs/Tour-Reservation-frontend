@@ -66,7 +66,7 @@ export default function Profile() {
     <div>
       <Topbar />
       <Navbar />
-      <ToastContainer />
+      
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">My Profile</h3>
@@ -124,10 +124,14 @@ export default function Profile() {
                     value={formData.gender}
                     onChange={handleChange}
                   >
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
+                    <option disabled value="">
+                      Select Gender
+                    </option>
+                    <optgroup label="Gender Options">
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
+                    </optgroup>
                   </select>
                 )}
               </div>
@@ -144,11 +148,15 @@ export default function Profile() {
                     value={formData.country}
                     onChange={handleChange}
                   >
-                    <option value="">Select Country</option>
-                    <option value="Sri Lanka">Sri Lanka</option>
-                    <option value="India">India</option>
-                    <option value="United States">United States</option>
-                    <option value="United Kingdom">United Kingdom</option>
+                    <option disabled value="">
+                      Select Country
+                    </option>
+                    <optgroup label="Country Options">
+                      <option value="Sri Lanka">Sri Lanka</option>
+                      <option value="India">India</option>
+                      <option value="United States">United States</option>
+                      <option value="United Kingdom">United Kingdom</option>
+                    </optgroup>
                   </select>
                 )}
               </div>
@@ -161,16 +169,16 @@ export default function Profile() {
       </div>
       <Footer />
       <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </div>
   );
 }
