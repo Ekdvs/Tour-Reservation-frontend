@@ -16,8 +16,8 @@ export default function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // New state for toggling password visibility
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false); // New state for toggling repeat password visibility
+  const [showPassword, setShowPassword] = useState(false); 
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false); 
   const navigate = useNavigate();
 
   // Email validation
