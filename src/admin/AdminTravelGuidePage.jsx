@@ -105,7 +105,7 @@ export default function AdminTravelGuidePage() {
             value={searchEmail}
             onChange={(e) => setSearchEmail(e.target.value)}
           />
-
+<Button variant="primary" onClick={searchTravelGuideByEmail}>Search</Button>
     </div>
 
 }
