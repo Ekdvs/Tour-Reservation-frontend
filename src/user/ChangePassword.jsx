@@ -36,6 +36,12 @@ export default function ChangePassword() {
         return;
       }
 
+      const userEmail = localStorage.getItem('userEmail');
+      if (!userEmail) {
+        toast.error('User email not found. Please log in again.');
+        return;
+      }
+
     
   };
   return (
