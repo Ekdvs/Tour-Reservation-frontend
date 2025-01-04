@@ -6,6 +6,7 @@ import { ToastContainer } from 'react-toastify'
 
 export default function ChangePassword() {
   const [Password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   
   return (
     <div>
