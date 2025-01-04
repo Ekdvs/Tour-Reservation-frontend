@@ -27,6 +27,7 @@ export default function Profile() {
                 setFormData({
                     firstName: response.data.firstName,
                     lastName: response.data.lastName,
+                    phoneNumber: response.data.phoneNumber,
                     
                     
                 });
