@@ -90,4 +90,10 @@ export default function Travel_Booking() {
                                         <label for="CategoriesSelect">Categories</label>
                                     </div>
                                 </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" style={{height: "100px"}}></textarea>
+                                        <label for="message">Special Request</label>
+                                    </div>
+                                </div>
 
