@@ -51,6 +51,10 @@ export default function AdminTravelGuidePage() {
     
     // Search travel guide by email
   const searchTravelGuideByEmail = async () => {
-
+    if (!searchEmail.trim()) {
+        toast.warning("Please enter an email address");
+        return;
+      }
+  
 
 }
