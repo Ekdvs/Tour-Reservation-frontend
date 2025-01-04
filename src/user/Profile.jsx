@@ -12,6 +12,8 @@ export default function Profile() {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
+        phoneNumber: "",
+        
         
          
     });
