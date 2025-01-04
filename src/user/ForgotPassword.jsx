@@ -36,6 +36,9 @@ export default function ForgotPassword() {
                 localStorage.setItem('userEmail', userEmail);
                 setTimeout(() => navigate('/VerifyOTP'), 2000);
             }
+            else {
+                toast.error(response.data || 'Unexpected error occurred.');  // Error toast message
+            }
 
         }
         catch(error){
