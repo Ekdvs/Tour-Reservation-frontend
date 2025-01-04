@@ -17,6 +17,14 @@ export default function ForgotPassword() {
     const handleSendOtpMethod = async (e) => {
         e.preventDefault();
 
+        if(!userEmail.trim())
+        {
+            toast.error('Email field cannot be empty.');
+            return;
+        }
+
+        if
+
         
     };
     
