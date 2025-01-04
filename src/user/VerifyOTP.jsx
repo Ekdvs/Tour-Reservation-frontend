@@ -14,6 +14,18 @@ export default function VerifyOTP() {
         const otpPattern = /^[0-9]{6}$/; 
         return otpPattern.test(otp);
     };
+
+    const handleOtpSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!email.trim()) {
+            toast.error('Email is missing. Please try again.');  // Toast message for missing email
+            return;
+        }
+       
+
+        
+    };
     
     
   return (
