@@ -18,5 +18,14 @@ color: #333;
     color: #555;
     font-size: 1rem;
 }
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
 
 
