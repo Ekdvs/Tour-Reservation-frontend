@@ -31,6 +31,7 @@ export default function Profile() {
                     title: response.data.title,
                     gender: response.data.gender,
                     country: response.data.country,
+                    profilePicture: response.data.profilePicture || null,
                    
                     
                 });
