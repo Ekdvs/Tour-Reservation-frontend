@@ -54,5 +54,13 @@ export default function CardPayment() {
                     src="https://img.icons8.com/color/36/000000/amex.png"
                     alt="Amex"
                     />
+                    </div>
+                </div>
+                </div>
+                <div className="card-body" style={{ height: "350px" }}>
+                <div className="form-group">
+                    <label htmlFor="cc-number" className="control-label">
+                    CARD NUMBER
+                    </label>
 
 
