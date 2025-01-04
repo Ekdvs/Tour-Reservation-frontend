@@ -20,7 +20,7 @@ export default function ChangePassword() {
     return passwordPattern.test(password);
   };
 
-  // Handle password change
+  
   const handleChangePassword = async (e) => {
     e.preventDefault();
 
