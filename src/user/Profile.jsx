@@ -9,6 +9,10 @@ export default function Profile() {
     const [profileData, setProfileData] = useState(null);
     const [isEditing, setIsEditing] = useState(false);
     const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        firstName: "",
+         
+    });
   return (
     <div>
       <Topbar/>
