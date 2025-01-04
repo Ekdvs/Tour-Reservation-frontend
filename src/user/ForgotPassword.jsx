@@ -14,6 +14,11 @@ export default function ForgotPassword() {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
     };
+    const handleSendOtpMethod = async (e) => {
+        e.preventDefault();
+
+        
+    };
     
   return (
     <div>
