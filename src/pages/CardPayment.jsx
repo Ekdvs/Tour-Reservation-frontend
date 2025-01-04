@@ -142,6 +142,10 @@ export default function CardPayment() {
                     </div>
                     </div>
                 </div>
+                <div className="form-group">
+                    <label htmlFor="card-holder" className="control-label">
+                    CARD HOLDER NAME
+                    </label>
 
 
 
