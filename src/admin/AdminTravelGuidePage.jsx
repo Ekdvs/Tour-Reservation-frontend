@@ -43,4 +43,6 @@ export default function AdminTravelGuidePage() {
         const guides = response.data.filter((user) => user.userRole === "travelGuide");
         setTravelGuides(guides); } 
         catch (error) {
+            toast.error("Error fetching travel guides");
+
 }
