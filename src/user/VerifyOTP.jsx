@@ -26,6 +26,10 @@ export default function VerifyOTP() {
             toast.warning('OTP cannot be empty.');  // Toast message for empty OTP
             return;
         }
+        if (!isValidOtp(otp)) {
+            toast.error('Invalid OTP. Please enter a 6-digit OTP.');  // Toast message for invalid OTP format
+            return;
+        }
         
 
         
