@@ -3,6 +3,9 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
@@ -13,56 +16,52 @@ export default function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  // Email validation 
+  // Email validation
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
   // Password validation (at least 8 characters, 1 uppercase, 1 number)
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
-  // Name validation regex 
+  // Name validation regex
   const nameRegex = /^[a-zA-Z]+$/;
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     if (!firstName || !lastName || !userEmail || !password || !repeatPassword) {
-      setMessage({ text: 'All fields are required. Please fill them out.', className: 'alert alert-danger' });
+      toast.error('All fields are required. Please fill them out.');
       return;
     }
 
     // Validate first name (only alphabetic characters)
     if (!nameRegex.test(firstName)) {
-      setMessage({ text: 'First name should only contain alphabetic characters.', className: 'alert alert-danger' });
+      toast.error('First name should only contain alphabetic characters.');
       return;
     }
 
     // Validate last name (only alphabetic characters)
     if (!nameRegex.test(lastName)) {
-      setMessage({ text: 'Last name should only contain alphabetic characters.', className: 'alert alert-danger' });
+      toast.error('Last name should only contain alphabetic characters.');
       return;
     }
 
     // Validate email format
     if (!emailRegex.test(userEmail)) {
-      setMessage({ text: 'Please enter a valid email address.', className: 'alert alert-danger' });
+      toast.error('Please enter a valid email address.');
       return;
     }
 
     // Validate password strength
     if (!passwordRegex.test(password)) {
-      setMessage({
-        text: 'Password must be at least 8 characters long, contain at least one uppercase letter and one number.',
-        className: 'alert alert-danger',
-      });
+      toast.error('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');
       return;
     }
 
     // Validate if passwords match
     if (password !== repeatPassword) {
-      setMessage({ text: 'Passwords do not match!', className: 'alert alert-danger' });
+      toast.error('Passwords do not match!');
       return;
     }
 
@@ -75,13 +74,13 @@ export default function Register() {
       });
 
       if (response.data === 'User already registered as a user') {
-        setMessage({ text: response.data, className: 'alert alert-danger' });
+        toast.error(response.data);
       } else {
-        setMessage({ text: 'Registration successful!', className: 'alert alert-success' });
+        toast.success('Registration successful!');
         setTimeout(() => navigate('/login'), 2000);
       }
     } catch (error) {
-      setMessage({ text: 'Error occurred, registration failed.', className: 'alert alert-danger' });
+      toast.error('Error occurred, registration failed.');
     }
   };
 
@@ -104,7 +103,6 @@ export default function Register() {
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
             <h5 className="card-title text-center">Sign Up</h5>
-            {message && <div className={message.className}>{message.text}</div>}
             <form onSubmit={handleRegister}>
               <div className="mb-3">
                 <label htmlFor="firstName" className="form-label">First Name</label>
@@ -170,6 +168,19 @@ export default function Register() {
         </div>
       </div>
       <Footer />
+      
+      {/* ToastContainer for toasts */}
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </>
   );
 }
