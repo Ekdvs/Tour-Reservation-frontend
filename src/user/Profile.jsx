@@ -61,6 +61,10 @@ export default function Profile() {
         .catch((error) => console.error("Error saving profile:", error));
 
     };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
 
   return (
     <div>
