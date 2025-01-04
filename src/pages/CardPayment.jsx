@@ -129,6 +129,11 @@ export default function CardPayment() {
                         <label htmlFor="cc-cvc" className="control-label">
                         CARD / CVC
                         </label>
+                        <input
+                        id="cc-cvc"
+                        type="tel"
+                        className="input-lg form-control cc-cvc"
+                        autoComplete="off"
                         
 
 
