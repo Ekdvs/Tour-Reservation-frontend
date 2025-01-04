@@ -6,6 +6,7 @@ export default function LogOut() {
     useEffect(()=>{
         const performLogout = async () => {
             try{
+                await axios.post('http://localhost:5000/api/logout');
 
             }
             catch(error)
