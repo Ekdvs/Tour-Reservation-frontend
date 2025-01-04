@@ -1,10 +1,11 @@
-import { Modal } from 'bootstrap';
 import React from 'react';
 import { ToastContainer } from 'react-toastify';
 import { Button, Form, Spinner, Table } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Modal from 'react-bootstrap/Modal';
+
 
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
