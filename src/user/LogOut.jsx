@@ -1,6 +1,11 @@
 import React from 'react'
 
 export default function LogOut() {
+    const navigate=useNavigate();
+    useEffect(()=>{
+        
+
+    );
   return (
     <div>
       <div className="logout-container">
