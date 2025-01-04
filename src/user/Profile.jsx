@@ -40,7 +40,11 @@ export default function Profile() {
                             <div className="mb-3 row" key={field}>
                                 <label className="col-sm-4 col-form-label text-capitalize">{field}:</label>
                                 <div className="col-sm-6">
-                                    
+                                    {!isEditing ? (
+                                        <p className="form-control-plaintext">{profileData[field] || "Not Set"}</p>
+                                    ) : (
+                                        
+                                    )}
                                 </div>
                             </div>
                         ))}   
