@@ -48,6 +48,17 @@ export default function Register() {
                   placeholder="Enter your last name"
                 />
               </div>
+              <div className="mb-3">
+                <label htmlFor="userEmail" className="form-label">Email</label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="userEmail"
+                  value={userEmail}
+                  onChange={(e) => setUserEmail(e.target.value)}
+                  placeholder="Enter your email"
+                />
+              </div>
               
               <button type="submit" className="btn btn-primary w-100">Sign Up</button>
             </form>
