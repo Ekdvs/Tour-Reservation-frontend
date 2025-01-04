@@ -41,18 +41,40 @@ export default function Profile() {
       });
   }, [userEmail]);
 
+  const validateForm = () => {
+    if (!formData.firstName || !formData.lastName || !formData.phoneNumber || !formData.title || !formData.gender || !formData.country) {
+      toast.error("All fields are required!");
+      return false;
+    }
+    if (!/^[a-zA-Z]+$/.test(formData.firstName)) {
+      toast.error("First name should only contain letters!");
+      return false;
+    }
+    if (!/^[a-zA-Z]+$/.test(formData.lastName)) {
+      toast.error("Last name should only contain letters!");
+      return false;
+    }
+    if (!/^\d{10}$/.test(formData.phoneNumber)) {
+      toast.error("Phone number should be 10 digits!");
+      return false;
+    }
+    return true;
+  };
+
   const handleSave = () => {
-    axios
-      .put(`http://localhost:8080/user/${userEmail}`, formData)
-      .then((response) => {
-        setProfileData(response.data);
-        setIsEditing(false);
-        toast.success("Profile updated successfully!");
-      })
-      .catch((error) => {
-        console.error("Error saving profile:", error);
-        toast.error("Failed to update profile. Please try again.");
-      });
+    if (validateForm()) {
+      axios
+        .put(`http://localhost:8080/user/${userEmail}`, formData)
+        .then((response) => {
+          setProfileData(response.data);
+          setIsEditing(false);
+          toast.success("Profile updated successfully!");
+        })
+        .catch((error) => {
+          console.error("Error saving profile:", error);
+          toast.error("Failed to update profile. Please try again.");
+        });
+    }
   };
 
   const handleChange = (e) => {
@@ -66,7 +88,7 @@ export default function Profile() {
     <div>
       <Topbar />
       <Navbar />
-      
+      <ToastContainer />
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">My Profile</h3>
