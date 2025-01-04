@@ -30,6 +30,7 @@ export default function Profile() {
                     phoneNumber: response.data.phoneNumber,
                     title: response.data.title,
                     gender: response.data.gender,
+                    country: response.data.country,
                    
                     
                 });
