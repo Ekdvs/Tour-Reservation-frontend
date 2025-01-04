@@ -3,6 +3,7 @@ import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 export default function SignIn() {
   const [userEmail, setUserEmail] = useState('');
@@ -33,7 +34,14 @@ export default function SignIn() {
     }
 
     try {
-
+      const responce=await  axios.post('http://localhost:5000/api/login', {
+       userEmail, password });
+      if(responce.data==='Login successful')
+      {
+        localStorage.setItem('userToken', responce.data.token);
+        sessionStorage.setItem('userToken', responce.data.token);
+        navigate('/');
+      }
     }
     catch (error) {
       console.error('Login failed. Please try again.', error);
