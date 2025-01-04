@@ -13,7 +13,6 @@ export default function VerifyOTP() {
     const [message, setMessage] = useState(null); 
     const navigate = useNavigate();
 
-    
     const isValidOtp = (otp) => {
         const otpPattern = /^[0-9]{6}$/; 
         return otpPattern.test(otp);
@@ -23,15 +22,15 @@ export default function VerifyOTP() {
         e.preventDefault();
 
         if (!email.trim()) {
-            toast.error('Email is missing. Please try again.');  // Toast message for missing email
+            toast.error('Email is missing. Please try again.');  
             return;
         }
         if (!otp.trim()) {
-            toast.warning('OTP cannot be empty.');  // Toast message for empty OTP
+            toast.warning('OTP cannot be empty.');  
             return;
         }
         if (!isValidOtp(otp)) {
-            toast.error('Invalid OTP. Please enter a 6-digit OTP.');  // Toast message for invalid OTP format
+            toast.error('Invalid OTP. Please enter a 6-digit OTP.');  
             return;
         }
 
@@ -58,25 +57,25 @@ export default function VerifyOTP() {
         <div>
             <Topbar />
             <Navbar />
-            <div className="container-fluid bg-breadcrumb">
-                <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
-                    <h3 className="text-white display-3 mb-4">Password Reset</h3>
+            <div className="container-fluid bg-primary py-5">
+                <div className="container text-center text-white" style={{ maxWidth: "900px" }}>
+                    <h3 className="display-3 mb-4">Password Reset</h3>
                     <ol className="breadcrumb justify-content-center mb-0">
-                        <li className="breadcrumb-item"><a href="/">Home</a></li>
-                        <li className="breadcrumb-item"><a href="/Contact">Pages</a></li>
-                        <li className="breadcrumb-item active text-white">Password Reset</li>
-                        <li className="breadcrumb-item active text-white">Verify OTP</li>
+                        <li className="breadcrumb-item"><a href="/" className="text-white">Home</a></li>
+                        <li className="breadcrumb-item"><a href="/Contact" className="text-white">Pages</a></li>
+                        <li className="breadcrumb-item active">Password Reset</li>
+                        <li className="breadcrumb-item active">Verify OTP</li>
                     </ol>
                 </div>
             </div>
             <div className="container my-5">
-                <div className="row justify-content-md-center">
-                    <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
-                        <div className="bg-white p-4 p-md-5 rounded shadow-sm">
-                            <h3>Enter OTP</h3>
+                <div className="row justify-content-center">
+                    <div className="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div className="bg-white p-4 p-md-5 rounded shadow-sm border">
+                            <h4 className="text-center mb-4">Enter OTP</h4>
 
                             {message && (
-                                <div className={message.className} role="alert">
+                                <div className={`alert ${message.className}`} role="alert">
                                     {message.text}
                                 </div>
                             )}
@@ -96,7 +95,7 @@ export default function VerifyOTP() {
                                     />
                                 </div>
                                 <div className="d-grid">
-                                    <button className="btn btn-lg btn-primary" type="submit">
+                                    <button className="btn btn-lg btn-success" type="submit">
                                         Verify OTP
                                     </button>
                                 </div>
