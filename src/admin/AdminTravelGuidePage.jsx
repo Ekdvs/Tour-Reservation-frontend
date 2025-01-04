@@ -78,5 +78,6 @@ export default function AdminTravelGuidePage() {
      const deleteTravelGuide = async (userId) => {
         try {
             await axios.delete(`${API_BASE_URL}/user/delete/${userId}`); 
-
+            toast.success("Travel guide deleted successfully");
+            
 }
