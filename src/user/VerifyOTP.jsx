@@ -57,17 +57,17 @@ export default function VerifyOTP() {
         <div>
             <Topbar />
             <Navbar />
-            <div className="container-fluid bg-primary py-5">
-                <div className="container text-center text-white" style={{ maxWidth: "900px" }}>
-                    <h3 className="display-3 mb-4">Password Reset</h3>
-                    <ol className="breadcrumb justify-content-center mb-0">
-                        <li className="breadcrumb-item"><a href="/" className="text-white">Home</a></li>
-                        <li className="breadcrumb-item"><a href="/Contact" className="text-white">Pages</a></li>
-                        <li className="breadcrumb-item active">Password Reset</li>
-                        <li className="breadcrumb-item active">Verify OTP</li>
-                    </ol>
-                </div>
+            <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style={{maxWidth:"900px"}}>
+                <h3 class="text-white display-3 mb-4">Login</h3>
+                <ol className="breadcrumb justify-content-center mb-0">
+                        <li className="breadcrumb-item"><a href="/">Home</a></li>
+                        <li className="breadcrumb-item"><a href="/Contact">Pages</a></li>
+                        <li className="breadcrumb-item active text-white">Password Reset</li>
+                        <li className="breadcrumb-item active text-white">Verify OTP</li>
+                    </ol>   
             </div>
+        </div>
             <div className="container my-5">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
