@@ -23,4 +23,8 @@ export default function Travel_Guides() {
                 <div class="mx-auto text-center mb-5" style={{maxwidth: "900px"}}>
                     <h5 class="section-title px-3">Travel Guide</h5>
                     <h1 class="mb-0">Meet Our Guide</h1>
-                </div>
+                    </div>
+                    <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="guide-item">
+                            
