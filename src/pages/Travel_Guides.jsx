@@ -21,4 +21,5 @@ export default function Travel_Guides() {
         <div class="container-fluid guide py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center mb-5" style={{maxwidth: "900px"}}>
+                    <h5 class="section-title px-3">Travel Guide</h5>
                     
