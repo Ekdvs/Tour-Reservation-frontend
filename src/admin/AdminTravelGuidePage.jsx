@@ -13,7 +13,7 @@ export default function AdminTravelGuidePage() {
     <Modal.Body>
     {user ? (
         <div>
-
+            <p></p>
         </div>
     
     </Modal.Body>
