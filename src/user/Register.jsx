@@ -26,7 +26,7 @@ export default function Register() {
 
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
-  // Name validation regex
+
   const nameRegex = /^[a-zA-Z]+$/;
 
   const handleRegister = async (e) => {
