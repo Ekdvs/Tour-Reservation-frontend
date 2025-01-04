@@ -54,7 +54,7 @@ export default function VerifyOTP() {
                 error.response?.data?.message ||
                 'An error occurred. Please try again.';
             toast.error(errorMessage);
-            setTimeout(() => navigate('/ForgotPassword'), 2000);
+            
         }
     };
 
@@ -62,11 +62,12 @@ export default function VerifyOTP() {
     useEffect(() => {
         if (otpSentTime) {
             const timer = setInterval(() => {
-                const timeRemaining = otpSentTime + 180000 - Date.now(); // 180000ms = 3 minutes
+                const timeRemaining = otpSentTime + 180000- Date.now(); // 180000ms = 3 minutes
                 if (timeRemaining <= 0) {
                     clearInterval(timer);
                     setCountdown(0); 
                     toast.error('OTP expired. Please request a new one.');
+                    setTimeout(() => navigate('/ForgotPassword'), 2000);
                 } else {
                     setCountdown(Math.floor(timeRemaining / 1000)); 
                 }
