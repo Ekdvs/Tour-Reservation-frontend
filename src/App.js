@@ -1,13 +1,19 @@
-import Footer from "./compodent/Footer";
-import Navbar from "./compodent/Navbar";
-import Topbar from "./compodent/Topbar";
+import Register from "./user/Register";
+
 
 function App() {
   return (
     <div>
-      <Topbar/>
-      
-      <Footer/>
+     <Router>
+        <Routes>
+
+          <Route path="/login" element={<SignIn/>} />
+          <Route path="/register" element={<Register/>} />
+          
+
+          ForgotPassword
+        </Routes>
+      </Router>
     </div>
   );
 }
