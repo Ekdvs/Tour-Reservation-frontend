@@ -16,7 +16,7 @@ export default function Profile() {
         title: "",
         gender: "",
         country: "",
-        
+        profilePicture: null, 
     });
   return (
     <div>
