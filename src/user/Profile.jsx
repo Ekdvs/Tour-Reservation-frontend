@@ -42,6 +42,10 @@ export default function Profile() {
         form.append('firstName', formData.firstName);
         form.append('lastName', formData.lastName);
         form.append('phoneNumber', formData.phoneNumber);
+        form.append('title', formData.title);
+
+
+
     };
 
   return (
