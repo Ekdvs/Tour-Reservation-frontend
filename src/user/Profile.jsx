@@ -46,6 +46,10 @@ export default function Profile() {
         form.append('gender', formData.gender);
         form.append('country', formData.country);
 
+        if (formData.profilePicture) {
+            form.append('profilePicture', formData.profilePicture);
+        }
+
     };
 
   return (
