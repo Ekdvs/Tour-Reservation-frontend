@@ -112,7 +112,19 @@ export default function AdminTravelGuidePage() {
             <h5>No travel guide found with that email address</h5>
           </div>
         )}
+        {searchResult && (
+          <div className="mt-3">
+            <h5>Search Result:</h5>
+            <p>
+              {searchResult.firstName} {searchResult.lastName} - {searchResult.userEmail}
+            </p>
+          </div>
+        )}
+      </div>
+</div>
 
-    </div>
+{loading ? (
+    <Spinner animation="border" className="d-block mx-auto" />
+  ) : (
 
 }
