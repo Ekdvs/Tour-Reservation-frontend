@@ -69,4 +69,11 @@ export default function AdminTravelGuidePage() {
             toast.error("Error during search");
             setSearchResult(null);
           } 
+          finally {
+            setLoading(false);
+          }
+        };
+
+     // Delete travel guide
+
 }
