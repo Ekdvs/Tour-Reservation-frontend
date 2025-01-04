@@ -41,5 +41,5 @@ export default function AdminTravelGuidePage() {
     try {
         const response = await axios.get(`${API_BASE_URL}/user/allUsers`);
         const guides = response.data.filter((user) => user.userRole === "travelGuide");
-
+        setTravelGuides(guides);
 }
