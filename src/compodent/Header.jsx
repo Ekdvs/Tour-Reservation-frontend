@@ -13,7 +13,16 @@ export default function Header() {
             <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/>
 
             <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
-             <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>
+            <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet"/>
+
+            
+
+       
+        <link href="css/bootstrap.min.css" rel="stylesheet"/>
+
+        
+
+
 
             </head>
 
