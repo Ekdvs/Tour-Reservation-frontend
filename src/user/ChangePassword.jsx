@@ -16,7 +16,7 @@ export default function ChangePassword() {
 
   const validatePassword = (password) => {
     
-    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
     return passwordPattern.test(password);
   };
 
