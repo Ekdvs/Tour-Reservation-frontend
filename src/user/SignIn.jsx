@@ -10,6 +10,9 @@ export default function SignIn() {
   const [message, setMessage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  
   return (
     <div>
       <Topbar/>
