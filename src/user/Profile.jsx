@@ -53,7 +53,12 @@ export default function Profile() {
                                     )}
                                 </div>
                             </div>
-                        ))}   
+                        ))}  
+                        {/* Profile Picture */}
+                        <div className="mb-3 row">
+                            <label className="col-sm-4 col-form-label">Profile Picture:</label>
+                            
+                        </div> 
                         <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
                             Change Password
                         </button>
