@@ -15,6 +15,7 @@ export default function Profile() {
         phoneNumber: "",
         title: "",
         gender: "",
+        country: "",
         
     });
   return (
