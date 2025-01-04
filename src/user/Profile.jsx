@@ -43,7 +43,13 @@ export default function Profile() {
                                     {!isEditing ? (
                                         <p className="form-control-plaintext">{profileData[field] || "Not Set"}</p>
                                     ) : (
-                                        
+                                        <input
+                                            type="text"
+                                            className="form-control"
+                                            name={field}
+                                            value={formData[field]}
+                                            onChange={handleChange}
+                                        />
                                     )}
                                 </div>
                             </div>
