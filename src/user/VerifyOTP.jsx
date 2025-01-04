@@ -7,6 +7,8 @@ export default function VerifyOTP() {
     const [otp, setOtp] = useState('');
     const [email] = useState(localStorage.getItem('userEmail') || ''); // Fetch stored email
     const [message, setMessage] = useState(null); // For success/error messages
+    const navigate = useNavigate();
+
     
     
   return (
