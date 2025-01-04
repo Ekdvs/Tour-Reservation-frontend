@@ -1,8 +1,13 @@
+import Footer from "./compodent/Footer";
+import Navbar from "./compodent/Navbar";
+import Topbar from "./compodent/Topbar";
 
 function App() {
   return (
     <div>
-      <h1>welcome</h1>
+      <Topbar/>
+      
+      <Footer/>
     </div>
   );
 }

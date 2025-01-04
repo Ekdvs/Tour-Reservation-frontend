@@ -1,8 +1,8 @@
 import React from 'react'
 import Header from './Header'
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { NavLink } from 'react-router-dom';
 
 const ActiveNavLink = styled(NavLink)`
   color: #13357B;
