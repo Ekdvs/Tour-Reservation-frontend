@@ -13,7 +13,7 @@ export default function AdminTravelGuidePage() {
     <Modal.Body>
     {user ? (
         <div>
-            <p></p>
+            <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
         </div>
     
     </Modal.Body>
