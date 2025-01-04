@@ -4,6 +4,8 @@ import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Profile() {
   const userEmail = localStorage.getItem("userEmail");
@@ -33,7 +35,10 @@ export default function Profile() {
           country: response.data.country,
         });
       })
-      .catch((error) => console.error("Error fetching profile:", error));
+      .catch((error) => {
+        console.error("Error fetching profile:", error);
+        toast.error("Failed to load profile data!");
+      });
   }, [userEmail]);
 
   const handleSave = () => {
@@ -42,8 +47,12 @@ export default function Profile() {
       .then((response) => {
         setProfileData(response.data);
         setIsEditing(false);
+        toast.success("Profile updated successfully!");
       })
-      .catch((error) => console.error("Error saving profile:", error));
+      .catch((error) => {
+        console.error("Error saving profile:", error);
+        toast.error("Failed to update profile. Please try again.");
+      });
   };
 
   const handleChange = (e) => {
@@ -57,6 +66,7 @@ export default function Profile() {
     <div>
       <Topbar />
       <Navbar />
+      <ToastContainer />
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">My Profile</h3>
