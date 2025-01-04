@@ -5,6 +5,10 @@ import Footer from '../compodent/Footer'
 import { ToastContainer } from 'react-toastify'
 
 export default function ForgotPassword() {
+
+    const [userEmail, setUserEmail] = useState('');
+    
+    
   return (
     <div>
     <Topbar/>
