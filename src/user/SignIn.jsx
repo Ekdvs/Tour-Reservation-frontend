@@ -40,7 +40,15 @@ export default function SignIn() {
               <div className="form-group mb-3">
                 <label htmlFor="password" className="form-label">Password</label>
                 <div className="input-group">
-                 
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                    required
+                  />
                   <button
                     type="button"
                     className="btn btn-outline-secondary"
