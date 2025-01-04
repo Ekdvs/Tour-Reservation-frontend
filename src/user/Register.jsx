@@ -49,7 +49,7 @@ export default function Register() {
       return;
     }
 
-    // Validate email format
+
     if (!emailRegex.test(userEmail)) {
       toast.error('Please enter a valid email address.');
       return;
