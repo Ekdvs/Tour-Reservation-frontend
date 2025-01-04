@@ -10,18 +10,12 @@ import Footer from '../compodent/Footer';
 export default function VerifyOTP() {
     const [otp, setOtp] = useState(''); 
     const [email] = useState(localStorage.getItem('userEmail') || ''); 
-    const [message, setMessage] = useState(null); 
     const [countdown, setCountdown] = useState(180); 
     const [otpSentTime, setOtpSentTime] = useState(null); 
     const navigate = useNavigate();
 
-   
-    const isValidOtp = (otp) => {
-        const otpPattern = /^[0-9]{6}$/; 
-        return otpPattern.test(otp);
-    };
+    const isValidOtp = (otp) => /^[0-9]{6}$/.test(otp);
 
-    
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
 
@@ -40,7 +34,11 @@ export default function VerifyOTP() {
 
         try {
             const response = await axios.post(
-                `http://localhost:8080/user/verify-code?userEmail=${encodeURIComponent(email)}&recoveryCode=${encodeURIComponent(otp)}`
+                `http://localhost:8080/user/verify-code`,
+                {
+                    userEmail: email,
+                    recoveryCode: otp,
+                }
             );
 
             if (response.status === 200 && response.data.success) {
@@ -51,35 +49,31 @@ export default function VerifyOTP() {
             }
         } catch (error) {
             const errorMessage =
-                error.response?.data?.message ||
-                'An error occurred. Please try again.';
+                error.response?.data?.message || 'An error occurred. Please try again.';
             toast.error(errorMessage);
-            
         }
     };
 
-    
     useEffect(() => {
         if (otpSentTime) {
             const timer = setInterval(() => {
-                const timeRemaining = otpSentTime + 180000- Date.now(); // 180000ms = 3 minutes
+                const timeRemaining = otpSentTime + 180000 - Date.now(); // 3 minutes
                 if (timeRemaining <= 0) {
                     clearInterval(timer);
-                    setCountdown(0); 
+                    setCountdown(0);
                     toast.error('OTP expired. Please request a new one.');
                     setTimeout(() => navigate('/ForgotPassword'), 2000);
                 } else {
-                    setCountdown(Math.floor(timeRemaining / 1000)); 
+                    setCountdown(Math.floor(timeRemaining / 1000));
                 }
             }, 1000);
 
-            return () => clearInterval(timer); 
+            return () => clearInterval(timer);
         }
     }, [otpSentTime]);
 
-    
     useEffect(() => {
-        setOtpSentTime(Date.now()); 
+        setOtpSentTime(Date.now());
     }, []);
 
     return (
@@ -102,12 +96,6 @@ export default function VerifyOTP() {
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                         <div className="bg-white p-4 p-md-5 rounded shadow-sm border">
                             <h4 className="text-center mb-4">Enter OTP</h4>
-
-                            {message && (
-                                <div className={`alert ${message.className}`} role="alert">
-                                    {message.text}
-                                </div>
-                            )}
                             <form onSubmit={handleOtpSubmit}>
                                 <div className="mb-3">
                                     <p className="text-dark">Enter OTP CODE</p>
@@ -133,19 +121,8 @@ export default function VerifyOTP() {
                     </div>
                 </div>
             </div>
-
             <Footer />
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-            />
+            <ToastContainer />
         </div>
     );
 }

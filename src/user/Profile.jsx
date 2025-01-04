@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { toast, ToastContainer,  } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 export default function Profile() {
   const userEmail = localStorage.getItem("userEmail");
@@ -19,8 +19,10 @@ export default function Profile() {
     title: "",
     gender: "",
     country: "",
+    profilePicture: "", // Add this to store profile picture path
   });
 
+  // Fetch profile data on load
   useEffect(() => {
     axios
       .get(`http://localhost:8080/user/${userEmail}`)
@@ -33,6 +35,7 @@ export default function Profile() {
           title: response.data.title,
           gender: response.data.gender,
           country: response.data.country,
+          profilePicture: response.data.profilePicture || "", // If no picture, set default
         });
       })
       .catch((error) => {
@@ -41,6 +44,7 @@ export default function Profile() {
       });
   }, [userEmail]);
 
+  // Form validation
   const validateForm = () => {
     if (!formData.firstName || !formData.lastName || !formData.phoneNumber || !formData.title || !formData.gender || !formData.country) {
       toast.error("All fields are required!");
@@ -61,6 +65,7 @@ export default function Profile() {
     return true;
   };
 
+  // Save profile data
   const handleSave = () => {
     if (validateForm()) {
       axios
@@ -77,9 +82,32 @@ export default function Profile() {
     }
   };
 
+  // Handle form input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle file input for profile picture upload
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // Create a FormData object and send it to the backend
+      const formData = new FormData();
+      formData.append('profilePicture', file);
+
+      axios.put(`http://localhost:8080/user/${userEmail}/upload`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }).then((response) => {
+        setProfileData(response.data);
+        toast.success("Profile picture updated successfully!");
+      }).catch((error) => {
+        console.error("Error uploading image:", error);
+        toast.error("Failed to upload profile picture.");
+      });
+    }
   };
 
   if (!profileData) return <div>Loading...</div>;
@@ -99,9 +127,10 @@ export default function Profile() {
           </ol>
         </div>
       </div>
+
       <div className="container py-5">
         <h1 className="my-4 text-center">Profile</h1>
-        
+
         <div className="card shadow-lg">
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center mb-3">
@@ -116,6 +145,8 @@ export default function Profile() {
                 </button>
               )}
             </div>
+
+            {/* Basic Info Fields */}
             {["firstName", "lastName", "phoneNumber", "title"].map((field) => (
               <div className="mb-3 row" key={field}>
                 <label className="col-sm-4 col-form-label text-capitalize">{field}:</label>
@@ -134,6 +165,8 @@ export default function Profile() {
                 </div>
               </div>
             ))}
+
+            {/* Gender and Country Select */}
             <div className="mb-3 row">
               <label className="col-sm-4 col-form-label">Gender:</label>
               <div className="col-sm-6">
@@ -158,6 +191,7 @@ export default function Profile() {
                 )}
               </div>
             </div>
+
             <div className="mb-3 row">
               <label className="col-sm-4 col-form-label">Country:</label>
               <div className="col-sm-6">
@@ -183,12 +217,35 @@ export default function Profile() {
                 )}
               </div>
             </div>
+
+            {/* Profile Picture Section */}
+            <div className="mb-3 row">
+              <label className="col-sm-4 col-form-label">Profile Picture:</label>
+              <div className="col-sm-6">
+                {!isEditing ? (
+                  <img
+                    src={profileData.profilePicture || "https://via.placeholder.com/150/0000FF/808080?Text=Profile+Picture"} // Placeholder image
+                    alt="Profile"
+                    style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                    className="img-thumbnail"
+                  />
+                ) : (
+                  <input
+                    type="file"
+                    className="form-control"
+                    onChange={handleFileChange}
+                  />
+                )}
+              </div>
+            </div>
+
             <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
               Change Password
             </button>
           </div>
         </div>
       </div>
+
       <Footer />
       <ToastContainer
         position="top-right"
