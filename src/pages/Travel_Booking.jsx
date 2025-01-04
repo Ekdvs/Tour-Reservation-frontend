@@ -108,5 +108,9 @@ export default function Travel_Booking() {
                 </div>
             </div>
         </div>
-        
+        <Footer/>
+        </div>
+    )
+}
+
 
