@@ -1,6 +1,12 @@
 import React from 'react'
 import Header from './Header'
 
+
+const ActiveNavLink = styled(NavLink)`
+  color: #13357B;
+  font-weight: bold;
+`;
+
 export default function Navbar() {
   return (
     <div>
