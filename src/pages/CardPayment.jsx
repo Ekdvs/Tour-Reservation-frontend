@@ -12,4 +12,7 @@ export default function CardPayment() {
         e.preventDefault();
         alert("Payment Successful!");
     };
-    
+    return (
+        <div>
+            <Topbar/>
+            <Navbar/>
