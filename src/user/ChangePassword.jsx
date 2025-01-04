@@ -35,7 +35,15 @@ export default function ChangePassword() {
                 <label htmlFor="confirmPassword" className="form-label">
                   Confirm Password
                 </label>
-                
+                <input
+                  type="password"
+                  className="form-control"
+                  id="confirmPassword"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  placeholder="Confirm new password"
+                  required
+                />
               </div>
               <div className="d-grid">
                 <button type="submit" className="btn btn-primary rounded-pill">
