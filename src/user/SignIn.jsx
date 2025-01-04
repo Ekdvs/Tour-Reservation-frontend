@@ -38,7 +38,18 @@ export default function SignIn() {
               </div>
 
               <div className="form-group mb-3">
-                
+                <label htmlFor="password" className="form-label">Password</label>
+                <div className="input-group">
+                 
+                  <button
+                    type="button"
+                    className="btn btn-outline-secondary"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? "Hide" : "Show"}
+                  </button>
+                </div>
+              </div>
 
               <div className="d-grid">
                 <button type="submit" className="btn btn-primary rounded-pill">
