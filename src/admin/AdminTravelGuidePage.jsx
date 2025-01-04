@@ -142,7 +142,8 @@ export default function AdminTravelGuidePage() {
                 <td>{index + 1}</td>
                 <td>{guide.firstName} {guide.lastName}</td>
                 <td>{guide.userEmail}</td>
+                <td>{guide.dateRegistered}</td>
 
-                
+
 
 }
