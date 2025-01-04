@@ -11,7 +11,11 @@ export default function AdminTravelGuidePage() {
       <Modal.Title>Travel Guide History</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-        
+    {user ? (
+        <div>
+
+        </div>
+    
     </Modal.Body>
     </Modal>
 
