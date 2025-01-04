@@ -55,7 +55,7 @@ export default function Register() {
       return;
     }
 
-    // Validate password strength
+
     if (!passwordRegex.test(password)) {
       toast.error('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');
       return;
