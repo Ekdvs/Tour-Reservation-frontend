@@ -119,6 +119,7 @@ export default function VerifyOTP() {
                                         value={otp}
                                         onChange={(e) => setOtp(e.target.value)}
                                         placeholder="Enter OTP"
+                                        maxLength={6}
                                         required
                                     />
                                 </div>
