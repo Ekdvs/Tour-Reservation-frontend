@@ -35,4 +35,6 @@ export default function AdminTravelGuidePage() {
         const [selectedUser, setSelectedUser] = useState(null);
         const [loading, setLoading] = useState(false);
 
+        // Fetch travel guides from the backend
+  const fetchTravelGuides = async () => {
 }
