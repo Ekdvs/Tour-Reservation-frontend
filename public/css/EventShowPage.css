@@ -42,4 +42,7 @@ color: #333;
     .event-card {
     margin-bottom: 15px;
     }
+    .event-title {
+    font-size: 1.3rem;
+    }
 
