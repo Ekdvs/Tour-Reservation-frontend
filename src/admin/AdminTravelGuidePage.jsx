@@ -37,4 +37,5 @@ export default function AdminTravelGuidePage() {
 
         // Fetch travel guides from the backend
   const fetchTravelGuides = async () => {
+    setLoading(true);
 }
