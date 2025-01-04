@@ -10,7 +10,7 @@ export default function LogOut() {
             }
             catch(error)
             {
-
+                console.error('Logout error', error);
             }
         
       };
