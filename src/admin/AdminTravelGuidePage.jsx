@@ -144,6 +144,8 @@ export default function AdminTravelGuidePage() {
                 <td>{guide.userEmail}</td>
                 <td>{guide.dateRegistered}</td>
                 <td className="d-flex justify-content-center">
+                <Button variant="danger" size="sm" onClick={() => deleteTravelGuide(guide.userId)}>Delete</Button>
+                {" "}
 
 
 
