@@ -24,7 +24,12 @@ const EventShowPage = () => {
                     {events.map((event) => (
                     <div key={event.eventId} className="col-md-4 mb-4">
                         <div className="card shadow-lg rounded-lg event-card">
-                            
+                        <img
+                        src={event.eventImagePath || "/path/to/default-image.jpg"}
+                        alt={event.eventName}
+                        className="card-img-top event-image"
+                        />
+
             
                 
 
