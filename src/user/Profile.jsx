@@ -4,6 +4,8 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function Profile() {
+    const userEmail = localStorage.getItem("userEmail"); // Replace with dynamic email if needed
+
   return (
     <div>
       <Topbar/>
