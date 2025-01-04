@@ -89,5 +89,9 @@ export default function Travel_Guides() {
                         </div>
                         </div>
                         <div class="col-md-6 col-lg-3">
-                        <div class="guide-item">
+                            <div class="guide-item">
+                                <div class="guide-img">
+                                <div class="guide-img-efects">
+                                    <img src="img/guide-4.jpg" class="img-fluid w-100 rounded-top" alt="Image"/>
+                                </div>
                             
