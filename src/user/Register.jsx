@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import eye icons
+import { FaEye, FaEyeSlash } from 'react-icons/fa';  
 
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
