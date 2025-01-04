@@ -35,4 +35,10 @@ export default function CardPayment() {
             <div className="bg">
                 
             <div className="card-header">
+            <div className="row">
+                    
+
+                    <div className="col-md-6">
+                    <span>CREDIT/DEBIT CARD PAYMENT</span>
+                    </div>
 
