@@ -43,7 +43,7 @@ export default function Register() {
       return;
     }
 
-    // Validate last name (only alphabetic characters)
+
     if (!nameRegex.test(lastName)) {
       toast.error('Last name should only contain alphabetic characters.');
       return;
