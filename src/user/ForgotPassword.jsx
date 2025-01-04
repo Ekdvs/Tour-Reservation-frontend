@@ -22,7 +22,36 @@ export default function ForgotPassword() {
                 <div className="container">
                     <div className="row justify-content-md-center">
                         <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
-                            
+                            <div className="bg-white p-4 p-md-5 rounded shadow-sm">
+                                <h2 className="h3">Password Reset</h2>
+                                <h3 className="fs-6 fw-normal text-secondary">
+                                    Provide the email address associated with your account to recover your password.
+                                </h3>
+                                <form onSubmit={handleSendOtpMethod}>
+                                    <div className="mb-3">
+                                        <label htmlFor="email" className="form-label" style={{ fontSize: '18px', color: 'black', fontWeight: 'normal' }}>
+                                            Email:
+                                        </label>
+                                        <input
+                                            type="email"
+                                            className="form-control"
+                                            id="email"
+                                            aria-label="Email address for password recovery"
+                                            placeholder="name@example.com"
+                                            value={userEmail}
+                                            onChange={(e) => setUserEmail(e.target.value)}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="d-grid">
+                                        <button type="submit" className="btn btn-lg btn-primary">
+                                            Reset Password
+                                        </button>
+                                    </div>
+                                </form>
+                                <hr className="mt-5 mb-4 border-secondary-subtle" />
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
