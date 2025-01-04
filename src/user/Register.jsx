@@ -6,6 +6,7 @@ import Footer from '../compodent/Footer'
 export default function Register() {
     const [password, setPassword] = useState('');
     const [repeatPassword, setRepeatPassword] = useState('');
+    const [firstName, setFirstName] = useState('');
     
   return (
     <div>
