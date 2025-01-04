@@ -20,10 +20,10 @@ export default function Register() {
   const [showRepeatPassword, setShowRepeatPassword] = useState(false); 
   const navigate = useNavigate();
 
-  // Email validation
+ 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
-  // Password validation (at least 8 characters, 1 uppercase, 1 number)
+
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
   // Name validation regex
