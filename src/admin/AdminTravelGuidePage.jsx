@@ -143,6 +143,7 @@ export default function AdminTravelGuidePage() {
                 <td>{guide.firstName} {guide.lastName}</td>
                 <td>{guide.userEmail}</td>
                 <td>{guide.dateRegistered}</td>
+                <td className="d-flex justify-content-center">
 
 
 
