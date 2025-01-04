@@ -13,7 +13,7 @@ function App() {
         <Routes>
 
           <Route path="/login" element={<SignIn/>} />
-          <Route path="/register" element={<Register/>} />
+          <Route path="/" element={<Register/>} />
           
 
           ForgotPassword
