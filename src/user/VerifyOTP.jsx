@@ -58,7 +58,7 @@ export default function VerifyOTP() {
         }
     };
 
-    // Start countdown timer when OTP is sent
+    
     useEffect(() => {
         if (otpSentTime) {
             const timer = setInterval(() => {
