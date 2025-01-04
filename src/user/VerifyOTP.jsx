@@ -31,7 +31,20 @@ export default function VerifyOTP() {
                         </div>
                     )}
                     <form onSubmit={handleOtpSubmit}>
-                        
+                        <div className="mb-3">
+                            <label htmlFor="otp" className="form-label">
+                                OTP <span className="text-danger">*</span>
+                            </label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                id="otp"
+                                value={otp}
+                                onChange={(e) => setOtp(e.target.value)}
+                                placeholder="Enter OTP"
+                                required
+                            />
+                        </div>
                         <div className="d-grid">
                             <button className="btn btn-lg btn-primary" type="submit">
                                 Verify OTP
