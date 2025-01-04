@@ -23,7 +23,11 @@ export default function ForgotPassword() {
             return;
         }
 
-        if
+        if(!isValidEmail(userEmail))
+        {
+            toast.error('Please enter a valid email address.');
+            return;
+        }
 
         
     };
