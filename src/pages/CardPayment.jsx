@@ -109,7 +109,11 @@ export default function CardPayment() {
                         value={expiry.year}
                         onChange={(e) => setExpiry({ ...expiry, year: e.target.value })}
                         required
-                        ></select>
+                        >
+                            <option value="" disabled>
+                            Year
+                            </option>
+                        </select>
                         
 
 
