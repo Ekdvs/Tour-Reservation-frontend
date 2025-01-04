@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import { ToastContainer } from 'react-toastify'
 
 export default function ForgotPassword() {
   return (
@@ -66,6 +67,18 @@ export default function ForgotPassword() {
 
 
     <Footer/>
+    {/* ToastContainer for toasts */}
+    <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       
     </div>
   )
