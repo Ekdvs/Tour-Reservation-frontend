@@ -51,6 +51,9 @@ export default function ChangePassword() {
             toast.success('Password changed successfully! Redirecting...');
             setTimeout(() => navigate('/Login'), 2000); // Redirect after success
           }
+          else {
+            toast.error(response.data || 'Failed to update password. Please try again.');
+          }
 
       }
       catch(error){
