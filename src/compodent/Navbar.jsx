@@ -21,7 +21,18 @@ export default function Navbar() {
                     <ActiveNavLink to="/Services" className="nav-item nav-link">Services</ActiveNavLink>
                     <ActiveNavLink to="/Packages" className="nav-item nav-link">Packages</ActiveNavLink>
                     <ActiveNavLink to="/Blog" className="nav-item nav-link">Blog</ActiveNavLink>
-                        
+                    <div className="nav-item dropdown">
+                            <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div className="dropdown-menu m-0">
+                                <a href="/Destination" className="dropdown-item">Destination</a>
+                                <a href="Explore_Tour" className="dropdown-item">Explore Tour</a>
+                                <a href="/Travel_Booking" className="dropdown-item">Travel Booking</a>
+                                <a href="/Our_Gallery" className="dropdown-item">Our Gallery</a>
+                                <a href="/Travel_Guides" className="dropdown-item">Travel Guides</a>
+                                <a href="/Testimonial" className="dropdown-item">Testimonial</a>
+                                <a href="/Pageerror" className="dropdown-item">404 Page</a>
+                            </div>
+                        </div>  
                         <a href="/Contact" className="nav-item nav-link">Contact</a>
                     </div>
                     <a href="/Travel_Booking" className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
