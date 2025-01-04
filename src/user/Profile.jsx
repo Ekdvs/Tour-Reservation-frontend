@@ -27,9 +27,13 @@ export default function Profile() {
                     <div className="d-flex justify-content-between align-items-center mb-3">
                             <h2>Basic Info</h2>
                             {!isEditing ? (
-                                
+                                <button className="btn btn-outline-primary" onClick={() => setIsEditing(true)}>
+                                    Edit
+                                </button>
                             ) : (
-                                
+                                <button className="btn btn-outline-success" onClick={handleSave}>
+                                    Save
+                                </button>
                             )}
                         </div>    
                         <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
