@@ -30,6 +30,16 @@ export default function VerifyOTP() {
             toast.error('Invalid OTP. Please enter a 6-digit OTP.');  // Toast message for invalid OTP format
             return;
         }
+
+        try
+        {
+
+        }
+
+        catch(error)
+        {
+            
+        }
         
 
         
