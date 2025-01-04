@@ -121,7 +121,7 @@ export default function AdminTravelGuidePage() {
           </div>
         )}
       </div>
-</div>
+
 
 {loading ? (
     <Spinner animation="border" className="d-block mx-auto" />
@@ -147,7 +147,19 @@ export default function AdminTravelGuidePage() {
                 <Button variant="danger" size="sm" onClick={() => deleteTravelGuide(guide.userId)}>Delete</Button>
                 {" "}
                 <Button variant="info" size="sm" onClick={() => handleViewHistory(guide)}>View History</Button>
-
+                </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
+  
+        <UserHistoryModal show={showModal} user={selectedUser} onClose={() => setShowModal(false)} />
+        </div>
+      );
+    };
+    
+    
 
 
 }
