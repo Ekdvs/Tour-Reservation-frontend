@@ -27,7 +27,12 @@ export default function CardPayment() {
             </div>
             </div>
             <div className="padding" >
-      <div className="row">
-      
+            <div className="row">
+    
         <div className="container-fluid d-flex justify-content-center">
-          <div className="col-sm-8 col-md-6"></div>
+            <div className="col-sm-8 col-md-6">
+            <div className="card">
+            <div className="bg">
+                
+            <div className="card-header">
+
