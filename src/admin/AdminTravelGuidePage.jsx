@@ -1,8 +1,11 @@
 import { Modal } from 'bootstrap';
-import React from 'react'
+import React from 'react';
 import { ToastContainer } from 'react-toastify';
+import { Button, Form, Spinner, Table } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
-export default function AdminTravelGuidePage() {
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
     // Modal for viewing travel guide history
@@ -159,7 +162,4 @@ export default function AdminTravelGuidePage() {
       );
     };
     
-    
-
-
-}
+    export default AdminTravelGuidePage;
