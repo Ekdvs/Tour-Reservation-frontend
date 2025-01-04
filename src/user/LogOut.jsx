@@ -10,7 +10,9 @@ export default function LogOut() {
 
                 localStorage.removeItem('userToken');
                 sessionStorage.removeItem('userToken');
-
+                setTimeout(() => {
+                    navigate('/login');
+                  }, 2000);
             }
             catch(error)
             {
