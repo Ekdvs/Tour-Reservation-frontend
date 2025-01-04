@@ -21,6 +21,23 @@ export default function Register() {
             setMessage({ text: 'Passwords do not match!', className: 'alert alert-danger' });
             return;
           }
+          try {
+            const response = await axios.post('http://localhost:8080/user/register', {
+              firstName,
+              lastName,
+              userEmail,
+              password,
+            });
+    
+            if (response.data === 'User already registered as a user') {
+              setMessage({ text: response.data, className: 'alert alert-danger' });
+            } else {
+              setMessage({ text: 'Registration successful!', className: 'alert alert-success' });
+              setTimeout(() => navigate('/login'), 2000);
+            }
+          } catch (error) {
+            setMessage({ text: 'Error occurred, registration failed.', className: 'alert alert-danger' });
+          }
     
           
         } else {
