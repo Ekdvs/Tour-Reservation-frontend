@@ -98,7 +98,7 @@ export default function AdminTravelGuidePage() {
         <h2 className="text-center">Admin Travel Guide Management</h2>
         <br />
       <div className="mb-4 search-container">
-
+      <Form.Group className="d-flex w-50">
     </div>
 
 }
