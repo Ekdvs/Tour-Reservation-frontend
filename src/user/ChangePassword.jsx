@@ -15,6 +15,12 @@ export default function ChangePassword() {
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
     return passwordPattern.test(password);
   };
+
+  const handleChangePassword = async (e) => {
+    e.preventDefault();
+
+    
+  };
   return (
     <div>
         <Topbar/>
