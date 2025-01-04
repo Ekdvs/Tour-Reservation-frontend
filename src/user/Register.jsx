@@ -26,7 +26,18 @@ export default function Register() {
             <h5 className="card-title text-center">Sign Up</h5>
             {message && <div className={message.className}>{message.text}</div>}
             <form onSubmit={handleRegister}>
-              
+            <div className="mb-3">
+                <label htmlFor="firstName" className="form-label">First Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="firstName"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  placeholder="Enter your first name"
+                />
+              </div>
+             
               <button type="submit" className="btn btn-primary w-100">Sign Up</button>
             </form>
             <div className="text-center mt-3">
