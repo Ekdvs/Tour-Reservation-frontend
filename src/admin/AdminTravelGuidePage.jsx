@@ -76,5 +76,7 @@ export default function AdminTravelGuidePage() {
 
      // Delete travel guide
      const deleteTravelGuide = async (userId) => {
+        try {
+           
 
 }
