@@ -29,6 +29,13 @@ export default function ForgotPassword() {
             return;
         }
 
+        try{
+
+        }
+        catch(error){
+            
+        }
+
         
     };
     
