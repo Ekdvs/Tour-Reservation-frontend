@@ -28,5 +28,6 @@ export default function AdminTravelGuidePage() {
     </Modal.Footer>
     </Modal>);
     const AdminTravelGuidePage = () => {
+        const [travelGuides, setTravelGuides] = useState([]);
 
 }
