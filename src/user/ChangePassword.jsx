@@ -5,6 +5,8 @@ import Footer from '../compodent/Footer'
 import { ToastContainer } from 'react-toastify'
 
 export default function ChangePassword() {
+  const [Password, setPassword] = useState('');
+  
   return (
     <div>
         <Topbar/>
