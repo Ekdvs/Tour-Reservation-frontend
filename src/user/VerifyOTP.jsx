@@ -21,7 +21,7 @@ export default function VerifyOTP() {
         return otpPattern.test(otp);
     };
 
-    // Handle OTP submit
+    
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
 
