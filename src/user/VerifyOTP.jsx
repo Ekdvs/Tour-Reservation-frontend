@@ -54,6 +54,7 @@ export default function VerifyOTP() {
                 error.response?.data?.message ||
                 'An error occurred. Please try again.';
             toast.error(errorMessage);
+            setTimeout(() => navigate('/ForgotPassword'), 2000);
         }
     };
 
@@ -64,20 +65,20 @@ export default function VerifyOTP() {
                 const timeRemaining = otpSentTime + 180000 - Date.now(); // 180000ms = 3 minutes
                 if (timeRemaining <= 0) {
                     clearInterval(timer);
-                    setCountdown(0); // OTP expired
+                    setCountdown(0); 
                     toast.error('OTP expired. Please request a new one.');
                 } else {
-                    setCountdown(Math.floor(timeRemaining / 1000)); // Update countdown in seconds
+                    setCountdown(Math.floor(timeRemaining / 1000)); 
                 }
             }, 1000);
 
-            return () => clearInterval(timer); // Cleanup the interval on component unmount
+            return () => clearInterval(timer); 
         }
     }, [otpSentTime]);
 
-    // Trigger OTP expiration process when the page loads
+    
     useEffect(() => {
-        setOtpSentTime(Date.now()); // Set OTP sent time to the current time
+        setOtpSentTime(Date.now()); 
     }, []);
 
     return (
