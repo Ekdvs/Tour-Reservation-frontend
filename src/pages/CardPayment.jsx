@@ -83,5 +83,18 @@ export default function CardPayment() {
                     <label htmlFor="cc-exp" className="control-label">
                         
                     </label>
+                    <div className="d-flex">
+                        {/* Month Dropdown */}
+                        <select
+                        id="cc-exp-month"
+                        className="form-control"
+                        style={{ marginRight: "10px" }}
+                        value={expiry.month}
+                        onChange={(e) => setExpiry({ ...expiry, month: e.target.value })}
+                        required
+                        >
+                            
+                        </select>
+
 
 
