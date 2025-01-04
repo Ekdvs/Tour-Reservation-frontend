@@ -85,5 +85,5 @@ export default function AdminTravelGuidePage() {
               }};
 
     const handleViewHistory = (guide) => {
-          
+        setSelectedUser(guide);    
 }
