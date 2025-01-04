@@ -13,7 +13,7 @@ export default function ChangePassword() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const navigate = useNavigate();
 
-  // Password validation function
+
   const validatePassword = (password) => {
     // Password must be at least 8 characters, include at least one uppercase letter, one digit, and one special character
     const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
