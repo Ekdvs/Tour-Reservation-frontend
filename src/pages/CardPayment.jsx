@@ -102,6 +102,14 @@ export default function CardPayment() {
                             </option>
                         ))}
                         </select>
+                        {/* Year Dropdown */}
+                        <select
+                        id="cc-exp-year"
+                        className="form-control"
+                        value={expiry.year}
+                        onChange={(e) => setExpiry({ ...expiry, year: e.target.value })}
+                        required
+                        ></select>
                         
 
 
