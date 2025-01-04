@@ -96,4 +96,17 @@ export default function Travel_Booking() {
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
+                                <div className="col-12">
+                                    <button className="btn btn-primary text-white w-100 py-3" type="submit">
+                                    Payment Now
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
 
