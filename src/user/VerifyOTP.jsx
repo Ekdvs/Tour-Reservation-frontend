@@ -4,6 +4,8 @@ import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
 
 export default function VerifyOTP() {
+    const [otp, setOtp] = useState('');
+    
   return (
     <div>
       <Topbar/>
