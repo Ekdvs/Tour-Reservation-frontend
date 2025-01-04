@@ -1,5 +1,6 @@
 import { Modal } from 'bootstrap';
 import React from 'react'
+import { ToastContainer } from 'react-toastify';
 
 export default function AdminTravelGuidePage() {
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
@@ -93,6 +94,7 @@ export default function AdminTravelGuidePage() {
       }, []);
     return (
     <div className="container mt-4">
+        <ToastContainer/>
         
     </div>
 
