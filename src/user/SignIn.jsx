@@ -7,7 +7,8 @@ export default function SignIn() {
   const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-  
+  const [showPassword, setShowPassword] = useState(false);
+ 
   return (
     <div>
       <Topbar/>
