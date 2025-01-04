@@ -133,6 +133,8 @@ export default function AdminTravelGuidePage() {
                 <th>Name</th>
                 <th>Email</th>
                 <th>Date Registered</th>
-
+                <th>Actions</th>
+            </tr>
+        </thead>
 
 }
