@@ -42,30 +42,30 @@ export default function Travel_Guides() {
                     />
                   </div>
                   <div class="guide-icon rounded-pill p-2">
-                    <a
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://facebook.com"}
                     >
                       <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://twitter.com"}
                     >
                       <i class="fab fa-twitter"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://instagram.com"}
                     >
                       <i class="fab fa-instagram"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://linkedin.com"}
                     >
                       <i class="fab fa-linkedin-in"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div class="guide-title text-center rounded-bottom p-4">
@@ -83,34 +83,34 @@ export default function Travel_Guides() {
                     <img
                       src="img/guide-2.jpg"
                       class="img-fluid w-100 rounded-top"
-                      alt="Image"
+                      alt="Travel Guide 2"
                     />
                   </div>
                   <div class="guide-icon rounded-pill p-2">
-                    <a
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://facebook.com"}
                     >
                       <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://twitter.com"}
                     >
                       <i class="fab fa-twitter"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://instagram.com"}
                     >
                       <i class="fab fa-instagram"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://linkedin.com"}
                     >
                       <i class="fab fa-linkedin-in"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div class="guide-title text-center rounded-bottom p-4">
@@ -128,34 +128,34 @@ export default function Travel_Guides() {
                     <img
                       src="img/guide-3.jpg"
                       class="img-fluid w-100 rounded-top"
-                      alt="Image"
+                      alt="Travel Guide 3"
                     />
                   </div>
                   <div class="guide-icon rounded-pill p-2">
-                    <a
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://facebook.com"}
                     >
                       <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://twitter.com"}
                     >
                       <i class="fab fa-twitter"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://instagram.com"}
                     >
                       <i class="fab fa-instagram"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://linkedin.com"}
                     >
                       <i class="fab fa-linkedin-in"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div class="guide-title text-center rounded-bottom p-4">
@@ -173,34 +173,34 @@ export default function Travel_Guides() {
                     <img
                       src="img/guide-4.jpg"
                       class="img-fluid w-100 rounded-top"
-                      alt="Image"
+                      alt="Travel Guide 4"
                     />
                   </div>
                   <div class="guide-icon rounded-pill p-2">
-                    <a
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://facebook.com"}
                     >
                       <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://twitter.com"}
                     >
                       <i class="fab fa-twitter"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://instagram.com"}
                     >
                       <i class="fab fa-instagram"></i>
-                    </a>
-                    <a
+                    </button>
+                    <button
                       class="btn btn-square btn-primary rounded-circle mx-1"
-                      href=""
+                      onClick={() => window.location.href="https://linkedin.com"}
                     >
                       <i class="fab fa-linkedin-in"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
                 <div class="guide-title text-center rounded-bottom p-4">
