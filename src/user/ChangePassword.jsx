@@ -101,7 +101,7 @@ export default function ChangePassword() {
                   />
                   <button
                     type="button"
-                    className="btn btn-outline-secondary"
+                    className="input-group-text"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
