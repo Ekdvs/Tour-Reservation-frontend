@@ -11,7 +11,7 @@ export default function VerifyOTP() {
     const [otp, setOtp] = useState(''); 
     const [email] = useState(localStorage.getItem('userEmail') || ''); 
     const [message, setMessage] = useState(null); 
-    const [countdown, setCountdown] = useState(180); // 3 minutes in seconds
+    const [countdown, setCountdown] = useState(180); 
     const [otpSentTime, setOtpSentTime] = useState(null); // Timestamp of OTP sent time
     const navigate = useNavigate();
 
