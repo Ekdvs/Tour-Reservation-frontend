@@ -14,6 +14,7 @@ export default function AdminTravelGuidePage() {
     {user ? (
         <div>
             <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
+            <p><strong>Email:</strong> {user.userEmail}</p>
         </div>
     
     </Modal.Body>
