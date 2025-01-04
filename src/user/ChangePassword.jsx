@@ -29,7 +29,15 @@ export default function ChangePassword() {
                 <label htmlFor="newPassword" className="form-label">
                   New Password
                 </label>
-                
+                <input
+                  type="password"
+                  className="form-control"
+                  id="Password"
+                  value={Password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="Enter new password"
+                  required
+                />
               </div>
               <div className="form-group mb-3">
                 <label htmlFor="confirmPassword" className="form-label">
