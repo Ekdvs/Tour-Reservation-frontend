@@ -35,7 +35,15 @@ export default function Profile() {
                                     Save
                                 </button>
                             )}
-                        </div>    
+                        </div> 
+                        {["firstName", "lastName", "phoneNumber", "title", "gender", "country"].map((field) => (
+                            <div className="mb-3 row" key={field}>
+                                <label className="col-sm-4 col-form-label text-capitalize">{field}:</label>
+                                <div className="col-sm-6">
+                                    
+                                </div>
+                            </div>
+                        ))}   
                         <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
                             Change Password
                         </button>
