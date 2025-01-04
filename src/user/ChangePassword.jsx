@@ -20,6 +20,32 @@ export default function ChangePassword() {
                     </ol>
                 </div>
             </div>
+            <div className="container my-5">
+        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+          <div className="card-body">
+            <h5 className="card-title text-center">Change Password</h5>
+            <form onSubmit={handleChangePassword}>
+              <div className="form-group mb-3">
+                <label htmlFor="newPassword" className="form-label">
+                  New Password
+                </label>
+                
+              </div>
+              <div className="form-group mb-3">
+                <label htmlFor="confirmPassword" className="form-label">
+                  Confirm Password
+                </label>
+                
+              </div>
+              <div className="d-grid">
+                <button type="submit" className="btn btn-primary rounded-pill">
+                  Update Password
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
 
         <Footer/>
         <ToastContainer
