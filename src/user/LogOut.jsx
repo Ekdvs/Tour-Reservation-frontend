@@ -3,7 +3,15 @@ import { useNavigate } from 'react-router-dom';
 
 export default function LogOut() {
     const navigate=useNavigate();
-    useEffect(()=>{const performLogout = async () => {
+    useEffect(()=>{
+        const performLogout = async () => {
+            try{
+
+            }
+            catch(error)
+            {
+
+            }
         
       };
   
