@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
     const [password, setPassword] = useState('');
@@ -10,7 +11,7 @@ export default function Register() {
     const [lastName, setLastName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [message, setMessage] = useState('');
-    
+    const navigate = useNavigate();
   return (
     <div>
         <Topbar/>
