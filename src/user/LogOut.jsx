@@ -9,6 +9,7 @@ export default function LogOut() {
                 await axios.post('http://localhost:5000/api/logout', {}, { withCredentials: true });
 
                 localStorage.removeItem('userToken');
+                sessionStorage.removeItem('userToken');
 
             }
             catch(error)
