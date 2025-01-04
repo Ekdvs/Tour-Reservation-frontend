@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';  // Import eye icons
 
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
@@ -16,6 +16,8 @@ export default function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userEmail, setUserEmail] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // New state for toggling password visibility
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false); // New state for toggling repeat password visibility
   const navigate = useNavigate();
 
   // Email validation
@@ -139,25 +141,43 @@ export default function Register() {
               </div>
               <div className="mb-3">
                 <label htmlFor="password" className="form-label">Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter your password"
-                />
+                <div className="input-group">
+                  <input
+                    type={showPassword ? 'text' : 'password'}
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Enter your password"
+                  />
+                  <button
+                    type="button"
+                    className="input-group-text"
+                    onClick={() => setShowPassword(!showPassword)}
+                  >
+                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </div>
               <div className="mb-3">
                 <label htmlFor="repeatPassword" className="form-label">Re-enter Password</label>
-                <input
-                  type="password"
-                  className="form-control"
-                  id="repeatPassword"
-                  value={repeatPassword}
-                  onChange={(e) => setRepeatPassword(e.target.value)}
-                  placeholder="Re-enter your password"
-                />
+                <div className="input-group">
+                  <input
+                    type={showRepeatPassword ? 'text' : 'password'}
+                    className="form-control"
+                    id="repeatPassword"
+                    value={repeatPassword}
+                    onChange={(e) => setRepeatPassword(e.target.value)}
+                    placeholder="Re-enter your password"
+                  />
+                  <button
+                    type="button"
+                    className="input-group-text"
+                    onClick={() => setShowRepeatPassword(!showRepeatPassword)}
+                  >
+                    {showRepeatPassword ? <FaEyeSlash /> : <FaEye />}
+                  </button>
+                </div>
               </div>
               <button type="submit" className="btn btn-primary w-100">Sign Up</button>
             </form>
