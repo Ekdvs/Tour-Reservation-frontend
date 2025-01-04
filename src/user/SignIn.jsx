@@ -5,6 +5,7 @@ import Footer from '../compodent/Footer'
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function SignIn() {
   const [userEmail, setUserEmail] = useState('');
@@ -100,13 +101,13 @@ export default function SignIn() {
                     placeholder="Enter your password"
                     required
                   />
-                  <button
-                    type="button"
-                    className="btn btn-outline-secondary"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? "Hide" : "Show"}
-                  </button>
+                   <button
+                      type="button"
+                      className="input-group-text"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </button>
                 </div>
               </div>
 
