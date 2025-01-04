@@ -45,6 +45,10 @@ export default function AdminTravelGuidePage() {
         catch (error) {
             toast.error("Error fetching travel guides"); } 
         finally {
-
+            setLoading(false);
+        }
+      };
+    
+    
 
 }
