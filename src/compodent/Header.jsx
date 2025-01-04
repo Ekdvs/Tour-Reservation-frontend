@@ -6,6 +6,7 @@ export default function Header() {
             <head>
             <meta charSet="utf-8"></meta>
             <title>Travela - Tourism Website Template</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
             
             </head>
 
