@@ -16,6 +16,7 @@ export default function AdminTravelGuidePage() {
             <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
             <p><strong>Email:</strong> {user.userEmail}</p>
             <p><strong>Role:</strong> {user.userRole}</p>
+            <p><strong>Date Registered:</strong> {user.dateRegistered}</p>
 
         </div>
     
