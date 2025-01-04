@@ -162,6 +162,18 @@ export default function CardPayment() {
                     style={{ fontSize: ".8rem" }}
                     onClick={handlePayment}
                     />
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <Footer/>
+    </div>
+    );
+}
 
 
 
