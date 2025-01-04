@@ -87,4 +87,7 @@ export default function Travel_Booking() {
                                             <option value="3">2</option>
                                             <option value="3">3</option>
                                         </select>
-                                        
+                                        <label for="CategoriesSelect">Categories</label>
+                                    </div>
+                                </div>
+
