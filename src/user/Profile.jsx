@@ -5,7 +5,8 @@ import Footer from '../compodent/Footer'
 
 export default function Profile() {
     const userEmail = localStorage.getItem("userEmail"); // Replace with dynamic email if needed
-
+    const [profileData, setProfileData] = useState(null);
+    
   return (
     <div>
       <Topbar/>
