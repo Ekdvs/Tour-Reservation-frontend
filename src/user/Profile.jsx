@@ -18,6 +18,19 @@ export default function Profile() {
                     </ol>
                 </div>
          </div>
+         <div className="container py-5">
+                <h1 className="my-4 text-center">Profile</h1>
+
+                {/* Basic Info */}
+                <div className="card shadow-lg">
+                    <div className="card-body">
+                        
+                        <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
+                            Change Password
+                        </button>
+                    </div>
+                </div>
+            </div>
       <Footer/>
     </div>
   )
