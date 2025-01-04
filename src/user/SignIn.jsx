@@ -32,6 +32,14 @@ export default function SignIn() {
       return;
     }
 
+    try {
+
+    }
+    catch (error) {
+      console.error('Login failed. Please try again.', error);
+    }
+      
+
     
   };
   return (
