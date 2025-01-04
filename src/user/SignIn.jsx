@@ -41,7 +41,7 @@ export default function SignIn() {
       if (response.data === 'Login successful') {
         toast.success('Login successful!');
         localStorage.setItem('userEmail', userEmail);
-        setTimeout(() => navigate('/My_Profile'), 2000);
+        setTimeout(() => navigate('/Profile'), 2000);
       } else {
         toast.error(response.data);
       }
