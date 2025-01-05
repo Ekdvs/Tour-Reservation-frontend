@@ -147,3 +147,8 @@ return () => {}; // No cleanup required anymore
         </tr>
     </thead>
 
+    <tbody>
+            {/* Render only the search result if searchResult exists, otherwise render all users */}
+            {(searchResult ? [searchResult] : users).map((user, index) => (
+              <tr key={user.userId}>
+
