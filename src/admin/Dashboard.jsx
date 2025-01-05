@@ -136,6 +136,16 @@ export default function Dashboard() {
                 <div class="card-title">Daily Sales</div>
                 <div class="card-tools">
                 <div class="dropdown">
+                <button
+                            class="btn btn-sm btn-label-light dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Export
+                          </button>
 
 
 
