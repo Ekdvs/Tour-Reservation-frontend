@@ -52,5 +52,9 @@ const fetchUsers = async () => {
   
 // Search user by email
 const searchUserByEmail = async () => {
-
+    if (!searchEmail.trim()) {
+        toast.warning("Please enter an email address");
+        return;
+      }
+  
 
