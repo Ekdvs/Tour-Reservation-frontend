@@ -102,7 +102,8 @@ const promoteToGuide = async (userId) => {
         setShowModal(true);
       };
 
-      
+      useEffect(() => {
 
-      
+
+
 
