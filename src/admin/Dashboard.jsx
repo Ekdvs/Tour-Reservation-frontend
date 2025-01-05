@@ -122,6 +122,9 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div class="card-body">
+                  <div class="chart-container" style={{ minHeight: '375px' }}>
+                      <canvas id="statisticsChart"></canvas>
+                    </div>
 
 
 
