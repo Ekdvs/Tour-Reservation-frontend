@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import EventShowPage from './pages/EventU';
 
 
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/About" element={<About/>} />
           <Route path="/Services" element={<Services/>} />
           <Route path="/Contact" element={<Contact/>} />
+          <Route path="/EventShowPage" element={<EventShowPage/>} />
 
         </Routes>
       </Router>
