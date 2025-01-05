@@ -80,5 +80,10 @@ const deleteUser = async (userId) => {
         await axios.delete(`${API_BASE_URL}/user/delete/${userId}`);
         toast.success("User deleted successfully");
         fetchUsers(); // Refresh users after deleting
+    } catch (error) {
+        toast.error("Error deleting user");
+      }
+    };
+  
   
 
