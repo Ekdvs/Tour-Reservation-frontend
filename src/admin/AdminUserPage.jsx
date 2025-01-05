@@ -56,5 +56,6 @@ const searchUserByEmail = async () => {
         toast.warning("Please enter an email address");
         return;
       }
-  
+    setLoading(true);
+
 
