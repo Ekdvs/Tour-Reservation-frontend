@@ -77,7 +77,11 @@ export default function Services() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                
         <Footer/>
         </div>
     )
