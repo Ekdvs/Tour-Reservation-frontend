@@ -157,6 +157,9 @@ return () => {}; // No cleanup required anymore
                 <td>{user.userRole}</td>
                 <td>{user.dateRegistered}</td>
                 <td className="d-flex justify-content-center">
+                <Button variant="danger" size="sm" onClick={() => deleteUser(user.userId)}>
+                    Delete
+                  </Button>{" "}
 
 
 
