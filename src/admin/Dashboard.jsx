@@ -212,6 +212,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div class="card-body p-0">
+                  <div class="table-responsive">
 
 
 
