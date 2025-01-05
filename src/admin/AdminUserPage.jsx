@@ -12,3 +12,8 @@ const UserHistoryModal = ({ show, user, onClose }) => (
     {user ? (
         <div>
             <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
+            <p><strong>Email:</strong> {user.userEmail}</p>
+
+
+
+
