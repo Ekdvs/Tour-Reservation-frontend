@@ -1,21 +1,22 @@
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { toast, ToastContainer } from 'react-toastify';  
-import 'react-toastify/dist/ReactToastify.css'; 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
 
 export default function VerifyOTP() {
-    const [otp, setOtp] = useState(''); 
-    const [email] = useState(localStorage.getItem('userEmail') || ''); 
-    const [countdown, setCountdown] = useState(180); 
-    const [otpSentTime, setOtpSentTime] = useState(null); 
+    const [otp, setOtp] = useState(''); // Stores the OTP entered by the user
+    const [email] = useState(localStorage.getItem('userEmail') || ''); // Fetch the email from localStorage
+    const [countdown, setCountdown] = useState(180); // 3-minute countdown for OTP expiration
     const navigate = useNavigate();
 
+    // Validate if the OTP entered is a 6-digit number
     const isValidOtp = (otp) => /^[0-9]{6}$/.test(otp);
 
+    // Handle OTP form submission
     const handleOtpSubmit = async (e) => {
         e.preventDefault();
 
@@ -23,27 +24,26 @@ export default function VerifyOTP() {
             toast.error('Email is missing. Please try again.');
             return;
         }
+
         if (!otp.trim()) {
             toast.warning('OTP cannot be empty.');
             return;
         }
+
         if (!isValidOtp(otp)) {
             toast.error('Invalid OTP. Please enter a 6-digit OTP.');
             return;
         }
 
         try {
-            const response = await axios.post(
-                `http://localhost:8080/user/verify-code`,
-                {
-                    userEmail: email,
-                    recoveryCode: otp,
-                }
-            );
+            const response = await axios.post(`http://localhost:8080/user/verify-code`, {
+                userEmail: email,
+                recoveryCode: otp,
+            });
 
             if (response.status === 200 && response.data.success) {
                 toast.success('OTP verified successfully! Redirecting...');
-                setTimeout(() => navigate('/PasswordChange'), 5000);
+                setTimeout(() => navigate('/PasswordChange'), 2000); // Redirect to password change page
             } else {
                 toast.error(response.data.message || 'Invalid OTP. Please try again.');
             }
@@ -54,34 +54,26 @@ export default function VerifyOTP() {
         }
     };
 
+    // Countdown timer logic for OTP expiration
     useEffect(() => {
-        if (otpSentTime) {
+        if (countdown > 0) {
             const timer = setInterval(() => {
-                const timeRemaining = otpSentTime + 180000 - Date.now(); // 3 minutes
-                if (timeRemaining <= 0) {
-                    clearInterval(timer);
-                    setCountdown(0);
-                    toast.error('OTP expired. Please request a new one.');
-                    setTimeout(() => navigate('/ForgotPassword'), 2000);
-                } else {
-                    setCountdown(Math.floor(timeRemaining / 1000));
-                }
+                setCountdown((prevCountdown) => prevCountdown - 1);
             }, 1000);
 
-            return () => clearInterval(timer);
+            return () => clearInterval(timer); // Cleanup interval on unmount
+        } else {
+            toast.error('OTP expired. Please request a new one.');
+            setTimeout(() => navigate('/ForgotPassword'), 2000); // Redirect to forgot password page
         }
-    }, [otpSentTime]);
-
-    useEffect(() => {
-        setOtpSentTime(Date.now());
-    }, []);
+    }, [countdown, navigate]);
 
     return (
         <div>
-            <Topbar />
-            <Navbar />
+            <Topbar/>
+            <Navbar/>
             <div className="container-fluid bg-breadcrumb">
-                <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+                <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
                     <h3 className="text-white display-3 mb-4">Password Reset</h3>
                     <ol className="breadcrumb justify-content-center mb-0">
                         <li className="breadcrumb-item"><a href="/">Home</a></li>
@@ -98,8 +90,12 @@ export default function VerifyOTP() {
                             <h4 className="text-center mb-4">Enter OTP</h4>
                             <form onSubmit={handleOtpSubmit}>
                                 <div className="mb-3">
-                                    <p className="text-dark">Enter OTP CODE</p>
-                                    {countdown > 0 && <p className="text-danger">Time remaining: {Math.floor(countdown / 60)}:{countdown % 60}</p>}
+                                    <p className="text-dark">Enter the 6-digit OTP sent to your email.</p>
+                                    {countdown > 0 && (
+                                        <p className="text-danger">
+                                            Time remaining: {Math.floor(countdown / 60)}:{countdown % 60}
+                                        </p>
+                                    )}
                                     <input
                                         type="text"
                                         className="form-control"
@@ -121,7 +117,7 @@ export default function VerifyOTP() {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer/>
             <ToastContainer />
         </div>
     );
