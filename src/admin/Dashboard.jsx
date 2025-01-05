@@ -8,6 +8,10 @@ export default function Dashboard() {
       <Sidebar/>
       <Nav/>
       <div class="container">
+        <div class="page-inner">
+
+
+
     </div>
   )
 }
