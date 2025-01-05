@@ -86,5 +86,6 @@ const deleteUser = async (userId) => {
     };
   
 // Promote user to Travel Guide
+const promoteToGuide = async (userId) => {
 
 
