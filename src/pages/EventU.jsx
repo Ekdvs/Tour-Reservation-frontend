@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventShowPage.css"; // Custom CSS file for styling
+import Topbar from "../compodent/Topbar";
 
 const EventShowPage = () => {
   const [events, setEvents] = useState([]);
@@ -22,6 +23,8 @@ const EventShowPage = () => {
   }, []);
 
   return (
+    <div>
+        <Topbar/>
     <div className="container mt-5">
       <h2 className="text-center mb-4">Upcoming Events</h2>
       <div className="row">
@@ -56,6 +59,7 @@ const EventShowPage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
