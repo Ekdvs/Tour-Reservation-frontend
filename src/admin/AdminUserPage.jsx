@@ -75,5 +75,6 @@ const searchUserByEmail = async () => {
     };
   
 // Delete user
-  
+const deleteUser = async (userId) => {
+
 
