@@ -53,6 +53,12 @@ export default function Dashboard() {
                       <p class="card-category">Subscribers</p>
                       <h4 class="card-title">1303</h4>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
 
 
 
