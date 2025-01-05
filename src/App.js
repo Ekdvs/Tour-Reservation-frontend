@@ -8,6 +8,8 @@ import VerifyOTP from './user/VerifyOTP';
 import ChangePassword from './user/ChangePassword';
 import Profile from './user/Profile';
 import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
 
 
 
@@ -24,7 +26,8 @@ function App() {
           <Route path="/VerifyOTP" element={<VerifyOTP/>} />
           <Route path="/PasswordChange" element={<ChangePassword/>} />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/new" element={<Home/>} />
+          <Route path="/About" element={<About/>} />
+          <Route path="/Services" element={<Services/>} />
 
         </Routes>
       </Router>
