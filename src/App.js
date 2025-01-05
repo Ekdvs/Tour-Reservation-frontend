@@ -7,7 +7,12 @@ import ForgotPassword from './user/ForgotPassword';
 import VerifyOTP from './user/VerifyOTP';
 import ChangePassword from './user/ChangePassword';
 import Profile from './user/Profile';
-import Home from './user/picture2';
+import Home from './pages/Home';
+import About from './pages/About';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import EventShowPage from './pages/EventU';
+
 
 
 function App() {
@@ -16,13 +21,17 @@ function App() {
      <Router>
         <Routes>
 
+          <Route path="/" element={<Home/>} />
           <Route path="/login" element={<SignIn/>} />
-          <Route path="/" element={<Register/>} />
+          <Route path="/Register" element={<Register/>} />
           <Route path="/ForgotPassword" element={<ForgotPassword/>} />
           <Route path="/VerifyOTP" element={<VerifyOTP/>} />
           <Route path="/PasswordChange" element={<ChangePassword/>} />
           <Route path="/Profile" element={<Profile/>} />
-          <Route path="/new" element={<Home/>} />
+          <Route path="/About" element={<About/>} />
+          <Route path="/Services" element={<Services/>} />
+          <Route path="/Contact" element={<Contact/>} />
+          <Route path="/EventShowPage" element={<EventShowPage/>} />
 
         </Routes>
       </Router>
