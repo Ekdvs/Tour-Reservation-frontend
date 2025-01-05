@@ -87,7 +87,7 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div class="col col-stats ms-3 ms-sm-0">
-
+                  <div class="numbers">
 
     </div>
   )
