@@ -33,6 +33,13 @@ export default function Dashboard() {
                     <div class="numbers">
                       <p class="card-category">Visitors</p>
                       <h4 class="card-title">1,294</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
 
 
 
