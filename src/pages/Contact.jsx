@@ -24,7 +24,10 @@ export default function Contact() {
                 <div class="mx-auto text-center mb-5" style={{ maxWidth: "900px" }}>
                     <h5 class="section-title px-3">Contact Us</h5>
                     <h1 class="mb-0">Contact For Any Query</h1>
-                </div>
+                    </div>
+                    <div class="row g-5 align-items-center">
+                    <div class="col-lg-4">
+                        
             <Footer/>
         </div>
     )
