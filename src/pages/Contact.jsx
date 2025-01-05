@@ -45,7 +45,10 @@ export default function Contact() {
                                 <p class="mb-0">info@example.com</p>
                             </div>
                         </div>
-                    </div></div>
+                            </div></div>
+                        <div class="col-lg-8">
+                        <h3 class="mb-2">Send us a message</h3>
+                        
             <Footer/>
         </div>
     )
