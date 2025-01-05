@@ -137,3 +137,5 @@ return () => {}; // No cleanup required anymore
       ) : (
 <Table striped bordered hover responsive>
     <thead>
+        <tr>
+              <th>#</th>
