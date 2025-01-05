@@ -27,6 +27,8 @@ const UserHistoryModal = ({ show, user, onClose }) => (
   </Modal>
 );
 
+const AdminUserPage = () => {
+
 
 
 
