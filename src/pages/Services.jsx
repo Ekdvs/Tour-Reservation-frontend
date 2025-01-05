@@ -10,6 +10,7 @@ export default function Services() {
             <Navbar />
             <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style={{ maxWidth: '900px' }}>
+                <h3 class="text-white display-3 mb-4">Our Services</h3>
                 
         <Footer/>
         </div>
