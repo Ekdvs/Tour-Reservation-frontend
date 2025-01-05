@@ -27,7 +27,10 @@ export default function Contact() {
                     </div>
                     <div class="row g-5 align-items-center">
                     <div class="col-lg-4">
-                        
+                        <div class="bg-white rounded p-4">
+                            <div class="text-center mb-4">
+                                <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
+                                
             <Footer/>
         </div>
     )
