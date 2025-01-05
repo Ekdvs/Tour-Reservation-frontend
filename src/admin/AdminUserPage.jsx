@@ -36,6 +36,7 @@ const AdminUserPage = () => {
     const [loading, setLoading] = useState(false);
 
 // Fetch users from the backend
+const fetchUsers = async () => {
 
 
 
