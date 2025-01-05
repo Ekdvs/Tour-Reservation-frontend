@@ -21,7 +21,10 @@ export default function Contact() {
         </div>
         <div class="container-fluid contact bg-light py-5">
             <div class="container py-5">
-                
+                <div class="mx-auto text-center mb-5" style={{ maxWidth: "900px" }}>
+                    <h5 class="section-title px-3">Contact Us</h5>
+                    <h1 class="mb-0">Contact For Any Query</h1>
+                </div>
             <Footer/>
         </div>
     )
