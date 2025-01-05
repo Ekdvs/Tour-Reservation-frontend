@@ -91,7 +91,10 @@ export default function Services() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
+                                </div>
+                                <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
+                                    
         <Footer/>
         </div>
     )
