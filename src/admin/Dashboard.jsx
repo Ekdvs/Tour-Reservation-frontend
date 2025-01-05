@@ -29,6 +29,7 @@ export default function Dashboard() {
                           <i class="fas fa-users"></i>
                       </div>
                     </div>
+                    <div class="col col-stats ms-3 ms-sm-0">
 
 
 
