@@ -29,6 +29,7 @@ const UserHistoryModal = ({ show, user, onClose }) => (
 
 const AdminUserPage = () => {
     const [users, setUsers] = useState([]);
+    const [searchEmail, setSearchEmail] = useState("");
 
 
 
