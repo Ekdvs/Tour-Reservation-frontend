@@ -10,3 +10,4 @@ const UserHistoryModal = ({ show, user, onClose }) => (
     </Modal.Header>
     <Modal.Body>
     {user ? (
+        <div>
