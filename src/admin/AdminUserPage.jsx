@@ -151,4 +151,5 @@ return () => {}; // No cleanup required anymore
             {/* Render only the search result if searchResult exists, otherwise render all users */}
             {(searchResult ? [searchResult] : users).map((user, index) => (
               <tr key={user.userId}>
+                <td>{index + 1}</td>
 
