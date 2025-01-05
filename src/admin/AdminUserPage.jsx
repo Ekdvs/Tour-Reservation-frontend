@@ -69,5 +69,10 @@ const searchUserByEmail = async () => {
     catch (error) {
         toast.error("Error during search");
         setSearchResult(null); // Reset if an error occurs
-      
+    } finally {
+        setLoading(false);
+      }
+    };
+  
+  
 
