@@ -87,7 +87,24 @@ export default function Dashboard() {
                     </div>
                   </div>
                   <div class="col col-stats ms-3 ms-sm-0">
-                  <div class="numbers">
+                    <div class="numbers">
+                          <p class="card-category">Order</p>
+                          <h4 class="card-title">576</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+
+
+
+
+
+
+
 
     </div>
   )
