@@ -217,6 +217,7 @@ export default function Dashboard() {
                   <thead class="thead-light">
                           <tr>
                           <th scope="col">Payment Number</th>
+                          <th scope="col" class="text-end">Date & Time</th>
 
 
 
