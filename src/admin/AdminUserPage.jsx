@@ -32,6 +32,7 @@ const AdminUserPage = () => {
     const [searchEmail, setSearchEmail] = useState("");
     const [searchResult, setSearchResult] = useState(null);
     const [showModal, setShowModal] = useState(false);
+    const [selectedUser, setSelectedUser] = useState(null);
 
 
 
