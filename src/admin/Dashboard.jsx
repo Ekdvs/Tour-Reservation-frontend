@@ -125,6 +125,10 @@ export default function Dashboard() {
                   <div class="chart-container" style={{ minHeight: '375px' }}>
                       <canvas id="statisticsChart"></canvas>
                     </div>
+                    <div id="myChartLegend"></div>
+                  </div>
+                </div>
+              </div>
 
 
 
