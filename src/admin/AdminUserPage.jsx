@@ -57,5 +57,7 @@ const searchUserByEmail = async () => {
         return;
       }
     setLoading(true);
-
+    try {
+        const response = await axios.get(`${API_BASE_URL}/user/getUserByEmail/${searchEmail}`);
+  
 
