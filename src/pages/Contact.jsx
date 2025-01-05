@@ -68,6 +68,12 @@ export default function Contact() {
                                         <input type="text" class="form-control border-0" id="subject" placeholder="Subject"/>
                                         <label for="subject">Subject</label>
                                     </div>
+                                    </div>
+                                    <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style={{ height: "160px" }}></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
                                 </div>
             <Footer/>
         </div>
