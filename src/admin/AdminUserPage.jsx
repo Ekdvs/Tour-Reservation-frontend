@@ -103,6 +103,7 @@ const promoteToGuide = async (userId) => {
       };
 
       useEffect(() => {
+        fetchUsers(); // Fetch users initially
 
 
 
