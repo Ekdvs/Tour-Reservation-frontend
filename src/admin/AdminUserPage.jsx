@@ -118,4 +118,9 @@ return () => {}; // No cleanup required anymore
       <Form.Control type="email" placeholder="Search user by email" value={searchEmail} onChange={(e) => setSearchEmail(e.target.value)}/>
       <Button variant="primary" onClick={searchUserByEmail}>Search</Button><br />
       </Form.Group>
+      {searchResult === null && searchEmail && (
+        <div className="mt-3">
+            <h5>No user found with that email address</h5>
+          </div>
+        )}
 
