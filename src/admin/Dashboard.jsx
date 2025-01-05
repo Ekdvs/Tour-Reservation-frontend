@@ -185,7 +185,7 @@ export default function Dashboard() {
               <div class="card-header">
               <div class="card-head-row card-tools-still-right">
               <div class="card-title">Transaction History</div>
-
+              <div class="card-tools">
 
 
 
