@@ -51,5 +51,6 @@ const fetchUsers = async () => {
     };
   
 // Search user by email
+const searchUserByEmail = async () => {
 
 
