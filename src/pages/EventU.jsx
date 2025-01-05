@@ -3,6 +3,7 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventShowPage.css"; // Custom CSS file for styling
 import Topbar from "../compodent/Topbar";
+import Navbar from "../compodent/Navbar";
 
 const EventShowPage = () => {
   const [events, setEvents] = useState([]);
@@ -25,6 +26,7 @@ const EventShowPage = () => {
   return (
     <div>
         <Topbar/>
+        <Navbar/>
     <div className="container mt-5">
       <h2 className="text-center mb-4">Upcoming Events</h2>
       <div className="row">
