@@ -116,5 +116,6 @@ return () => {}; // No cleanup required anymore
       <div className="mb-4 search-container">
       <Form.Group className="d-flex w-50">
       <Form.Control type="email" placeholder="Search user by email" value={searchEmail} onChange={(e) => setSearchEmail(e.target.value)}/>
-
+      <Button variant="primary" onClick={searchUserByEmail}>Search</Button><br />
+      </Form.Group>
 
