@@ -33,6 +33,7 @@ const AdminUserPage = () => {
     const [searchResult, setSearchResult] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [selectedUser, setSelectedUser] = useState(null);
+    const [loading, setLoading] = useState(false);
 
 
 
