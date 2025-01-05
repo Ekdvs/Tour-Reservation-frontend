@@ -39,8 +39,12 @@ export default function SignIn() {
       });
 
       if (response.data === 'Login successful') {
-        toast.success('Login successful!');
+        const{userEmail,role}=response.data.user;
         localStorage.setItem('userEmail', userEmail);
+        localStorage.setItem('role', role);
+
+
+        
         setTimeout(() => navigate('/Profile'), 2000);
       } else {
         toast.error(response.data);
