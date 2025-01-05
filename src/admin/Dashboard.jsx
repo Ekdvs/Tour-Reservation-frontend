@@ -216,6 +216,7 @@ export default function Dashboard() {
                   <table class="table align-items-center mb-0">
                   <thead class="thead-light">
                           <tr>
+                          <th scope="col">Payment Number</th>
 
 
 
