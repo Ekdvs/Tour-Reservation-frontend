@@ -37,7 +37,10 @@ export default function Contact() {
                                 <h4 class="text-primary">Mobile</h4>
                                 <p class="mb-0">+9471 897 4153</p>
                                 <p class="mb-0">+9477 603 2660</p>
-                            </div>
+                                    </div>
+                                    <div class="text-center">
+                                <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
+                                
             <Footer/>
         </div>
     )
