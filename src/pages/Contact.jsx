@@ -80,7 +80,18 @@ export default function Contact() {
                                 </div>
                             </div>
                         </form>
-                    </div>
+                        </div>
+                        <div class="col-12">
+                    <div className="rounded">
+                    <iframe
+                            className="rounded w-100"
+                            style={{ height: "450px", border: "0" }}
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15841.786123967167!2d79.9101437895392!3d6.956536388568587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25789f736ff2f%3A0x7b61e230dd11e6ec!2sKelaniya%2C%20Peliyagoda!5e0!3m2!1sen!2slk!4v1732291183089!5m2!1sen!2slk"
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            />
+                        </div>
             <Footer/>
         </div>
     )
