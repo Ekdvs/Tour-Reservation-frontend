@@ -30,7 +30,7 @@ const EventShowPage = () => {
         <Navbar/>
         <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
-          <h3 className="text-white display-3 mb-4">Password Reset</h3>
+          <h3 className="text-white display-3 mb-4">Upcoming Events</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
               <a href="/">Home</a>
@@ -38,7 +38,7 @@ const EventShowPage = () => {
             <li className="breadcrumb-item">
               <a href="/Contact">Pages</a>
             </li>
-            <li className="breadcrumb-item active text-white">Password Change</li>
+            <li className="breadcrumb-item active text-white">Upcoming Events</li>
           </ol>
         </div>
       </div>
