@@ -70,7 +70,14 @@ export default function Services() {
                                         <h5 class="mb-4">Event Management</h5>
                                         <p class="mb-0">Dolor sit amet consectetur adipisicing elit. Non alias eum, suscipit expedita corrupti officiis debitis possimus nam laudantium beatae quidem dolore consequuntur voluptate rem reiciendis, omnis sequi harum earum.
                                         </p>
+                                        </div>
+                                        <div class="service-icon p-4">
+                                        <i class="fa fa-cog fa-4x text-primary"></i>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         <Footer/>
         </div>
     )
