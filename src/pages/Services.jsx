@@ -7,7 +7,10 @@ export default function Services() {
     return (
         <div>
         <Topbar/>
-        <Navbar/>
+            <Navbar />
+            <div class="container-fluid bg-breadcrumb">
+            <div class="container text-center py-5" style={{ maxWidth: '900px' }}>
+                
         <Footer/>
         </div>
     )
