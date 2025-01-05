@@ -82,6 +82,11 @@ export default function Dashboard() {
               <div class="card-body">
                 <div class="row align-items-center">
                   <div class="col-icon">
+                    <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                          <i class="far fa-check-circle"></i>
+                    </div>
+                  </div>
+                  <div class="col col-stats ms-3 ms-sm-0">
 
 
     </div>
