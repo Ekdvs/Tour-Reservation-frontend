@@ -187,6 +187,16 @@ export default function Dashboard() {
               <div class="card-title">Transaction History</div>
               <div class="card-tools">
               <div class="dropdown">
+              <button
+                            class="btn btn-icon btn-clean me-0"
+                            type="button"
+                            id="dropdownMenuButton"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            <i class="fas fa-ellipsis-h"></i>
+                          </button>
 
 
 
