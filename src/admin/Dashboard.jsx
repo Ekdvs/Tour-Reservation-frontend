@@ -156,10 +156,15 @@ export default function Dashboard() {
                               >Something else here</a
                             >
                           </div>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="card-category">March 25 - April 02</div>
+                  </div>
 
 
 
-                          
+
 
 
 
