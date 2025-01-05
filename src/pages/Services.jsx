@@ -15,7 +15,14 @@ export default function Services() {
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="/Services">Pages</a></li>
                     <li class="breadcrumb-item active text-white">Services</li>
-                </ol>
+                    </ol>
+                    </div>
+        </div>
+       
+        <div class="container-fluid bg-light service py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style={{ maxWidth: '900px' }}>
+                    
         <Footer/>
         </div>
     )
