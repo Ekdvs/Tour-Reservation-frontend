@@ -59,5 +59,12 @@ const searchUserByEmail = async () => {
     setLoading(true);
     try {
         const response = await axios.get(`${API_BASE_URL}/user/getUserByEmail/${searchEmail}`);
-  
+        if (response.data) {
+            setSearchResult(response.data); // Set search result
+          } else {
+            setSearchResult(null); // No result found
+            toast.error("User not found");
+          }
+        } 
+        
 
