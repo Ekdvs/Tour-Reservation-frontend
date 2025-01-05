@@ -123,4 +123,11 @@ return () => {}; // No cleanup required anymore
             <h5>No user found with that email address</h5>
           </div>
         )}
+{searchResult && (
+          <div className="mt-3">
+            <h5>Search Result:</h5>
+            <p>{searchResult.firstName} {searchResult.lastName} - {searchResult.userEmail}</p>
+          </div>
+        )}
+      </div>
 
