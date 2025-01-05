@@ -162,6 +162,9 @@ export default function Dashboard() {
                     <div class="card-category">March 25 - April 02</div>
                   </div>
                   <div class="card-body pb-0">
+                  <div class="mb-4 mt-2">
+                      <h1>$4,578.58</h1>
+                  </div>
 
 
 
