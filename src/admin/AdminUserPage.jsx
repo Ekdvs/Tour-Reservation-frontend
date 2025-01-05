@@ -155,6 +155,7 @@ return () => {}; // No cleanup required anymore
                 <td>{user.firstName} {user.lastName}</td>
                 <td>{user.userEmail}</td>
                 <td>{user.userRole}</td>
+                <td>{user.dateRegistered}</td>
 
 
 
