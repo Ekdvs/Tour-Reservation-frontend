@@ -24,7 +24,13 @@ export default function Services() {
                 <div class="mx-auto text-center mb-5" style={{ maxWidth: '900px' }}>
                     <h5 class="section-title px-3">Searvices</h5>
                     <h1 class="mb-0">Our Services</h1>
-                </div>
+                    </div>
+                    <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="row g-4">
+                            <div class="col-12">
+                                <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
+                                    
         <Footer/>
         </div>
     )
