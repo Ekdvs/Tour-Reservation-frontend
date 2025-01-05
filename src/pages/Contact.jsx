@@ -74,7 +74,13 @@ export default function Contact() {
                                         <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style={{ height: "160px" }}></textarea>
                                         <label for="message">Message</label>
                                     </div>
+                                    </div>
+                                    <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
                                 </div>
+                            </div>
+                        </form>
+                    </div>
             <Footer/>
         </div>
     )
