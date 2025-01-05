@@ -94,7 +94,9 @@ export default function Services() {
                                 </div>
                                 <div class="col-12">
                                 <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
-                                    
+                                    <div class="service-icon p-4">
+                                        <i class="fa fa-hotel fa-4x text-primary"></i>
+                                    </div>
         <Footer/>
         </div>
     )
