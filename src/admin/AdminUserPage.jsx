@@ -160,6 +160,15 @@ return () => {}; // No cleanup required anymore
                 <Button variant="danger" size="sm" onClick={() => deleteUser(user.userId)}>
                     Delete
                   </Button>{" "}
+                  {user.userRole !== "travelGuide" && (
+                    <Button
+                      variant="warning"
+                      size="sm"
+                      onClick={() => promoteToGuide(user.userId)}
+                    >
+                      Promote to Guide
+                    </Button>
+                  )}{" "}
 
 
 
