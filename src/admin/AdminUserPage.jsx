@@ -179,6 +179,12 @@ return () => {}; // No cleanup required anymore
         </Table>
       )}
 
+<UserHistoryModal show={showModal} user={selectedUser} onClose={() => setShowModal(false)} />
+    </div>
+  );
+};
+
+export default AdminUserPage;
 
 
 
