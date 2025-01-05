@@ -33,7 +33,7 @@ function App() {
           <Route path="/Services" element={<Services/>} />
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/EventShowPage" element={<EventShowPage/>} />
-          <Route path="/EventManagement" element={<EventManagement/>} />
+         
 
         </Routes>
       </Router>
