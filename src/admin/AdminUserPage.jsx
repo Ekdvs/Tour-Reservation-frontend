@@ -76,5 +76,9 @@ const searchUserByEmail = async () => {
   
 // Delete user
 const deleteUser = async (userId) => {
-
+    try {
+        await axios.delete(`${API_BASE_URL}/user/delete/${userId}`);
+        toast.success("User deleted successfully");
+        fetchUsers(); // Refresh users after deleting
+  
 
