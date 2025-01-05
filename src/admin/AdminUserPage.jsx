@@ -139,3 +139,4 @@ return () => {}; // No cleanup required anymore
     <thead>
         <tr>
               <th>#</th>
+              <th>Name</th>
