@@ -41,5 +41,8 @@ const fetchUsers = async () => {
     try {
         const response = await axios.get(`${API_BASE_URL}/user/allUsers`);
         setUsers(response.data);
-
+    } 
+    catch (error) {
+        toast.error("Error fetching users");
+  
 
