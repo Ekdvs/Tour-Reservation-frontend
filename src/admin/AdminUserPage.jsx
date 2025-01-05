@@ -20,6 +20,12 @@ const UserHistoryModal = ({ show, user, onClose }) => (
       ) : (
         <p>No user selected</p>
       )}
+</Modal.Body>
+    <Modal.Footer>
+      <Button variant="secondary" onClick={onClose}>Close</Button>
+    </Modal.Footer>
+  </Modal>
+);
 
 
 
