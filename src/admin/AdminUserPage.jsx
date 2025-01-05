@@ -11,3 +11,4 @@ const UserHistoryModal = ({ show, user, onClose }) => (
     <Modal.Body>
     {user ? (
         <div>
+            <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
