@@ -37,15 +37,24 @@ export default function SignIn() {
         userEmail,
         password,
       });
+      
 
       if (response.data === 'Login successful') {
         const{userEmail,role}=response.data.user;
         localStorage.setItem('userEmail', userEmail);
-        localStorage.setItem('role', role);
+        localStorage.setItem('userRole', role);
 
+        if (role === 'user') {
+          toast.success('Login successful!');
+          setTimeout(() => navigate('/Profile'), 2000);
+        } else if (role === 'admin') {
+          toast.success('Login successful!');
+          setTimeout(() => navigate('/Dashbord'), 2000);
+        } else if (role === '') {
+          toast.success('Login successful!');
+          setTimeout(() => navigate('/Dashbord'), 2000);
+        }
 
-        
-        setTimeout(() => navigate('/Profile'), 2000);
       } else {
         toast.error(response.data);
       }
