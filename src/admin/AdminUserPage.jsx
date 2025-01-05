@@ -142,4 +142,5 @@ return () => {}; // No cleanup required anymore
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
+              <th>Date Registered</th>
 
