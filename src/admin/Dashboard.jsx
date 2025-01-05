@@ -22,6 +22,7 @@ export default function Dashboard() {
           <div class="row">
             <div class="col-sm-6 col-md-3">
               <div class="card card-stats card-round">
+                <div class="card-body">
 
 
     </div>
