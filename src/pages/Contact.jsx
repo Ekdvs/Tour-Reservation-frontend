@@ -31,7 +31,10 @@ export default function Contact() {
                             <div class="text-center mb-4">
                                 <i class="fa fa-map-marker-alt fa-3x text-primary"></i>
                                 <h4 class="text-primary"><address><p class="mb-0">123 Kandy Colombo Main Street, <br/> Kelaniya, Sri Lanka</p>
-                                </address></h4>
+                                    </address></h4>
+                                    <div class="text-center mb-4">
+                                <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
+                                
             <Footer/>
         </div>
     )
