@@ -176,18 +176,17 @@ export default function Services() {
               </div>
               <div class="col-12">
                 <div class="text-center">
-                  <a
+                  <button
                     class="btn btn-primary rounded-pill py-3 px-5 mt-2"
-                    href=""
                   >
                     Service More
-                  </a>
-                </div>
+                  </button>
               </div>
             </div>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
+    </div>
     );
 }
