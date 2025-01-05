@@ -16,7 +16,12 @@ export default function Contact() {
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="/Contact">Pages</a></li>
                     <li class="breadcrumb-item active text-white">Contact</li>
-                </ol>
+                    </ol>
+                    </div>
+        </div>
+        <div class="container-fluid contact bg-light py-5">
+            <div class="container py-5">
+                
             <Footer/>
         </div>
     )
