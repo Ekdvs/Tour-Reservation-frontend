@@ -1,6 +1,7 @@
 import React from 'react'
 import Sidebar from './Sidebar'
 import Nav from './Nav'
+import OnlineUsersCard from './OnlineUsersCard'
 
 export default function Dashboard() {
   return (
@@ -170,6 +171,10 @@ export default function Dashboard() {
                     </div>
                   </div>
                 </div>
+                <OnlineUsersCard/>
+              </div>
+            </div>
+            <div class="row">
 
 
 
