@@ -10,6 +10,7 @@ import Profile from './user/Profile';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
+import Contact from './pages/Contact';
 
 
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/Profile" element={<Profile/>} />
           <Route path="/About" element={<About/>} />
           <Route path="/Services" element={<Services/>} />
+          <Route path="/Contact" element={<Contact/>} />
 
         </Routes>
       </Router>
