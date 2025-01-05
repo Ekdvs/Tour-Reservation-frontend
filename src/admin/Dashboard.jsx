@@ -31,6 +31,8 @@ export default function Dashboard() {
                     </div>
                     <div class="col col-stats ms-3 ms-sm-0">
                     <div class="numbers">
+                      <p class="card-category">Visitors</p>
+                      <h4 class="card-title">1,294</h4>
 
 
 
