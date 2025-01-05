@@ -30,7 +30,9 @@ export default function Services() {
                         <div class="row g-4">
                             <div class="col-12">
                                 <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                                    
+                                    <div class="service-content text-end">
+                                        <h5 class="mb-4">WorldWide Tours</h5>
+                                        
         <Footer/>
         </div>
     )
