@@ -16,6 +16,10 @@ const UserHistoryModal = ({ show, user, onClose }) => (
             <p><strong>Role:</strong> {user.userRole}</p>
             <p><strong>Date Registered:</strong> {user.dateRegistered}</p>
             <p><strong>Last Login:</strong> {user.lastLogin}</p>
+        </div>
+      ) : (
+        <p>No user selected</p>
+      )}
 
 
 
