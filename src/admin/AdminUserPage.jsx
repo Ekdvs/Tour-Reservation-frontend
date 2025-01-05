@@ -154,3 +154,10 @@ return () => {}; // No cleanup required anymore
                 <td>{index + 1}</td>
                 <td>{user.firstName} {user.lastName}</td>
                 <td>{user.userEmail}</td>
+                <td>{user.userRole}</td>
+
+
+
+
+
+
