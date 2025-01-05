@@ -44,5 +44,10 @@ const fetchUsers = async () => {
     } 
     catch (error) {
         toast.error("Error fetching users");
+    } 
+    finally {
+        setLoading(false);
+      }
+    };
   
 
