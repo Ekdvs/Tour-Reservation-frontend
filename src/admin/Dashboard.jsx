@@ -220,6 +220,10 @@ export default function Dashboard() {
                           <th scope="col" class="text-end">Date & Time</th>
                           <th scope="col" class="text-end">Amount</th>
                           <th scope="col" class="text-end">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
 
 
 
