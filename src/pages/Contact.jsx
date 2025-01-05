@@ -40,7 +40,12 @@ export default function Contact() {
                                     </div>
                                     <div class="text-center">
                                 <i class="fa fa-envelope-open fa-3x text-primary mb-3"></i>
-                                
+                                <h4 class="text-primary">Email</h4>
+                                <p class="mb-0">info@example.com</p>
+                                <p class="mb-0">info@example.com</p>
+                            </div>
+                        </div>
+                    </div></div>
             <Footer/>
         </div>
     )
