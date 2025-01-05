@@ -7,7 +7,8 @@ import ForgotPassword from './user/ForgotPassword';
 import VerifyOTP from './user/VerifyOTP';
 import ChangePassword from './user/ChangePassword';
 import Profile from './user/Profile';
-import Home from './user/picture2';
+import Home from './pages/Home';
+
 
 
 function App() {
