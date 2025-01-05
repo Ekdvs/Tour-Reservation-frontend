@@ -34,6 +34,8 @@ export default function Contact() {
                                     </address></h4>
                                     <div class="text-center mb-4">
                                 <i class="fa fa-phone-alt fa-3x text-primary mb-3"></i>
+                                <h4 class="text-primary">Mobile</h4>
+                                <p class="mb-0">+9471 897 4153</p>
                                 
             <Footer/>
         </div>
