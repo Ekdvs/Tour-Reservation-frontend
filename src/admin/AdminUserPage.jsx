@@ -169,6 +169,16 @@ return () => {}; // No cleanup required anymore
                       Promote to Guide
                     </Button>
                   )}{" "}
+<Button variant="info" size="sm" onClick={() => handleViewHistory(user)}>
+                    View History
+                  </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      )}
+
 
 
 
