@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./EventShowPage.css"; // Custom CSS file for styling
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
+import Footer from "../compodent/Footer";
 
 const EventShowPage = () => {
   const [events, setEvents] = useState([]);
@@ -62,6 +63,7 @@ const EventShowPage = () => {
         ))}
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };
