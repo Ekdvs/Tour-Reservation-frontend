@@ -68,7 +68,7 @@ export default function Register() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8080/user/register', {
+      const response = await axios.post('http://localhost:8080/user/adduser', {
         firstName,
         lastName,
         userEmail,
