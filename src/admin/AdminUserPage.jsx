@@ -153,3 +153,4 @@ return () => {}; // No cleanup required anymore
               <tr key={user.userId}>
                 <td>{index + 1}</td>
                 <td>{user.firstName} {user.lastName}</td>
+                <td>{user.userEmail}</td>
