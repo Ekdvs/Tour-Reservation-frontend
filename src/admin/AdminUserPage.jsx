@@ -74,5 +74,6 @@ const searchUserByEmail = async () => {
       }
     };
   
+// Delete user
   
 
