@@ -40,5 +40,6 @@ const fetchUsers = async () => {
     setLoading(true);
     try {
         const response = await axios.get(`${API_BASE_URL}/user/allUsers`);
+        setUsers(response.data);
 
 
