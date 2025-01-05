@@ -102,6 +102,9 @@ export default function Dashboard() {
             <div class="card card-round">
               <div class="card-header">
                 <div class="card-head-row">
+                <div class="card-title">
+                  User Statistics
+                </div>
 
 
 
