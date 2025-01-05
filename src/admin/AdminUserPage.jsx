@@ -97,5 +97,12 @@ const promoteToGuide = async (userId) => {
       }
     };
 
+    const handleViewHistory = (user) => {
+        setSelectedUser(user);
+        setShowModal(true);
+      };
 
+      
+
+      
 
