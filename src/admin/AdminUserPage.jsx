@@ -135,4 +135,5 @@ return () => {}; // No cleanup required anymore
 {loading ? (
         <Spinner animation="border" className="d-block mx-auto" />
       ) : (
+<Table striped bordered hover responsive>
 
