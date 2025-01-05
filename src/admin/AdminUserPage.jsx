@@ -152,4 +152,4 @@ return () => {}; // No cleanup required anymore
             {(searchResult ? [searchResult] : users).map((user, index) => (
               <tr key={user.userId}>
                 <td>{index + 1}</td>
-
+                <td>{user.firstName} {user.lastName}</td>
