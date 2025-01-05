@@ -96,7 +96,10 @@ export default function Services() {
                                 <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 ps-0">
                                     <div class="service-icon p-4">
                                         <i class="fa fa-hotel fa-4x text-primary"></i>
-                                    </div>
+                                        </div>
+                                        <div class="service-content">
+                                        <h5 class="mb-4">Hotel Reservation</h5>
+                                        
         <Footer/>
         </div>
     )
