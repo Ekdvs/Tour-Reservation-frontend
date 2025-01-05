@@ -105,6 +105,9 @@ const promoteToGuide = async (userId) => {
       useEffect(() => {
         fetchUsers(); // Fetch users initially
 // Remove auto-refresh interval
+return () => {}; // No cleanup required anymore
+  }, []);
+
 
 
 
