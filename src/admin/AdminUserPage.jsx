@@ -92,5 +92,10 @@ const promoteToGuide = async (userId) => {
         toast.success("User promoted to Travel Guide");
         fetchUsers(); // Refresh users after promotion
       }
-      
+    catch (error) {
+        toast.error("Error promoting user");
+      }
+    };
+
+
 
