@@ -8,4 +8,4 @@ const UserHistoryModal = ({ show, user, onClose }) => (
 <Modal.Header closeButton>
       <Modal.Title>User History</Modal.Title>
     </Modal.Header>
-
+    <Modal.Body>
