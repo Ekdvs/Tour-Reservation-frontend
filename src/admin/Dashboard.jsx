@@ -18,6 +18,8 @@ export default function Dashboard() {
                 <a href="/" class="btn btn-label-info btn-round me-2">Manage</a>
                 <a href="/" class="btn btn-primary btn-round">Add Travel Guide</a>
             </div>
+          </div>
+          <div class="row">
 
 
     </div>
