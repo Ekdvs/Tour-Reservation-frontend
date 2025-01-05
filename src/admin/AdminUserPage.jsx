@@ -50,4 +50,6 @@ const fetchUsers = async () => {
       }
     };
   
+// Search user by email
+
 
