@@ -7,7 +7,7 @@ export default function Dashboard() {
     <div>
       <Sidebar/>
       <Nav/>
-
+      <div class="container">
     </div>
   )
 }
