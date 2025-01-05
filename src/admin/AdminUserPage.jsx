@@ -87,5 +87,10 @@ const deleteUser = async (userId) => {
   
 // Promote user to Travel Guide
 const promoteToGuide = async (userId) => {
-
+    try {
+        await axios.put(`${API_BASE_URL}/user/travelgudie/${userId}`, { userRole: "travelGuide" });
+        toast.success("User promoted to Travel Guide");
+        fetchUsers(); // Refresh users after promotion
+      }
+      
 
