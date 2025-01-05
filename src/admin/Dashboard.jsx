@@ -219,6 +219,7 @@ export default function Dashboard() {
                           <th scope="col">Payment Number</th>
                           <th scope="col" class="text-end">Date & Time</th>
                           <th scope="col" class="text-end">Amount</th>
+                          <th scope="col" class="text-end">Status</th>
 
 
 
