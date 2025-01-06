@@ -5,6 +5,7 @@ import OnlineUsersCard from './OnlineUsersCard'
 import NewCustomers from './NewCustomers'
 
 
+
 export default function Dashboard() {
   return (
     <div>
@@ -337,13 +338,6 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
-    </div>
-  )
-}
-
-
-
-
     </div>
   )
 }
