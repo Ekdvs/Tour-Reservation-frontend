@@ -288,4 +288,35 @@ const handleEditEvent = (event) => {
         </button>
       </form>
 
+ {/* Event List */}
+ <h2 className="mt-4">Event List</h2>
+      <ul className="list-group">
+        {events.map((event) => (
+          <li key={event.eventId} className="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+              <h5>{event.eventName}</h5>
+              <p>{event.description}</p>
+            </div>
+            <div className="d-flex">
+              <button
+                className="btn btn-warning me-2 w-100"
+                onClick={() => handleEditEvent(event)}
+              >
+                Edit
+              </button>
+              <button
+                className="btn btn-danger w-100"
+                onClick={() => handleDeleteEvent(event.eventId)}
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default EventManagement;
 
