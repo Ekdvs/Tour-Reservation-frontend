@@ -42,3 +42,31 @@ const EventManagement = () => {
     }
   };
 
+ // Add Event
+ const handleAddEvent = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("event", JSON.stringify(eventForm));
+    formData.append("imageFile", eventImage);
+
+    try {
+      await axios.post("http://localhost:8080/event/addEvent", formData);
+      fetchEvents();
+      toast.success("Event added successfully!");
+      setEventForm({
+        eventName: "",
+        eventDate: "",
+        eventTime: "",
+        eventVenue: "",
+        eventOrganizer: "",
+        description: "",
+        oneTicketPrice: 0,
+        eventType: "",
+        eventIsFor: "",
+        numOfTickets: 0,
+      }); // Clear the form after adding an event
+    } catch (error) {
+      toast.error("Error adding event!");
+    }
+  };
+
