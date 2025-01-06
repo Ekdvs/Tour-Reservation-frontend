@@ -57,6 +57,11 @@ export default function Nav() {
                   </li>
                 <li>
                 <div className="message-notif-scroll scrollbar-outer">
+                <div className="notif-center">
+                      <a href="#">
+                        <div className="notif-img">
+                          <img src="assets/img/jm_denis.jpg" alt="Img Profile" />
+                        </div>
 
 
 
