@@ -63,7 +63,7 @@ export default function Nav() {
                           <img src="assets/img/jm_denis.jpg" alt="Img Profile" />
                         </div>
                         <div className="notif-content">
-
+                        <span className="subject">Jimmy Denis</span>
 
 
 
