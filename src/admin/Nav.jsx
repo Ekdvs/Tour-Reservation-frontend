@@ -222,6 +222,7 @@ export default function Nav() {
                       </a>
                       <a className="col-6 col-md-4 p-0" href="#">
                       <div className="quick-actions-item">
+                      <div className="avatar-item bg-primary rounded-circle">
 
 
 
