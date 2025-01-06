@@ -243,10 +243,9 @@ export default function Nav() {
             </li>
 
             <li className="nav-item topbar-user dropdown hidden-caret">
-              <a className="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+              <a className ="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                 <div className="avatar-sm">
                   <img src="assets/img/profile.jpg" alt="..." className="avatar-img rounded-circle" />
-                </div>
                 </div>
                 <span className="profile-username">
                   <span className="op-7">Hi,</span>
@@ -286,7 +285,7 @@ export default function Nav() {
             </li>
           </ul>
         </div>
-      </nav>  
+        </nav>  
     </div>
   )
 }
