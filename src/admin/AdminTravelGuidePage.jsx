@@ -97,12 +97,12 @@ export default function AdminUserPage() {
        fetchTravelGuides();
       }, []);
     return (
-    <div classNameName="container mt-4">
+    <div className="container mt-4">
         <ToastContainer/>
-        <h2 classNameName="text-center">Admin Travel Guide Management</h2>
+        <h2 className="text-center">Admin Travel Guide Management</h2>
         <br />
-      <div classNameName="mb-4 search-container">
-      <Form.Group classNameName="d-flex w-50">
+      <div className="mb-4 search-container">
+      <Form.Group className="d-flex w-50">
       <Form.Control
             type="email"
             placeholder="Search travel guide by email"
@@ -112,12 +112,12 @@ export default function AdminUserPage() {
         <Button variant="primary" onClick={searchTravelGuideByEmail}>Search</Button>
         </Form.Group>
         {searchResult === null && searchEmail && (
-            <div classNameName="mt-3">
+            <div className="mt-3">
             <h5>No travel guide found with that email address</h5>
           </div>
         )}
         {searchResult && (
-          <div classNameName="mt-3">
+          <div className="mt-3">
             <h5>Search Result:</h5>
             <p>
               {searchResult.firstName} {searchResult.lastName} - {searchResult.userEmail}
@@ -128,7 +128,7 @@ export default function AdminUserPage() {
 
 
 {loading ? (
-    <Spinner animation="border" classNameName="d-block mx-auto" />
+    <Spinner animation="border" className="d-block mx-auto" />
   ) : (
     <Table striped bordered hover responsive>
         <thead>
@@ -147,7 +147,7 @@ export default function AdminUserPage() {
                 <td>{guide.firstName} {guide.lastName}</td>
                 <td>{guide.userEmail}</td>
                 <td>{guide.dateRegistered}</td>
-                <td classNameName="d-flex justify-content-center">
+                <td className="d-flex justify-content-center">
                 <Button variant="danger" size="sm" onClick={() => deleteTravelGuide(guide.userId)}>Delete</Button>
                 {" "}
                 <Button variant="info" size="sm" onClick={() => handleViewHistory(guide)}>View History</Button>

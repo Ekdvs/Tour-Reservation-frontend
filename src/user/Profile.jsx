@@ -117,49 +117,49 @@ export default function Profile() {
       <Topbar />
       <Navbar />
       
-      <div classNameName="container-fluid bg-breadcrumb">
-        <div classNameName="container text-center py-5" style={{ maxWidth: "900px" }}>
-          <h3 classNameName="text-white display-3 mb-4">My Profile</h3>
-          <ol classNameName="breadcrumb justify-content-center mb-0">
-            <li classNameName="breadcrumb-item "><a href="/">Home</a></li>
-            <li classNameName="breadcrumb-item"><a href="/Contact">Pages</a></li>
-            <li classNameName="breadcrumb-item active text-white">My Profile</li>
+      <div className="container-fluid bg-breadcrumb">
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+          <h3 className="text-white display-3 mb-4">My Profile</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item "><a href="/">Home</a></li>
+            <li className="breadcrumb-item"><a href="/Contact">Pages</a></li>
+            <li className="breadcrumb-item active text-white">My Profile</li>
           </ol>
         </div>
       </div>
 
-      <div classNameName="container py-5">
-        <h1 classNameName="my-4 text-center">Profile</h1>
+      <div className="container py-5">
+        <h1 className="my-4 text-center">Profile</h1>
 
-        <div classNameName="card shadow-lg">
-          <div classNameName="card-body">
-            <div classNameName="d-flex justify-content-between align-items-center mb-3">
+        <div className="card shadow-lg">
+          <div className="card-body">
+            <div className="d-flex justify-content-between align-items-center mb-3">
               <h2>Basic Info</h2>
               {!isEditing ? (
-                <button classNameName="btn btn-outline-primary" onClick={() => setIsEditing(true)}>
+                <button className="btn btn-outline-primary" onClick={() => setIsEditing(true)}>
                   Edit
                 </button>
               ) : (
-                <button classNameName="btn btn-outline-success" onClick={handleSave}>
+                <button className="btn btn-outline-success" onClick={handleSave}>
                   Save
                 </button>
               )}
             </div>
               {/* Profile Picture Section */}
-            <div classNameName="mb-3 row">
-              <label classNameName="col-sm-4 col-form-label"></label>
-              <div classNameName="col-sm-6">
+            <div className="mb-3 row">
+              <label className="col-sm-4 col-form-label"></label>
+              <div className="col-sm-6">
                 {!isEditing ? (
                   <img
                     src={profileData.profilePicture || "../img/profile.jpeg"} // Placeholder image
                     alt="Profile"
                     style={{ width: "150px", height: "150px", objectFit: "cover" }}
-                    classNameName="img-thumbnail"
+                    className="img-thumbnail"
                   />
                 ) : (
                   <input
                     type="file"
-                    classNameName="form-control"
+                    className="form-control"
                     onChange={handleFileChange}
                   />
                 )}
@@ -167,15 +167,15 @@ export default function Profile() {
             </div>
             {/* Basic Info Fields */}
             {["firstName", "lastName", "phoneNumber", "title"].map((field) => (
-              <div classNameName="mb-3 row" key={field}>
-                <label classNameName="col-sm-4 col-form-label text-capitalize">{field}:</label>
-                <div classNameName="col-sm-6">
+              <div className="mb-3 row" key={field}>
+                <label className="col-sm-4 col-form-label text-capitalize">{field}:</label>
+                <div className="col-sm-6">
                   {!isEditing ? (
-                    <p classNameName="form-control-plaintext">{profileData[field] || "Not Set"}</p>
+                    <p className="form-control-plaintext">{profileData[field] || "Not Set"}</p>
                   ) : (
                     <input
                       type="text"
-                      classNameName="form-control"
+                      className="form-control"
                       name={field}
                       value={formData[field]}
                       onChange={handleChange}
@@ -186,14 +186,14 @@ export default function Profile() {
             ))}
 
             {/* Gender and Country Select */}
-            <div classNameName="mb-3 row">
-              <label classNameName="col-sm-4 col-form-label">Gender:</label>
-              <div classNameName="col-sm-6">
+            <div className="mb-3 row">
+              <label className="col-sm-4 col-form-label">Gender:</label>
+              <div className="col-sm-6">
                 {!isEditing ? (
-                  <p classNameName="form-control-plaintext">{profileData.gender || "Not Set"}</p>
+                  <p className="form-control-plaintext">{profileData.gender || "Not Set"}</p>
                 ) : (
                   <select
-                    classNameName="form-control"
+                    className="form-control"
                     name="gender"
                     value={formData.gender}
                     onChange={handleChange}
@@ -211,14 +211,14 @@ export default function Profile() {
               </div>
             </div>
 
-            <div classNameName="mb-3 row">
-              <label classNameName="col-sm-4 col-form-label">Country:</label>
-              <div classNameName="col-sm-6">
+            <div className="mb-3 row">
+              <label className="col-sm-4 col-form-label">Country:</label>
+              <div className="col-sm-6">
                 {!isEditing ? (
-                  <p classNameName="form-control-plaintext">{profileData.country || "Not Set"}</p>
+                  <p className="form-control-plaintext">{profileData.country || "Not Set"}</p>
                 ) : (
                   <select
-                    classNameName="form-control"
+                    className="form-control"
                     name="country"
                     value={formData.country}
                     onChange={handleChange}
@@ -239,7 +239,7 @@ export default function Profile() {
 
             
 
-            <button classNameName="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
+            <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
               Change Password
             </button>
           </div>

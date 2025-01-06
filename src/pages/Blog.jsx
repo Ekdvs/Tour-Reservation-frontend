@@ -31,7 +31,7 @@ export default function Blog() {
                         <div className="blog-item">
                             <div className="blog-img">
                                 <div className="blog-img-inner">
-                                    <img classNameName="imgluid w-100 rounded-top" src="img/blog-1.jpg" alt="Blog 1"/>
+                                    <img className="imgluid w-100 rounded-top" src="img/blog-1.jpg" alt="Blog 1"/>
                                     <div className="blog-icon">
                                         <button className="my-auto" style={{ background: 'none', border: 'none', padding: 0 }}><i className="fas fa-link fa-2x text-white"></i></button>
                                     </div>

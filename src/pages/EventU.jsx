@@ -28,35 +28,35 @@ const EventShowPage = () => {
     <div>
         <Topbar/>
         <Navbar/>
-        <div classNameName="container-fluid bg-breadcrumb">
-        <div classNameName="container text-center py-5" style={{ maxWidth: '900px' }}>
-          <h3 classNameName="text-white display-3 mb-4">Upcoming Events</h3>
-          <ol classNameName="breadcrumb justify-content-center mb-0">
-            <li classNameName="breadcrumb-item">
+        <div className="container-fluid bg-breadcrumb">
+        <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
+          <h3 className="text-white display-3 mb-4">Upcoming Events</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item">
               <a href="/">Home</a>
             </li>
-            <li classNameName="breadcrumb-item">
+            <li className="breadcrumb-item">
               <a href="/Contact">Pages</a>
             </li>
-            <li classNameName="breadcrumb-item active text-white">Upcoming Events</li>
+            <li className="breadcrumb-item active text-white">Upcoming Events</li>
           </ol>
         </div>
       </div>
-    <div classNameName="container mt-5">
-      <h2 classNameName="text-center mb-4">Upcoming Events</h2>
-      <div classNameName="row">
+    <div className="container mt-5">
+      <h2 className="text-center mb-4">Upcoming Events</h2>
+      <div className="row">
         {events.map((event) => (
-          <div key={event.eventId} classNameName="col-md-4 mb-4">
-            <div classNameName="card shadow-lg rounded-lg event-card">
+          <div key={event.eventId} className="col-md-4 mb-4">
+            <div className="card shadow-lg rounded-lg event-card">
               {/* Correct way to display the base64 image */}
               <img 
                 src={`data:${event.contentType};base64,${event.imageData}`} 
                 alt="event" 
-                classNameName="card-img-top" 
+                className="card-img-top" 
               />
-              <div classNameName="card-body">
-                <h5 classNameName="card-title event-title">{event.eventName}</h5>
-                <p classNameName="card-text event-description">
+              <div className="card-body">
+                <h5 className="card-title event-title">{event.eventName}</h5>
+                <p className="card-text event-description">
                   {event.description}
                 </p>
                 <p>
@@ -67,7 +67,7 @@ const EventShowPage = () => {
                 </p>
                 <a
                   href={`/book/${event.eventId}`}
-                  classNameName="btn btn-primary btn-lg w-100"
+                  className="btn btn-primary btn-lg w-100"
                 >
                   Book Tickets
                 </a>

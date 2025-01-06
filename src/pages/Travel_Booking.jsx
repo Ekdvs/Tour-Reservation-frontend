@@ -14,13 +14,13 @@ export default function Travel_Booking() {
         <div>
             <Topbar/>
             <Navbar/>
-            <div classNameName="container-fluid bg-breadcrumb">
-            <div classNameName="container text-center py-5" style={{ maxWidth: "900px" }}>
-                <h3 classNameName="text-white display-3 mb-4">Online Booking</h3>
-                <ol classNameName="breadcrumb justify-content-center mb-0">
-                    <li classNameName="breadcrumb-item"><a href="/">Home</a></li>
-                    <li classNameName="breadcrumb-item"><a href="/">Pages</a></li>
-                    <li classNameName="breadcrumb-item active text-white">Online Booking</li>
+            <div className="container-fluid bg-breadcrumb">
+            <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+                <h3 className="text-white display-3 mb-4">Online Booking</h3>
+                <ol className="breadcrumb justify-content-center mb-0">
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                    <li className="breadcrumb-item"><a href="/">Pages</a></li>
+                    <li className="breadcrumb-item active text-white">Online Booking</li>
                 </ol>
             </div>
             </div>
@@ -96,8 +96,8 @@ export default function Travel_Booking() {
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
-                                <div classNameName="col-12">
-                                    <button classNameName="btn btn-primary text-white w-100 py-3" type="submit">
+                                <div className="col-12">
+                                    <button className="btn btn-primary text-white w-100 py-3" type="submit">
                                     Payment Now
                                     </button>
                                 </div>

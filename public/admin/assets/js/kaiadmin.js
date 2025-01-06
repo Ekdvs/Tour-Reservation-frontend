@@ -164,7 +164,7 @@ $(document).ready(function(){
 		{
 			var subject = $('.quick-sidebar'); 
 
-			if(e.target.classNameName != subject.attr('className') && !subject.has(e.target).length)
+			if(e.target.className != subject.attr('className') && !subject.has(e.target).length)
 			{
 				$('html').removeclassName('quick_sidebar_open');
 				$('.quick-sidebar-toggler').removeclassName('toggled');
