@@ -126,6 +126,8 @@ export default function Nav() {
               <div className="dropdown-title">
                     You have 4 new notifications
                   </div>
+                  </li>
+                <li>
 
 
 
