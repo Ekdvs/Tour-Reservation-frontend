@@ -169,6 +169,13 @@ export default function Nav() {
                     </div>
                   </div>
                 </li>
+                <li>
+                  <a className="see-all" href="javascript:void(0);">
+                    See all notifications<i className="fa fa-angle-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
 
 
 
