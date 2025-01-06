@@ -118,6 +118,26 @@ const handleAddPlace = () => {
     setIsAddingPlace(true);
   };
 
+  return (
+    <div className="container mt-5">
+      <ToastContainer />
+      <h3>{editingPlace ? 'Edit Travel Place' : isAddingPlace ? 'Add New Place' : 'All Travel Places'}</h3>
+
+      {/* Form for adding/updating a place */}
+      {(editingPlace || isAddingPlace) && (
+        <form onSubmit={handleSubmit} className="mt-4" encType="multipart/form-data">
+          <div className="mb-3">
+            <label htmlFor="placeName" className="form-label">Place Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="placeName"
+              value={placeName}
+              onChange={(e) => setPlaceName(e.target.value)}
+              required
+              disabled={!!editingPlace}
+            />
+          </div>
 
 
 
