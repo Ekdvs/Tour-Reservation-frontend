@@ -228,6 +228,8 @@ export default function Nav() {
                           <span className="text">Invoice</span>
                         </div>
                       </a>
+                      <a className="col-6 col-md-4 p-0" href="#">
+                        <div className="quick-actions-item">
 
 
 
