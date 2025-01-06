@@ -190,6 +190,9 @@ export default function Nav() {
                 <div className="row m-0">
                 <a className="col-6 col-md-4 p-0" href="#">
                         <div className="quick-actions-item">
+                        <div className="avatar-item bg-danger rounded-circle">
+                            <i className="far fa-calendar-alt"></i>
+                          </div>
 
 
       
