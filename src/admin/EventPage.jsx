@@ -283,4 +283,9 @@ const handleEditEvent = (event) => {
           />
         </div>
 
+        <button type="submit" className="btn btn-success w-100">
+          {editEvent ? "Update Event" : "Add Event"}
+        </button>
+      </form>
+
 
