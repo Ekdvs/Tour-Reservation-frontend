@@ -683,7 +683,7 @@ body {
         float: left;
         font-size: 16px;
         line-height: 30px; }
-        .sidebar .nav > .nav-item a i[class^="flaticon-"], .sidebar[data-background-color="white"] .nav > .nav-item a i[class^="flaticon-"] {
+        .sidebar .nav > .nav-item a i[className^="flaticon-"], .sidebar[data-background-color="white"] .nav > .nav-item a i[className^="flaticon-"] {
           font-size: 20px; }
       .sidebar .nav > .nav-item a p, .sidebar[data-background-color="white"] .nav > .nav-item a p {
         font-size: 1rem;
@@ -1029,7 +1029,7 @@ body {
       .sidebar_minimize .sidebar .sidebar-wrapper .user {
         padding-left: 0px;
         padding-right: 0px; }
-        .sidebar_minimize .sidebar .sidebar-wrapper .user [class^="avatar-"] {
+        .sidebar_minimize .sidebar .sidebar-wrapper .user [className^="avatar-"] {
           float: none !important; }
         .sidebar_minimize .sidebar .sidebar-wrapper .user .info {
           display: none; }
@@ -1086,7 +1086,7 @@ body {
       .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user {
         padding-left: 15px;
         padding-right: 15px; }
-        .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user [class^="avatar-"] {
+        .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user [className^="avatar-"] {
           float: left !important; }
         .sidebar_minimize.sidebar_minimize_hover .sidebar .sidebar-wrapper .user .info {
           display: block; }
@@ -2335,9 +2335,9 @@ label {
         font-size: 22px !important; }
   .card-profile .user-stats {
     margin-bottom: 10px; }
-    .card-profile .user-stats [class^="col"] {
+    .card-profile .user-stats [className^="col"] {
       border-right: 1px solid #ebebeb; }
-    .card-profile .user-stats [class^="col"]:last-child {
+    .card-profile .user-stats [className^="col"]:last-child {
       border-right: 0px; }
     .card-profile .user-stats .number {
       font-weight: 400;
@@ -2378,14 +2378,14 @@ label {
       padding-left: 0px !important;
       padding-top: 0px !important;
       padding-right: 0px !important; }
-  .row-card-no-pd [class*=col] .card:before {
+  .row-card-no-pd [className*=col] .card:before {
     position: absolute;
     height: calc(100%);
     width: 1px;
     background: #eee;
     content: '';
     right: -15px; }
-  .row-card-no-pd [class*=col]:last-child .card:before {
+  .row-card-no-pd [className*=col]:last-child .card:before {
     width: 0px; }
 
 /*     Accordion     */
@@ -2455,7 +2455,7 @@ label {
 .gutters-0 {
   margin-right: 0;
   margin-left: 0; }
-  .gutters-0 > .col, .gutters-0 > [class*="col-"] {
+  .gutters-0 > .col, .gutters-0 > [className*="col-"] {
     padding-right: 0;
     padding-left: 0; }
   .gutters-0 .card {
@@ -2464,7 +2464,7 @@ label {
 .gutters-xs {
   margin-right: -0.25rem;
   margin-left: -0.25rem; }
-  .gutters-xs > .col, .gutters-xs > [class*="col-"] {
+  .gutters-xs > .col, .gutters-xs > [className*="col-"] {
     padding-right: 0.25rem;
     padding-left: 0.25rem; }
   .gutters-xs .card {
@@ -2473,7 +2473,7 @@ label {
 .gutters-sm {
   margin-right: -0.5rem;
   margin-left: -0.5rem; }
-  .gutters-sm > .col, .gutters-sm > [class*="col-"] {
+  .gutters-sm > .col, .gutters-sm > [className*="col-"] {
     padding-right: 0.5rem;
     padding-left: 0.5rem; }
   .gutters-sm .card {
@@ -2482,7 +2482,7 @@ label {
 .gutters-lg {
   margin-right: -1rem;
   margin-left: -1rem; }
-  .gutters-lg > .col, .gutters-lg > [class*="col-"] {
+  .gutters-lg > .col, .gutters-lg > [className*="col-"] {
     padding-right: 1rem;
     padding-left: 1rem; }
   .gutters-lg .card {
@@ -2491,7 +2491,7 @@ label {
 .gutters-xl {
   margin-right: -1.5rem;
   margin-left: -1.5rem; }
-  .gutters-xl > .col, .gutters-xl > [class*="col-"] {
+  .gutters-xl > .col, .gutters-xl > [className*="col-"] {
     padding-right: 1.5rem;
     padding-left: 1.5rem; }
   .gutters-xl .card {
@@ -2911,7 +2911,7 @@ label {
   font-size: 1rem; }
   .input-group-text i.la {
     font-size: 21px; }
-  .input-group-text i[class*="flaticon"] {
+  .input-group-text i[className*="flaticon"] {
     font-size: 17px; }
 
 /*    Input Icon */
@@ -3194,30 +3194,30 @@ label.error {
 .hidden-caret .dropdown-toggle::after {
   display: none !important; }
 
-.navbar[class*="bg-"] {
+.navbar[className*="bg-"] {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
   border-left: 1px solid rgba(255, 255, 255, 0.1) !important; }
-  .navbar[class*="bg-"] .navbar-brand {
+  .navbar[className*="bg-"] .navbar-brand {
     color: #ffffff; }
-  .navbar[class*="bg-"] .navbar-toggler-icon {
+  .navbar[className*="bg-"] .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
-  .navbar[class*="bg-"] .navbar-nav > .nav-item > .nav-link {
+  .navbar[className*="bg-"] .navbar-nav > .nav-item > .nav-link {
     color: #ffffff; }
-    .navbar[class*="bg-"] .navbar-nav > .nav-item > .nav-link.disabled {
+    .navbar[className*="bg-"] .navbar-nav > .nav-item > .nav-link.disabled {
       color: #d8d8d8 !important; }
-    .navbar[class*="bg-"] .navbar-nav > .nav-item > .nav-link:hover {
+    .navbar[className*="bg-"] .navbar-nav > .nav-item > .nav-link:hover {
       background: rgba(255, 255, 255, 0.22) !important; }
-  .navbar[class*="bg-"] .navbar-nav > .nav-item.active > .nav-link {
+  .navbar[className*="bg-"] .navbar-nav > .nav-item.active > .nav-link {
     background: rgba(255, 255, 255, 0.22) !important; }
-  .navbar[class*="bg-"] .btn-toggle {
+  .navbar[className*="bg-"] .btn-toggle {
     background: rgba(19, 19, 19, 0.25) !important;
     color: #ffffff !important; }
-  .navbar[class*="bg-"] .nav-search .input-group {
+  .navbar[className*="bg-"] .nav-search .input-group {
     border: 0;
     background: rgba(19, 19, 19, 0.25) !important; }
-    .navbar[class*="bg-"] .nav-search .input-group .form-control {
+    .navbar[className*="bg-"] .nav-search .input-group .form-control {
       color: #ffffff !important; }
-  .navbar[class*="bg-"] .nav-search .search-icon {
+  .navbar[className*="bg-"] .nav-search .search-icon {
     color: #ffffff !important; }
 
 /*    Page Navigation   */
@@ -3393,7 +3393,7 @@ label.error {
   border: 1px solid #ddd;
   height: fit-content !important; }
 
-[class*="badge-"]:not(.badge-count) {
+[className*="badge-"]:not(.badge-count) {
   border: 0px !important; }
 
 .badge-count {
@@ -5736,11 +5736,11 @@ label.error {
 
 /*     Responsive     */
 @media screen and (max-width: 576px) {
-  .row-card-no-pd [class*=col-] .card:before {
+  .row-card-no-pd [className*=col-] .card:before {
     width: calc(100% - 30px) !important;
     right: 15px !important;
     height: 1px !important; }
-  .row-card-no-pd [class*=col-]:first-child .card:before {
+  .row-card-no-pd [className*=col-]:first-child .card:before {
     display: none !important; } }
 @media screen and (min-width: 992px) {
   .main-header .main-header-logo {
@@ -6179,12 +6179,12 @@ body {
     background: transparent !important; }
   body[data-background-color="dark"] .card-pricing2, body[data-background-color="dark2"] .card-pricing2 {
     background: #202940 !important; }
-  body[data-background-color="dark"] .row-card-no-pd [class*="col"] .card:before, body[data-background-color="dark2"] .row-card-no-pd [class*="col"] .card:before {
+  body[data-background-color="dark"] .row-card-no-pd [className*="col"] .card:before, body[data-background-color="dark2"] .row-card-no-pd [className*="col"] .card:before {
     background: rgba(181, 181, 181, 0.1) !important; }
   body[data-background-color="dark"] .card .card-header,
   body[data-background-color="dark"] .card .card-footer,
   body[data-background-color="dark"] .card .card-action,
-  body[data-background-color="dark"] .card-profile .user-stats [class^="col"],
+  body[data-background-color="dark"] .card-profile .user-stats [className^="col"],
   body[data-background-color="dark"] .timeline > li > .timeline-panel,
   body[data-background-color="dark"] .table td,
   body[data-background-color="dark"] .table th,
@@ -6201,7 +6201,7 @@ body {
   body[data-background-color="dark"] .main-panel .page-divider, body[data-background-color="dark2"] .card .card-header,
   body[data-background-color="dark2"] .card .card-footer,
   body[data-background-color="dark2"] .card .card-action,
-  body[data-background-color="dark2"] .card-profile .user-stats [class^="col"],
+  body[data-background-color="dark2"] .card-profile .user-stats [className^="col"],
   body[data-background-color="dark2"] .timeline > li > .timeline-panel,
   body[data-background-color="dark2"] .table td,
   body[data-background-color="dark2"] .table th,

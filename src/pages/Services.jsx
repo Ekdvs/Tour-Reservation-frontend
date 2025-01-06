@@ -36,7 +36,7 @@ export default function Services() {
                     <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                       <div class="service-content text-end">
                         <h5 class="mb-4">WorldWide Tours</h5>
-                        <p class="mb-0">
+                        <p class="mb-0" style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -53,7 +53,7 @@ export default function Services() {
                     <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
                       <div class="service-content text-end">
                         <h5 class="mb-4">Hotel Reservation</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -70,7 +70,7 @@ export default function Services() {
                     <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                       <div class="service-content text-end">
                         <h5 class="mb-4">Travel Guides</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -87,7 +87,7 @@ export default function Services() {
                     <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                       <div class="service-content text-end">
                         <h5 class="mb-4">Event Management</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -111,7 +111,7 @@ export default function Services() {
                       </div>
                       <div class="service-content">
                         <h5 class="mb-4">WorldWide Tours</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -128,7 +128,7 @@ export default function Services() {
                       </div>
                       <div class="service-content">
                         <h5 class="mb-4">Hotel Reservation</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -145,7 +145,7 @@ export default function Services() {
                       </div>
                       <div class="service-content">
                         <h5 class="mb-4">Travel Guides</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -162,7 +162,7 @@ export default function Services() {
                       </div>
                       <div class="service-content">
                         <h5 class="mb-4">Event Management</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
@@ -176,17 +176,18 @@ export default function Services() {
               </div>
               <div class="col-12">
                 <div class="text-center">
-                  <button
+                  <a
                     class="btn btn-primary rounded-pill py-3 px-5 mt-2"
+                    href="/Services"
                   >
                     Service More
-                  </button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
     );
 }

@@ -145,7 +145,26 @@ export default function Profile() {
                 </button>
               )}
             </div>
-
+              {/* Profile Picture Section */}
+            <div className="mb-3 row">
+              <label className="col-sm-4 col-form-label"></label>
+              <div className="col-sm-6">
+                {!isEditing ? (
+                  <img
+                    src={profileData.profilePicture || "../img/profile.jpeg"} // Placeholder image
+                    alt="Profile"
+                    style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                    className="img-thumbnail"
+                  />
+                ) : (
+                  <input
+                    type="file"
+                    className="form-control"
+                    onChange={handleFileChange}
+                  />
+                )}
+              </div>
+            </div>
             {/* Basic Info Fields */}
             {["firstName", "lastName", "phoneNumber", "title"].map((field) => (
               <div className="mb-3 row" key={field}>
@@ -218,26 +237,7 @@ export default function Profile() {
               </div>
             </div>
 
-            {/* Profile Picture Section */}
-            <div className="mb-3 row">
-              <label className="col-sm-4 col-form-label">Profile Picture:</label>
-              <div className="col-sm-6">
-                {!isEditing ? (
-                  <img
-                    src={profileData.profilePicture || "https://via.placeholder.com/150/0000FF/808080?Text=Profile+Picture"} // Placeholder image
-                    alt="Profile"
-                    style={{ width: "150px", height: "150px", objectFit: "cover" }}
-                    className="img-thumbnail"
-                  />
-                ) : (
-                  <input
-                    type="file"
-                    className="form-control"
-                    onChange={handleFileChange}
-                  />
-                )}
-              </div>
-            </div>
+            
 
             <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
               Change Password

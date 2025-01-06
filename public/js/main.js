@@ -5,7 +5,7 @@
     var spinner = function () {
         setTimeout(function () {
             if ($('#spinner').length > 0) {
-                $('#spinner').removeclass('show');
+                $('#spinner').removeclassName('show');
             }
         }, 1);
     };
@@ -15,9 +15,9 @@
     // Sticky Navbar
     $(window).scroll(function () {
         if ($(this).scrollTop() > 45) {
-            $('.navbar').addclass('sticky-top shadow-sm');
+            $('.navbar').addclassName('sticky-top shadow-sm');
         } else {
-            $('.navbar').removeclass('sticky-top shadow-sm');
+            $('.navbar').removeclassName('sticky-top shadow-sm');
         }
     });
 
@@ -32,10 +32,10 @@
         margin: 25,
         nav : false,
         navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
+            '<i className="bi bi-arrow-left"></i>',
+            '<i className="bi bi-arrow-right"></i>'
         ],
-        responsiveclass: true,
+        responsiveclassName: true,
         responsive: {
             0:{
                 items:1
@@ -63,10 +63,10 @@
         margin: 25,
         nav : true,
         navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
+            '<i className="bi bi-arrow-left"></i>',
+            '<i className="bi bi-arrow-right"></i>'
         ],
-        responsiveclass: true,
+        responsiveclassName: true,
         responsive: {
             0:{
                 items:1
@@ -94,10 +94,10 @@
         margin: 25,
         nav : true,
         navText : [
-            '<i class="bi bi-arrow-left"></i>',
-            '<i class="bi bi-arrow-right"></i>'
+            '<i className="bi bi-arrow-left"></i>',
+            '<i className="bi bi-arrow-right"></i>'
         ],
-        responsiveclass: true,
+        responsiveclassName: true,
         responsive: {
             0:{
                 items:1
