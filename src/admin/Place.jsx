@@ -214,6 +214,24 @@ const handleAddPlace = () => {
         </button>
       )}
 
+{/* Search Input and Button */}
+<div className="mt-3 mb-3">
+        <label htmlFor="search" className="form-label">Search by Place Name</label>
+        <div className="d-flex">
+          <input
+            type="text"
+            className="form-control"
+            id="search"
+            placeholder="Enter place name to search"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className="btn btn-primary ms-2" onClick={handleSearch}>
+            Search
+          </button>
+        </div>
+      </div>
+
 
 
 
