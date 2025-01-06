@@ -152,7 +152,8 @@ export default function Nav() {
                         <div className="notif-img">
                         <img src="assets/img/profile2.jpg" alt="Img Profile" />
                         </div>
-                      
+                        <div className="notif-content">
+
 
 
 
