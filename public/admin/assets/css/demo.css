@@ -155,12 +155,12 @@
 body[data-background-color="dark"] .demo-icon .icon-preview {
   color: #969696; }
 
-.demo-icon .icon-class {
+.demo-icon .icon-className {
   font-weight: 300;
   font-size: 13px;
   color: #777; }
 
-body[data-background-color="dark"] .demo-icon .icon-class {
+body[data-background-color="dark"] .demo-icon .icon-className {
   color: #a9a8a8; }
 
 .form-show-notify .form-control {
@@ -176,9 +176,9 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 
 .row-demo-grid {
   margin-bottom: 15px; }
-  .row-demo-grid [class^="col"] {
+  .row-demo-grid [className^="col"] {
     text-align: center; }
-    .row-demo-grid [class^="col"] .card-body {
+    .row-demo-grid [className^="col"] .card-body {
       background: #ddd; }
 
 .btnSwitch button[data-color="white"] {

@@ -16,17 +16,17 @@
       $properties: append((), $properties);
     }
 
-    // Use custom class if present
-    $property-class: if(map-has-key($utility, class), map-get($utility, class), nth($properties, 1));
-    $property-class: if($property-class == null, "", $property-class);
+    // Use custom className if present
+    $property-className: if(map-has-key($utility, className), map-get($utility, className), nth($properties, 1));
+    $property-className: if($property-className == null, "", $property-className);
 
-    // State params to generate pseudo-classes
+    // State params to generate pseudo-classNamees
     $state: if(map-has-key($utility, state), map-get($utility, state), ());
 
-    $infix: if($property-class == "" and str-slice($infix, 1, 1) == "-", str-slice($infix, 2), $infix);
+    $infix: if($property-className == "" and str-slice($infix, 1, 1) == "-", str-slice($infix, 2), $infix);
 
-    // Don't prefix if value key is null (eg. with shadow class)
-    $property-class-modifier: if($key, if($property-class == "" and $infix == "", "", "-") + $key, "");
+    // Don't prefix if value key is null (eg. with shadow className)
+    $property-className-modifier: if($key, if($property-className == "" and $infix == "", "", "-") + $key, "");
 
     @if map-get($utility, rfs) {
       // Inside the media query
@@ -47,14 +47,14 @@
       @if $is-rtl == false {
         /* rtl:begin:remove */
       }
-      .#{$property-class + $infix + $property-class-modifier} {
+      .#{$property-className + $infix + $property-className-modifier} {
         @each $property in $properties {
           #{$property}: $value if($enable-important-utilities, !important, null);
         }
       }
 
       @each $pseudo in $state {
-        .#{$property-class + $infix + $property-class-modifier}-#{$pseudo}:#{$pseudo} {
+        .#{$property-className + $infix + $property-className-modifier}-#{$pseudo}:#{$pseudo} {
           @each $property in $properties {
             #{$property}: $value if($enable-important-utilities, !important, null);
           }
