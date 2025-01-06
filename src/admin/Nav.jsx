@@ -140,6 +140,9 @@ export default function Nav() {
                         </div>
                       </a>
                       <a href="#">
+                      <div className="notif-icon notif-success">
+                          <i className="fa fa-comment"></i>
+                        </div>
 
 
 
