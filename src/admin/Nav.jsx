@@ -143,6 +143,10 @@ export default function Nav() {
                       <div className="notif-icon notif-success">
                           <i className="fa fa-comment"></i>
                         </div>
+                        <div className="notif-content">
+                          <span className="block">Rahmad commented on Admin</span>
+                          <span className="time">12 minutes ago</span>
+                        </div>
 
 
 
