@@ -34,3 +34,32 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newPlace = { placeName, description, location, category, price };
+
+     // If an image was selected, append it to the form data
+     const formData = new FormData();
+     formData.append('placeName', placeName);
+     formData.append('description', description);
+     formData.append('location', location);
+     formData.append('category', category);
+     formData.append('price', price);
+     if (image) formData.append('image', image);
+ 
+     try {
+       if (editingPlace) {
+         await axios.put(`${API_BASE_URL}/update/${editingPlace.placeName}`, formData, {
+           headers: { 'Content-Type': 'multipart/form-data' },
+         });
+         toast.success('Place updated successfully!');
+       } else if (isAddingPlace) {
+         await axios.post(`${API_BASE_URL}/addplace`, formData, {
+           headers: { 'Content-Type': 'multipart/form-data' },
+         });
+         toast.success('Place added successfully!');
+       }
+       fetchPlaces();
+       resetForm();
+     } catch (error) {
+       toast.error('Error adding/updating place!');
+     }
+   };
+ 
