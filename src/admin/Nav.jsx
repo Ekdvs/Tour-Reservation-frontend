@@ -153,7 +153,7 @@ export default function Nav() {
                         <img src="assets/img/profile2.jpg" alt="Img Profile" />
                         </div>
                         <div className="notif-content">
-
+                        <span className="block">Reza sent messages to you</span>
 
 
 
