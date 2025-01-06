@@ -119,6 +119,7 @@ export default function Nav() {
                 aria-expanded="false"
               >
                 <i className="fa fa-bell"></i>
+                <span className="notification">4</span>
 
 
 
