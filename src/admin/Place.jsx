@@ -74,6 +74,19 @@ const handleDelete = async (name) => {
     }
   };
 
+  // Reset form fields
+  const resetForm = () => {
+    setPlaceName('');
+    setDescription('');
+    setLocation('');
+    setImage(null); // Reset the image field
+    setCategory('');
+    setPrice('');
+    setEditingPlace(null);
+    setIsAddingPlace(false);
+  };
+
+
 
 
 
