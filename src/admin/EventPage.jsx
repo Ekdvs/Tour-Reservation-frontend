@@ -155,5 +155,19 @@ const handleEditEvent = (event) => {
         </button>
       </div>
 
+{/* Add or Edit Event Form */}
+<form onSubmit={editEvent ? handleUpdateEvent : handleAddEvent} className="border p-4 rounded mb-4">
+        <h2>{editEvent ? "Edit Event" : "Add Event"}</h2>
+        <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="eventName"
+            placeholder="Event Name"
+            value={eventForm.eventName}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
 
 
