@@ -217,6 +217,10 @@ export default function Nav() {
                       <div className="avatar-item bg-success rounded-circle">
                             <i className="fas fa-envelope"></i>
                           </div>
+                          <span className="text">Emails</span>
+                        </div>
+                      </a>
+                      <a className="col-6 col-md-4 p-0" href="#">
 
 
 
