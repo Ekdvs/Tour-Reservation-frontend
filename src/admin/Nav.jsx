@@ -154,6 +154,7 @@ export default function Nav() {
                         </div>
                         <div className="notif-content">
                         <span className="block">Reza sent messages to you</span>
+                        <span className="time">12 minutes ago</span>
 
 
 
