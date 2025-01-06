@@ -181,3 +181,14 @@ const handleEditEvent = (event) => {
           />
         </div>
 
+        <div className="form-group mb-3">
+          <input
+            type="time"
+            className="form-control"
+            name="eventTime"
+            value={eventForm.eventTime}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+
