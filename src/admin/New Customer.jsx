@@ -43,6 +43,26 @@ const NewCustomers = () => {
                   alt="..."
                   className="avatar-img rounded-circle"
                 />
+</div>
+              <div className="info-user ms-3">
+                <div className="username">{customer.firstName} {customer.lastName}</div>
+                <div className="status">{customer.role}</div>
+              </div>
+              <button className="btn btn-icon btn-link op-8 me-1">
+                <i className="far fa-envelope"></i>
+              </button>
+              <button className="btn btn-icon btn-link btn-danger op-8">
+                <i className="fas fa-ban"></i>
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default NewCustomers;
 
 
 
