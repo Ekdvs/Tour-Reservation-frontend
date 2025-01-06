@@ -3732,7 +3732,7 @@ temporary rendered events).
 
 /* DayGrid events
 ----------------------------------------------------------------------------------------------------
-We use the full "fc-day-grid-event" class instead of using descendants because the event won't
+We use the full "fc-day-grid-event" className instead of using descendants because the event won't
 be a descendant of the grid when it is being dragged.
 */
 .fc-day-grid-event {
@@ -4273,7 +4273,7 @@ NOTE: use percentage font sizes or else old IE chokes
 
 /* TimeGrid Event Styling
 ----------------------------------------------------------------------------------------------------
-We use the full "fc-time-grid-event" class instead of using descendants because the event won't
+We use the full "fc-time-grid-event" className instead of using descendants because the event won't
 be a descendant of the grid when it is being dragged.
 */
 .fc-time-grid-event {
@@ -4591,7 +4591,7 @@ div.dataTables_scrollHead table.table-bordered {
   border-bottom-width: 0; }
 div.table-responsive > div.dataTables_wrapper > div.row {
   margin: 0; }
-  div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:first-child, div.table-responsive > div.dataTables_wrapper > div.row > div[class^="col-"]:last-child {
+  div.table-responsive > div.dataTables_wrapper > div.row > div[className^="col-"]:first-child, div.table-responsive > div.dataTables_wrapper > div.row > div[className^="col-"]:last-child {
     padding-left: 0;
     padding-right: 0; }
 
@@ -5171,7 +5171,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   display: block;
   padding: 6px; }
 
-.select2-container--classic .select2-selection--single {
+.select2-container--classNameic .select2-selection--single {
   background-color: #f7f7f7;
   border: 1px solid #aaa;
   border-radius: 4px;
@@ -5181,19 +5181,19 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   background-image: linear-gradient(to bottom, white 50%, #eeeeee 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white-colorFFFFF', endColorstr='#FFEEEEEE', GradientType=0); }
-  .select2-container--classic .select2-selection--single:focus {
+  .select2-container--classNameic .select2-selection--single:focus {
     border: 1px solid #5897fb; }
-  .select2-container--classic .select2-selection--single .select2-selection__rendered {
+  .select2-container--classNameic .select2-selection--single .select2-selection__rendered {
     color: #444;
     line-height: 28px; }
-  .select2-container--classic .select2-selection--single .select2-selection__clear {
+  .select2-container--classNameic .select2-selection--single .select2-selection__clear {
     cursor: pointer;
     float: right;
     font-weight: bold;
     margin-right: 10px; }
-  .select2-container--classic .select2-selection--single .select2-selection__placeholder {
+  .select2-container--classNameic .select2-selection--single .select2-selection__placeholder {
     color: #999; }
-  .select2-container--classic .select2-selection--single .select2-selection__arrow {
+  .select2-container--classNameic .select2-selection--single .select2-selection__arrow {
     background-color: #ddd;
     border: none;
     border-left: 1px solid #aaa;
@@ -5209,7 +5209,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
     background-image: linear-gradient(to bottom, #eeeeee 50%, #cccccc 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='#FFCCCCCC', GradientType=0); }
-    .select2-container--classic .select2-selection--single .select2-selection__arrow b {
+    .select2-container--classNameic .select2-selection--single .select2-selection__arrow b {
       border-color: #888 transparent transparent transparent;
       border-style: solid;
       border-width: 5px 4px 0 4px;
@@ -5220,9 +5220,9 @@ div.table-responsive > div.dataTables_wrapper > div.row {
       position: absolute;
       top: 50%;
       width: 0; }
-.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__clear {
+.select2-container--classNameic[dir="rtl"] .select2-selection--single .select2-selection__clear {
   float: left; }
-.select2-container--classic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
+.select2-container--classNameic[dir="rtl"] .select2-selection--single .select2-selection__arrow {
   border: none;
   border-right: 1px solid #aaa;
   border-radius: 0;
@@ -5230,15 +5230,15 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   border-bottom-left-radius: 4px;
   left: 1px;
   right: auto; }
-.select2-container--classic.select2-container--open .select2-selection--single {
+.select2-container--classNameic.select2-container--open .select2-selection--single {
   border: 1px solid #5897fb; }
-  .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow {
+  .select2-container--classNameic.select2-container--open .select2-selection--single .select2-selection__arrow {
     background: transparent;
     border: none; }
-    .select2-container--classic.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    .select2-container--classNameic.select2-container--open .select2-selection--single .select2-selection__arrow b {
       border-color: transparent transparent #888 transparent;
       border-width: 0 4px 5px 4px; }
-.select2-container--classic.select2-container--open.select2-container--above .select2-selection--single {
+.select2-container--classNameic.select2-container--open.select2-container--above .select2-selection--single {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
@@ -5247,7 +5247,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   background-image: linear-gradient(to bottom, white 0%, #eeeeee 50%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white-colorFFFFF', endColorstr='#FFEEEEEE', GradientType=0); }
-.select2-container--classic.select2-container--open.select2-container--below .select2-selection--single {
+.select2-container--classNameic.select2-container--open.select2-container--below .select2-selection--single {
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
@@ -5256,21 +5256,21 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   background-image: linear-gradient(to bottom, #eeeeee 50%, white 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFEEEEEE', endColorstr='$white-colorFFFFF', GradientType=0); }
-.select2-container--classic .select2-selection--multiple {
+.select2-container--classNameic .select2-selection--multiple {
   background-color: white;
   border: 1px solid #aaa;
   border-radius: 4px;
   cursor: text;
   outline: 0; }
-  .select2-container--classic .select2-selection--multiple:focus {
+  .select2-container--classNameic .select2-selection--multiple:focus {
     border: 1px solid #5897fb; }
-  .select2-container--classic .select2-selection--multiple .select2-selection__rendered {
+  .select2-container--classNameic .select2-selection--multiple .select2-selection__rendered {
     list-style: none;
     margin: 0;
     padding: 0 5px; }
-  .select2-container--classic .select2-selection--multiple .select2-selection__clear {
+  .select2-container--classNameic .select2-selection--multiple .select2-selection__clear {
     display: none; }
-  .select2-container--classic .select2-selection--multiple .select2-selection__choice {
+  .select2-container--classNameic .select2-selection--multiple .select2-selection__choice {
     background-color: #e4e4e4;
     border: 1px solid #aaa;
     border-radius: 4px;
@@ -5279,59 +5279,59 @@ div.table-responsive > div.dataTables_wrapper > div.row {
     margin-right: 5px;
     margin-top: 5px;
     padding: 0 5px; }
-  .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove {
+  .select2-container--classNameic .select2-selection--multiple .select2-selection__choice__remove {
     color: #888;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
     margin-right: 2px; }
-    .select2-container--classic .select2-selection--multiple .select2-selection__choice__remove:hover {
+    .select2-container--classNameic .select2-selection--multiple .select2-selection__choice__remove:hover {
       color: #555; }
-.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
+.select2-container--classNameic[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
   float: right;
   margin-left: 5px;
   margin-right: auto; }
-.select2-container--classic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
+.select2-container--classNameic[dir="rtl"] .select2-selection--multiple .select2-selection__choice__remove {
   margin-left: 2px;
   margin-right: auto; }
-.select2-container--classic.select2-container--open .select2-selection--multiple {
+.select2-container--classNameic.select2-container--open .select2-selection--multiple {
   border: 1px solid #5897fb; }
-.select2-container--classic.select2-container--open.select2-container--above .select2-selection--multiple {
+.select2-container--classNameic.select2-container--open.select2-container--above .select2-selection--multiple {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
-.select2-container--classic.select2-container--open.select2-container--below .select2-selection--multiple {
+.select2-container--classNameic.select2-container--open.select2-container--below .select2-selection--multiple {
   border-bottom: none;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0; }
-.select2-container--classic .select2-search--dropdown .select2-search__field {
+.select2-container--classNameic .select2-search--dropdown .select2-search__field {
   border: 1px solid #aaa;
   outline: 0; }
-.select2-container--classic .select2-search--inline .select2-search__field {
+.select2-container--classNameic .select2-search--inline .select2-search__field {
   outline: 0;
   box-shadow: none; }
-.select2-container--classic .select2-dropdown {
+.select2-container--classNameic .select2-dropdown {
   background-color: white;
   border: 1px solid transparent; }
-.select2-container--classic .select2-dropdown--above {
+.select2-container--classNameic .select2-dropdown--above {
   border-bottom: none; }
-.select2-container--classic .select2-dropdown--below {
+.select2-container--classNameic .select2-dropdown--below {
   border-top: none; }
-.select2-container--classic .select2-results > .select2-results__options {
+.select2-container--classNameic .select2-results > .select2-results__options {
   max-height: 200px;
   overflow-y: auto; }
-.select2-container--classic .select2-results__option[role=group] {
+.select2-container--classNameic .select2-results__option[role=group] {
   padding: 0; }
-.select2-container--classic .select2-results__option[aria-disabled=true] {
+.select2-container--classNameic .select2-results__option[aria-disabled=true] {
   color: grey; }
-.select2-container--classic .select2-results__option--highlighted[aria-selected] {
+.select2-container--classNameic .select2-results__option--highlighted[aria-selected] {
   background-color: #3875d7;
   color: white; }
-.select2-container--classic .select2-results__group {
+.select2-container--classNameic .select2-results__group {
   cursor: default;
   display: block;
   padding: 6px; }
-.select2-container--classic.select2-container--open .select2-dropdown {
+.select2-container--classNameic.select2-container--open .select2-dropdown {
   border-color: #5897fb; }
 
 /*!
@@ -6187,7 +6187,7 @@ div.table-responsive > div.dataTables_wrapper > div.row {
   font-display: auto;
   src: url(../fonts/summernote/summernote.eot);
   src: url(../fonts/summernote/summernote.eot?#iefix) format("embedded-opentype"), url(../fonts/summernote/summernote.woff2) format("woff2"), url(../fonts/summernote/summernote.woff) format("woff"), url(../fonts/summernote/summernote.ttf) format("truetype"); }
-[class*=" note-icon"]:before, [class^=note-icon]:before {
+[className*=" note-icon"]:before, [className^=note-icon]:before {
   display: inline-block;
   font-family: summernote;
   font-style: normal;
@@ -7609,7 +7609,7 @@ a.note-dropdown-item, a.note-dropdown-item:hover {
   text-align: center;
   -webkit-tap-highlight-color: transparent;
   margin-top: 10px; }
-  .owl-theme .owl-nav [class*=owl-] {
+  .owl-theme .owl-nav [className*=owl-] {
     color: #FFF;
     font-size: 18px;
     margin: 5px;
@@ -7618,7 +7618,7 @@ a.note-dropdown-item, a.note-dropdown-item:hover {
     display: inline-block;
     cursor: pointer;
     border-radius: 3px; }
-    .owl-theme .owl-nav [class*=owl-]:hover {
+    .owl-theme .owl-nav [className*=owl-]:hover {
       background: #869791;
       color: #FFF;
       text-decoration: none; }
