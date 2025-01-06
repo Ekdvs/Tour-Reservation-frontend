@@ -15,3 +15,19 @@ const OnlineUsersCard = () => {
       fetchOnlineUsers();
     }, []);
   
+    return (
+        <div className="card card-round">
+          <div className="card-body pb-0">
+            <div className="h1 fw-bold float-end text-primary">+5%</div>
+            <h2 className="mb-2">{onlineUsers}</h2>
+            <p className="text-muted">Users online</p>
+            <div className="pull-in sparkline-fix">
+              <div id="lineChart"> {/* Placeholder for any future chart */}</div>
+            </div>
+          </div>
+        </div>
+      );
+    };
+    
+    export default OnlineUsersCard;
+    
