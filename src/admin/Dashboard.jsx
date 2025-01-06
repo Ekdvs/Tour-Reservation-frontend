@@ -225,6 +225,11 @@ export default function Dashboard() {
                         <tbody>
                           <tr>
                           <th scope="row">
+                          <button
+                                class="btn btn-icon btn-round btn-success btn-sm me-2"
+                              >
+                                <i class="fa fa-check"></i>
+                              </button>
 
 
 
