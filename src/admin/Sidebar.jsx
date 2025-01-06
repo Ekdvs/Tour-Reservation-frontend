@@ -63,10 +63,23 @@ export default function Sidebar() {
             </Link>
             </li>
 
+            <li className="nav-item">
+            <Link className="nav-link" to="/EvenPage">
+                <i className="fas fa-bars"></i>
+                <p>Order</p>
+            </Link>
+            </li>
 
+            <li className="nav-item">
+            <Link className="nav-link" to="/EvenPage">
+                <i className="fas fa-bars"></i>
+                <p>User</p>
+            </Link>
+            </li>
 
-
-
-    </div>
-  )
+          </ul>
+        </div>
+      </div>
+    </div></div>
+  );
 }
