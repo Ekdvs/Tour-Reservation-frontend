@@ -275,5 +275,12 @@ const handleEditEvent = (event) => {
           />
         </div>
 
+        <div className="form-group mb-3">
+          <input
+            type="file"
+            className="form-control"
+            onChange={(e) => setEventImage(e.target.files[0])}
+          />
+        </div>
 
 
