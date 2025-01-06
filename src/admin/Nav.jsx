@@ -247,6 +247,23 @@ export default function Nav() {
                 <div className="avatar-sm">
                   <img src="assets/img/profile.jpg" alt="..." className="avatar-img rounded-circle" />
                 </div>
+                </div>
+                <span className="profile-username">
+                  <span className="op-7">Hi,</span>
+                  <span className="fw-bold">Hizrian</span>
+                </span>
+              </a>
+              <ul className="dropdown-menu dropdown-user animated fadeIn">
+                <div className="dropdown-user-scroll scrollbar-outer">
+                  <li>
+                    <div className="user-box">
+                      <div className="avatar-lg">
+                        <img
+                          src="assets/img/profile.jpg"
+                          alt="image profile"
+                          className="avatar-img rounded"
+                        />
+                      </div>
 
 
 
