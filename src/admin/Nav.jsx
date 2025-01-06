@@ -201,7 +201,10 @@ export default function Nav() {
                         <div className="avatar-item bg-warning rounded-circle">
                             <i className="fas fa-map"></i>
                           </div>
-
+                          <span className="text">Maps</span>
+                        </div>
+                      </a>
+                      <a className="col-6 col-md-4 p-0" href="#">
 
       
     </div>
