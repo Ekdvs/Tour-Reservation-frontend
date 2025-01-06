@@ -15,8 +15,8 @@ $(".changeBodyBackgroundFullColor").on("click", function () {
     $("body").attr("data-background-full", $(this).attr("data-color"));
   }
 
-  $(this).parent().find(".changeBodyBackgroundFullColor").removeClass("selected");
-  $(this).addClass("selected");
+  $(this).parent().find(".changeBodyBackgroundFullColor").removeclassName("selected");
+  $(this).addclassName("selected");
   layoutsColors();
   getCheckmark();
 });
@@ -28,8 +28,8 @@ $(".changeLogoHeaderColor").on("click", function () {
     $(".logo-header").attr("data-background-color", $(this).attr("data-color"));
   }
 
-  $(this).parent().find(".changeLogoHeaderColor").removeClass("selected");
-  $(this).addClass("selected");
+  $(this).parent().find(".changeLogoHeaderColor").removeclassName("selected");
+  $(this).addclassName("selected");
   customCheckColor();
   layoutsColors();
   getCheckmark();
@@ -42,8 +42,8 @@ $(".changeTopBarColor").on("click", function () {
     $(".main-header .navbar-header").attr("data-background-color", $(this).attr("data-color"));
   }
 
-  $(this).parent().find(".changeTopBarColor").removeClass("selected");
-  $(this).addClass("selected");
+  $(this).parent().find(".changeTopBarColor").removeclassName("selected");
+  $(this).addclassName("selected");
   layoutsColors();
   getCheckmark();
 });
@@ -55,8 +55,8 @@ $(".changeSideBarColor").on("click", function () {
     $(".sidebar").attr("data-background-color", $(this).attr("data-color"));
   }
 
-  $(this).parent().find(".changeSideBarColor").removeClass("selected");
-  $(this).addClass("selected");
+  $(this).parent().find(".changeSideBarColor").removeclassName("selected");
+  $(this).addclassName("selected");
   layoutsColors();
   getCheckmark();
 });
@@ -64,8 +64,8 @@ $(".changeSideBarColor").on("click", function () {
 $(".changeBackgroundColor").on("click", function () {
   $("body").removeAttr("data-background-color");
   $("body").attr("data-background-color", $(this).attr("data-color"));
-  $(this).parent().find(".changeBackgroundColor").removeClass("selected");
-  $(this).addClass("selected");
+  $(this).parent().find(".changeBackgroundColor").removeclassName("selected");
+  $(this).addclassName("selected");
   getCheckmark();
 });
 
@@ -86,12 +86,12 @@ if (!toggle_customSidebar) {
 
   toggle.on("click", function () {
     if (custom_open == 1) {
-      $(".custom-template").removeClass("open");
-      toggle.removeClass("toggled");
+      $(".custom-template").removeclassName("open");
+      toggle.removeclassName("toggled");
       custom_open = 0;
     } else {
-      $(".custom-template").addClass("open");
-      toggle.addClass("toggled");
+      $(".custom-template").addclassName("open");
+      toggle.addclassName("toggled");
       custom_open = 1;
     }
   });
@@ -99,7 +99,7 @@ if (!toggle_customSidebar) {
 }
 
 function getCheckmark() {
-  var checkmark = `<i class="gg-check"></i>`;
+  var checkmark = `<i className="gg-check"></i>`;
   $(".btnSwitch").find("button").empty();
   $(".btnSwitch").find("button.selected").append(checkmark);
 }

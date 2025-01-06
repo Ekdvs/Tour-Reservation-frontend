@@ -62,33 +62,33 @@ export default function SignIn() {
     <div>
       <Topbar />
       <Navbar />
-      <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
-          <h3 className="text-white display-3 mb-4">Login</h3>
-          <ol className="breadcrumb justify-content-center mb-0">
-            <li className="breadcrumb-item">
+      <div classNameName="container-fluid bg-breadcrumb">
+        <div classNameName="container text-center py-5" style={{ maxWidth: "900px" }}>
+          <h3 classNameName="text-white display-3 mb-4">Login</h3>
+          <ol classNameName="breadcrumb justify-content-center mb-0">
+            <li classNameName="breadcrumb-item">
               <a href="/">Home</a>
             </li>
-            <li className="breadcrumb-item">
+            <li classNameName="breadcrumb-item">
               <a href="/Contact">Pages</a>
             </li>
-            <li className="breadcrumb-item active text-white">Login</li>
+            <li classNameName="breadcrumb-item active text-white">Login</li>
           </ol>
         </div>
       </div>
 
-      <div className="container my-5">
-        <div className="card mx-auto" style={{ maxWidth: "500px" }}>
-          <div className="card-body">
-            <h5 className="card-title text-center">Sign In</h5>
+      <div classNameName="container my-5">
+        <div classNameName="card mx-auto" style={{ maxWidth: "500px" }}>
+          <div classNameName="card-body">
+            <h5 classNameName="card-title text-center">Sign In</h5>
             <form onSubmit={handleSignIn}>
-              <div className="form-group mb-3">
-                <label htmlFor="email" className="form-label">
+              <div classNameName="form-group mb-3">
+                <label htmlFor="email" classNameName="form-label">
                   Email
                 </label>
                 <input
                   type="email"
-                  className="form-control"
+                  classNameName="form-control"
                   id="email"
                   value={userEmail}
                   onChange={(e) => setUserEmail(e.target.value)}
@@ -97,14 +97,14 @@ export default function SignIn() {
                 />
               </div>
 
-              <div className="form-group mb-3">
-                <label htmlFor="password" className="form-label">
+              <div classNameName="form-group mb-3">
+                <label htmlFor="password" classNameName="form-label">
                   Password
                 </label>
-                <div className="input-group">
+                <div classNameName="input-group">
                   <input
                     type={showPassword ? "text" : "password"}
-                    className="form-control"
+                    classNameName="form-control"
                     id="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -113,7 +113,7 @@ export default function SignIn() {
                   />
                   <button
                     type="button"
-                    className="input-group-text"
+                    classNameName="input-group-text"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -121,21 +121,21 @@ export default function SignIn() {
                 </div>
               </div>
 
-              <div className="d-grid">
-                <button type="submit" className="btn btn-primary rounded-pill">
+              <div classNameName="d-grid">
+                <button type="submit" classNameName="btn btn-primary rounded-pill">
                   Sign In
                 </button>
               </div>
             </form>
 
-            <div className="text-center mt-3">
-              <a href="/ForgotPassword" className="text-decoration-none">
+            <div classNameName="text-center mt-3">
+              <a href="/ForgotPassword" classNameName="text-decoration-none">
                 Forgot Password?
               </a>
             </div>
-            <div className="text-center mt-3">
+            <div classNameName="text-center mt-3">
               <span>Don't have an account? </span>
-              <a href="/register" className="text-decoration-none">
+              <a href="/register" classNameName="text-decoration-none">
                 Sign Up
               </a>
             </div>

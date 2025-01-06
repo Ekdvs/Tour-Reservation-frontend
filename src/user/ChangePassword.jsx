@@ -66,33 +66,33 @@ export default function ChangePassword() {
     <div>
       <Topbar />
       <Navbar />
-      <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
-          <h3 className="text-white display-3 mb-4">Password Reset</h3>
-          <ol className="breadcrumb justify-content-center mb-0">
-            <li className="breadcrumb-item">
+      <div classNameName="container-fluid bg-breadcrumb">
+        <div classNameName="container text-center py-5" style={{ maxWidth: '900px' }}>
+          <h3 classNameName="text-white display-3 mb-4">Password Reset</h3>
+          <ol classNameName="breadcrumb justify-content-center mb-0">
+            <li classNameName="breadcrumb-item">
               <a href="/">Home</a>
             </li>
-            <li className="breadcrumb-item">
+            <li classNameName="breadcrumb-item">
               <a href="/Contact">Pages</a>
             </li>
-            <li className="breadcrumb-item active text-white">Password Change</li>
+            <li classNameName="breadcrumb-item active text-white">Password Change</li>
           </ol>
         </div>
       </div>
-      <div className="container my-5">
-        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
-          <div className="card-body">
-            <h5 className="card-title text-center">Change Password</h5>
+      <div classNameName="container my-5">
+        <div classNameName="card mx-auto" style={{ maxWidth: '500px' }}>
+          <div classNameName="card-body">
+            <h5 classNameName="card-title text-center">Change Password</h5>
             <form onSubmit={handleChangePassword}>
-              <div className="form-group mb-3">
-                <label htmlFor="Password" className="form-label">
+              <div classNameName="form-group mb-3">
+                <label htmlFor="Password" classNameName="form-label">
                   New Password
                 </label>
-                <div className="input-group">
+                <div classNameName="input-group">
                   <input
                     type={showPassword ? 'text' : 'password'}
-                    className="form-control"
+                    classNameName="form-control"
                     id="Password"
                     value={Password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -101,21 +101,21 @@ export default function ChangePassword() {
                   />
                   <button
                     type="button"
-                    className="input-group-text"
+                    classNameName="input-group-text"
                     onClick={() => setShowPassword(!showPassword)}
                   >
                     {showPassword ? <FaEyeSlash /> : <FaEye />}
                   </button>
                 </div>
               </div>
-              <div className="form-group mb-3">
-                <label htmlFor="confirmPassword" className="form-label">
+              <div classNameName="form-group mb-3">
+                <label htmlFor="confirmPassword" classNameName="form-label">
                   Confirm Password
                 </label>
-                <div className="input-group">
+                <div classNameName="input-group">
                   <input
                     type={showConfirmPassword ? 'text' : 'password'}
-                    className="form-control"
+                    classNameName="form-control"
                     id="confirmPassword"
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -124,15 +124,15 @@ export default function ChangePassword() {
                   />
                   <button
                     type="button"
-                    className="input-group-text"
+                    classNameName="input-group-text"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   >
                     {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
                   </button>
                 </div>
               </div>
-              <div className="d-grid">
-                <button type="submit" className="btn btn-primary rounded-pill">
+              <div classNameName="d-grid">
+                <button type="submit" classNameName="btn btn-primary rounded-pill">
                   Update Password
                 </button>
               </div>

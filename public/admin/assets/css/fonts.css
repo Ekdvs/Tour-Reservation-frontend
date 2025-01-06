@@ -23,8 +23,8 @@
 Flaticon icon font: Flaticon
 Creation date: 13/03/2018 03:24
 */
-/* [class^="flaticon-"]:before,
-[class*=" flaticon-"]:before {
+/* [className^="flaticon-"]:before,
+[className*=" flaticon-"]:before {
   font-family: Flaticon;
   font-style: normal;
   font-weight: normal;
@@ -5707,8 +5707,8 @@ readers do not read off random characters that represent icons */
   font-style: normal;
 }
 /*
- Use the following CSS code if you want to have a class per icon.
- Instead of a list of all class selectors, you can use the generic [class*="icon-"] selector, but it's slower:
+ Use the following CSS code if you want to have a className per icon.
+ Instead of a list of all className selectors, you can use the generic [className*="icon-"] selector, but it's slower:
 */
 .icon-user,
 .icon-people,

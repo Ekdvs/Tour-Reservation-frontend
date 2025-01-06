@@ -19,32 +19,32 @@ export default function CardPayment() {
         <div>
             <Topbar/>
             <Navbar/>
-            <div className="container-fluid bg-breadcrumb">
-            <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
-                <h3 className="text-white display-3 mb-4">Online Payment</h3>
-                <ol className="breadcrumb justify-content-center mb-0">
-                <li className="breadcrumb-item"><a href="/">Home</a></li>
-                <li className="breadcrumb-item"><a href="/Travel_Booking">Pages</a></li>
-                <li className="breadcrumb-item active text-white">Online Booking</li>
+            <div classNameName="container-fluid bg-breadcrumb">
+            <div classNameName="container text-center py-5" style={{ maxWidth: "900px" }}>
+                <h3 classNameName="text-white display-3 mb-4">Online Payment</h3>
+                <ol classNameName="breadcrumb justify-content-center mb-0">
+                <li classNameName="breadcrumb-item"><a href="/">Home</a></li>
+                <li classNameName="breadcrumb-item"><a href="/Travel_Booking">Pages</a></li>
+                <li classNameName="breadcrumb-item active text-white">Online Booking</li>
                 </ol>
             </div>
             </div>
-            <div className="padding" >
-            <div className="row">
+            <div classNameName="padding" >
+            <div classNameName="row">
     
-        <div className="container-fluid d-flex justify-content-center">
-            <div className="col-sm-8 col-md-6">
-            <div className="card">
-            <div className="bg">
+        <div classNameName="container-fluid d-flex justify-content-center">
+            <div classNameName="col-sm-8 col-md-6">
+            <div classNameName="card">
+            <div classNameName="bg">
                 
-            <div className="card-header">
-            <div className="row">
+            <div classNameName="card-header">
+            <div classNameName="row">
                     
 
-                    <div className="col-md-6">
+                    <div classNameName="col-md-6">
                     <span>CREDIT/DEBIT CARD PAYMENT</span>
                     </div>
-                    <div className="col-md-6 text-right" style={{ marginTop: "-5px" }}>
+                    <div classNameName="col-md-6 text-right" style={{ marginTop: "-5px" }}>
                     <img
                     src="https://img.icons8.com/color/36/000000/visa.png"
                     alt="Visa"
@@ -60,15 +60,15 @@ export default function CardPayment() {
                     </div>
                 </div>
                 </div>
-                <div className="card-body" style={{ height: "350px" }}>
-                <div className="form-group">
-                    <label htmlFor="cc-number" className="control-label">
+                <div classNameName="card-body" style={{ height: "350px" }}>
+                <div classNameName="form-group">
+                    <label htmlFor="cc-number" classNameName="control-label">
                     CARD NUMBER
                     </label>
                     <input
                     id="cc-number"
                     type="tel"
-                    className="input-lg form-control cc-number"
+                    classNameName="input-lg form-control cc-number"
                     autoComplete="cc-number"
                     placeholder="xxxx xxxx xxxx xxxx"
                     value={cardNumber}
@@ -76,21 +76,21 @@ export default function CardPayment() {
                     required
                     />
                 </div>
-                <div className="row">
-                <div className="col-md-6">
-                    <div className="form-group">
-                    <label htmlFor="cc-exp" className="control-label">
+                <div classNameName="row">
+                <div classNameName="col-md-6">
+                    <div classNameName="form-group">
+                    <label htmlFor="cc-exp" classNameName="control-label">
                         CARD EXPIRY
                     </label>
-                    <div className="form-group">
-                    <label htmlFor="cc-exp" className="control-label">
+                    <div classNameName="form-group">
+                    <label htmlFor="cc-exp" classNameName="control-label">
                         
                     </label>
-                    <div className="d-flex">
+                    <div classNameName="d-flex">
                         {/* Month Dropdown */}
                         <select
                         id="cc-exp-month"
-                        className="form-control"
+                        classNameName="form-control"
                         style={{ marginRight: "10px" }}
                         value={expiry.month}
                         onChange={(e) => setExpiry({ ...expiry, month: e.target.value })}
@@ -108,7 +108,7 @@ export default function CardPayment() {
                         {/* Year Dropdown */}
                         <select
                         id="cc-exp-year"
-                        className="form-control"
+                        classNameName="form-control"
                         value={expiry.year}
                         onChange={(e) => setExpiry({ ...expiry, year: e.target.value })}
                         required
@@ -127,15 +127,15 @@ export default function CardPayment() {
 
                     </div>
                 </div>
-                <div className="col-md-6">
-                    <div className="form-group">
-                        <label htmlFor="cc-cvc" className="control-label">
+                <div classNameName="col-md-6">
+                    <div classNameName="form-group">
+                        <label htmlFor="cc-cvc" classNameName="control-label">
                         CARD / CVC
                         </label>
                         <input
                         id="cc-cvc"
                         type="tel"
-                        className="input-lg form-control cc-cvc"
+                        classNameName="input-lg form-control cc-cvc"
                         autoComplete="off"
                         placeholder="xxx"
                         value={cvc}
@@ -145,23 +145,23 @@ export default function CardPayment() {
                     </div>
                     </div>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="card-holder" className="control-label">
+                <div classNameName="form-group">
+                    <label htmlFor="card-holder" classNameName="control-label">
                     CARD HOLDER NAME
                     </label>
                     <input
                     id="card-holder"
                     type="text"
-                    className="input-lg form-control"
+                    classNameName="input-lg form-control"
                     value={cardHolder}
                     onChange={(e) => setCardHolder(e.target.value)}
                     />
                     </div><br></br>
-                <div className="form-control">
+                <div classNameName="form-control">
                     <input
                     value="MAKE PAYMENT"
                     type="button"
-                    className="btnpayment"
+                    classNameName="btnpayment"
                     style={{ fontSize: ".8rem" }}
                     onClick={handlePayment}
                     />

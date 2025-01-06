@@ -72,33 +72,33 @@ export default function VerifyOTP() {
         <div>
             <Topbar/>
             <Navbar/>
-            <div className="container-fluid bg-breadcrumb">
-                <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
-                    <h3 className="text-white display-3 mb-4">Password Reset</h3>
-                    <ol className="breadcrumb justify-content-center mb-0">
-                        <li className="breadcrumb-item"><a href="/">Home</a></li>
-                        <li className="breadcrumb-item"><a href="/Contact">Pages</a></li>
-                        <li className="breadcrumb-item active text-white">Password Reset</li>
-                        <li className="breadcrumb-item active text-white">Verify OTP</li>
+            <div classNameName="container-fluid bg-breadcrumb">
+                <div classNameName="container text-center py-5" style={{ maxWidth: '900px' }}>
+                    <h3 classNameName="text-white display-3 mb-4">Password Reset</h3>
+                    <ol classNameName="breadcrumb justify-content-center mb-0">
+                        <li classNameName="breadcrumb-item"><a href="/">Home</a></li>
+                        <li classNameName="breadcrumb-item"><a href="/Contact">Pages</a></li>
+                        <li classNameName="breadcrumb-item active text-white">Password Reset</li>
+                        <li classNameName="breadcrumb-item active text-white">Verify OTP</li>
                     </ol>
                 </div>
             </div>
-            <div className="container my-5">
-                <div className="row justify-content-center">
-                    <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-                        <div className="bg-white p-4 p-md-5 rounded shadow-sm border">
-                            <h4 className="text-center mb-4">Enter OTP</h4>
+            <div classNameName="container my-5">
+                <div classNameName="row justify-content-center">
+                    <div classNameName="col-12 col-md-8 col-lg-6 col-xl-5">
+                        <div classNameName="bg-white p-4 p-md-5 rounded shadow-sm border">
+                            <h4 classNameName="text-center mb-4">Enter OTP</h4>
                             <form onSubmit={handleOtpSubmit}>
-                                <div className="mb-3">
-                                    <p className="text-dark">Enter the 6-digit OTP sent to your email.</p>
+                                <div classNameName="mb-3">
+                                    <p classNameName="text-dark">Enter the 6-digit OTP sent to your email.</p>
                                     {countdown > 0 && (
-                                        <p className="text-danger">
+                                        <p classNameName="text-danger">
                                             Time remaining: {Math.floor(countdown / 60)}:{countdown % 60}
                                         </p>
                                     )}
                                     <input
                                         type="text"
-                                        className="form-control"
+                                        classNameName="form-control"
                                         id="otp"
                                         value={otp}
                                         onChange={(e) => setOtp(e.target.value)}
@@ -107,8 +107,8 @@ export default function VerifyOTP() {
                                         required
                                     />
                                 </div>
-                                <div className="d-grid">
-                                    <button className="btn btn-lg btn-success" type="submit">
+                                <div classNameName="d-grid">
+                                    <button classNameName="btn btn-lg btn-success" type="submit">
                                         Verify OTP
                                     </button>
                                 </div>
