@@ -112,6 +112,11 @@ const handleSearch = async () => {
     setIsAddingPlace(false);
   };
 
+// Handle adding a new place
+const handleAddPlace = () => {
+    resetForm();
+    setIsAddingPlace(true);
+  };
 
 
 
