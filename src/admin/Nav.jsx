@@ -28,7 +28,6 @@ export default function Nav() {
               >
                 <i className="fa fa-search"></i>
               </a>
-              </a>
               <ul className="dropdown-menu dropdown-search animated fadeIn">
                 <form className="navbar-left navbar-form nav-search">
                   <div className="input-group">
@@ -37,6 +36,23 @@ export default function Nav() {
                 </form>
               </ul>
             </li>
+            <li className="nav-item topbar-icon dropdown hidden-caret">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="messageDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i className="fa fa-envelope"></i>
+              </a>
+
+
+
+
+
 
 
 
