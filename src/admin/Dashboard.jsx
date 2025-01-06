@@ -294,6 +294,7 @@ export default function Dashboard() {
                             </th>
                             <td class="text-end">Mar 19, 2020, 2.45pm</td>
                             <td class="text-end">$250.00</td>
+                            <td class="text-end">
 
 
 
