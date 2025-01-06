@@ -79,6 +79,7 @@ export default function Nav() {
                         </div>
                       </a>
                       <a href="#">
+                      <div className="notif-img">
 
 
 
