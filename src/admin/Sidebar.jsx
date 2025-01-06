@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Header from './Header'
+
 
 export default function Sidebar() {
   return (
     <div>
-      <Header/>
+      <Headeradmin/>
     <div className="sidebar" data-background-color="dark">
       <div className="sidebar-logo">
        
