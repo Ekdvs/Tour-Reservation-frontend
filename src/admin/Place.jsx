@@ -183,6 +183,29 @@ const handleAddPlace = () => {
             />
           </div>
 
+          <div className="mb-3">
+            <label htmlFor="price" className="form-label">Price</label>
+            <input
+              type="number"
+              className="form-control"
+              id="price"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            {editingPlace ? 'Update Place' : 'Add Place'}
+          </button>
+          <button
+            type="button"
+            className="btn btn-secondary ms-2"
+            onClick={resetForm}
+          >
+            Cancel
+          </button>
+        </form>
+      )}
 
 
 
