@@ -8,6 +8,10 @@ export default function Nav() {
       <nav className="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
       <div className="input-group">
       <div className="input-group-prepend">
+      <button type="submit" className="btn btn-search pe-1">
+                  <i className="fa fa-search search-icon"></i>
+                </button>
+              </div>
 
 
 
