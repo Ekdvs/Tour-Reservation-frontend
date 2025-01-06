@@ -12,6 +12,7 @@ export default function Nav() {
                   <i className="fa fa-search search-icon"></i>
                 </button>
               </div>
+              <input type="text" placeholder="Search ..." className="form-control" />
 
 
 
