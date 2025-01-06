@@ -233,6 +233,20 @@ export default function Nav() {
                         <div className="avatar-item bg-secondary rounded-circle">
                             <i className="fas fa-credit-card"></i>
                           </div>
+                          <span className="text">Payments</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li className="nav-item topbar-user dropdown hidden-caret">
+              <a className="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                <div className="avatar-sm">
+                  <img src="assets/img/profile.jpg" alt="..." className="avatar-img rounded-circle" />
+                </div>
 
 
 
