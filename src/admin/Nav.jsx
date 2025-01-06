@@ -48,7 +48,7 @@ export default function Nav() {
               >
                 <i className="fa fa-envelope"></i>
               </a>
-
+              <ul className="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
 
 
 
