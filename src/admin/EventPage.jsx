@@ -98,3 +98,14 @@ const EventManagement = () => {
       toast.error("Error updating event!");
     }
   };
+
+  // Delete Event
+  const handleDeleteEvent = async (eventId) => {
+    try {
+      await axios.delete(`http://localhost:8080/event/deleteEvent/${eventId}`);
+      fetchEvents();
+      toast.success("Event deleted successfully!");
+    } catch (error) {
+      toast.error("Error deleting event!");
+    }
+  };
