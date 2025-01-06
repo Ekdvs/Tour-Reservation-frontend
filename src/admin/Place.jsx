@@ -13,3 +13,19 @@ const Places = () => {
   
     const API_BASE_URL = 'http://localhost:8080/place';
   
+    
+  // Fetch all places
+  const fetchPlaces = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/allplaces`);
+      setPlaces(response.data);
+      setFilteredPlaces(response.data);
+    } catch (error) {
+      toast.error('Error fetching places!');
+    }
+  };
+
+  useEffect(() => {
+    fetchPlaces();
+  }, []);
+
