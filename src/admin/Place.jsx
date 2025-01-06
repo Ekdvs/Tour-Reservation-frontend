@@ -139,6 +139,30 @@ const handleAddPlace = () => {
             />
           </div>
 
+          <div className="mb-3">
+            <label htmlFor="description" className="form-label">Description</label>
+            <textarea
+              className="form-control"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              required
+            ></textarea>
+          </div>
+          <div className="mb-3">
+            <label htmlFor="location" className="form-label">Location</label>
+            <input
+              type="text"
+              className="form-control"
+              id="location"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
+              required
+            />
+          </div>
+
+
+
 
 
 
