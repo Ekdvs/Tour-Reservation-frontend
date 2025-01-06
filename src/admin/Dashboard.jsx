@@ -230,6 +230,9 @@ export default function Dashboard() {
                               >
                                 <i class="fa fa-check"></i>
                               </button>
+                              Payment from #10231
+                            </th>
+                            <td class="text-end">Mar 19, 2020, 2.45pm</td>
 
 
 
