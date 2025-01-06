@@ -1,3 +1,8 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+
+
 const NewCustomers = () => {
     const [newCustomers, setNewCustomers] = useState([]);
   
