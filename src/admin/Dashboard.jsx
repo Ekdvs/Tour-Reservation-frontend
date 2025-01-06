@@ -300,6 +300,13 @@ export default function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row">
+                            <button
+                                class="btn btn-icon btn-round btn-success btn-sm me-2"
+                              >
+                                <i class="fa fa-check"></i>
+                              </button>
+                              Payment from #10231
+                            </th>
 
 
 
