@@ -183,6 +183,8 @@ export default function Nav() {
               <div className="dropdown-menu quick-actions animated fadeIn">
               <div className="quick-actions-header">
               <span className="title mb-1">Quick Actions</span>
+              <span className="subtitle op-7">Shortcuts</span>
+                </div>
 
 
 
