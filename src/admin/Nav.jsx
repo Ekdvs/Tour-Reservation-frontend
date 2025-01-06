@@ -50,7 +50,10 @@ export default function Nav() {
               </a>
               <ul className="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
               <li>
-
+              <div className="dropdown-title d-flex justify-content-between align-items-center">
+                    Messages
+                    <a href="#" className="small">Mark all as read</a>
+                  </div>
 
 
 
