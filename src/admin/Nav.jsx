@@ -181,6 +181,7 @@ export default function Nav() {
                 <i className="fas fa-layer-group"></i>
               </a>
               <div className="dropdown-menu quick-actions animated fadeIn">
+              <div className="quick-actions-header">
 
 
 
