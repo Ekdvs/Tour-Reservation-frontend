@@ -207,6 +207,12 @@ const handleAddPlace = () => {
         </form>
       )}
 
+{/* Add Place Button */}
+{!editingPlace && !isAddingPlace && (
+        <button onClick={handleAddPlace} className="btn btn-success mb-3">
+          Add Place
+        </button>
+      )}
 
 
 
