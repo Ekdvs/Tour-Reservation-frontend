@@ -180,6 +180,7 @@ export default function Nav() {
               <a className="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                 <i className="fas fa-layer-group"></i>
               </a>
+              <div className="dropdown-menu quick-actions animated fadeIn">
 
 
 
