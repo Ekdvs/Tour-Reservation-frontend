@@ -128,6 +128,7 @@ export default function Nav() {
                   </div>
                   </li>
                 <li>
+                <div className="notif-scroll scrollbar-outer">
 
 
 
