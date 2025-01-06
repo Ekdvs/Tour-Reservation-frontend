@@ -13,6 +13,10 @@ export default function Nav() {
                 </button>
               </div>
               <input type="text" placeholder="Search ..." className="form-control" />
+              </div>
+          </nav>
+
+          <ul className="navbar-nav topbar-nav ms-md-auto align-items-center">
 
 
 
