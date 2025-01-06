@@ -116,8 +116,24 @@ const EventManagement = () => {
     setEventForm({ ...eventForm, [name]: value });
   };
 
+// Set Event for Editing
+const handleEditEvent = (event) => {
+    setEditEvent(event);
+    setEventForm({
+      eventName: event.eventName,
+      eventDate: event.eventDate,
+      eventTime: event.eventTime,
+      eventVenue: event.eventVenue,
+      eventOrganizer: event.eventOrganizer,
+      description: event.description,
+      oneTicketPrice: event.oneTicketPrice,
+      eventType: event.eventType,
+      eventIsFor: event.eventIsFor,
+      numOfTickets: event.numOfTickets,
+    });
+  };
 
 
 
 
-  
+
