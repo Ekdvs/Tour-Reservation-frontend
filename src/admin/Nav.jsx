@@ -176,6 +176,10 @@ export default function Nav() {
                 </li>
               </ul>
             </li>
+            <li className="nav-item topbar-icon dropdown hidden-caret">
+              <a className="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+                <i className="fas fa-layer-group"></i>
+              </a>
 
 
 
