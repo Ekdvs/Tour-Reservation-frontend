@@ -86,6 +86,10 @@ export default function Nav() {
                         <span className="subject">Jhon Doe</span>
                         <span className="block">Ready for the meeting today...</span>
                         <span className="time">12 minutes ago</span>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div className="notif-img">
 
 
 
