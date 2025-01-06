@@ -102,6 +102,23 @@ export default function Nav() {
                   </div>
                 </li>
                 <li>
+                <a className="see-all" href="javascript:void(0);">
+                    See all messages<i className="fa fa-angle-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li className="nav-item topbar-icon dropdown hidden-caret">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="notifDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i className="fa fa-bell"></i>
 
 
 
