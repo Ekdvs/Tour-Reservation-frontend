@@ -53,7 +53,7 @@ export default function Services() {
                     <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
                       <div class="service-content text-end">
                         <h5 class="mb-4">Hotel Reservation</h5>
-                        <p class="mb-0">
+                        <p class="mb-0"style={{ color: "black" }}>
                           Dolor sit amet consectetur adipisicing elit. Non alias
                           eum, suscipit expedita corrupti officiis debitis
                           possimus nam laudantium beatae quidem dolore
