@@ -286,18 +286,7 @@ export default function Nav() {
             </li>
           </ul>
         </div>
-      </nav>
-    </div>
-
-
-
-
-
-
-
-
-
-      
+      </nav>  
     </div>
   )
 }
