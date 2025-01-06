@@ -33,6 +33,23 @@ export default function Sidebar() {
                 </ul>
               </div>
 
+              </li>
+            <li className="nav-section">
+              <span className="sidebar-mini-icon">
+                <i className="fa fa-ellipsis-h"></i>
+              </span>
+              <h4 className="text-section">Components</h4>
+            </li>
+            
+           
+            <li className="nav-item">
+            <Link className="nav-link" to="/place">
+                <i className="fas fa-bars"></i>
+                <p>Add Place</p>
+            </Link>
+            </li>
+            
+            <li className="nav-item">
 
 
 
