@@ -93,6 +93,7 @@ export default function Nav() {
                         <img src="assets/img/talha.jpg" alt="Img Profile" />
                         </div>
                         <div className="notif-content">
+                        <span className="subject">Talha</span>
 
 
 
