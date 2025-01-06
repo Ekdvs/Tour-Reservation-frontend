@@ -86,6 +86,19 @@ const handleDelete = async (name) => {
     setIsAddingPlace(false);
   };
 
+// Handle search button click
+const handleSearch = async () => {
+    if (searchTerm === '') {
+      setFilteredPlaces(places);
+    } else {
+      try {
+        const response = await axios.get(`${API_BASE_URL}/getPlaceByName/${searchTerm}`);
+        setFilteredPlaces([response.data]);
+      } catch (error) {
+        toast.error('Error searching for place!');
+      }
+    }
+  };
 
 
 
