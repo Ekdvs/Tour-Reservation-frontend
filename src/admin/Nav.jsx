@@ -28,6 +28,15 @@ export default function Nav() {
               >
                 <i className="fa fa-search"></i>
               </a>
+              </a>
+              <ul className="dropdown-menu dropdown-search animated fadeIn">
+                <form className="navbar-left navbar-form nav-search">
+                  <div className="input-group">
+                    <input type="text" placeholder="Search ..." className="form-control" />
+                  </div>
+                </form>
+              </ul>
+            </li>
 
 
 
