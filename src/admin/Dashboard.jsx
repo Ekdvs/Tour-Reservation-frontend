@@ -322,6 +322,7 @@ export default function Dashboard() {
                               </button>
                               Payment from #10231
                             </th>
+                            <td class="text-end">Mar 19, 2020, 2.45pm</td>
 
 
 
