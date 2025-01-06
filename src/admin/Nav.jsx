@@ -90,7 +90,7 @@ export default function Nav() {
                       </a>
                       <a href="#">
                         <div className="notif-img">
-
+                        <img src="assets/img/talha.jpg" alt="Img Profile" />
 
 
 
