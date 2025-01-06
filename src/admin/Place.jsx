@@ -100,6 +100,18 @@ const handleSearch = async () => {
     }
   };
 
+  // Load details of a place into the form for editing
+  const handleEdit = (place) => {
+    setPlaceName(place.placeName);
+    setDescription(place.description);
+    setLocation(place.location);
+    setImage(null); // Reset the image in case it's being edited
+    setCategory(place.category);
+    setPrice(place.price);
+    setEditingPlace(place);
+    setIsAddingPlace(false);
+  };
+
 
 
 
