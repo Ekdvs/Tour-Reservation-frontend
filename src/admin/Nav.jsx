@@ -66,6 +66,12 @@ export default function Nav() {
                         <span className="subject">Jimmy Denis</span>
                         <span className="block">How are you ?</span>
                         <span className="time">5 minutes ago</span>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div className="notif-img">
+                          <img src="assets/img/chadengle.jpg" alt="Img Profile" />
+                        </div>
 
 
 
