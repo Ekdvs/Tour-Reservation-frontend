@@ -14,6 +14,7 @@ import Contact from './pages/Contact';
 import EventShowPage from './pages/EventU';
 import EventManagement from './admin/EventPage';
 import CardPayment from './pages/CardPayment';
+import Dashboard from './admin/Dashboard';
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/EventShowPage" element={<EventShowPage/>} />
           <Route path="/CardPayment" element={<CardPayment/>} />
+          <Route path="/Dashboard" element={<Dashboard/>} />
          
 
         </Routes>
