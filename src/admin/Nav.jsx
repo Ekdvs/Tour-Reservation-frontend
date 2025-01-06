@@ -122,6 +122,7 @@ export default function Nav() {
                 <span className="notification">4</span>
                 </a>
               <ul className="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
+              <li>
 
 
 
