@@ -109,3 +109,15 @@ const EventManagement = () => {
       toast.error("Error deleting event!");
     }
   };
+
+   // Form Change Handler
+   const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setEventForm({ ...eventForm, [name]: value });
+  };
+
+
+
+
+
+  
