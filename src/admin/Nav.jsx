@@ -56,6 +56,7 @@ export default function Nav() {
                   </div>
                   </li>
                 <li>
+                <div className="message-notif-scroll scrollbar-outer">
 
 
 
