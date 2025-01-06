@@ -64,6 +64,7 @@ export default function Nav() {
                         </div>
                         <div className="notif-content">
                         <span className="subject">Jimmy Denis</span>
+                        <span className="block">How are you ?</span>
 
 
 
