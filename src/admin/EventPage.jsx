@@ -133,6 +133,14 @@ const handleEditEvent = (event) => {
     });
   };
 
+  return (
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Event Management</h1>
+
+      {/* Toast Notifications */}
+      <ToastContainer />
+
+      {/* Search Bar */}
 
 
 
