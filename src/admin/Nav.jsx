@@ -209,6 +209,10 @@ export default function Nav() {
                       <div className="avatar-item bg-info rounded-circle">
                             <i className="fas fa-file-excel"></i>
                           </div>
+                          <span className="text">Reports</span>
+                        </div>
+                      </a>
+                      <a className="col-6 col-md-4 p-0" href="#">
 
 
 
