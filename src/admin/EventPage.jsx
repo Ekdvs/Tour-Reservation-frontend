@@ -227,6 +227,17 @@ const handleEditEvent = (event) => {
           ></textarea>
         </div>
 
+        <div className="form-group mb-3">
+          <input
+            type="number"
+            className="form-control"
+            name="oneTicketPrice"
+            placeholder="Ticket Price"
+            value={eventForm.oneTicketPrice}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
 
 
 
