@@ -80,6 +80,8 @@ export default function Nav() {
                       </a>
                       <a href="#">
                       <div className="notif-img">
+                      <img src="assets/img/mlane.jpg" alt="Img Profile" />
+                        </div>
 
 
 
