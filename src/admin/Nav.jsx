@@ -83,6 +83,8 @@ export default function Nav() {
                       <img src="assets/img/mlane.jpg" alt="Img Profile" />
                         </div>
                         <div className="notif-content">
+                        <span className="subject">Jhon Doe</span>
+                        <span className="block">Ready for the meeting today...</span>
 
 
 
