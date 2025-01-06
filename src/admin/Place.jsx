@@ -63,3 +63,21 @@ const handleSubmit = async (e) => {
      }
    };
  
+// Handle delete place
+const handleDelete = async (name) => {
+    try {
+      await axios.delete(`${API_BASE_URL}/delete/${name}`);
+      toast.success('Place deleted successfully!');
+      fetchPlaces();
+    } catch (error) {
+      toast.error('Error deleting place!');
+    }
+  };
+
+
+
+
+
+
+
+
