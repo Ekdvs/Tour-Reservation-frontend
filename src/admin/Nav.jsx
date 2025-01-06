@@ -95,6 +95,7 @@ export default function Nav() {
                         <div className="notif-content">
                         <span className="subject">Talha</span>
                         <span className="block">Hi, Apa Kabar?</span>
+                        <span className="time">17 minutes ago</span>
 
 
 
