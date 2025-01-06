@@ -142,6 +142,18 @@ const handleEditEvent = (event) => {
 
       {/* Search Bar */}
 
+      <div className="mb-4">
+        <input
+          type="text"
+          className="form-control mb-2"
+          placeholder="Search by event name"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        <button className="btn btn-primary w-100" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
 
 
 
