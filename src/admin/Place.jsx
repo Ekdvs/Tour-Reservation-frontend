@@ -233,6 +233,57 @@ const handleAddPlace = () => {
       </div>
 
 
+      <table className="table mt-3">
+        <thead>
+          <tr>
+            <th>Place Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Image</th> {/* Added column for Image */}
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {filteredPlaces.map((place) => (
+            <tr key={place.placeName}>
+              <td>{place.placeName}</td>
+              <td>{place.description}</td>
+              <td>{place.location}</td>
+              <td>{place.category}</td>
+              <td>{place.price}</td>
+              <td>
+                {place.imagePath && (
+                  <img src={place.imagePath} alt="Place" style={{ maxWidth: '100px', height: 'auto' }} />
+                )}
+              </td>
+              <td>
+                <div className="d-flex">
+                  <button
+                    onClick={() => handleEdit(place)}
+                    className="btn btn-warning me-2 w-100"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDelete(place.placeName)}
+                    className="btn btn-danger w-100"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+};
+
+export default Places;
+
 
 
 
