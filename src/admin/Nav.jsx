@@ -223,6 +223,11 @@ export default function Nav() {
                       <a className="col-6 col-md-4 p-0" href="#">
                       <div className="quick-actions-item">
                       <div className="avatar-item bg-primary rounded-circle">
+                      <i className="fas fa-file-invoice-dollar"></i>
+                          </div>
+                          <span className="text">Invoice</span>
+                        </div>
+                      </a>
 
 
 
