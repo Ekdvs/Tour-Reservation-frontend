@@ -26,7 +26,19 @@ const NewCustomers = () => {
                   >
                     <i className="fas fa-ellipsis-h"></i>
                   </button>
-    
+                  <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a className="dropdown-item" href="#">Action</a>
+                <a className="dropdown-item" href="#">Another action</a>
+                <a className="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="card-list py-4">
+          {newCustomers.map((customer, index) => (
+            <div className="item-list" key={index}>
+              <div className="avatar">
+
 
 
 
