@@ -161,6 +161,27 @@ const handleAddPlace = () => {
             />
           </div>
 
+          <div className="mb-3">
+            <label htmlFor="image" className="form-label">Image</label>
+            <input
+              type="file"
+              className="form-control"
+              id="image"
+              onChange={(e) => setImage(e.target.files[0])}
+            />
+            {image && <img src={URL.createObjectURL(image)} alt="Preview" className="mt-3" style={{ maxWidth: '100%', height: 'auto' }} />}
+          </div>
+          <div className="mb-3">
+            <label htmlFor="category" className="form-label">Category</label>
+            <input
+              type="text"
+              className="form-control"
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              required
+            />
+          </div>
 
 
 
