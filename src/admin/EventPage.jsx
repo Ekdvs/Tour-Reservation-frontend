@@ -216,7 +216,16 @@ const handleEditEvent = (event) => {
           />
         </div>
 
-
+        <div className="form-group mb-3">
+          <textarea
+            className="form-control"
+            name="description"
+            placeholder="Description"
+            value={eventForm.description}
+            onChange={handleInputChange}
+            required
+          ></textarea>
+        </div>
 
 
 
