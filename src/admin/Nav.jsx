@@ -96,6 +96,12 @@ export default function Nav() {
                         <span className="subject">Talha</span>
                         <span className="block">Hi, Apa Kabar?</span>
                         <span className="time">17 minutes ago</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </li>
+                <li>
 
 
 
