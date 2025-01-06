@@ -155,6 +155,12 @@ export default function Nav() {
                         <div className="notif-content">
                         <span className="block">Reza sent messages to you</span>
                         <span className="time">12 minutes ago</span>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div className="notif-icon notif-danger">
+                          <i className="fa fa-heart"></i>
+                        </div>
 
 
 
