@@ -161,6 +161,14 @@ export default function Nav() {
                         <div className="notif-icon notif-danger">
                           <i className="fa fa-heart"></i>
                         </div>
+                        <div className="notif-content">
+                          <span className="block">Farrah liked Admin</span>
+                          <span className="time">17 minutes ago</span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </li>
 
 
 
