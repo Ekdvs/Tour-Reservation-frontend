@@ -30,3 +30,15 @@ const EventManagement = () => {
       fetchEvents();
     }, []);
   
+    // Search Events by Name
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/event/searchEvents?name=${searchQuery}`
+      );
+      setEvents(response.data);
+    } catch (error) {
+      toast.error("Error searching events!");
+    }
+  };
+
