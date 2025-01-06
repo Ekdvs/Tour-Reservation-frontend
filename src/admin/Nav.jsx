@@ -193,6 +193,9 @@ export default function Nav() {
                         <div className="avatar-item bg-danger rounded-circle">
                             <i className="far fa-calendar-alt"></i>
                           </div>
+                          <span className="text">Calendar</span>
+                        </div>
+                      </a>
 
 
       
