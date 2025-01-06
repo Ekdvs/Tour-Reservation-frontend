@@ -188,6 +188,8 @@ export default function Nav() {
                 <div className="quick-actions-scroll scrollbar-outer">
                 <div className="quick-actions-items">
                 <div className="row m-0">
+                <a className="col-6 col-md-4 p-0" href="#">
+                        <div className="quick-actions-item">
 
 
       
