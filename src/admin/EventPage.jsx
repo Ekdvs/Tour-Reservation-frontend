@@ -70,3 +70,31 @@ const EventManagement = () => {
     }
   };
 
+ // Update Event
+ const handleUpdateEvent = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("event", JSON.stringify(eventForm));
+    if (eventImage) formData.append("imageFile", eventImage);
+
+    try {
+      await axios.put(`http://localhost:8080/event/updateEvent/${editEvent.eventId}`, formData);
+      fetchEvents();
+      toast.success("Event updated successfully!");
+      setEditEvent(null); // Clear the editing state
+      setEventForm({
+        eventName: "",
+        eventDate: "",
+        eventTime: "",
+        eventVenue: "",
+        eventOrganizer: "",
+        description: "",
+        oneTicketPrice: 0,
+        eventType: "",
+        eventIsFor: "",
+        numOfTickets: 0,
+      }); // Clear the form
+    } catch (error) {
+      toast.error("Error updating event!");
+    }
+  };
