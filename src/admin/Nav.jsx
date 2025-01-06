@@ -17,6 +17,17 @@ export default function Nav() {
           </nav>
 
           <ul className="navbar-nav topbar-nav ms-md-auto align-items-center">
+          <li className="nav-item topbar-icon dropdown hidden-caret d-flex d-lg-none">
+              <a
+                className="nav-link dropdown-toggle"
+                data-bs-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                <i className="fa fa-search"></i>
+              </a>
 
 
 
