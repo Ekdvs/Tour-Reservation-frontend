@@ -38,6 +38,11 @@ const NewCustomers = () => {
           {newCustomers.map((customer, index) => (
             <div className="item-list" key={index}>
               <div className="avatar">
+              <img
+                  src={customer.avatarUrl || 'default-avatar.jpg'} // Use a default avatar if not available
+                  alt="..."
+                  className="avatar-img rounded-circle"
+                />
 
 
 
