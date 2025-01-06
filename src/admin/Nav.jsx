@@ -185,6 +185,7 @@ export default function Nav() {
               <span className="title mb-1">Quick Actions</span>
               <span className="subtitle op-7">Shortcuts</span>
                 </div>
+                <div className="quick-actions-scroll scrollbar-outer">
 
 
 
