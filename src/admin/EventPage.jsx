@@ -239,6 +239,17 @@ const handleEditEvent = (event) => {
           />
         </div>
 
+        <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="eventType"
+            placeholder="Type"
+            value={eventForm.eventType}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
 
 
 
