@@ -14,22 +14,22 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Simulate authentication check
+    
     const simulateAuthCheck = setTimeout(() => {
-      const userLoggedIn = !!localStorage.getItem('authToken'); // Check if user is logged in
+      const userLoggedIn = !!localStorage.getItem('authToken'); 
       setIsLoggedIn(userLoggedIn);
       setLoading(false);
 
       if (!userLoggedIn) {
-        navigate('/login'); // Redirect to login page if not logged in
+        navigate('/login'); 
       }
-    }, 2000); // Simulate 2 seconds loading time
+    }, 2000); 
 
     return () => clearTimeout(simulateAuthCheck);
   }, [navigate]);
 
   if (loading) {
-    // Show a loading spinner while authentication is checked
+    
     return (
       <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
         <div className="spinner-border text-primary" role="status">
@@ -40,7 +40,7 @@ export default function Dashboard() {
   }
 
   if (!isLoggedIn) {
-    return null; // Prevent rendering the dashboard if not logged in
+    return null; 
   }
   return (
     <div>
