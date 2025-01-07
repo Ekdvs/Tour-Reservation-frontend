@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
 import Nav from './Nav'
 import OnlineUsersCard from './OnlineUserCard'
 import NewCustomers from './NewCustomer'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -11,6 +12,21 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true); // Manage loading state
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login status
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Simulate authentication check
+    const simulateAuthCheck = setTimeout(() => {
+      const userLoggedIn = true; // Replace this with your actual authentication logic
+      setIsLoggedIn(userLoggedIn);
+      setLoading(false);
+
+      if (!userLoggedIn) {
+        navigate('/login'); // Redirect to login page if not logged in
+      }
+    }, 2000); // Simulated loading time (2 seconds)
+
+    return () => clearTimeout(simulateAuthCheck);
+  }, [navigate]);
   return (
     <div>
       <Sidebar />
