@@ -20,7 +20,7 @@ import AdminUserPage from './admin/AdminUserPage';
 
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
 
-import Our_Gallery from './pages/Our_Gallery';
+
 
 
 
