@@ -17,10 +17,9 @@ import CardPayment from './pages/CardPayment';
 import Dashboard from './admin/Dashboard';
 import Places from './admin/Place';
 import AdminUserPage from './admin/AdminUserPage';
-import AdminQuidePage from './admin/AdminTravelGuidePage';
+
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
-import AdminCalendar from './admin/AdminCalendar';
-import Blog from './pages/Blog';
+
 import Our_Gallery from './pages/Our_Gallery';
 
 
@@ -48,7 +47,7 @@ function App() {
           <Route path="/EvenPage" element={<EventManagement/>} />
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
-          <Route path="/Our_Gallery" element={<Our_Gallery/>} />
+          
           
 
         </Routes>
