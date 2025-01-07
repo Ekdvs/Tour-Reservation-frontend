@@ -15,6 +15,7 @@ import EventShowPage from './pages/EventU';
 import EventManagement from './admin/EventPage';
 import CardPayment from './pages/CardPayment';
 import Dashboard from './admin/Dashboard';
+import Places from './admin/Place';
 
 
 
@@ -37,7 +38,8 @@ function App() {
           <Route path="/EventShowPage" element={<EventShowPage/>} />
           <Route path="/CardPayment" element={<CardPayment/>} />
           <Route path="/Dashboard" element={<Dashboard/>} />
-         
+          <Route path="/place" element={<Places/>} />
+
 
         </Routes>
       </Router>
