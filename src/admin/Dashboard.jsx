@@ -38,6 +38,10 @@ export default function Dashboard() {
       </div>
     );
   }
+
+  if (!isLoggedIn) {
+    return null; // Prevent rendering the dashboard if not logged in
+  }
   return (
     <div>
       <Sidebar />
