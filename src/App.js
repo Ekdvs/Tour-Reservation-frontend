@@ -16,6 +16,7 @@ import EventManagement from './admin/EventPage';
 import CardPayment from './pages/CardPayment';
 import Dashboard from './admin/Dashboard';
 import Places from './admin/Place';
+import AdminUserPage from './admin/AdminUserPage';
 
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/place" element={<Places/>} />
           <Route path="/EvenPage" element={<EventManagement/>} />
+          <Route path="12" element={<AdminUserPage/>} />
           
 
         </Routes>
