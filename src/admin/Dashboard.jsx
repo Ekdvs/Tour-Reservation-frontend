@@ -8,6 +8,9 @@ import NewCustomers from './NewCustomer'
 
 
 export default function Dashboard() {
+  const [loading, setLoading] = useState(true); // Manage loading state
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login status
+  const navigate = useNavigate();
   return (
     <div>
       <Sidebar />
