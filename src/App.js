@@ -19,6 +19,7 @@ import Places from './admin/Place';
 import AdminUserPage from './admin/AdminUserPage';
 import AdminQuidePage from './admin/AdminTravelGuidePage';
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
+import AdminCalendar from './admin/AdminCalendar';
 
 
 
@@ -45,6 +46,7 @@ function App() {
           <Route path="/EvenPage" element={<EventManagement/>} />
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
+          <Route path="/calander" element={<AdminCalendar/>} />
           
 
         </Routes>
