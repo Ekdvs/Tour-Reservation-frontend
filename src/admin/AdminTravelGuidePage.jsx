@@ -6,7 +6,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import Modal from 'react-bootstrap/Modal';
 
-export default function AdminUserPage() {
+export default function AdminQuidePage() {
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
     // Modal for viewing travel guide history
