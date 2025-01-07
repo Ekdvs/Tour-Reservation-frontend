@@ -9,27 +9,27 @@ import { useNavigate } from 'react-router-dom'
 
 
 export default function Dashboard() {
-  const [loading, setLoading] = useState(true); // Manage loading state
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login status
+  const [loading, setLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
     // Simulate authentication check
     const simulateAuthCheck = setTimeout(() => {
-      const userLoggedIn = true; // Replace this with your actual authentication logic
+      const userLoggedIn = !!localStorage.getItem('authToken'); // Check if user is logged in
       setIsLoggedIn(userLoggedIn);
       setLoading(false);
 
       if (!userLoggedIn) {
         navigate('/login'); // Redirect to login page if not logged in
       }
-    }, 2000); // Simulated loading time (2 seconds)
+    }, 2000); // Simulate 2 seconds loading time
 
     return () => clearTimeout(simulateAuthCheck);
   }, [navigate]);
 
   if (loading) {
-    // Show a loading spinner or screen while authentication is checked
+    // Show a loading spinner while authentication is checked
     return (
       <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
         <div className="spinner-border text-primary" role="status">
