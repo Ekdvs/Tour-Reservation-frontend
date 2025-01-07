@@ -18,6 +18,7 @@ import Dashboard from './admin/Dashboard';
 import Places from './admin/Place';
 import AdminUserPage from './admin/AdminUserPage';
 import AdminQuidePage from './admin/AdminTravelGuidePage';
+import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
 
 
 
@@ -42,7 +43,7 @@ function App() {
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/place" element={<Places/>} />
           <Route path="/EvenPage" element={<EventManagement/>} />
-          <Route path="/manage" element={<AdminUserPage/>} />
+          <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
           
 
