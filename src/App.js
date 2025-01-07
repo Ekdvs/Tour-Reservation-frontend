@@ -39,7 +39,8 @@ function App() {
           <Route path="/CardPayment" element={<CardPayment/>} />
           <Route path="/Dashboard" element={<Dashboard/>} />
           <Route path="/place" element={<Places/>} />
-
+          <Route path="/EvenPage" element={<EventManagement/>} />
+          
 
         </Routes>
       </Router>
