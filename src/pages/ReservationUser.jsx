@@ -84,6 +84,12 @@ export default function ReservationUser() {
         {reservations.length > 0 ? (
           <table className="table table-striped">
             <thead></thead>
+            <tr>
+                <th>ID</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
       
     </div>
   )
