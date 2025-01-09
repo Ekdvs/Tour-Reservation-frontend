@@ -10,9 +10,14 @@ export default function CardPayment() {
   const [cardHolder, setCardHolder] = useState("");
   const [errors, setErrors] = useState({});
 
+  // Validate Visa and MasterCard number
   const validateCardNumber = (number) => {
-    const regex = /^[0-9]{16}$/; // Check if it's 16 digits
-    return regex.test(number);
+    // Visa: Starts with 4, length 13 or 16
+    const visaRegex = /^4\d{12}(\d{3})?$/;
+    // MasterCard: Starts with 51-55 or 2221-2720, length 16
+    const masterCardRegex = /^(5[1-5]\d{14}|222[1-9]\d{12}|22[3-9]\d{13}|23[0-9]\d{12}|24[0-9]\d{12}|25[0-9]\d{12}|26[0-9]\d{12}|27[0-9]\d{12}|2720\d{12})$/;
+
+    return visaRegex.test(number) || masterCardRegex.test(number);
   };
 
   const validateExpiry = ({ month, year }) => {
@@ -34,9 +39,9 @@ export default function CardPayment() {
   const handlePayment = (e) => {
     e.preventDefault();
     const newErrors = {};
-    
+
     if (!validateCardNumber(cardNumber)) {
-      newErrors.cardNumber = "Card number must be 16 digits.";
+      newErrors.cardNumber = "Card number must be valid for Visa or MasterCard.";
     }
     if (!validateExpiry(expiry)) {
       newErrors.expiry = "Expiry date must be valid and in the future.";
