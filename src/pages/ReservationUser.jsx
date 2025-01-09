@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 export default function ReservationUser() {
@@ -18,6 +19,14 @@ export default function ReservationUser() {
 
   const handleAddReservation = (e) => {
     e.preventDefault();
+    axios
+    .post("http://localhost:8080/reservation/addReservation", newReservation)
+    .then(() => {
+      alert("Reservation added successfully!");
+      setNewReservation({ userId: "", details: "" });
+      fetchReservationsByUserId(); // Refresh the list
+    })
+    .catch((err) => console.error(err));
    
   };
   return (
