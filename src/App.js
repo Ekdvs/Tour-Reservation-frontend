@@ -51,7 +51,7 @@ function App() {
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
           <Route path="/logout" element={<LogOut/>} />
-          <Route path="/ReservationUser" element={<Cart/>} />
+          <Route path="/Cart/:eventId" element={<Cart/>} />
           
           
 
