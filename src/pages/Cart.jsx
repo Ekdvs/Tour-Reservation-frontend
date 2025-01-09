@@ -73,6 +73,17 @@ export default function Cart() {
                   className="card-img-top"
                   alt={selectedEvent.eventName}
                 />
+                <div className="card-body">
+              <h5 className="card-title">{selectedEvent.eventName}</h5>
+              <p className="card-text">{selectedEvent.description}</p>
+              <p>
+                <strong>Date:</strong> {selectedEvent.eventDate} <br />
+                <strong>Time:</strong> {selectedEvent.eventTime} <br />
+                <strong>Venue:</strong> {selectedEvent.eventVenue}
+              </p>
+              <p>
+                <strong>Ticket Price:</strong> ${selectedEvent.oneTicketPrice}
+              </p>
       
     </div>
   )
