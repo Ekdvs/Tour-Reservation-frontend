@@ -32,6 +32,8 @@ export default function Cart() {
   };
   return (
     <div>
+        <div className="container mt-5">
+        <h1 className="text-center mb-4">Event Booking</h1>
       
     </div>
   )
