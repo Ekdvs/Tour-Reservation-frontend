@@ -84,6 +84,16 @@ export default function Cart() {
               <p>
                 <strong>Ticket Price:</strong> ${selectedEvent.oneTicketPrice}
               </p>
+              <div className="mb-3">
+                <label className="form-label">Number of Tickets:</label>
+                <input
+                  type="number"
+                  className="form-control"
+                  value={numOfTickets}
+                  onChange={handleTicketChange}
+                  min="1"
+                />
+              </div>
       
     </div>
   )
