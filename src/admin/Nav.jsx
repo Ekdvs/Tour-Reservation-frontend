@@ -268,19 +268,19 @@ export default function Nav() {
                       <div className="u-text">
                         <h4>Hizrian</h4>
                         <p className="text-muted">hello@example.com</p>
-                        <a href="profile.html" className="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                        <a href="/profile" className="btn btn-xs btn-secondary btn-sm">View Profile</a>
                       </div>
                     </div>
                   </li>
                   <li>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="/">My Profile</a>
+                    <a className="dropdown-item" href="/profile">My Profile</a>
                     <a className="dropdown-item" href="#">My Balance</a>
                     <a className="dropdown-item" href="#">Inbox</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Account Setting</a>
+                    <a className="dropdown-item" href="/Dashboard">Account Setting</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Logout</a>
+                    <a className="dropdown-item" href="/logout">Logout</a>
                   </li>
                 </div>
               </ul>
