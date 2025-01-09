@@ -56,7 +56,6 @@ function App() {
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
           <Route path="/logout" element={<LogOut/>} />
           <Route path="/Cart" element={<Cart/>} />
-
           <Route path="/payment" element={<CardPayment/>} />
 
           

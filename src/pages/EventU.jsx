@@ -5,10 +5,12 @@ import "./EventShowPage.css"; // Custom CSS file for styling
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { useNavigate } from "react-router-dom"; // Using useNavigate for routing
 
 const EventShowPage = () => {
   const [events, setEvents] = useState([]);
   const API_BASE_URL = "http://localhost:8080/event";
+  const navigate = useNavigate(); // To navigate programmatically
   
   // Fetch all events
   const fetchEvents = async () => {
@@ -24,11 +26,19 @@ const EventShowPage = () => {
     fetchEvents();
   }, []);
 
+  // Function to handle booking button click
+  const handleBookTickets = (event) => {
+    // Store event data in localStorage
+    localStorage.setItem("selectedEvent", JSON.stringify(event));
+    // Navigate to the Cart page
+    navigate("/Cart");
+  };
+
   return (
     <div>
-        <Topbar/>
-        <Navbar/>
-        <div className="container-fluid bg-breadcrumb">
+      <Topbar />
+      <Navbar />
+      <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
           <h3 className="text-white display-3 mb-4">Upcoming Events</h3>
           <ol className="breadcrumb justify-content-center mb-0">
@@ -42,43 +52,43 @@ const EventShowPage = () => {
           </ol>
         </div>
       </div>
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">Upcoming Events</h2>
-      <div className="row">
-        {events.map((event) => (
-          <div key={event.eventId} className="col-md-4 mb-4">
-            <div className="card shadow-lg rounded-lg event-card">
-              {/* Correct way to display the base64 image */}
-              <img 
-                src={`data:${event.contentType};base64,${event.imageData}`} 
-                alt="event" 
-                className="card-img-top" 
-              />
-              <div className="card-body">
-                <h5 className="card-title event-title">{event.eventName}</h5>
-                <p className="card-text event-description">
-                  {event.description}
-                </p>
-                <p>
-                  <strong>Date:</strong> {event.eventDate} <br />
-                  <strong>Time:</strong> {event.eventTime} <br />
-                  <strong>Venue:</strong> {event.eventVenue} <br />
-                  <strong>Ticket Price:</strong> ${event.oneTicketPrice} <br />
-                </p>
-                
-                <a
-                  href={`/Cart/${event.eventId}`}
-                  className="btn btn-primary btn-lg w-100"
-                >
-                  Book Tickets
-                </a>
+      <div className="container mt-5">
+        <h2 className="text-center mb-4">Upcoming Events</h2>
+        <div className="row">
+          {events.map((event) => (
+            <div key={event.eventId} className="col-md-4 mb-4">
+              <div className="card shadow-lg rounded-lg event-card">
+                {/* Correct way to display the base64 image */}
+                <img 
+                  src={`data:${event.contentType};base64,${event.imageData}`} 
+                  alt="event" 
+                  className="card-img-top" 
+                />
+                <div className="card-body">
+                  <h5 className="card-title event-title">{event.eventName}</h5>
+                  <p className="card-text event-description">
+                    {event.description}
+                  </p>
+                  <p>
+                    <strong>Date:</strong> {event.eventDate} <br />
+                    <strong>Time:</strong> {event.eventTime} <br />
+                    <strong>Venue:</strong> {event.eventVenue} <br />
+                    <strong>Ticket Price:</strong> ${event.oneTicketPrice} <br />
+                  </p>
+                  {/* Book Tickets button */}
+                  <button
+                    onClick={() => handleBookTickets(event)}
+                    className="btn btn-primary btn-lg w-100"
+                  >
+                    Book Tickets
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
-    <Footer/>
+      <Footer />
     </div>
   );
 };
