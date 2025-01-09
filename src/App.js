@@ -18,6 +18,7 @@ import Places from './admin/Place';
 import AdminUserPage from './admin/AdminUserPage';
 
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
+import Maldi from './user/mn';
 
 
 
@@ -46,7 +47,7 @@ function App() {
           <Route path="/EventManagement" element={<EventManagement/>} />
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
-          
+          <Route path="/mn" element={<Maldi/>} />
           
 
         </Routes>
