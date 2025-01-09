@@ -132,6 +132,12 @@ const Cart = () => {
                 <button className="btn btn-success" onClick={handlePayment}>
                   Proceed to Payment
                 </button>
+                <button 
+                  className="btn btn-secondary ms-3"
+                  onClick={handleBackToEvents}
+                >
+                  Back to Events
+                </button>
               </div>
             </div>
           </div>
