@@ -7,6 +7,11 @@ export default function Cart() {
     const [events, setEvents] = useState([]);
     const [selectedEvent, setSelectedEvent] = useState(null);
     const [numOfTickets, setNumOfTickets] = useState(1);
+
+    // Handle event selection
+  const handleEventSelect = (eventId) => {
+   
+  };
   return (
     <div>
       
