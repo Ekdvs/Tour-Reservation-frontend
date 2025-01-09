@@ -55,6 +55,13 @@ export default function ReservationUser() {
           <form onSubmit={handleAddReservation}>
             <div className="mb-3">
               <label className="form-label">User ID</label>
+              <input
+                type="text"
+                className="form-control"
+                value={newReservation.userId}
+                onChange={(e) => setNewReservation({ ...newReservation, userId: e.target.value })}
+                required
+              />
       
     </div>
   )
