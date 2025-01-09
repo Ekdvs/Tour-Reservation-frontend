@@ -51,6 +51,12 @@ export default function Cart() {
                     <p className="card-text">
                       {event.description.substring(0, 100)}...
                     </p>
+                    <button
+                      className="btn btn-primary"
+                      onClick={() => handleEventSelect(event.eventId)}
+                    >
+                      View Details
+                    </button>
       
     </div>
   )
