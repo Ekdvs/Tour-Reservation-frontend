@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function CardPayment() {
   const [cardNumber, setCardNumber] = useState("");
@@ -9,14 +11,13 @@ export default function CardPayment() {
   const [cvc, setCvc] = useState("");
   const [cardHolder, setCardHolder] = useState("");
   const [errors, setErrors] = useState({});
+  const [isProcessing, setIsProcessing] = useState(false);
+  const navigate = useNavigate();
 
   // Validate Visa and MasterCard number
   const validateCardNumber = (number) => {
-    // Visa: Starts with 4, length 13 or 16
     const visaRegex = /^4\d{12}(\d{3})?$/;
-    // MasterCard: Starts with 51-55 or 2221-2720, length 16
     const masterCardRegex = /^(5[1-5]\d{14}|222[1-9]\d{12}|22[3-9]\d{13}|23[0-9]\d{12}|24[0-9]\d{12}|25[0-9]\d{12}|26[0-9]\d{12}|27[0-9]\d{12}|2720\d{12})$/;
-
     return visaRegex.test(number) || masterCardRegex.test(number);
   };
 
@@ -27,16 +28,10 @@ export default function CardPayment() {
     return inputDate > currentDate;
   };
 
-  const validateCVC = (cvc) => {
-    const regex = /^[0-9]{3}$/; // Check if it's 3 digits
-    return regex.test(cvc);
-  };
+  const validateCVC = (cvc) => /^[0-9]{3}$/.test(cvc);
+  const validateCardHolder = (name) => name.trim().length > 0;
 
-  const validateCardHolder = (name) => {
-    return name.trim().length > 0; // Check if not empty
-  };
-
-  const handlePayment = (e) => {
+  const handlePayment = async (e) => {
     e.preventDefault();
     const newErrors = {};
 
@@ -56,8 +51,28 @@ export default function CardPayment() {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      alert("Payment Successful!");
-      // Process payment logic here
+      setIsProcessing(true);
+      try {
+        const paymentData = {
+          cardNumber,
+          expiry,
+          cvc,
+          cardHolder,
+          amount: 100, // Example amount, you can set it dynamically
+        };
+
+        // Make an API request to process payment
+        const response = await axios.post("http://localhost:8080/payment/process", paymentData);
+        if (response.data) {
+          // Redirect to the success page or show success message
+          alert("Payment Successful!");
+          navigate("/payment/success"); // Replace with your success route
+        }
+      } catch (error) {
+        alert("Payment failed! Please try again.");
+      } finally {
+        setIsProcessing(false);
+      }
     }
   };
 
@@ -177,13 +192,15 @@ export default function CardPayment() {
                     {errors.cardHolder && <small className="text-danger">{errors.cardHolder}</small>}
                   </div>
                   <div className="form-control">
-                    <input
-                      value="MAKE PAYMENT"
+                    <button
                       type="button"
                       className="btnpayment"
                       style={{ fontSize: ".8rem" }}
                       onClick={handlePayment}
-                    />
+                      disabled={isProcessing}
+                    >
+                      {isProcessing ? "Processing..." : "MAKE PAYMENT"}
+                    </button>
                   </div>
                 </div>
               </div>
