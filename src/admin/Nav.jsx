@@ -66,7 +66,7 @@ export default function Nav() {
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >
+              ><img src="../img/message.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
                 <i className="fa fa-envelope"></i>
               </a>
               <ul className="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
@@ -81,7 +81,7 @@ export default function Nav() {
                 <div className="notif-center">
                       <a href="#">
                         <div className="notif-img">
-                          <img src="assets/img/jm_denis.jpg" alt="Img Profile" />
+                        <img src="../img/calendar.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
                         </div>
                         <div className="notif-content">
                         <span className="subject">Jimmy Denis</span>
@@ -140,7 +140,7 @@ export default function Nav() {
                 aria-expanded="false"
               >
                 <i className="fa fa-bell"></i>
-                <span className="notification">4</span>
+                <img src="../img/notification.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
                 </a>
               <ul className="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
               <li>
@@ -289,7 +289,7 @@ export default function Nav() {
                     <div className="user-box">
                       <div className="avatar-lg">
                         <img
-                          src="assets/img/profile.jpg"
+                          src="../img/profile.jpeg"
                           alt="image profile"
                           className="avatar-img rounded"
                         />
