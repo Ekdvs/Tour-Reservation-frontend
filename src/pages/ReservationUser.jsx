@@ -62,6 +62,17 @@ export default function ReservationUser() {
                 onChange={(e) => setNewReservation({ ...newReservation, userId: e.target.value })}
                 required
               />
+              </div>
+            <div className="mb-3">
+              <label className="form-label">Details</label>
+              <input
+                type="text"
+                className="form-control"
+                value={newReservation.details}
+                onChange={(e) => setNewReservation({ ...newReservation, details: e.target.value })}
+                required
+              />
+              
       
     </div>
   )
