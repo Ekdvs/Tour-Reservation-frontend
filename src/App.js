@@ -19,7 +19,8 @@ import AdminUserPage from './admin/AdminUserPage';
 
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
 import LogOut from './user/LogOut';
-import ReservationUser from './pages/ReservationUser';
+
+import Reservationadmin from './admin/Reservationadmin';
 
 
 
@@ -49,7 +50,7 @@ function App() {
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
           <Route path="/logout" element={<LogOut/>} />
-          <Route path="/ReservationUser" element={<ReservationUser/>} />
+          <Route path="/ReservationUser" element={<Reservationadmin/>} />
           
           
 
