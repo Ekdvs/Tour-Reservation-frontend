@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Headeradmin from '../compodent/Headeradmin'
 
 export default function Nav() {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    // Fetch user details from localStorage
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      setUserData(JSON.parse(storedUser));
+    }
+  }, []);
   return (
     <div>
       <Headeradmin/>
@@ -251,7 +260,9 @@ export default function Nav() {
                 </div>
                 <span className="profile-username">
                   <span className="op-7">Hi,</span>
-                  <span className="fw-bold">Hizrian</span>
+                  <span className="profile-username">
+                  Hi, <strong>{userData?.name || 'Guest'}</strong>
+                </span>
                 </span>
               </a>
               <ul className="dropdown-menu dropdown-user animated fadeIn">
