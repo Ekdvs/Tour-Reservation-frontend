@@ -30,6 +30,7 @@ import Cart from './pages/Cart';
 
 
 
+
 function App() {
   return (
     <div>
@@ -54,7 +55,8 @@ function App() {
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
           <Route path="/logout" element={<LogOut/>} />
-          <Route path="/Cart/:eventId" element={<Cart/>} />
+          <Route path="/Cart" element={<Cart/>} />
+
           <Route path="/payment" element={<CardPayment/>} />
 
           
