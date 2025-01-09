@@ -72,7 +72,18 @@ export default function ReservationUser() {
                 onChange={(e) => setNewReservation({ ...newReservation, details: e.target.value })}
                 required
               />
-              
+              </div>
+            <button type="submit" className="btn btn-success">
+              Add Reservation
+            </button>
+          </form>
+        </div>
+      </div>
+      <div>
+        <h3>Your Reservations</h3>
+        {reservations.length > 0 ? (
+          <table className="table table-striped">
+            <thead></thead>
       
     </div>
   )
