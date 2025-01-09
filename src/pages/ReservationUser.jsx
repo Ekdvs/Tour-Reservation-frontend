@@ -10,7 +10,11 @@ export default function ReservationUser() {
             alert("Please enter a User ID to fetch reservations.");
         return;
       }
-      };
+      axios
+      .get(`http://localhost:8080/reservation/getReservationByUserId/${userId}`)
+      .then((res) => setReservations(res.data))
+      .catch((err) => console.error(err));
+  };
   return (
     <div>
       
