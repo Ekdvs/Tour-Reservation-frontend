@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const Cart = () => {
   const { eventId } = useParams(); // Get eventId from the URL
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [numOfTickets, setNumOfTickets] = useState(1);
+  const navigate = useNavigate();
   const API_BASE_URL = "http://localhost:8080/event";
 
   // Fetch selected event by ID
@@ -33,13 +36,23 @@ const Cart = () => {
   };
 
   const handlePayment = () => {
-    alert("Proceeding to payment...");
-    // Integrate payment gateway here
+    toast.success("Proceeding to payment...");
+    setTimeout(() => {
+      navigate("/payment", {
+        state: {
+          eventId: selectedEvent.eventId,
+          eventName: selectedEvent.eventName,
+          totalPrice: calculateTotalPrice(),
+          numOfTickets,
+        },
+      });
+    }, 2000); // Add a delay to simulate payment preparation
   };
 
   return (
     <div className="container mt-5">
       <h1 className="text-center mb-4">Event Booking</h1>
+      <ToastContainer />
       {selectedEvent ? (
         <div>
           <h3>Event Details</h3>
