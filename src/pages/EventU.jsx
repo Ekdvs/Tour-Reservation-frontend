@@ -66,7 +66,7 @@ const EventShowPage = () => {
                   <strong>Ticket Price:</strong> ${event.oneTicketPrice} <br />
                 </p>
                 <a
-                  href={`/book/${event.eventId}`}
+                  href={`/Cart/${event.eventId}`}
                   className="btn btn-primary btn-lg w-100"
                 >
                   Book Tickets
