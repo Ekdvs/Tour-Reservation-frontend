@@ -56,6 +56,13 @@ const Cart = () => {
       });
     }, 2000); // Simulate a delay before navigating to the payment page
   };
+ 
+  
+  const handleBackToEvents = () => {
+    setTimeout(() => {
+      navigate("/events");
+    }, 2000);
+  };
 
   return (
     <div>
