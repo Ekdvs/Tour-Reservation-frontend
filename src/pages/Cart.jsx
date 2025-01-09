@@ -4,6 +4,9 @@ import { useParams, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Topbar from "../compodent/Topbar";
+import Navbar from "../compodent/Navbar";
+import Footer from "../compodent/Footer";
 
 const Cart = () => {
   const { eventId } = useParams(); // Get eventId from the URL
@@ -58,6 +61,9 @@ const Cart = () => {
   };
 
   return (
+    <div>
+        <Topbar/>
+        <Navbar/>
     <div className="container mt-5">
       <h1 className="text-center mb-4">Event Booking</h1>
       <ToastContainer />
@@ -116,6 +122,8 @@ const Cart = () => {
       ) : (
         <p>Loading event details...</p>
       )}
+    </div>
+    <Footer/>
     </div>
   );
 };
