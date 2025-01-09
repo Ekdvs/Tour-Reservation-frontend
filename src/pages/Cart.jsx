@@ -31,6 +31,14 @@ const Cart = () => {
     setNumOfTickets(value);
   };
 
+  const incrementTickets = () => {
+    setNumOfTickets(prevTickets => prevTickets + 1);
+  };
+
+  const decrementTickets = () => {
+    setNumOfTickets(prevTickets => Math.max(1, prevTickets - 1)); // Ensure ticket count doesn't go below 1
+  };
+
   const calculateTotalPrice = () => {
     return selectedEvent ? numOfTickets * selectedEvent.oneTicketPrice : 0;
   };
@@ -75,13 +83,28 @@ const Cart = () => {
               </p>
               <div className="mb-3">
                 <label className="form-label">Number of Tickets:</label>
-                <input
-                  type="number"
-                  className="form-control"
-                  value={numOfTickets}
-                  onChange={handleTicketChange}
-                  min="1"
-                />
+                <div className="d-flex align-items-center">
+                  <button 
+                    className="btn btn-outline-primary me-2"
+                    onClick={decrementTickets}
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    className="form-control text-center"
+                    value={numOfTickets}
+                    onChange={handleTicketChange}
+                    min="1"
+                    style={{ width: "80px" }}
+                  />
+                  <button 
+                    className="btn btn-outline-primary ms-2"
+                    onClick={incrementTickets}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
               <h5>Total Price: ${calculateTotalPrice()}</h5>
               <button className="btn btn-success" onClick={handlePayment}>
