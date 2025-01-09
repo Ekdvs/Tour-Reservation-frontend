@@ -57,6 +57,12 @@ export default function Cart() {
                     >
                       View Details
                     </button>
+                    </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       
     </div>
   )
