@@ -63,6 +63,16 @@ export default function Cart() {
             ))}
           </div>
         </div>
+        ) : (
+            <div>
+              {/* Event Details and Booking */}
+              <h3>Event Details</h3>
+              <div className="card mb-4">
+                <img
+                  src={`http://localhost:8080${selectedEvent.eventImagePath}`}
+                  className="card-img-top"
+                  alt={selectedEvent.eventName}
+                />
       
     </div>
   )
