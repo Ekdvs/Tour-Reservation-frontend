@@ -276,9 +276,9 @@ export default function Nav() {
                           className="avatar-img rounded"
                         />
                       </div>
-                      <div className="u-text">
-                        <h4>Hizrian</h4>
-                        <p className="text-muted">hello@example.com</p>
+                       <div className="user-box">
+                    <h4>{userData?.name || 'User Name'}</h4>
+                    <p>{userData?.email || 'user@example.com'}</p>
                         <a href="/profile" className="btn btn-xs btn-secondary btn-sm">View Profile</a>
                       </div>
                     </div>
