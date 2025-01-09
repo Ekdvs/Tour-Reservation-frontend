@@ -94,6 +94,10 @@ export default function Cart() {
                   min="1"
                 />
               </div>
+              <h5>Total Price: ${calculateTotalPrice()}</h5>
+              <button className="btn btn-success" onClick={handlePayment}>
+                Proceed to Payment
+              </button>
       
     </div>
   )
