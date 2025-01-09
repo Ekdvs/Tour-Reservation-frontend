@@ -80,16 +80,29 @@ export default function ReservationUser() {
         </div>
       </div>
       <div>
-        <h3>Your Reservations</h3>
+      <h3>Your Reservations</h3>
         {reservations.length > 0 ? (
           <table className="table table-striped">
-            <thead></thead>
-            <tr>
+            <thead>
+              <tr>
                 <th>ID</th>
                 <th>Details</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              {reservations.map((reservation) => (
+                <tr key={reservation.id}>
+                  <td>{reservation.id}</td>
+                  <td>{reservation.details}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>No reservations found for this user.</p>
+        )}
+      </div>
+    </div>
       
     </div>
   )
