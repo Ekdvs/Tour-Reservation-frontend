@@ -34,6 +34,18 @@ export default function Cart() {
     <div>
         <div className="container mt-5">
         <h1 className="text-center mb-4">Event Booking</h1>
+        {!selectedEvent ? (
+        <div>
+          <h3>Select an Event</h3>
+          <div className="row">
+            {events.map((event) => (
+              <div className="col-md-4 mb-4" key={event.eventId}>
+                <div className="card">
+                     <img
+                    src={`http://localhost:8080${event.eventImagePath}`}
+                    className="card-img-top"
+                    alt={event.eventName}
+                  />
       
     </div>
   )
