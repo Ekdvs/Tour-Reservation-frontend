@@ -18,7 +18,8 @@ export default function Cart() {
   };
 
   const handleTicketChange = (e) => {
-    
+    const value = Math.max(1, parseInt(e.target.value, 10) || 1);
+    setNumOfTickets(value);
   };
   return (
     <div>
