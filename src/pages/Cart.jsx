@@ -46,6 +46,11 @@ export default function Cart() {
                     className="card-img-top"
                     alt={event.eventName}
                   />
+                  <div className="card-body">
+                    <h5 className="card-title">{event.eventName}</h5>
+                    <p className="card-text">
+                      {event.description.substring(0, 100)}...
+                    </p>
       
     </div>
   )
