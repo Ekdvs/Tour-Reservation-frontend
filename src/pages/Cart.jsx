@@ -10,6 +10,10 @@ export default function Cart() {
 
     // Handle event selection
   const handleEventSelect = (eventId) => {
+    axios
+    .get(`http://localhost:8080/event/getEventById/${eventId}`)
+    .then((res) => setSelectedEvent(res.data))
+    .catch((err) => console.error(err));
    
   };
   return (
