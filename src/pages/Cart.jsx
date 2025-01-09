@@ -21,6 +21,10 @@ export default function Cart() {
     const value = Math.max(1, parseInt(e.target.value, 10) || 1);
     setNumOfTickets(value);
   };
+
+  const calculateTotalPrice = () => {
+    return selectedEvent ? numOfTickets * selectedEvent.oneTicketPrice : 0;
+  };
   return (
     <div>
       
