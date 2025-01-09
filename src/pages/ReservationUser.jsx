@@ -31,6 +31,8 @@ export default function ReservationUser() {
   };
   return (
     <div>
+        <div className="container mt-5">
+        <h1 className="text-center mb-4">User Reservations</h1>
       
     </div>
   )
