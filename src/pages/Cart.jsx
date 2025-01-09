@@ -60,7 +60,7 @@ const Cart = () => {
   
   const handleBackToEvents = () => {
     setTimeout(() => {
-      navigate("/events");
+      navigate("/EventShowPage");
     }, 2000);
   };
 
