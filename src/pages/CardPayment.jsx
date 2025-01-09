@@ -101,6 +101,7 @@ export default function CardPayment() {
                       className="input-lg form-control cc-number"
                       autoComplete="cc-number"
                       placeholder="xxxx xxxx xxxx xxxx"
+                      maxLength={16}
                       value={cardNumber}
                       onChange={(e) => setCardNumber(e.target.value)}
                       required
@@ -154,6 +155,7 @@ export default function CardPayment() {
                           className="input-lg form-control cc-cvc"
                           autoComplete="off"
                           placeholder="xxx"
+                          maxLength={3}
                           value={cvc}
                           onChange={(e) => setCvc(e.target.value)}
                           required
