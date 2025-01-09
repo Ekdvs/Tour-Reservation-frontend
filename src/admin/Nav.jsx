@@ -274,7 +274,7 @@ export default function Nav() {
                   </li>
                   <li>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">My Profile</a>
+                    <a className="dropdown-item" href="/">My Profile</a>
                     <a className="dropdown-item" href="#">My Balance</a>
                     <a className="dropdown-item" href="#">Inbox</a>
                     <div className="dropdown-divider"></div>
