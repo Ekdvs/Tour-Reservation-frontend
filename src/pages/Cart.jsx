@@ -41,7 +41,7 @@ export default function Cart() {
             {events.map((event) => (
               <div className="col-md-4 mb-4" key={event.eventId}>
                 <div className="card">
-                     <img
+                <img
                     src={`http://localhost:8080${event.eventImagePath}`}
                     className="card-img-top"
                     alt={event.eventName}
