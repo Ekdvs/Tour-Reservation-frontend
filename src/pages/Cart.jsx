@@ -98,6 +98,14 @@ export default function Cart() {
               <button className="btn btn-success" onClick={handlePayment}>
                 Proceed to Payment
               </button>
+
+              <button
+                className="btn btn-secondary ms-2"
+                onClick={() => setSelectedEvent(null)}
+              >
+                Back to Events
+              </button>
+              
       
     </div>
   )
