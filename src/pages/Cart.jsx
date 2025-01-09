@@ -105,6 +105,11 @@ export default function Cart() {
               >
                 Back to Events
               </button>
+              </div>
+          </div>
+        </div>
+      )}
+    </div>
               
       
     </div>
