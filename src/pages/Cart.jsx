@@ -8,6 +8,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 
 const Cart = () => {
+  const userEmail = localStorage.getItem("userEmail");
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [numOfTickets, setNumOfTickets] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -32,11 +33,11 @@ const Cart = () => {
   };
 
   const incrementTickets = () => {
-    setNumOfTickets(prevTickets => prevTickets + 1);
+    setNumOfTickets((prevTickets) => prevTickets + 1);
   };
 
   const decrementTickets = () => {
-    setNumOfTickets(prevTickets => Math.max(1, prevTickets - 1)); // Ensure ticket count doesn't go below 1
+    setNumOfTickets((prevTickets) => Math.max(1, prevTickets - 1)); // Ensure ticket count doesn't go below 1
   };
 
   const calculateTotalPrice = () => {
@@ -44,20 +45,32 @@ const Cart = () => {
   };
 
   const handlePayment = () => {
-    toast.success("Proceeding to payment...");
-    setTimeout(() => {
-      navigate("/payment", {
-        state: {
-          eventId: selectedEvent.eventId,
-          eventName: selectedEvent.eventName,
-          totalPrice: calculateTotalPrice(),
-          numOfTickets,
-        },
-      });
-    }, 2000); // Simulate a delay before navigating to the payment page
+    // Check if the user is logged in by checking for a token in localStorage (or any other storage mechanism you're using)
+    const userToken = localStorage.getItem("userToken");  // Replace with your actual authentication method
+
+    if (!userEmail ) {
+      // If not logged in, redirect to login page
+      toast.error("Please log in to proceed with the payment.");
+      setTimeout(() => {
+        navigate("/login");  // Redirect to login page
+      }, 2000);
+    } else {
+      // If logged in, proceed with payment
+      toast.success("Proceeding to payment...");
+      setTimeout(() => {
+        navigate("/payment", {
+          state: {
+            eventId: selectedEvent.eventId,
+            eventName: selectedEvent.eventName,
+            totalPrice: calculateTotalPrice(),
+            numOfTickets,
+          },
+        });
+      }, 2000); // Simulate a delay before navigating to the payment page
+    }
   };
- 
-  
+
+  // Navigate back to the events page after 2000ms delay
   const handleBackToEvents = () => {
     setTimeout(() => {
       navigate("/EventShowPage");
@@ -113,7 +126,7 @@ const Cart = () => {
                 <div className="mb-3">
                   <label className="form-label">Number of Tickets:</label>
                   <div className="d-flex align-items-center">
-                    <button 
+                    <button
                       className="btn btn-outline-primary me-2"
                       onClick={decrementTickets}
                     >
@@ -127,7 +140,7 @@ const Cart = () => {
                       min="1"
                       style={{ width: "80px" }}
                     />
-                    <button 
+                    <button
                       className="btn btn-outline-primary ms-2"
                       onClick={incrementTickets}
                     >
@@ -139,7 +152,7 @@ const Cart = () => {
                 <button className="btn btn-success" onClick={handlePayment}>
                   Proceed to Payment
                 </button>
-                <button 
+                <button
                   className="btn btn-secondary ms-3"
                   onClick={handleBackToEvents}
                 >
