@@ -25,6 +25,11 @@ export default function Cart() {
   const calculateTotalPrice = () => {
     return selectedEvent ? numOfTickets * selectedEvent.oneTicketPrice : 0;
   };
+
+  const handlePayment = () => {
+    alert("Proceeding to payment...");
+    // Integrate payment gateway here
+  };
   return (
     <div>
       
