@@ -199,6 +199,7 @@ export default function Nav() {
             </li>
             <li className="nav-item topbar-icon dropdown hidden-caret">
   <a className="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+  <img src="../img/shortcut.jpeg" alt="shortcut" className="img-fluid rounded-circle" />
     <i className="fas fa-layer-group"></i>
   </a>
   <div className="dropdown-menu quick-actions animated fadeIn">
@@ -213,7 +214,7 @@ export default function Nav() {
           <a className="col-6 col-md-4 p-0" href="#">
             <div className="quick-actions-item">
               <div className="avatar-item bg-danger rounded-circle">
-                <img src="../img/calender.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
+                <img src="../img/calendar.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
               </div>
               <span className="text">Calendar</span>
             </div>
