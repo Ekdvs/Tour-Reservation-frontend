@@ -49,6 +49,12 @@ export default function ReservationUser() {
           </button>
         </div>
       </div>
+      <div className="card mb-4">
+        <div className="card-header">Add Reservation</div>
+        <div className="card-body">
+          <form onSubmit={handleAddReservation}>
+            <div className="mb-3">
+              <label className="form-label">User ID</label>
       
     </div>
   )
