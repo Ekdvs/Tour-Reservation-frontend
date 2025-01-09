@@ -16,6 +16,10 @@ export default function Cart() {
     .catch((err) => console.error(err));
    
   };
+
+  const handleTicketChange = (e) => {
+    
+  };
   return (
     <div>
       
