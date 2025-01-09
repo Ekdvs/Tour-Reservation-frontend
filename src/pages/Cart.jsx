@@ -1,20 +1,35 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Cart() {
-    const [events, setEvents] = useState([]);
-    const [selectedEvent, setSelectedEvent] = useState(null);
-    const [numOfTickets, setNumOfTickets] = useState(1);
+const Cart = () => {
+  const [events, setEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [numOfTickets, setNumOfTickets] = useState(1);
+  const API_BASE_URL = "http://localhost:8080/event";
 
-    // Handle event selection
-  const handleEventSelect = (eventId) => {
-    axios
-    .get(`http://localhost:8080/event/getEventById/${eventId}`)
-    .then((res) => setSelectedEvent(res.data))
-    .catch((err) => console.error(err));
-   
+  // Fetch all events
+  const fetchEvents = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/getAllEvents`);
+      setEvents(response.data);
+    } catch (error) {
+      console.error("Error fetching events:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  // Handle event selection
+  const handleEventSelect = async (eventId) => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/getEventById/${eventId}`);
+      setSelectedEvent(response.data);
+    } catch (error) {
+      console.error("Error fetching event details:", error);
+    }
   };
 
   const handleTicketChange = (e) => {
@@ -30,19 +45,19 @@ export default function Cart() {
     alert("Proceeding to payment...");
     // Integrate payment gateway here
   };
+
   return (
-    <div>
-        <div className="container mt-5">
-        <h1 className="text-center mb-4">Event Booking</h1>
-        {!selectedEvent ? (
+    <div className="container mt-5">
+      <h1 className="text-center mb-4">Event Booking</h1>
+      {!selectedEvent ? (
         <div>
           <h3>Select an Event</h3>
           <div className="row">
             {events.map((event) => (
               <div className="col-md-4 mb-4" key={event.eventId}>
-                <div className="card">
-                <img
-                    src={`http://localhost:8080${event.eventImagePath}`}
+                <div className="card shadow-lg rounded-lg">
+                  <img
+                    src={`data:${event.contentType};base64,${event.imageData}`}
                     className="card-img-top"
                     alt={event.eventName}
                   />
@@ -57,23 +72,22 @@ export default function Cart() {
                     >
                       View Details
                     </button>
-                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        ) : (
-            <div>
-              {/* Event Details and Booking */}
-              <h3>Event Details</h3>
-              <div className="card mb-4">
-                <img
-                  src={`http://localhost:8080${selectedEvent.eventImagePath}`}
-                  className="card-img-top"
-                  alt={selectedEvent.eventName}
-                />
-                <div className="card-body">
+      ) : (
+        <div>
+          <h3>Event Details</h3>
+          <div className="card mb-4 shadow-lg">
+            <img
+              src={`data:${selectedEvent.contentType};base64,${selectedEvent.imageData}`}
+              className="card-img-top"
+              alt={selectedEvent.eventName}
+            />
+            <div className="card-body">
               <h5 className="card-title">{selectedEvent.eventName}</h5>
               <p className="card-text">{selectedEvent.description}</p>
               <p>
@@ -98,20 +112,18 @@ export default function Cart() {
               <button className="btn btn-success" onClick={handlePayment}>
                 Proceed to Payment
               </button>
-
               <button
                 className="btn btn-secondary ms-2"
                 onClick={() => setSelectedEvent(null)}
               >
                 Back to Events
               </button>
-              </div>
+            </div>
           </div>
         </div>
       )}
     </div>
-              
-      
-    </div>
-  )
-}
+  );
+};
+
+export default Cart;
