@@ -6,7 +6,10 @@ export default function ReservationUser() {
     const [userId, setUserId] = useState("");
 
     const fetchReservationsByUserId = () => {
-        if (!userId)
+        if (!userId){
+            alert("Please enter a User ID to fetch reservations.");
+        return;
+      }
       };
   return (
     <div>
