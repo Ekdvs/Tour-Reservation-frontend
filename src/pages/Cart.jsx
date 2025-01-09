@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Cart() {
     const [events, setEvents] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState(null);
   return (
     <div>
       
