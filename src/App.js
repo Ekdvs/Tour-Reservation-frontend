@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Register from "./user/Register";
 import SignIn from "./user/SignIn";
 import ForgotPassword from './user/ForgotPassword';
@@ -14,6 +15,19 @@ import Contact from './pages/Contact';
 import EventShowPage from './pages/EventU';
 import EventManagement from './admin/EventPage';
 import CardPayment from './pages/CardPayment';
+import Dashboard from './admin/Dashboard';
+import Places from './admin/Place';
+import AdminUserPage from './admin/AdminUserPage';
+
+import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
+import LogOut from './user/LogOut';
+import Cart from './pages/Cart';
+
+
+
+
+
+
 
 
 
@@ -35,7 +49,17 @@ function App() {
           <Route path="/Contact" element={<Contact/>} />
           <Route path="/EventShowPage" element={<EventShowPage/>} />
           <Route path="/CardPayment" element={<CardPayment/>} />
-         
+          <Route path="/Dashboard" element={<Dashboard/>} />
+          <Route path="/place" element={<Places/>} />
+          <Route path="/EventManagement" element={<EventManagement/>} />
+          <Route path="/manage" element={<AdminTravelGuidePage/>} />
+          <Route path="/addtravelguide" element={<AdminUserPage/>} />
+          <Route path="/logout" element={<LogOut/>} />
+          <Route path="/Cart" element={<Cart/>} />
+          <Route path="/payment" element={<CardPayment/>} />
+
+          
+          
 
         </Routes>
       </Router>

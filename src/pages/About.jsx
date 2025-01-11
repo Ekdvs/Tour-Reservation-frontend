@@ -18,19 +18,13 @@ export default function About() {
                 </ol>
             </div>
         </div>
-        <div className="container-fluid about py-5" style={{ background: '#f7f8fa' }}>
+        <div className="container-fluid about py-5" style={{ background: '' }}>
             <div className="container py-5">
                 <div className="row g-5 align-items-center">
                     <div className="col-lg-5">
                     <div
                             className="h-100"
-                            style={{
-                                width: '500px',
-                                height: '500px',
-                                border: '50px solid',
-                                borderColor: 'transparent #13357B transparent #13357B',
-                                position: 'relative'
-                            }}
+                            
                         >
                             <img src="img/about.jpg" className="img-fluid w-100 h-100" alt="Sri Lanka" style={{ objectFit: 'cover', borderRadius: '10px' }} />
                         </div>
