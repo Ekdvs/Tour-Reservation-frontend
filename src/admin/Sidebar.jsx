@@ -53,7 +53,7 @@ export default function Sidebar() {
             </li>
             
             <li className="nav-item">
-            <Link className="nav-link" to="/EvenPage">
+            <Link className="nav-link" to="/EventManagement">
                 <i className="fas fa-bars"></i>
                 <p>Add Event</p>
             </Link>
@@ -77,6 +77,13 @@ export default function Sidebar() {
             <Link className="nav-link" to="/EvenPage">
                 <i className="fas fa-bars"></i>
                 <p>User</p>
+            </Link>
+            </li>
+
+            <li className="nav-item">
+            <Link className="nav-link" to="/EventShowPage">
+                <i className="fas fa-bars"></i>
+                <p>Event Show</p>
             </Link>
             </li>
 
