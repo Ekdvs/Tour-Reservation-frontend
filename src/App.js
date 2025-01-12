@@ -22,6 +22,10 @@ import AdminUserPage from './admin/AdminUserPage';
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
 import LogOut from './user/LogOut';
 import Cart from './pages/Cart';
+import Destination from './pages/Destination';
+import Testimonial from './pages/Testimonial';
+import Explore_Tour from './pages/Explore_Tour';
+import Travel_Guides from './pages/Travel_Guides';
 
 
 
@@ -57,8 +61,11 @@ function App() {
           <Route path="/logout" element={<LogOut/>} />
           <Route path="/Cart" element={<Cart/>} />
           <Route path="/payment" element={<CardPayment/>} />
-
-          
+          <Route path="/Destination" element={<Destination/>} />
+          <Route path="/Testimonial" element={<Testimonial/>} />
+          <Route path="/Explore_Tour" element={<Explore_Tour/>} />
+          <Route path="/Travel_Guides" element={<Travel_Guides/>} />
+         
           
 
         </Routes>
