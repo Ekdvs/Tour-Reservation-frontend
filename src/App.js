@@ -23,6 +23,7 @@ import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
 import LogOut from './user/LogOut';
 import Cart from './pages/Cart';
 import Destination from './pages/Destination';
+import Testimonial from './pages/Testimonial';
 
 
 
@@ -59,8 +60,8 @@ function App() {
           <Route path="/Cart" element={<Cart/>} />
           <Route path="/payment" element={<CardPayment/>} />
           <Route path="/Destination" element={<Destination/>} />
+          <Route path="/Testimonial" element={<Testimonial/>} />
           
-
           
           
 
