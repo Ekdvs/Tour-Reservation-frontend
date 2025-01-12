@@ -8,9 +8,12 @@ export default function Travel_Guides() {
 
     useEffect(() => {
         // Fetch travel guides data from backend
-        fetch("/api/travel-guides")
+        fetch("http://localhost:8080/user/travel-guides") // Ensure this is the correct endpoint
             .then((response) => response.json())
-            .then((data) => setGuides(data))
+            .then((data) => {
+                console.log(data); // Log the data to check the structure
+                setGuides(data);
+            })
             .catch((error) => console.error("Error fetching guides:", error));
     }, []);
 
@@ -41,61 +44,67 @@ export default function Travel_Guides() {
                         <h1 className="mb-0">Meet Our Guide</h1>
                     </div>
                     <div className="row g-4">
-                        {guides.map((guide, index) => (
-                            <div className="col-md-6 col-lg-3" key={index}>
-                                <div className="guide-item">
-                                    <div className="guide-img">
-                                        <div className="guide-img-efects">
-                                            <img
-                                                src={guide.imageUrl}
-                                                className="img-fluid w-100 rounded-top"
-                                                alt={`Travel Guide ${index + 1}`}
-                                            />
+                        {guides.length > 0 ? (
+                            guides.map((guide, index) => (
+                                <div className="col-md-6 col-lg-3" key={index}>
+                                    <div className="guide-item">
+                                        <div className="guide-img">
+                                            <div className="guide-img-efects">
+                                                {/* Ensure that the image is being rendered properly */}
+                                                <img
+                                                    src={`data:${guide.contentType};base64,${guide.imageData}`}
+                                                    className="img-fluid w-100 rounded-top"
+                                                    alt={`Travel Guide ${index + 1}`}
+                                                />
+                                            </div>
+                                            <div className="guide-icon rounded-pill p-2">
+                                                <button
+                                                    className="btn btn-square btn-primary rounded-circle mx-1"
+                                                    onClick={() =>
+                                                        (window.location.href = "https://facebook.com")
+                                                    }
+                                                >
+                                                    <i className="fab fa-facebook-f"></i>
+                                                </button>
+                                                <button
+                                                    className="btn btn-square btn-primary rounded-circle mx-1"
+                                                    onClick={() =>
+                                                        (window.location.href = "https://twitter.com")
+                                                    }
+                                                >
+                                                    <i className="fab fa-twitter"></i>
+                                                </button>
+                                                <button
+                                                    className="btn btn-square btn-primary rounded-circle mx-1"
+                                                    onClick={() =>
+                                                        (window.location.href = "https://instagram.com")
+                                                    }
+                                                >
+                                                    <i className="fab fa-instagram"></i>
+                                                </button>
+                                                <button
+                                                    className="btn btn-square btn-primary rounded-circle mx-1"
+                                                    onClick={() =>
+                                                        (window.location.href = "https://linkedin.com")
+                                                    }
+                                                >
+                                                    <i className="fab fa-linkedin-in"></i>
+                                                </button>
+                                            </div>
                                         </div>
-                                        <div className="guide-icon rounded-pill p-2">
-                                            <button
-                                                className="btn btn-square btn-primary rounded-circle mx-1"
-                                                onClick={() =>
-                                                    (window.location.href = "https://facebook.com")
-                                                }
-                                            >
-                                                <i className="fab fa-facebook-f"></i>
-                                            </button>
-                                            <button
-                                                className="btn btn-square btn-primary rounded-circle mx-1"
-                                                onClick={() =>
-                                                    (window.location.href = "https://twitter.com")
-                                                }
-                                            >
-                                                <i className="fab fa-twitter"></i>
-                                            </button>
-                                            <button
-                                                className="btn btn-square btn-primary rounded-circle mx-1"
-                                                onClick={() =>
-                                                    (window.location.href = "https://instagram.com")
-                                                }
-                                            >
-                                                <i className="fab fa-instagram"></i>
-                                            </button>
-                                            <button
-                                                className="btn btn-square btn-primary rounded-circle mx-1"
-                                                onClick={() =>
-                                                    (window.location.href = "https://linkedin.com")
-                                                }
-                                            >
-                                                <i className="fab fa-linkedin-in"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="guide-title text-center rounded-bottom p-4">
-                                        <div className="guide-title-inner">
-                                            <h4 className="mt-3">{guide.fullName}</h4>
-                                            <p className="mb-0">{guide.designation}</p>
+                                        <div className="guide-title text-center rounded-bottom p-4">
+                                            <div className="guide-title-inner">
+                                                {/* Display the first name and last name separately */}
+                                                <h4 className="mt-3">{guide.firstName} {guide.lastName}</h4>
+                                                <p className="mb-0">{guide.designation}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))
+                        ) : (
+                            <p>No travel guides available at the moment.</p>
+                        )}
                     </div>
                 </div>
             </div>
