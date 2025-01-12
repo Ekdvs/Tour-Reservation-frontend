@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Register from "./user/Register";
 import SignIn from "./user/SignIn";
 import ForgotPassword from './user/ForgotPassword';
@@ -18,7 +20,12 @@ import Places from './admin/Place';
 import AdminUserPage from './admin/AdminUserPage';
 
 import AdminTravelGuidePage from './admin/AdminTravelGuidePage';
-import Maldi from './user/mn';
+import LogOut from './user/LogOut';
+import Cart from './pages/Cart';
+
+
+
+
 
 
 
@@ -47,7 +54,11 @@ function App() {
           <Route path="/EventManagement" element={<EventManagement/>} />
           <Route path="/manage" element={<AdminTravelGuidePage/>} />
           <Route path="/addtravelguide" element={<AdminUserPage/>} />
-          <Route path="/mn" element={<Maldi/>} />
+          <Route path="/logout" element={<LogOut/>} />
+          <Route path="/Cart" element={<Cart/>} />
+          <Route path="/payment" element={<CardPayment/>} />
+
+          
           
 
         </Routes>

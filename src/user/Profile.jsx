@@ -19,23 +19,24 @@ export default function Profile() {
     title: "",
     gender: "",
     country: "",
-    profilePicture: "", // Add this to store profile picture path
+    profilePicture: "",
   });
 
-  // Fetch profile data on load
+  // Fetch profile data on component load
   useEffect(() => {
     axios
       .get(`http://localhost:8080/user/${userEmail}`)
       .then((response) => {
-        setProfileData(response.data);
+        const data = response.data;
+        setProfileData(data);
         setFormData({
-          firstName: response.data.firstName,
-          lastName: response.data.lastName,
-          phoneNumber: response.data.phoneNumber,
-          title: response.data.title,
-          gender: response.data.gender,
-          country: response.data.country,
-          profilePicture: response.data.profilePicture || "", // If no picture, set default
+          firstName: data.firstName || "",
+          lastName: data.lastName || "",
+          phoneNumber: data.phoneNumber || "",
+          title: data.title || "",
+          gender: data.gender || "",
+          country: data.country || "",
+          profilePicture: data.profilePicture || "",
         });
       })
       .catch((error) => {
@@ -82,31 +83,33 @@ export default function Profile() {
     }
   };
 
-  // Handle form input change
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handle file input for profile picture upload
+  // Handle file upload
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      // Create a FormData object and send it to the backend
       const formData = new FormData();
       formData.append('profilePicture', file);
 
-      axios.put(`http://localhost:8080/user/${userEmail}/upload`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then((response) => {
-        setProfileData(response.data);
-        toast.success("Profile picture updated successfully!");
-      }).catch((error) => {
-        console.error("Error uploading image:", error);
-        toast.error("Failed to upload profile picture.");
-      });
+      axios
+        .put(`http://localhost:8080/user/${userEmail}/upload`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        })
+        .then((response) => {
+          setProfileData(response.data);
+          toast.success("Profile picture updated successfully!");
+        })
+        .catch((error) => {
+          console.error("Error uploading image:", error);
+          toast.error("Failed to upload profile picture.");
+        });
     }
   };
 
@@ -116,12 +119,12 @@ export default function Profile() {
     <div>
       <Topbar />
       <Navbar />
-      
+
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">My Profile</h3>
           <ol className="breadcrumb justify-content-center mb-0">
-            <li className="breadcrumb-item "><a href="/">Home</a></li>
+            <li className="breadcrumb-item"><a href="/">Home</a></li>
             <li className="breadcrumb-item"><a href="/Contact">Pages</a></li>
             <li className="breadcrumb-item active text-white">My Profile</li>
           </ol>
@@ -130,7 +133,6 @@ export default function Profile() {
 
       <div className="container py-5">
         <h1 className="my-4 text-center">Profile</h1>
-
         <div className="card shadow-lg">
           <div className="card-body">
             <div className="d-flex justify-content-between align-items-center mb-3">
@@ -145,13 +147,14 @@ export default function Profile() {
                 </button>
               )}
             </div>
-              {/* Profile Picture Section */}
+
+            {/* Profile Picture Section */}
             <div className="mb-3 row">
               <label className="col-sm-4 col-form-label"></label>
               <div className="col-sm-6">
                 {!isEditing ? (
                   <img
-                    src={profileData.profilePicture || "../img/profile.jpeg"} // Placeholder image
+                    src={profileData.profilePicture || "../img/profile.jpeg"}
                     alt="Profile"
                     style={{ width: "150px", height: "150px", objectFit: "cover" }}
                     className="img-thumbnail"
@@ -165,6 +168,7 @@ export default function Profile() {
                 )}
               </div>
             </div>
+
             {/* Basic Info Fields */}
             {["firstName", "lastName", "phoneNumber", "title"].map((field) => (
               <div className="mb-3 row" key={field}>
@@ -198,14 +202,10 @@ export default function Profile() {
                     value={formData.gender}
                     onChange={handleChange}
                   >
-                    <option disabled value="">
-                      Select Gender
-                    </option>
-                    <optgroup label="Gender Options">
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </optgroup>
+                    <option disabled value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                   </select>
                 )}
               </div>
@@ -223,23 +223,20 @@ export default function Profile() {
                     value={formData.country}
                     onChange={handleChange}
                   >
-                    <option disabled value="">
-                      Select Country
-                    </option>
-                    <optgroup label="Country Options">
-                      <option value="Sri Lanka">Sri Lanka</option>
-                      <option value="India">India</option>
-                      <option value="United States">United States</option>
-                      <option value="United Kingdom">United Kingdom</option>
-                    </optgroup>
+                    <option disabled value="">Select Country</option>
+                    <option value="Sri Lanka">Sri Lanka</option>
+                    <option value="India">India</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
                   </select>
                 )}
               </div>
             </div>
 
-            
-
-            <button className="btn btn-outline-primary mt-4" onClick={() => navigate('/PasswordChange')}>
+            <button
+              className="btn btn-outline-primary mt-4"
+              onClick={() => navigate('/PasswordChange')}
+            >
               Change Password
             </button>
           </div>

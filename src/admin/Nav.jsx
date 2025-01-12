@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Headeradmin from '../compodent/Headeradmin'
+import axios from 'axios';
 
 export default function Nav() {
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      const userEmail = localStorage.getItem("userEmail");
+      if (userEmail) {
+        try {
+          const response = await axios.get(`http://localhost:8080/user/${userEmail}`);
+          setUserData(response.data);
+        } catch (error) {
+          console.error("Error fetching user data:", error.message);
+          setUserData(null);
+        }
+      }
+    };
+
+    fetchUserData();
+  }, []);
   return (
     <div>
       <Headeradmin/>
@@ -47,7 +66,7 @@ export default function Nav() {
                 data-bs-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >
+              ><img src="../img/message.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
                 <i className="fa fa-envelope"></i>
               </a>
               <ul className="dropdown-menu messages-notif-box animated fadeIn" aria-labelledby="messageDropdown">
@@ -62,7 +81,7 @@ export default function Nav() {
                 <div className="notif-center">
                       <a href="#">
                         <div className="notif-img">
-                          <img src="assets/img/jm_denis.jpg" alt="Img Profile" />
+                        <img src="../img/calendar.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
                         </div>
                         <div className="notif-content">
                         <span className="subject">Jimmy Denis</span>
@@ -121,7 +140,7 @@ export default function Nav() {
                 aria-expanded="false"
               >
                 <i className="fa fa-bell"></i>
-                <span className="notification">4</span>
+                <img src="../img/notification.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
                 </a>
               <ul className="dropdown-menu notif-box animated fadeIn" aria-labelledby="notifDropdown">
               <li>
@@ -179,79 +198,89 @@ export default function Nav() {
               </ul>
             </li>
             <li className="nav-item topbar-icon dropdown hidden-caret">
-              <a className="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
-                <i className="fas fa-layer-group"></i>
-              </a>
-              <div className="dropdown-menu quick-actions animated fadeIn">
-              <div className="quick-actions-header">
-              <span className="title mb-1">Quick Actions</span>
-              <span className="subtitle op-7">Shortcuts</span>
-                </div>
-                <div className="quick-actions-scroll scrollbar-outer">
-                <div className="quick-actions-items">
-                <div className="row m-0">
-                <a className="col-6 col-md-4 p-0" href="#">
-                        <div className="quick-actions-item">
-                        <div className="avatar-item bg-danger rounded-circle">
-                            <i className="far fa-calendar-alt"></i>
-                          </div>
-                          <span className="text">Calendar</span>
-                        </div>
-                      </a>
-                      <a className="col-6 col-md-4 p-0" href="#">
-                        <div className="quick-actions-item">
-                        <div className="avatar-item bg-warning rounded-circle">
-                            <i className="fas fa-map"></i>
-                          </div>
-                          <span className="text">Maps</span>
-                        </div>
-                      </a>
-                      <a className="col-6 col-md-4 p-0" href="#">
-                      <div className="quick-actions-item">
-                      <div className="avatar-item bg-info rounded-circle">
-                            <i className="fas fa-file-excel"></i>
-                          </div>
-                          <span className="text">Reports</span>
-                        </div>
-                      </a>
-                      <a className="col-6 col-md-4 p-0" href="#">
-                      <div className="quick-actions-item">
-                      <div className="avatar-item bg-success rounded-circle">
-                            <i className="fas fa-envelope"></i>
-                          </div>
-                          <span className="text">Emails</span>
-                        </div>
-                      </a>
-                      <a className="col-6 col-md-4 p-0" href="#">
-                      <div className="quick-actions-item">
-                      <div className="avatar-item bg-primary rounded-circle">
-                      <i className="fas fa-file-invoice-dollar"></i>
-                          </div>
-                          <span className="text">Invoice</span>
-                        </div>
-                      </a>
-                      <a className="col-6 col-md-4 p-0" href="#">
-                        <div className="quick-actions-item">
-                        <div className="avatar-item bg-secondary rounded-circle">
-                            <i className="fas fa-credit-card"></i>
-                          </div>
-                          <span className="text">Payments</span>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                </div>
+  <a className="nav-link" data-bs-toggle="dropdown" href="#" aria-expanded="false">
+  <img src="../img/shortcut.jpeg" alt="shortcut" className="img-fluid rounded-circle" />
+    <i className="fas fa-layer-group"></i>
+  </a>
+  <div className="dropdown-menu quick-actions animated fadeIn">
+    <div className="quick-actions-header">
+      <span className="title mb-1">Quick Actions</span>
+      <span className="subtitle op-7">Shortcuts</span>
+    </div>
+    <div className="quick-actions-scroll scrollbar-outer">
+      <div className="quick-actions-items">
+        <div className="row m-0">
+          {/* Calendar */}
+          <a className="col-6 col-md-4 p-0" href="#">
+            <div className="quick-actions-item">
+              <div className="avatar-item bg-danger rounded-circle">
+                <img src="../img/calendar.jpeg" alt="Calendar" className="img-fluid rounded-circle" />
               </div>
-            </li>
+              <span className="text">Calendar</span>
+            </div>
+          </a>
+          {/* Maps */}
+          <a className="col-6 col-md-4 p-0" href="#">
+            <div className="quick-actions-item">
+              <div className="avatar-item bg-warning rounded-circle">
+                <img src="../img/map.jpeg" alt="Maps" className="img-fluid rounded-circle" />
+              </div>
+              <span className="text">Maps</span>
+            </div>
+          </a>
+          {/* Reports */}
+          <a className="col-6 col-md-4 p-0" href="#">
+            <div className="quick-actions-item">
+              <div className="avatar-item bg-info rounded-circle">
+                <img src="../img/report.jpeg" alt="Reports" className="img-fluid rounded-circle" />
+              </div>
+              <span className="text">Reports</span>
+            </div>
+          </a>
+          {/* Emails */}
+          <a className="col-6 col-md-4 p-0" href="#">
+            <div className="quick-actions-item">
+              <div className="avatar-item bg-success rounded-circle">
+                <img src="../img/email.jpeg" alt="Emails" className="img-fluid rounded-circle" />
+              </div>
+              <span className="text">Emails</span>
+            </div>
+          </a>
+          {/* Invoice */}
+          <a className="col-6 col-md-4 p-0" href="#">
+            <div className="quick-actions-item">
+              <div className="avatar-item bg-primary rounded-circle">
+                <img src="../img/invoice.jpeg" alt="Invoice" className="img-fluid rounded-circle" />
+              </div>
+              <span className="text">Invoice</span>
+            </div>
+          </a>
+          {/* Payments */}
+          <a className="col-6 col-md-4 p-0" href="#">
+            <div className="quick-actions-item">
+              <div className="avatar-item bg-secondary rounded-circle">
+                <img src="../img/payment.jpeg" alt="Payments" className="img-fluid rounded-circle" />
+              </div>
+              <span className="text">Payments</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
+
 
             <li className="nav-item topbar-user dropdown hidden-caret">
               <a className ="dropdown-toggle profile-pic" data-bs-toggle="dropdown" href="#" aria-expanded="false">
                 <div className="avatar-sm">
-                  <img src="assets/img/profile.jpg" alt="..." className="avatar-img rounded-circle" />
+                  <img src="../img/profile.jpeg" alt="..." className="avatar-img rounded-circle" />
                 </div>
                 <span className="profile-username">
                   <span className="op-7">Hi,</span>
-                  <span className="fw-bold">Hizrian</span>
+                  <span className="profile-username">
+                  , <strong>{userData?.firstName || 'Guest'}</strong>
+                </span>
                 </span>
               </a>
               <ul className="dropdown-menu dropdown-user animated fadeIn">
@@ -260,27 +289,27 @@ export default function Nav() {
                     <div className="user-box">
                       <div className="avatar-lg">
                         <img
-                          src="assets/img/profile.jpg"
+                          src="../img/profile.jpeg"
                           alt="image profile"
                           className="avatar-img rounded"
                         />
                       </div>
                       <div className="u-text">
-                        <h4>Hizrian</h4>
-                        <p className="text-muted">hello@example.com</p>
-                        <a href="profile.html" className="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                      <h4>{userData?.firstName || 'User Name'}</h4>
+                    <p>{userData?.userEmail || 'user@example.com'}</p>
+                    <a href="/profile" className="btn btn-xs btn-secondary btn-sm">View Profile</a>
                       </div>
                     </div>
                   </li>
                   <li>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">My Profile</a>
+                    <a className="dropdown-item" href="/profile">My Profile</a>
                     <a className="dropdown-item" href="#">My Balance</a>
                     <a className="dropdown-item" href="#">Inbox</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Account Setting</a>
+                    <a className="dropdown-item" href="/Dashboard">Account Setting</a>
                     <div className="dropdown-divider"></div>
-                    <a className="dropdown-item" href="#">Logout</a>
+                    <a className="dropdown-item" href="/logout">Logout</a>
                   </li>
                 </div>
               </ul>
