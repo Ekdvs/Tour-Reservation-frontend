@@ -60,7 +60,7 @@ export default function Sidebar() {
             </li>
 
             <li className="nav-item">
-            <Link className="nav-link" to="/EvenPage">
+            <Link className="nav-link" to="/addtravelguide">
                 <i className="fas fa-bars"></i>
                 <p>Add Travel Guide</p>
             </Link>
