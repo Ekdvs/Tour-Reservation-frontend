@@ -1,0 +1,87 @@
+/* Breadcrumb Section */
+.bg-breadcrumb {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url("https://via.placeholder.com/1920x600") no-repeat center center;
+    background-size: cover;
+    color: white;
+  }
+  
+  /* General Heading Styles */
+  h3.display-3 {
+    font-weight: 700;
+    letter-spacing: 1.5px;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+  }
+  
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Card Styles */
+  .card {
+    border: none;
+    overflow: hidden;
+  }
+  
+  .card img {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card img:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  /* Button Styles */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    font-weight: 500;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  
+  /* Search Bar Styles */
+  .input-group .form-control {
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .input-group .btn-primary {
+    border-radius: 0;
+  }
+  
+  /* Footer Links */
+  .footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Spacing */
+  @media (max-width: 768px) {
+    .card img {
+      height: 180px !important;
+      object-fit: cover;
+    }
+  }
+  
