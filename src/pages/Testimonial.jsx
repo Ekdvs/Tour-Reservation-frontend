@@ -1,12 +1,12 @@
-import React from 'react'
-
-import OwlCarousel from 'react-owl-carousel'; 
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
 import Footer from '../compodent/Footer';
 
-
-export default function Testimonial() {
+const Testimonial = () => {
   const testimonials = [
     {
       id: 1,
@@ -41,54 +41,57 @@ export default function Testimonial() {
       location: "Houston, USA",
     },
   ];
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+  };
+
   return (
     <div>
-      <Topbar/>
-      <Navbar/>
-      <div class="container-fluid bg-breadcrumb">
-            <div class="container text-center py-5" style="max-width: 900px;">
-                <h3 class="text-white display-3 mb-4">Our Testimonial</h3>
-                <ol class="breadcrumb justify-content-center mb-0">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                    <li class="breadcrumb-item active text-white">Testimonial</li>
-                </ol>    
-            </div>
+      <Topbar />
+      <Navbar />
+      <div className="container-fluid bg-breadcrumb">
+        <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
+          <h3 className="text-white display-3 mb-4">Our Testimonial</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item">
+              <a href="index.html">Home</a>
+            </li>
+            <li className="breadcrumb-item">
+              <a href="#">Pages</a>
+            </li>
+            <li className="breadcrumb-item active text-white">Testimonial</li>
+          </ol>
         </div>
-        <div className="container-fluid testimonial py-5">
+      </div>
+
       <div className="container py-5">
-        <div className="mx-auto text-center mb-5" style={{ maxWidth: "900px" }}>
+        <div className="mx-auto text-center mb-5" style={{ maxWidth: '900px' }}>
           <h5 className="section-title px-3">Testimonial</h5>
-          <h1 className="mb-0">Our Clients Say!!!</h1>
+          <h1 className="mb-0">What Our Clients Say</h1>
         </div>
-        <OwlCarousel
-          className="testimonial-carousel owl-theme"
-          loop
-          margin={10}
-          nav
-          autoplay
-          autoplayTimeout={5000}
-          responsive={{
-            0: { items: 1 },
-            768: { items: 2 },
-            992: { items: 3 },
-          }}
-        >
+        <Slider {...settings}>
           {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="testimonial-item text-center rounded pb-4">
-              <div className="testimonial-comment bg-light rounded p-4">
-                <p className="text-center mb-5">{testimonial.comment}</p>
-              </div>
+              {/* Remove the comment part */}
               <div className="testimonial-img p-1">
                 <img
                   src={testimonial.img}
                   className="img-fluid rounded-circle"
                   alt={testimonial.name}
                 />
+                 <p className="mb-0"style={{ color: 'black' }}>{testimonial.comment}</p>
               </div>
-              <div style={{ marginTop: "-35px" }}>
+              <div style={{ marginTop: '35px' }}>
                 <h5 className="mb-0">{testimonial.name}</h5>
-                <p className="mb-0">{testimonial.location}</p>
+                <p className="mb-0"style={{ color: 'black' }}>{testimonial.location}</p>
+               
                 <div className="d-flex justify-content-center">
                   {[...Array(5)].map((_, i) => (
                     <i key={i} className="fas fa-star text-primary"></i>
@@ -97,13 +100,12 @@ export default function Testimonial() {
               </div>
             </div>
           ))}
-        </OwlCarousel>
+        </Slider>
       </div>
-    </div>
 
-
-      <Footer/>
-      
+      <Footer />
     </div>
-  )
-}
+  );
+};
+
+export default Testimonial;

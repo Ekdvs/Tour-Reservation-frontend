@@ -24,6 +24,7 @@ import LogOut from './user/LogOut';
 import Cart from './pages/Cart';
 import Destination from './pages/Destination';
 import Testimonial from './pages/Testimonial';
+import Explore_Tour from './pages/Explore_Tour';
 
 
 
@@ -61,7 +62,7 @@ function App() {
           <Route path="/payment" element={<CardPayment/>} />
           <Route path="/Destination" element={<Destination/>} />
           <Route path="/Testimonial" element={<Testimonial/>} />
-          
+          <Route path="/Explore_Tour" element={<Explore_Tour/>} />
           
           
 
