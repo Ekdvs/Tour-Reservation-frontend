@@ -18,7 +18,7 @@ export default function Topbar() {
               <a className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://linding.com">
                 <i className="fab fa-linkedin-in fw-normal"></i>
               </a>
-              <a className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://intergram.com">
+              <a className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://instagram.com">
                 <i className="fab fa-instagram fw-normal"></i>
               </a>
               <a className="btn btn-sm btn-outline-light btn-sm-square rounded-circle" href="https://youtube.com">
