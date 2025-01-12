@@ -48,7 +48,7 @@ export default function SignIn() {
           setTimeout(() => navigate("/Profile"), 2000);
         } else if (role === "admin") {
           setTimeout(() => navigate("/Dashboard"), 2000);
-        } else if (role === "travelguide") {
+        } else if (role === "travelGuide") {
           setTimeout(() => navigate("/GuideDashboard"), 2000);
         }
       }
