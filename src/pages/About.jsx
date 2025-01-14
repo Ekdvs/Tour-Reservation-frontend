@@ -111,10 +111,9 @@ export default function About() {
                   borderRadius: "15px",
                 }}
               >
-                <h5 className="section-about-title pe-3">About Us</h5>
                 <h1 className="mb-4 text-dark">
-                  Welcome to{" "}
-                  <span className="text-primary">The Ceylon Traveler</span>
+                 {" "}
+                  <span className="text-primary">Why Choose Us?</span>
                 </h1>
                 <p
                   className="mb-4 text-dark"
