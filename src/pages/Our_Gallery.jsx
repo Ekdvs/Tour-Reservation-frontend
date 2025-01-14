@@ -44,10 +44,12 @@ export default function Our_Gallery() {
         <Row>
           {images.map((src, index) => (
             <Col xs={6} md={4} key={index} className="mb-4">
-              <Image src={src} rounded fluid className="zoom"/>
+              <Image src={src} rounded fluid className="zoom" />
             </Col>
           ))}
         </Row>
-    
+      </Container>
+      <Footer />
+    </div>
   );
 }
