@@ -25,8 +25,10 @@ export default function Our_Gallery() {
       <div className="navbar-container">
         <Navbar />
       </div>
-    <div>
-      <h1>Capture the Essence of Sri Lanka</h1>
-    </div>
+      <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style={{ maxwidth: "900px" }}>
+          <h3 class="text-white display-3 mb-4">Tour Category</h3>
+          
+    
   );
 }
