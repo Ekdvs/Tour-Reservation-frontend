@@ -24,8 +24,19 @@
   color: white;
 }
 
+
 .App-link {
   color: #61dafb;
+}
+
+.zoom {
+  transition: transform 0.2s;
+  /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+  /* Zoom in */
 }
 
 @keyframes App-logo-spin {
