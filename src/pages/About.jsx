@@ -70,6 +70,15 @@ export default function About() {
                         countryside.
                       </p>
                     </Col>
+                    <h3 className="mb-4">Our Mission</h3>
+                    <p className="text-justify" style={{ color: "black" }}>
+                      Our mission is to provide exceptional travel experiences
+                      that showcase the best of Sri Lanka, combining comfort,
+                      adventure, and cultural immersion. We aim to make every
+                      trip seamless and memorable, offering tailored services
+                      that cater to the unique needs and desires of each
+                      traveler.
+                    </p>
                   </Row>
                 </Container>
               </div>
@@ -86,7 +95,8 @@ export default function About() {
               >
                 <h5 className="section-about-title pe-3">About Us</h5>
                 <h1 className="mb-4 text-dark">
-                  Welcome to <span className="text-primary">The Ceylon Traveler</span>
+                  Welcome to{" "}
+                  <span className="text-primary">The Ceylon Traveler</span>
                 </h1>
                 <p
                   className="mb-4 text-dark"
