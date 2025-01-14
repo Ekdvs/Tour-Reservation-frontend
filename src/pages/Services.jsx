@@ -69,12 +69,9 @@ export default function Services() {
                       <div>
                         <h5>Seamless Travel Solutions</h5>
                         <p className="text-justify" style={{ color: "black" }}>
-                          Find your perfect home away from home with our range
-                          of accommodations. Choose from luxurious hotels,
-                          relaxing resorts, and unique stays, all designed to
-                          make your trip unforgettable.
+                          Enjoy smooth, stress-free journeys with our transportation services. From airport transfers to local travel, we ensure you get to your destination comfortably and on time.
                         </p>
-                        <b>Book Your Stay Now</b>
+                        <b>Discover More</b>
                       </div>
                     </div>
                   </div>
