@@ -2,7 +2,7 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
-import { Container, Row, Col,Table } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 export default function About() {
     return (
