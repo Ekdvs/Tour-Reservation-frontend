@@ -125,14 +125,13 @@ export default function Services() {
                   <div class="col-12">
                     <div class="service-content-inner d-flex  bg-white border border-primary rounded p-4 pe-4">
                       <div>
-                        <h5>Seamless Travel Solutions</h5>
+                        <h5>Visa Assistance Made Easy</h5>
                         <p className="text-justify" style={{ color: "black" }}>
-                          Enjoy smooth, stress-free journeys with our
-                          transportation services. From airport transfers to
-                          local travel, we ensure you get to your destination
-                          comfortably and on time.
+                          Simplify your travel with our expert visa support
+                          services. We guide you through applications and
+                          documentation to ensure a smooth process.
                         </p>
-                        <b>Discover More</b>
+                        <b>Get Help with Your Visa</b>
                       </div>
                     </div>
                   </div>
