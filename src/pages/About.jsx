@@ -58,6 +58,17 @@ export default function About() {
                         historic landmarks, we ensure every journey with us is
                         extraordinary.
                       </p>
+                      <h3 className="mb-4">Our Story</h3>
+                      <p className="text-justify" style={{ color: "black" }}>
+                        The Ceylon Traveler was born from a deep love for Sri
+                        Lanka’s diverse landscapes and cultural richness. Our
+                        journey began with a simple idea: to share the island’s
+                        hidden gems with travelers from around the world. Over
+                        the years, we’ve grown into a trusted travel partner,
+                        helping countless adventurers discover the magic of Sri
+                        Lanka, from its bustling cities to its tranquil
+                        countryside.
+                      </p>
                     </Col>
                   </Row>
                 </Container>
@@ -75,7 +86,7 @@ export default function About() {
               >
                 <h5 className="section-about-title pe-3">About Us</h5>
                 <h1 className="mb-4 text-dark">
-                  Welcome to <span className="text-primary">Travela</span>
+                  Welcome to <span className="text-primary">The Ceylon Traveler</span>
                 </h1>
                 <p
                   className="mb-4 text-dark"
