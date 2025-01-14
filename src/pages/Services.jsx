@@ -26,26 +26,26 @@ export default function Services() {
         <div class="container-fluid bg-light service py-5">
           <div class="container py-5">
             <div class="mx-auto text-center mb-5" style={{ maxWidth: "900px" }}>
-              <h5 class="section-title px-3">Searvices</h5>
+              <h5 class="section-title px-3">Services</h5>
               <h1 class="mb-0">Our Services</h1>
             </div>
             <div class="row g-4">
               <div class="col-lg-6">
                 <div class="row g-4">
                   <div class="col-12">
-                    <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                      <div class="service-content text-end">
-                        <h5 class="mb-4">WorldWide Tours</h5>
-                        <p class="mb-0" style={{ color: "black" }}>
-                          Dolor sit amet consectetur adipisicing elit. Non alias
-                          eum, suscipit expedita corrupti officiis debitis
-                          possimus nam laudantium beatae quidem dolore
-                          consequuntur voluptate rem reiciendis, omnis sequi
-                          harum earum.
+                    <div class="service-content-inner d-flex  bg-white border border-primary rounded p-4 pe-4">
+                      <div>
+                        <h5>Tailored Tour Packages</h5>
+                        <p className="text-justify" style={{ color: "black" }}>
+                          Choose from a variety of tour packages designed to
+                          match your interests. Whether you're into adventure,
+                          culture, or relaxation, we’ve got something for you.
+                          From thrilling activities to immersive cultural
+                          experiences, each package includes accommodations,
+                          transportation, and guided tours for a seamless trip.
+                          Start your journey today with a package that fits your
+                          style.
                         </p>
-                      </div>
-                      <div class="service-icon p-4">
-                        <i class="fa fa-globe fa-4x text-primary"></i>
                       </div>
                     </div>
                   </div>
@@ -60,9 +60,6 @@ export default function Services() {
                           consequuntur voluptate rem reiciendis, omnis sequi
                           harum earum.
                         </p>
-                      </div>
-                      <div class="service-icon p-4">
-                        <i class="fa fa-hotel fa-4x text-primary"></i>
                       </div>
                     </div>
                   </div>
