@@ -138,14 +138,13 @@ export default function Services() {
                   <div class="col-12">
                     <div class="service-content-inner d-flex  bg-white border border-primary rounded p-4 pe-4">
                       <div>
-                        <h5>Seamless Travel Solutions</h5>
+                        <h5>Exclusive Travel Deals</h5>
                         <p className="text-justify" style={{ color: "black" }}>
-                          Enjoy smooth, stress-free journeys with our
-                          transportation services. From airport transfers to
-                          local travel, we ensure you get to your destination
-                          comfortably and on time.
+                          Unlock incredible savings with our special promotions,
+                          discounts, and loyalty rewards. Don't miss out on your
+                          next great adventure at the best price.
                         </p>
-                        <b>Discover More</b>
+                        <b>View Offers</b>
                       </div>
                     </div>
                   </div>
