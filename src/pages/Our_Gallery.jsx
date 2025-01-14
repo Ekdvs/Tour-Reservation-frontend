@@ -8,10 +8,16 @@ import Footer from "../compodent/Footer";
 // Image paths from the public folder
 const images = [
   "/img/gallery-1.jpg",
-   "/img/gallery-2.jpg",
+  "/img/gallery-2.jpg",
   "/img/gallery-3.jpg",
   "/img/gallery-4.jpg",
   "/img/gallery-5.jpg",
+  "/img/gallery-6.jpg",
+  "/img/gallery-7.jpg",
+  "/img/gallery-8.jpg",
+  "/img/gallery-9.jpg",
+];
+
 export default function Our_Gallery() {
   return (
     <div>
