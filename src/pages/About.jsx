@@ -112,9 +112,10 @@ export default function About() {
                 }}
               >
                 <h1 className="mb-4 text-dark">
-                 {" "}
+                  {" "}
                   <span className="text-primary">Why Choose Us?</span>
                 </h1>
+
                 <p
                   className="mb-4 text-dark"
                   style={{ fontSize: "18px", lineHeight: "1.8" }}
@@ -161,6 +162,18 @@ export default function About() {
                       24/7 Service
                     </p>
                   </div>
+                  <br></br>
+                  <h3 className="mb-4">Achievements and Partnerships</h3>
+
+                  <p
+                    className="mb-4 text-dark"
+                    style={{ fontSize: "18px", lineHeight: "1.8" }}
+                  >
+                    We are proud to collaborate with some of the top names in
+                    the travel industry, ensuring our clients receive the best
+                    services and experiences. Our dedication to excellence has
+                    earned us numerous accolades and a loyal customer base.
+                  </p>
                 </div>
                 <a
                   href="/services"
