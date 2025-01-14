@@ -26,6 +26,7 @@ import Destination from './pages/Destination';
 import Testimonial from './pages/Testimonial';
 import Explore_Tour from './pages/Explore_Tour';
 import Travel_Guides from './pages/Travel_Guides';
+import Our_Gallery from './pages/Our_Gallery';
 
 
 
@@ -64,7 +65,8 @@ function App() {
           <Route path="/Destination" element={<Destination/>} />
           <Route path="/Testimonial" element={<Testimonial/>} />
           <Route path="/Explore_Tour" element={<Explore_Tour/>} />
-          <Route path="/Travel_Guides" element={<Travel_Guides/>} />
+          <Route path="/Travel_Guides" element={<Travel_Guides />} />
+          <Route path="/Our_Gallery" element={<Our_Gallery />} />
          
           
 
