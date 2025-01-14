@@ -79,19 +79,15 @@ export default function Services() {
                     </div>
                   </div>
                   <div class="col-12">
-                    <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
-                      <div class="service-content text-end">
-                        <h5 class="mb-4">Event Management</h5>
-                        <p class="mb-0" style={{ color: "black" }}>
-                          Dolor sit amet consectetur adipisicing elit. Non alias
-                          eum, suscipit expedita corrupti officiis debitis
-                          possimus nam laudantium beatae quidem dolore
-                          consequuntur voluptate rem reiciendis, omnis sequi
-                          harum earum.
+                    <div class="service-content-inner d-flex  bg-white border border-primary rounded p-4 pe-4">
+                      <div>
+                        <h5>Travel Worry-Free</h5>
+                        <p className="text-justify" style={{ color: "black" }}>
+                          Protect your adventures with comprehensive travel
+                          insurance. Enjoy peace of mind with coverage for
+                          unexpected events, ensuring a safe and secure journey.
                         </p>
-                      </div>
-                      <div class="service-icon p-4">
-                        <i class="fa fa-cog fa-4x text-primary"></i>
+                        <b>Get Covered Now</b>
                       </div>
                     </div>
                   </div>
