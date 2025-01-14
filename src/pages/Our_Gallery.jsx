@@ -39,6 +39,9 @@ export default function Our_Gallery() {
           </ol>
         </div>
       </div>
+      <Container className="my-4">
+        <h1 className="text-center mb-4">Capture the Essence of Sri Lanka</h1>
+        
     
   );
 }
