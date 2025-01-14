@@ -32,6 +32,13 @@ export default function Our_Gallery() {
             <li class="breadcrumb-item">
               <a href="index.html">Home</a>
             </li>
+            <li class="breadcrumb-item">
+              <a href="#">Pages</a>
+            </li>
+            <li class="breadcrumb-item active text-white">Gallery</li>
+          </ol>
+        </div>
+      </div>
     
   );
 }
