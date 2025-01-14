@@ -79,6 +79,15 @@ export default function About() {
                       that cater to the unique needs and desires of each
                       traveler.
                     </p>
+                    <h3 className="mb-4">Our Vision</h3>
+                    <p className="text-justify" style={{ color: "black" }}>
+                      We envision The Ceylon Traveler as the leading name in Sri
+                      Lankan tourism, recognized globally for our commitment to
+                      excellence, sustainability, and authentic travel
+                      experiences. We strive to continuously innovate and expand
+                      our offerings, making Sri Lanka accessible and enchanting
+                      for all.
+                    </p>
                   </Row>
                 </Container>
               </div>
