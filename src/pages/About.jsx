@@ -88,6 +88,15 @@ export default function About() {
                       our offerings, making Sri Lanka accessible and enchanting
                       for all.
                     </p>
+                    <h3 className="mb-4">Our Team</h3>
+                    <p className="text-justify" style={{ color: "black" }}>
+                      Meet the passionate team behind The Ceylon Traveler. Our
+                      dedicated travel experts and local guides bring years of
+                      experience and an insider’s knowledge of Sri Lanka’s
+                      best-kept secrets. From planning your itinerary to
+                      ensuring a smooth journey, we’re here to make your travel
+                      dreams come true.
+                    </p>
                   </Row>
                 </Container>
               </div>
