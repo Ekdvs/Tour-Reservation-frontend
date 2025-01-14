@@ -16,6 +16,9 @@ const images = [
   "/img/gallery-7.jpg",
   "/img/gallery-8.jpg",
   "/img/gallery-9.jpg",
+  "/img/gallery-10.jpg",
+  "/img/gallery-11.jpg",
+  "/img/gallery-12.jpg",
 ];
 
 export default function Our_Gallery() {
