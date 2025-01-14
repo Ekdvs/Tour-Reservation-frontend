@@ -69,14 +69,12 @@ export default function Services() {
                       <div>
                         <h5>Seamless Travel Solutions</h5>
                         <p className="text-justify" style={{ color: "black" }}>
-                          Enjoy smooth, stress-free journeys with our transportation services. From airport transfers to local travel, we ensure you get to your destination comfortably and on time.
+                          Enjoy smooth, stress-free journeys with our
+                          transportation services. From airport transfers to
+                          local travel, we ensure you get to your destination
+                          comfortably and on time.
                         </p>
                         <b>Discover More</b>
-                      </div>
-                    </div>
-                  </div>
-                      <div class="service-icon p-4">
-                        <i class="fa fa-user fa-4x text-primary"></i>
                       </div>
                     </div>
                   </div>
