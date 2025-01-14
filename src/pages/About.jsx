@@ -2,6 +2,7 @@ import React from 'react'
 import Topbar from '../compodent/Topbar'
 import Navbar from '../compodent/Navbar'
 import Footer from '../compodent/Footer'
+import { Container, Row, Col,Table } from 'react-bootstrap'
 
 export default function About() {
     return (
@@ -30,21 +31,42 @@ export default function About() {
         <div className="container-fluid about py-5" style={{ background: "" }}>
           <div className="container py-5">
             <div className="row g-5 align-items-center">
-              <div className="col-lg-5">
-                <div className="h-100">
-                  <img
-                    src="img/about.jpg"
-                    className="img-fluid w-100 h-100"
-                    alt="Sri Lanka"
-                    style={{ objectFit: "cover", borderRadius: "10px" }}
-                  />
-                </div>
+              <div className="col-lg-12">
+                <Container>
+                  <Row>
+                    <Col lg={6}>
+                      <img
+                        src="img/logo.png"
+                        className="img-fluid w-100 h-100"
+                        alt="Sri Lanka"
+                        style={{
+                          objectFit: "cover",
+                          borderRadius: "10px",
+                          maxWidth: "100%",
+                        }}
+                      />
+                    </Col>
+                    <Col lg={6}>
+                      <h3 className="mb-4">Company Overview</h3>
+                      <p className="text-justify" style={{ color: "black" }}>
+                        Welcome to The Ceylon Traveler, your ultimate gateway to
+                        exploring the unparalleled beauty and rich heritage of
+                        Sri Lanka. Founded with a passion for travel and
+                        adventure, we specialize in crafting unforgettable
+                        experiences across this island paradise. Whether you're
+                        seeking serene beaches, lush tea plantations, or
+                        historic landmarks, we ensure every journey with us is
+                        extraordinary.
+                      </p>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
               <div
                 className="col-lg-7"
                 style={{
                   background:
-                    "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(img/about-img-1.png)",
+                    "linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(img/logo.png)",
                   backgroundSize: "cover",
                   height: "100vh",
                   width: "100%",
