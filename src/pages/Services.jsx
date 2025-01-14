@@ -98,14 +98,14 @@ export default function Services() {
                   <div class="col-12">
                     <div class="service-content-inner d-flex  bg-white border border-primary rounded p-4 pe-4">
                       <div>
-                        <h5>Seamless Travel Solutions</h5>
+                        <h5>Always Here for You</h5>
                         <p className="text-justify" style={{ color: "black" }}>
-                          Enjoy smooth, stress-free journeys with our
-                          transportation services. From airport transfers to
-                          local travel, we ensure you get to your destination
-                          comfortably and on time.
+                          Our dedicated team is available 24/7 to assist you
+                          with any questions or concerns. Reach out anytime
+                          through phone, email, or chat for prompt and friendly
+                          support.
                         </p>
-                        <b>Discover More</b>
+                        <b>Get Help Now</b>
                       </div>
                     </div>
                   </div>
