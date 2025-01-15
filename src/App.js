@@ -27,6 +27,7 @@ import Testimonial from './pages/Testimonial';
 import Explore_Tour from './pages/Explore_Tour';
 import Travel_Guides from './pages/Travel_Guides';
 import Our_Gallery from './pages/Our_Gallery';
+import Blog from './pages/Blog';
 
 
 
