@@ -21,7 +21,7 @@ export default function Blog() {
       author: "Lara Smith",
       excerpt:
         "Dive into the rich flavors and diverse cuisine that Sri Lanka has to offer.",
-      img: "img/blog-2.jpg",
+      img: "img/culinary.jpg",
     },
     {
       title: "Exploring the Ancient Ruins",
@@ -29,7 +29,7 @@ export default function Blog() {
       author: "John Doe",
       excerpt:
         "Step back in time and explore the ancient ruins that tell the story of Sri Lanka's rich history.",
-      img: "img/blog-3.jpg",
+      img: "img/ruin.jpg",
     },
   ];
 
