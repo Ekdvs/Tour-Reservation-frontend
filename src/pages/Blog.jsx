@@ -4,6 +4,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { Container, Row, Col, Card, Button, Breadcrumb } from "react-bootstrap";
 import "./Blog.css"; // Assuming you have a CSS file for custom styles
+import { useNavigate } from 'react-router-dom';
 
 export default function Blog() {
   const blogPosts = [
@@ -30,8 +31,13 @@ export default function Blog() {
       excerpt:
         "Step back in time and explore the ancient ruins that tell the story of Sri Lanka's rich history.",
       img: "img/ruin.jpg",
-    },
-  ];
+      },
+    
+    ];
+    const navigate = useNavigate();
+    const handleReadMore = () => {
+    navigate('/read-more'); // Specify the path you want to navigate to
+  };
 
   return (
     <div>
@@ -66,7 +72,9 @@ export default function Blog() {
                   <Card.Body>
                     <Card.Title>{post.title}</Card.Title>
                     <Card.Text>{post.excerpt}</Card.Text>
-                    <Button variant="primary">Read More</Button>
+                    <Button variant="primary" onClick={handleReadMore}>
+                      Read More
+                    </Button>
                   </Card.Body>
                   <Card.Footer>
                     <small className="text-muted">
