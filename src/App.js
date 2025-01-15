@@ -68,6 +68,7 @@ function App() {
           <Route path="/Explore_Tour" element={<Explore_Tour/>} />
           <Route path="/Travel_Guides" element={<Travel_Guides />} />
           <Route path="/Our_Gallery" element={<Our_Gallery />} />
+          <Route path="/Blog" element={<Blog />} />
          
           
 
