@@ -99,7 +99,7 @@ export default function Register() {
       </div>
       <div
   style={{
-    backgroundImage: "url('../img/bg.jpeg')",
+    backgroundImage: "url('../img/R.jpeg')",
     backgroundSize: "cover",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
@@ -174,7 +174,7 @@ export default function Register() {
               />
               <button
                 type="button"
-                className="btn btn-outline-secondary"
+                className="input-group-text"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -195,7 +195,7 @@ export default function Register() {
               />
               <button
                 type="button"
-                className="btn btn-outline-secondary"
+                className="input-group-text"
                 onClick={() => setShowRepeatPassword(!showRepeatPassword)}
               >
                 {showRepeatPassword ? <FaEyeSlash /> : <FaEye />}
