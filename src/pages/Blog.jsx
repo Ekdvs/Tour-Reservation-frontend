@@ -13,7 +13,7 @@ export default function Blog() {
       author: "Royal Hamblin",
       excerpt:
         "Uncover the beauty of lesser-known destinations in Sri Lanka and embark on unique adventures.",
-      img: "img/blog-1.jpg",
+      img: "img/turtle.jpg",
     },
     {
       title: "A Culinary Journey Through Sri Lanka",
