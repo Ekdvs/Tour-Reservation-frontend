@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';  
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import Topbar from '../compodent/Topbar';
 import Navbar from '../compodent/Navbar';
@@ -16,66 +16,63 @@ export default function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [userEmail, setUserEmail] = useState('');
-  const [showPassword, setShowPassword] = useState(false); 
-  const [showRepeatPassword, setShowRepeatPassword] = useState(false); 
+  const [profileImage, setProfileImage] = useState(null); // For storing profile image file
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRepeatPassword, setShowRepeatPassword] = useState(false);
   const navigate = useNavigate();
 
- 
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-
-
   const passwordRegex = /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
-
-
   const nameRegex = /^[a-zA-Z]+$/;
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
-    if (!firstName || !lastName || !userEmail || !password || !repeatPassword) {
+    // Validation
+    if (!firstName || !lastName || !userEmail || !password || !repeatPassword || !profileImage) {
       toast.error('All fields are required. Please fill them out.');
       return;
     }
-
 
     if (!nameRegex.test(firstName)) {
       toast.error('First name should only contain alphabetic characters.');
       return;
     }
 
-
     if (!nameRegex.test(lastName)) {
       toast.error('Last name should only contain alphabetic characters.');
       return;
     }
-
 
     if (!emailRegex.test(userEmail)) {
       toast.error('Please enter a valid email address.');
       return;
     }
 
-
     if (!passwordRegex.test(password)) {
       toast.error('Password must be at least 8 characters long, contain at least one uppercase letter and one number.');
       return;
     }
-
 
     if (password !== repeatPassword) {
       toast.error('Passwords do not match!');
       return;
     }
 
+    // Preparing form data
+    const formData = new FormData();
+    formData.append('user', JSON.stringify({ firstName, lastName, userEmail, password }));
+    formData.append('imageFile', profileImage);
+
     try {
-      const response = await axios.post('http://localhost:8080/user/register', {
-        firstName,
-        lastName,
-        userEmail,
-        password,
+      // Sending request to backend
+      const response = await axios.post('http://localhost:8080/user/register', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
       });
 
-      if (response.data === 'User already registered as a user') {
+      if (response.data === 'User already registered with this email') {
         toast.error(response.data);
       } else {
         toast.success('Registration successful!');
@@ -140,6 +137,15 @@ export default function Register() {
                 />
               </div>
               <div className="mb-3">
+                <label htmlFor="profileImage" className="form-label">Profile Picture</label>
+                <input
+                  type="file"
+                  className="form-control"
+                  id="profileImage"
+                  onChange={(e) => setProfileImage(e.target.files[0])}
+                />
+              </div>
+              <div className="mb-3">
                 <label htmlFor="password" className="form-label">Password</label>
                 <div className="input-group">
                   <input
@@ -188,8 +194,6 @@ export default function Register() {
         </div>
       </div>
       <Footer />
-      
-      {/* ToastContainer for toasts */}
       <ToastContainer
         position="top-right"
         autoClose={5000}

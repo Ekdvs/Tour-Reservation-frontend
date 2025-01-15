@@ -1,0 +1,22 @@
+.blog-post {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: scale(1.05);
+}
+
+.blog-post-1 {
+    /* Custom styles for the first blog post */
+}
+
+.blog-post-2 {
+    /* Custom styles for the second blog post */
+}
+
+.blog-post-3 {
+    /* Custom styles for the third blog post */
+}

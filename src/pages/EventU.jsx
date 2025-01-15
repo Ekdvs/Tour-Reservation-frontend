@@ -46,7 +46,7 @@ const EventShowPage = () => {
       <h2 className="text-center mb-4">Upcoming Events</h2>
       <div className="row">
         {events.map((event) => (
-          <div key={event.eventId} className="col-md-4 mb-4">
+          <div key={event.eventId} className="card mb-4 shadow-lg">
             <div className="card shadow-lg rounded-lg event-card">
               {/* Correct way to display the base64 image */}
               <img 
@@ -66,7 +66,7 @@ const EventShowPage = () => {
                   <strong>Ticket Price:</strong> ${event.oneTicketPrice} <br />
                 </p>
                 <a
-                  href={`/book/${event.eventId}`}
+                  href="/cart"
                   className="btn btn-primary btn-lg w-100"
                 >
                   Book Tickets

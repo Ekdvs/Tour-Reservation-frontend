@@ -400,6 +400,7 @@
     background-size: cover;
     background-attachment: fixed;
     padding: 150px 0 50px 0;
+    border-radius: 10px;
 }
 
 .bg-breadcrumb .breadcrumb-item a {
@@ -1225,6 +1226,7 @@
 /*** Footer Start ***/
 .footer {
     background: var(--bs-dark);
+    border-radius: 10px;
 }
 .footer .footer-item a {
     line-height: 30px;

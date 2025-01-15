@@ -7,7 +7,7 @@
   }
   
   .event-image {
-    height: 200px;
+    height: 500px;
     object-fit: cover;
     border-bottom: 2px solid #ddd;
   }

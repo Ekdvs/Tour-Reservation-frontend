@@ -9,39 +9,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 export default function Dashboard() {
-  const [loading, setLoading] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    
-    const simulateAuthCheck = setTimeout(() => {
-      const userLoggedIn = !!localStorage.getItem('authToken'); 
-      setIsLoggedIn(userLoggedIn);
-      setLoading(false);
-
-      if (!userLoggedIn) {
-        navigate('/login'); 
-      }
-    }, 2000); 
-
-    return () => clearTimeout(simulateAuthCheck);
-  }, [navigate]);
-
-  if (loading) {
-    
-    return (
-      <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-        <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isLoggedIn) {
-    return null; 
-  }
+  
   return (
     <div>
       <Sidebar />
