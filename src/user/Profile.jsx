@@ -129,6 +129,18 @@ export default function Profile() {
                     </ol>
                 </div>
             </div>
+            <div
+  style={{
+    backgroundImage: "url('../img/R.jpeg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
             <div className="container py-5">
                 <h1 className="my-4 text-center">Profile</h1>
                 <div className="card shadow-lg">
@@ -239,6 +251,7 @@ export default function Profile() {
                         </button>
                     </div>
                 </div>
+            </div>
             </div>
             <Footer />
             <ToastContainer
