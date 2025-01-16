@@ -28,21 +28,22 @@ const PlaceDetail = () => {
             <Navbar />
           </div>
           <div className="container-fluid bg-breadcrumb">
-            <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
-              <h3 className="text-white display-3 mb-4">Travel Gallery</h3>
-              <ol className="breadcrumb justify-content-center mb-0">
-                <li className="breadcrumb-item">
-                  <a href="/Home">Home</a>
-                </li>
-                <li className="breadcrumb-item">
-                  <a href="#">Pages</a>
-                </li>
-                <li className="breadcrumb-item active text-white">Gallery</li>
-              </ol>
-            </div>
-          </div>
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+          <h3 className="text-white display-3 mb-4">Destinations</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li className="breadcrumb-item">
+              <a href="/Destinations">Pages</a>
+            </li>
+            <li className="breadcrumb-item"><a href="">Destinations</a></li>
+            <li className="breadcrumb-item active text-white">{place.placeName}</li>
+          </ol>
+        </div>
+      </div>
     
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       <div className="card shadow-lg border-0">
         <div className="card-header bg-primary text-white text-center py-4">
           <h2 className="mb-0">{place.placeName || "Place Name"}</h2>
@@ -87,7 +88,16 @@ const PlaceDetail = () => {
                 </li>
                 
               </ul>
-              <button
+              
+            </div>
+          </div>
+
+          {/* Description Section */}
+          <div className="mt-4">
+            <h4 className="text-primary">Description</h4>
+            <p className="text-muted">{place.description || "Description not provided."}</p>
+          </div>
+          <button
                 className="btn btn-primary btn-lg w-100"
                 onClick={() => {
                   if (place.website) {
@@ -98,14 +108,6 @@ const PlaceDetail = () => {
               >
                 Back to Destination
               </button>
-            </div>
-          </div>
-
-          {/* Description Section */}
-          <div className="mt-4">
-            <h4 className="text-primary">Description</h4>
-            <p className="text-muted">{place.description || "Description not provided."}</p>
-          </div>
         </div>
       </div>
     </div>

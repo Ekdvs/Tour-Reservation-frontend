@@ -57,9 +57,9 @@ const Destination = () => {
               <a href="/">Home</a>
             </li>
             <li className="breadcrumb-item">
-              <a href="/events">Events</a>
+              <a href="/Destinations">Pages</a>
             </li>
-            <li className="breadcrumb-item active text-white">Event Booking</li>
+            <li className="breadcrumb-item active text-white">Destinations</li>
           </ol>
         </div>
       </div>
@@ -112,7 +112,7 @@ const Destination = () => {
         </div>
 
         {/* List of Places */}
-        <div className="place-grid">
+        <div className="place-grid mb-5">
           {places.map((place) => (
             <div key={place.placeId} className="place-card">
               <img
@@ -120,17 +120,23 @@ const Destination = () => {
                 alt={place.placeName}
                 className="place-img"
               />
-              <div className="place-info">
+              <div className="place-info"style={{ textAlign: 'center' }}>
                 <h5>{place.placeName}</h5>
-                <p>{place.description}</p>
+               </div>
+               <div className="place-info">
                 <p>
                   <strong>Location:</strong> {place.location} <br />
                   <strong>Category:</strong> {place.category}
                 </p>
+                <p>
+                {place.description.length > 100
+                ? `${place.description.substring(0, 100)}...`
+                : place.description}
+                </p>
                 {/* Use saveToLocalStorage to store place data */}
                 <Link
                   to="/place-detail"
-                  className="btn btn-primary w-100"
+                  className="text-primary text-decoration-underline"
                   onClick={() => saveToLocalStorage(place)}
                 >
                   Read More
