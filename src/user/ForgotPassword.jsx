@@ -71,7 +71,19 @@ export default function ForgotPassword() {
                 </ol>    
             </div>
         </div>
-        <div className="bg-light py-3 py-md-5">
+        <div
+  style={{
+    backgroundImage: "url('../img/R.jpeg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+        <div className="">
                 <div className="container">
                     <div className="row justify-content-md-center">
                         <div className="col-12 col-md-11 col-lg-8 col-xl-7 col-xxl-6">
@@ -114,6 +126,7 @@ export default function ForgotPassword() {
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
                 </div>
 

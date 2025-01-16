@@ -97,102 +97,123 @@ export default function Register() {
           </ol>
         </div>
       </div>
-
-      <div className="container my-5">
-        <div className="card mx-auto" style={{ maxWidth: '500px' }}>
-          <div className="card-body">
-            <h5 className="card-title text-center">Sign Up</h5>
-            <form onSubmit={handleRegister}>
-              <div className="mb-3">
-                <label htmlFor="firstName" className="form-label">First Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="firstName"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  placeholder="Enter your first name"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="lastName" className="form-label">Last Name</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="lastName"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  placeholder="Enter your last name"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="userEmail" className="form-label">Email</label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="userEmail"
-                  value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
-                  placeholder="Enter your email"
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="profileImage" className="form-label">Profile Picture</label>
-                <input
-                  type="file"
-                  className="form-control"
-                  id="profileImage"
-                  onChange={(e) => setProfileImage(e.target.files[0])}
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="password" className="form-label">Password</label>
-                <div className="input-group">
-                  <input
-                    type={showPassword ? 'text' : 'password'}
-                    className="form-control"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
-                  />
-                  <button
-                    type="button"
-                    className="input-group-text"
-                    onClick={() => setShowPassword(!showPassword)}
-                  >
-                    {showPassword ? <FaEyeSlash /> : <FaEye />}
-                  </button>
-                </div>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="repeatPassword" className="form-label">Re-enter Password</label>
-                <div className="input-group">
-                  <input
-                    type={showRepeatPassword ? 'text' : 'password'}
-                    className="form-control"
-                    id="repeatPassword"
-                    value={repeatPassword}
-                    onChange={(e) => setRepeatPassword(e.target.value)}
-                    placeholder="Re-enter your password"
-                  />
-                  <button
-                    type="button"
-                    className="input-group-text"
-                    onClick={() => setShowRepeatPassword(!showRepeatPassword)}
-                  >
-                    {showRepeatPassword ? <FaEyeSlash /> : <FaEye />}
-                  </button>
-                </div>
-              </div>
-              <button type="submit" className="btn btn-primary w-100">Sign Up</button>
-            </form>
-            <div className="text-center mt-3">
-              <a href="/login">Already a Member?</a>
+      <div
+  style={{
+    backgroundImage: "url('../img/R.jpeg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
+  <div className="container">
+    <div className="card shadow-lg mx-auto" style={{ maxWidth: "500px" }}>
+      <div className="card-body p-5">
+        <h2 className="card-title text-center mb-4 text-primary">Sign Up</h2>
+        <form onSubmit={handleRegister}>
+          <div className="mb-3">
+            <label htmlFor="firstName" className="form-label">First Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="firstName"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="Enter your first name"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="lastName" className="form-label">Last Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="lastName"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Enter your last name"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="userEmail" className="form-label">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="userEmail"
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="profileImage" className="form-label">Profile Picture</label>
+            <input
+              type="file"
+              className="form-control"
+              id="profileImage"
+              onChange={(e) => setProfileImage(e.target.files[0])}
+              accept="image/*"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">Password</label>
+            <div className="input-group">
+              <input
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Enter your password"
+                required
+              />
+              <button
+                type="button"
+                className="input-group-text"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
             </div>
           </div>
+          <div className="mb-3">
+            <label htmlFor="repeatPassword" className="form-label">Re-enter Password</label>
+            <div className="input-group">
+              <input
+                type={showRepeatPassword ? "text" : "password"}
+                className="form-control"
+                id="repeatPassword"
+                value={repeatPassword}
+                onChange={(e) => setRepeatPassword(e.target.value)}
+                placeholder="Re-enter your password"
+                required
+              />
+              <button
+                type="button"
+                className="input-group-text"
+                onClick={() => setShowRepeatPassword(!showRepeatPassword)}
+              >
+                {showRepeatPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+          </div>
+          <button type="submit" className="btn btn-primary w-100">Sign Up</button>
+        </form>
+        <div className="text-center mt-4">
+          <p className="mb-0">
+            Already a member? <a href="/login" className="text-decoration-none">Log In</a>
+          </p>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
       <Footer />
       <ToastContainer
         position="top-right"
@@ -206,5 +227,6 @@ export default function Register() {
         pauseOnHover
       />
     </>
+    
   );
 }

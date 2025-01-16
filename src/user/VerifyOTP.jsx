@@ -83,6 +83,19 @@ export default function VerifyOTP() {
                     </ol>
                 </div>
             </div>
+
+            <div
+  style={{
+    backgroundImage: "url('../img/R.jpeg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
             <div className="container my-5">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -116,6 +129,7 @@ export default function VerifyOTP() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
             <Footer/>
             <ToastContainer />

@@ -48,7 +48,7 @@ export default function SignIn() {
           setTimeout(() => navigate("/Profile"), 2000);
         } else if (role === "admin") {
           setTimeout(() => navigate("/Dashboard"), 2000);
-        } else if (role === "travelguide") {
+        } else if (role === "travelGuide") {
           setTimeout(() => navigate("/GuideDashboard"), 2000);
         }
       }
@@ -77,6 +77,18 @@ export default function SignIn() {
         </div>
       </div>
 
+      <div
+  style={{
+    backgroundImage: "url('../img/R.jpeg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
       <div className="container my-5">
         <div className="card mx-auto" style={{ maxWidth: "500px" }}>
           <div className="card-body">
@@ -141,6 +153,7 @@ export default function SignIn() {
             </div>
           </div>
         </div>
+      </div>
       </div>
       <Footer/>
       <ToastContainer
