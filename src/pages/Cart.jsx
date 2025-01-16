@@ -92,7 +92,8 @@ const Cart = () => {
             <li className="breadcrumb-item">
               <a href="/events">Events</a>
             </li>
-            <li className="breadcrumb-item active text-white">Event Booking</li>
+            <li className="breadcrumb-item active text-white"><a href="/EventShowPage">Event Booking</a></li>
+            
           </ol>
         </div>
       </div>
