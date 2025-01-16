@@ -71,7 +71,7 @@ export default function Blog() {
               className="d-block w-100"
               src={post.img}
               alt={`Slide ${index + 1}`}
-              style={{ height: "500px", objectFit: "cover" }}
+              style={{ height: "500px", objectFit: "cover"  }}
             />
             <Carousel.Caption>
               <h3>{post.title}</h3>

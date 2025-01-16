@@ -34,7 +34,7 @@ export default function Our_Gallery() {
           <h3 className="text-white display-3 mb-4">Travel Gallery</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
-              <a href="index.html">Home</a>
+              <a href="/Home">Home</a>
             </li>
             <li className="breadcrumb-item">
               <a href="#">Pages</a>
@@ -45,7 +45,8 @@ export default function Our_Gallery() {
       </div>
 
       {/* Carousel Section */}
-      <Container className="my-4">
+      <div className="container-fluid bg-light py-5">
+      <Container >
         <Carousel>
           {images.slice(0, 6).map((src, index) => (
             <Carousel.Item key={index}>
@@ -58,6 +59,7 @@ export default function Our_Gallery() {
           ))}
         </Carousel>
       </Container>
+      </div>
 
       {/* Image Grid Section */}
       <Container className="my-4">
