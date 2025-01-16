@@ -16,7 +16,7 @@ export default function Navbar() {
       <div className="container-fluid position-relative p-0">
             <nav className="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
                 <a href="/" className="navbar-brand p-0">
-                    <h1 className="m-0"><i className="fa fa-map-marker-alt me-3"></i>Ceylon <br></br>Paradice</h1>
+                    <h1 className="m-0"><i className="fa fa-map-marker-alt me-3"></i>The Ceylon Traveler </h1>
 
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
