@@ -250,16 +250,26 @@ const handleEditEvent = (event) => {
         </div>
 
         <div className="form-group mb-3">
-          <input
-            type="text"
-            className="form-control"
-            name="eventType"
-            placeholder="Type"
-            value={eventForm.eventType}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
+  <select
+    className="form-control"
+    name="eventType"
+    value={eventForm.eventType}
+    onChange={handleInputChange}
+    required
+  >
+    <option value="" disabled>
+      Select Event Type
+    </option>
+    <option value="Cultural">Cultural</option>
+    <option value="Religious">Religious</option>
+    <option value="Entertainment">Entertainment</option>
+    <option value="Food">Food</option>
+    <option value="Fashion">Fashion</option>
+    <option value="Literary">Literary</option>
+    <option value="Film">Film</option>
+  </select>
+</div>
+
 
         <div className="form-group mb-3">
           <input

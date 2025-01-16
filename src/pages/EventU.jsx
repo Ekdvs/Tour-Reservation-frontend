@@ -6,6 +6,7 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 
+
 const EventShowPage = () => {
   const [events, setEvents] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -45,6 +46,7 @@ const EventShowPage = () => {
     <div>
       <Topbar />
       <Navbar />
+
       {/* Header Section */}
       <div className="container-fluid bg-breadcrumb">
         <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
@@ -66,19 +68,15 @@ const EventShowPage = () => {
         <div id="eventCarousel" className="carousel slide mt-5" data-bs-ride="carousel">
           <div className="carousel-inner">
             {events.map((event, index) => (
-              <div
-                key={event.eventId}
-                className={`carousel-item ${index === 0 ? "active" : ""}`}
-              >
+              <div key={event.eventId} className={`carousel-item ${index === 0 ? "active" : ""}`}>
                 <img
                   src={`data:${event.contentType};base64,${event.imageData}`}
                   className="d-block w-100"
                   alt={event.eventName}
                   style={{ height: "500px", objectFit: "cover" }}
                 />
-                <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 p-3 rounded">
+                <div className="bg-dark text-white p-2 rounded" style={{ position: "absolute", bottom: "10px", left: "10px", zIndex: "1" }}>
                   <h5>{event.eventName}</h5>
-                  <p>{event.description}</p>
                 </div>
               </div>
             ))}
@@ -130,13 +128,17 @@ const EventShowPage = () => {
         <div className="row">
           {events.length > 0 ? (
             events.map((event) => (
-              <div key={event.eventId} className="col-md-12 mb-4">
+              <div key={event.eventId} className="col-md-4 mb-4">
                 <div className="card shadow-lg rounded-lg event-card">
                   <img
                     src={`data:${event.contentType};base64,${event.imageData}`}
                     alt="event"
                     className="card-img-top"
-                    style={{ height: "100%",width:"100%", objectFit: "cover" ,borderRadius: "10px"}}
+                    style={{
+                      height: "200px",
+                      objectFit: "cover",
+                      borderRadius: "10px 10px 0 0",
+                    }}
                   />
                   <div className="card-body">
                     <h5 className="card-title event-title">{event.eventName}</h5>
@@ -160,7 +162,7 @@ const EventShowPage = () => {
         </div>
       </div>
 
-      <Footer />
+      <Footer/>
     </div>
   );
 };

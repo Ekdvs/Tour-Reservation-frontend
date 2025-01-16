@@ -63,13 +63,23 @@ export default function CardPayment() {
 
         // Make an API request to process payment
         const response = await axios.post("http://localhost:8080/payment/process", paymentData);
-        if (response.data) {
+        if (response.data && response.data.success) {
           // Redirect to the success page or show success message
           alert("Payment Successful!");
           navigate("/payment/success"); // Replace with your success route
+        } else {
+          // Handle failure if the response is not as expected
+          alert("Payment failed! Please try again.");
         }
       } catch (error) {
-        alert("Payment failed! Please try again.");
+        console.error("Payment error:", error);  // Log the error for debugging
+        if (error.response) {
+          // Handle errors from the backend
+          alert(`Payment failed: ${error.response.data.message || "Please try again."}`);
+        } else {
+          // Handle other types of errors (e.g., network issues)
+          alert("Payment failed due to a network error. Please try again.");
+        }
       } finally {
         setIsProcessing(false);
       }
