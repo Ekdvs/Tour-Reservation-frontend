@@ -73,6 +73,9 @@ export default function Our_Gallery() {
         </Carousel>
       </div>
 
+
+      
+
       <Footer />
     </div>
   );
