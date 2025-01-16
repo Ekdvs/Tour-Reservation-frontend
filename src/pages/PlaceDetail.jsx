@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { Navigate } from "react-router-dom";
 
 const PlaceDetail = () => {
   const [place, setPlace] = useState(null);
@@ -20,6 +21,12 @@ const PlaceDetail = () => {
       </div>
     );
   }
+  const handleBackToPlaces = () => {
+    setTimeout(() => {
+      Navigate("/Destination");
+      localStorage.removeItem("selectedPlace");
+    }, 2000);
+  };
 
   return (
     <div>
@@ -98,16 +105,12 @@ const PlaceDetail = () => {
             <p className="text-muted">{place.description || "Description not provided."}</p>
           </div>
           <button
-                className="btn btn-primary btn-lg w-100"
-                onClick={() => {
-                  if (place.website) {
-                    window.open(place.website, "_blank", "noreferrer");
-                  }
-                }}
-                disabled={!place.placeId}
-              >
-                Back to Destination
-              </button>
+          className="btn btn-primary btn-lg w-100"
+          onClick={handleBackToPlaces}
+          disabled={!place.placeId}
+        >
+          Back to Destination
+        </button>
         </div>
       </div>
     </div>

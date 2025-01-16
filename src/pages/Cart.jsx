@@ -74,6 +74,7 @@ const Cart = () => {
   const handleBackToEvents = () => {
     setTimeout(() => {
       navigate("/EventShowPage");
+      localStorage.removeItem("selectedEvent");
     }, 2000);
   };
 
