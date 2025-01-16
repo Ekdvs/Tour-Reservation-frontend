@@ -80,6 +80,18 @@ export default function ChangePassword() {
           </ol>
         </div>
       </div>
+      <div
+  style={{
+    backgroundImage: "url('../img/R.jpeg')",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
+    height: "100vh", 
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  }}
+>
       <div className="container my-5">
         <div className="card mx-auto" style={{ maxWidth: '500px' }}>
           <div className="card-body">
@@ -139,7 +151,7 @@ export default function ChangePassword() {
             </form>
           </div>
         </div>
-      </div>
+      </div></div>
       <Footer />
       <ToastContainer
         position="top-right"
