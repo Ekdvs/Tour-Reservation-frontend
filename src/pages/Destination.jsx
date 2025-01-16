@@ -6,6 +6,7 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom"; // Import Link
 
 const Destination = () => {
   const [places, setPlaces] = useState([]);
@@ -106,31 +107,24 @@ const Destination = () => {
         </div>
 
         {/* List of Places */}
-        <div className="row g-4">
+        <div className="place-grid">
           {places.map((place) => (
-            <div key={place.placeId} className="col-md-4">
-              <div className="card h-100 shadow-sm">
-                <img
-                  src={`data:${place.contentType};base64,${place.imageData}`}
-                  alt={place.placeName}
-                  className="card-img-top"
-                  style={{
-                    height: "250px",
-                    objectFit: "cover",
-                    borderRadius: "15px",
-                  }}
-                />
-                <div className="card-body d-flex flex-column">
-                  <h5 className="card-title">{place.placeName}</h5>
-                  <p className="card-text">{place.description}</p>
-                  <p className="mt-auto">
-                    <strong>Location:</strong> {place.location} <br />
-                    <strong>Category:</strong> {place.category}
-                  </p>
-                  <a href="/book" className="btn btn-primary w-100 mt-3">
-                    Book Now
-                  </a>
-                </div>
+            <div key={place.placeId} className="place-card">
+              <img
+                src={`data:${place.contentType};base64,${place.imageData}`}
+                alt={place.placeName}
+                className="place-img"
+              />
+              <div className="place-info">
+                <h5>{place.placeName}</h5>
+                <p>{place.description}</p>
+                <p>
+                  <strong>Location:</strong> {place.location} <br />
+                  <strong>Category:</strong> {place.category}
+                </p>
+                <Link to={`/place/${place.placeId}`} className="btn btn-primary w-100">
+                  Read More
+                </Link>
               </div>
             </div>
           ))}

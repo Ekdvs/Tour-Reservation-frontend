@@ -1,63 +1,60 @@
-/* Custom Styles */
+/* Styling for EventShowPage */
+
+.bg-breadcrumb {
+  background-color: #007bff;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  border-radius: 10px;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #555;
+}
+
 .event-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .event-image {
-    height: 500px;
-    object-fit: cover;
-    border-bottom: 2px solid #ddd;
-  }
-  
-  .event-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .event-description {
-    color: #555;
-    font-size: 1rem;
-  }
-  
-  .btn-primary {
-    background-color: #007bff;
-    border: none;
-    font-size: 1.1rem;
-    padding: 12px;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-primary:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .event-card {
-      margin-bottom: 20px;
-    }
-  
-    .btn-primary {
-      font-size: 1rem;
-    }
-  }
-  
-  @media (max-width: 576px) {
-    .event-card {
-      margin-bottom: 15px;
-    }
-  
-    .event-title {
-      font-size: 1.3rem;
-    }
-  
-    .event-description {
-      font-size: 0.9rem;
-    }
-  }
-  
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.input-group input {
+  border-radius: 20px 0 0 20px;
+}
+
+.input-group button {
+  border-radius: 0 20px 20px 0;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 500px;
+}
+
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.carousel-caption p {
+  font-size: 1.25rem;
+}
