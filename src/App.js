@@ -29,6 +29,7 @@ import Travel_Guides from './pages/Travel_Guides';
 import Our_Gallery from './pages/Our_Gallery';
 import Blog from './pages/Blog';
 import ReadMorePage from './pages/ReadMorePage';
+import PlaceDetail from './pages/PlaceDetail';
 
 
 
@@ -70,6 +71,7 @@ function App() {
           <Route path="/Our_Gallery" element={<Our_Gallery />} />
           <Route path="/Blog" element={<Blog />} />
           <Route path="/read-more" element={<ReadMorePage />} />
+          <Route path="/place-detail"read-more element={<PlaceDetail />} />
         </Routes>
       </Router>
     </div>

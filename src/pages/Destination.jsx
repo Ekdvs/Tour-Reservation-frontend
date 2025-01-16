@@ -39,6 +39,11 @@ const Destination = () => {
     fetchPlaces();
   }, []);
 
+  // Save place data to localStorage
+  const saveToLocalStorage = (place) => {
+    localStorage.setItem("selectedPlace", JSON.stringify(place));
+  };
+
   return (
     <div>
       <Topbar />
@@ -122,7 +127,12 @@ const Destination = () => {
                   <strong>Location:</strong> {place.location} <br />
                   <strong>Category:</strong> {place.category}
                 </p>
-                <Link to={`/place/${place.placeId}`} className="btn btn-primary w-100">
+                {/* Use saveToLocalStorage to store place data */}
+                <Link
+                  to="/place-detail"
+                  className="btn btn-primary w-100"
+                  onClick={() => saveToLocalStorage(place)}
+                >
                   Read More
                 </Link>
               </div>
