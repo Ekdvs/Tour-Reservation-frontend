@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container, Row, Col, Image, Carousel } from "react-bootstrap";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+
 // Image paths from the public folder
 const images = [
   "/img/gallery-1.jpg",
@@ -28,20 +29,37 @@ export default function Our_Gallery() {
       <div className="navbar-container">
         <Navbar />
       </div>
-      <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style={{ maxwidth: "900px" }}>
-          <h3 class="text-white display-3 mb-4">Travel Gallery</h3>
-          <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item">
+      <div className="container-fluid bg-breadcrumb">
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+          <h3 className="text-white display-3 mb-4">Travel Gallery</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item">
               <a href="index.html">Home</a>
             </li>
-            <li class="breadcrumb-item">
+            <li className="breadcrumb-item">
               <a href="#">Pages</a>
             </li>
-            <li class="breadcrumb-item active text-white">Gallery</li>
+            <li className="breadcrumb-item active text-white">Gallery</li>
           </ol>
         </div>
       </div>
+
+      {/* Carousel Section */}
+      <Container className="my-4">
+        <Carousel>
+          {images.slice(0, 6).map((src, index) => (
+            <Carousel.Item key={index}>
+              <Image src={src} alt={`Slide ${index + 1}`} fluid className="d-block w-100" />
+              <Carousel.Caption>
+                <h3>Beautiful Destination {index + 1}</h3>
+                <p>Discover the beauty of Sri Lanka.</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </Container>
+
+      {/* Image Grid Section */}
       <Container className="my-4">
         <h1 className="text-center mb-4">Capture the Essence of Sri Lanka</h1>
         <Row>
@@ -52,6 +70,7 @@ export default function Our_Gallery() {
           ))}
         </Row>
       </Container>
+
       <Footer />
     </div>
   );
