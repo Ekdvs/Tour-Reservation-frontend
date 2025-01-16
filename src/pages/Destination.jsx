@@ -5,6 +5,7 @@ import "./DestinationShowPage.css";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { Carousel } from "react-bootstrap";
 
 const Destination = () => {
   const [places, setPlaces] = useState([]);
@@ -43,7 +44,7 @@ const Destination = () => {
       <Navbar />
       {/* Header Section */}
       <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">Event Booking</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
@@ -55,6 +56,31 @@ const Destination = () => {
             <li className="breadcrumb-item active text-white">Event Booking</li>
           </ol>
         </div>
+      </div>
+
+      {/* Carousel Section */}
+      <div className="container mt-5">
+        <h2 className="text-center mb-4">Featured Destinations</h2>
+        <Carousel>
+          {places.slice(0, 5).map((place) => (
+            <Carousel.Item key={place.placeId}>
+              <img
+                src={`data:${place.contentType};base64,${place.imageData}`}
+                alt={place.placeName}
+                className="d-block w-100"
+                style={{
+                  height: "600px",
+                  objectFit: "cover",
+                  borderRadius: "10px",
+                }}
+              />
+              <Carousel.Caption>
+                <h3 className="bg-dark text-white p-2 rounded">{place.placeName}</h3>
+                <p className="bg-dark text-white p-2 rounded">{place.description}</p>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
       </div>
 
       {/* Content Section */}
@@ -79,16 +105,20 @@ const Destination = () => {
           </div>
         </div>
 
-        {/* Single Column of Places */}
+        {/* List of Places */}
         <div className="row g-4">
           {places.map((place) => (
-            <div key={place.placeId} className="col-12">
-              <div className="card h-100 shadow-sm mb-4">
+            <div key={place.placeId} className="col-md-4">
+              <div className="card h-100 shadow-sm">
                 <img
                   src={`data:${place.contentType};base64,${place.imageData}`}
                   alt={place.placeName}
                   className="card-img-top"
-                  style={{ height: "100%" ,width:"100%", objectFit: "cover" }}
+                  style={{
+                    height: "250px",
+                    objectFit: "cover",
+                    borderRadius: "15px",
+                  }}
                 />
                 <div className="card-body d-flex flex-column">
                   <h5 className="card-title">{place.placeName}</h5>
