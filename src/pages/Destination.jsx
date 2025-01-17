@@ -94,8 +94,9 @@ const Destination = () => {
         <h2 className="text-center mb-4">Explore Destinations</h2>
 
         {/* Search Bar */}
-        <div className="row justify-content-center mb-5">
-          <div className="col-md-6">
+        <div className="container mt-4">
+        <div className="row justify-content-center mb-4">
+          <div className="col-md-8">
             <div className="input-group">
               <input
                 type="text"
@@ -107,6 +108,7 @@ const Destination = () => {
               <button className="btn btn-primary" onClick={searchPlaces}>
                 Search
               </button>
+            </div>
             </div>
           </div>
         </div>

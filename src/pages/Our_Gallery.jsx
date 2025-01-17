@@ -6,6 +6,7 @@ import Topbar from "../compodent/Topbar";  // Corrected the spelling of 'compone
 import Navbar from "../compodent/Navbar";  // Corrected the spelling of 'components'
 import Footer from "../compodent/Footer";  // Corrected the spelling of 'components'
 import axios from 'axios';
+import "./Gallery.css";
 
 export default function Our_Gallery() {
   const [places, setPlaces] = useState([]);
@@ -65,13 +66,36 @@ export default function Our_Gallery() {
                   borderRadius: "10px",
                 }}
               />
-              <Carousel.Caption>
-                <h3 className="bg-dark text-white p-2 rounded">{place.placeName}</h3>
-              </Carousel.Caption>
+              
             </Carousel.Item>
           ))}
         </Carousel>
       </div>
+
+      {/* Grid of Images */}
+              <div className="container mt-5">
+          <h2 className="text-center mb-4">Explore More</h2>
+          <div className="row g-4">
+            {places.map((place) => (
+             <div className="col-lg-4 col-md-10 col-sm-6" key={place.placeId}>
+             <div className="card border-0 shadow">
+               <div className="zoom-container">
+                 <img
+                   src={`data:${place.contentType};base64,${place.imageData}`}
+                   alt={place.placeName}
+                   className="card-img-top"
+                 />
+               </div>
+               <div className="card-body text-center">
+                 <h6 className="card-title">{place.placeName}</h6>
+               </div>
+             </div>
+           </div>
+           
+            
+            ))}
+          </div>
+        </div>
 
 
       

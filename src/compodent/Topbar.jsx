@@ -27,8 +27,8 @@ export default function Topbar() {
             </div>
           </div>
           
-          <div className="col-lg-4 d-flex justify-content-lg-end justify-content-center text-center">
-            <div className="d-inline-flex align-items-center" style={{ height: '45px' }}>
+          <div className="col-lg-4 d-flex justify-content-lg-end justify-content-center ">
+            <div className="d-inline-flex text-center align-items-center" style={{ height: '45px' }}>
               <a href="/Register"><small className="me-3 text-light"><i className="fa fa-user me-2"></i>Register</small></a>
               <a href="/Login"><small className="me-3 text-light"><i className="fa fa-sign-in-alt me-2"></i>Login</small></a>
               <div className="dropdown">
