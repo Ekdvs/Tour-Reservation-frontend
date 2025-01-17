@@ -26,12 +26,13 @@ export default function Topbar() {
               </a>
             </div>
           </div>
-          <div className="col-lg-4 text-center text-lg-end">
-          <div className="d-inline-flex align-items-center" style={{ height: '45px' }}>
+          
+          <div className="col-lg-4 d-flex justify-content-lg-end justify-content-center text-center">
+            <div className="d-inline-flex align-items-center" style={{ height: '45px' }}>
               <a href="/Register"><small className="me-3 text-light"><i className="fa fa-user me-2"></i>Register</small></a>
               <a href="/Login"><small className="me-3 text-light"><i className="fa fa-sign-in-alt me-2"></i>Login</small></a>
               <div className="dropdown">
-              <a href="/" className="dropdown-toggle text-light" data-bs-toggle="dropdown">
+                <a href="/" className="dropdown-toggle text-light" data-bs-toggle="dropdown">
                   <small><i className="fa fa-home me-2"></i> My Dashboard</small>
                 </a>
                 <div className="dropdown-menu rounded">
@@ -41,10 +42,10 @@ export default function Topbar() {
                   <a href="/" className="dropdown-item"><i className="fas fa-cog me-2"></i> Account Settings</a>
                   <a href="/" className="dropdown-item"><i className="fas fa-power-off me-2"></i> Log Out</a>
                 </div>
-
               </div>
-            </div> 
+            </div>
           </div>
+
         </div>
         </div>
     
