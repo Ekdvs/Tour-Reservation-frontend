@@ -74,6 +74,7 @@ const Cart = () => {
   const handleBackToEvents = () => {
     setTimeout(() => {
       navigate("/EventShowPage");
+      localStorage.removeItem("selectedEvent");
     }, 2000);
   };
 
@@ -91,7 +92,8 @@ const Cart = () => {
             <li className="breadcrumb-item">
               <a href="/events">Events</a>
             </li>
-            <li className="breadcrumb-item active text-white">Event Booking</li>
+            <li className="breadcrumb-item active text-white"><a href="/EventShowPage">Event Booking</a></li>
+            
           </ol>
         </div>
       </div>
@@ -149,15 +151,15 @@ const Cart = () => {
                   </div>
                 </div>
                 <h5>Total Price: ${calculateTotalPrice()}</h5>
-                <button className="btn btn-success" onClick={handlePayment}>
-                  Proceed to Payment
-                </button>
-                <button
-                  className="btn btn-secondary ms-3"
-                  onClick={handleBackToEvents}
-                >
-                  Back to Events
-                </button>
+                <div className="d-flex justify-content-center mt-4">
+                  <button className="btn btn-success me-3" onClick={handlePayment}>
+                    Proceed to Payment
+                  </button>
+                  <button className="btn btn-secondary" onClick={handleBackToEvents}>
+                    Back to Events
+                  </button>
+                </div>
+
               </div>
             </div>
           </div>

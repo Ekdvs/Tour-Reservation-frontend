@@ -178,14 +178,22 @@ const Places = () => {
 
                     <div className="mb-3">
                         <label htmlFor="category" className="form-label">Category</label>
-                        <input
-                            type="text"
+                        <select
                             className="form-control"
                             id="category"
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
                             required
-                        />
+                            >
+                            <option value="" disabled>
+                                Select a category
+                            </option>
+                            <option value="Beach">Beach</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Historical">Historical</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Cultural">Cultural</option>
+                            </select>
                     </div>
 
                     <button type="submit" className="btn btn-primary">

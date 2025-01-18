@@ -61,15 +61,30 @@ export default function CardPayment() {
           amount: 100, // Example amount, you can set it dynamically
         };
 
+        console.log("Sending payment data:", paymentData); // Debugging
+
         // Make an API request to process payment
         const response = await axios.post("http://localhost:8080/payment/process", paymentData);
-        if (response.data) {
+
+        console.log("Payment response:", response); // Debugging
+
+        if (response.data && response.data.success) {
           // Redirect to the success page or show success message
           alert("Payment Successful!");
           navigate("/payment/success"); // Replace with your success route
+        } else {
+          // Handle failure if the response is not as expected
+          alert("Payment failed! Please try again.");
         }
       } catch (error) {
-        alert("Payment failed! Please try again.");
+        console.error("Payment error:", error); // Log the error for debugging
+        if (error.response) {
+          // Handle errors from the backend
+          alert(`Payment failed: ${error.response.data.message || "Please try again."}`);
+        } else {
+          // Handle other types of errors (e.g., network issues)
+          alert("Payment failed due to a network error. Please try again.");
+        }
       } finally {
         setIsProcessing(false);
       }
@@ -100,7 +115,7 @@ export default function CardPayment() {
                     <div className="col-md-6">
                       <span>CREDIT/DEBIT CARD PAYMENT</span>
                     </div>
-                    <div className="col-md-6 text-right">
+                    <div className="col-md-5 text-right">
                       <img src="https://img.icons8.com/color/36/000000/visa.png" alt="Visa" />
                       <img src="https://img.icons8.com/color/36/000000/mastercard.png" alt="Mastercard" />
                       <img src="https://img.icons8.com/color/36/000000/amex.png" alt="Amex" />

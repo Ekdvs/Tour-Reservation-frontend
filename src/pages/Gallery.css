@@ -1,0 +1,21 @@
+.zoom-container {
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%; /* Ensures the container adapts responsively */
+  }
+  
+  .zoom-container img {
+    width: 100%; /* Ensures the image adapts to the container */
+    height: 450px; /* Sets a larger height for the image */
+    object-fit: cover; /* Ensures the image fills the container proportionally */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+  }
+  
+  .zoom-container img:hover {
+    transform: scale(1.2); /* Increased zoom effect on hover */
+  }
+  
+  .card {
+    overflow: hidden; /* Prevents the image from overflowing when zoomed */
+  }
+  

@@ -33,7 +33,7 @@ export default function Navbar() {
                             <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div className="dropdown-menu m-0">
                                 <a href="/Destination" className="dropdown-item">Destination</a>
-                                <a href="Explore_Tour" className="dropdown-item">Explore Tour</a>
+                                <a href="/EventShowPage" className="dropdown-item">Explore Tour</a>
                                 <a href="/Travel_Booking" className="dropdown-item">Travel Booking</a>
                                 <a href="/Our_Gallery" className="dropdown-item">Our Gallery</a>
                                 <a href="/Travel_Guides" className="dropdown-item">Travel Guides</a>
