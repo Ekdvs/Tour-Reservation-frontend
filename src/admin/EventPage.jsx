@@ -1,46 +1,44 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
-
 const EventManagement = () => {
-    const [events, setEvents] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("");
-    const [eventForm, setEventForm] = useState({
-      eventName: "",
-      eventDate: "",
-      eventTime: "",
-      eventVenue: "",
-      eventOrganizer: "",
-      description: "",
-      oneTicketPrice: "",
-      eventType: "",
-      eventIsFor: "",
-      numOfTickets: "",
-    });
-    const [eventImage, setEventImage] = useState(null);
-    const [editEvent, setEditEvent] = useState(null); // Store the event being edited
-  
-    // Fetch all events
-    const fetchEvents = async () => {
-      try {
-        const response = await axios.get("http://localhost:8080/event/getAllEvents");
-        setEvents(response.data);
-      } catch (error) {
-        toast.error("Error fetching events!");
-      }
-    };
-  
-    useEffect(() => {
-      fetchEvents();
-    }, []);
-  
-    // Search Events by Name
+  const [events, setEvents] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [eventForm, setEventForm] = useState({
+    eventName: "",
+    eventDate: "",
+    eventTime: "",
+    eventVenue: "",
+    eventOrganizer: "",
+    description: "",
+    oneTicketPrice: "",
+    eventType: "",
+    eventIsFor: "",
+    numOfTickets: "",
+  });
+  const [eventImage, setEventImage] = useState(null);
+  const [editEvent, setEditEvent] = useState(null); // Store the event being edited
+
+  // Fetch all events
+  const fetchEvents = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8080/event/getAllEvents"
+      );
+      setEvents(response.data);
+    } catch (error) {
+      toast.error("Error fetching events!");
+    }
+  };
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  // Search Events by Name
   const handleSearch = async () => {
     try {
       const response = await axios.get(
@@ -52,8 +50,8 @@ const EventManagement = () => {
     }
   };
 
- // Add Event
- const handleAddEvent = async (e) => {
+  // Add Event
+  const handleAddEvent = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("event", JSON.stringify(eventForm));
@@ -80,15 +78,18 @@ const EventManagement = () => {
     }
   };
 
- // Update Event
- const handleUpdateEvent = async (e) => {
+  // Update Event
+  const handleUpdateEvent = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("event", JSON.stringify(eventForm));
     if (eventImage) formData.append("imageFile", eventImage);
 
     try {
-      await axios.put(`http://localhost:8080/event/updateEvent/${editEvent.eventId}`, formData);
+      await axios.put(
+        `http://localhost:8080/event/updateEvent/${editEvent.eventId}`,
+        formData
+      );
       fetchEvents();
       toast.success("Event updated successfully!");
       setEditEvent(null); // Clear the editing state
@@ -120,14 +121,14 @@ const EventManagement = () => {
     }
   };
 
-   // Form Change Handler
-   const handleInputChange = (e) => {
+  // Form Change Handler
+  const handleInputChange = (e) => {
     const { name, value } = e.target;
     setEventForm({ ...eventForm, [name]: value });
   };
 
-// Set Event for Editing
-const handleEditEvent = (event) => {
+  // Set Event for Editing
+  const handleEditEvent = (event) => {
     setEditEvent(event);
     setEventForm({
       eventName: event.eventName,
@@ -165,8 +166,11 @@ const handleEditEvent = (event) => {
         </button>
       </div>
 
-{/* Add or Edit Event Form */}
-<form onSubmit={editEvent ? handleUpdateEvent : handleAddEvent} className="border p-4 rounded mb-4">
+      {/* Add or Edit Event Form */}
+      <form
+        onSubmit={editEvent ? handleUpdateEvent : handleAddEvent}
+        className="border p-4 rounded mb-4"
+      >
         <h2>{editEvent ? "Edit Event" : "Add Event"}</h2>
         <div className="form-group mb-3">
           <input
@@ -250,26 +254,25 @@ const handleEditEvent = (event) => {
         </div>
 
         <div className="form-group mb-3">
-  <select
-    className="form-control"
-    name="eventType"
-    value={eventForm.eventType}
-    onChange={handleInputChange}
-    required
-  >
-    <option value="" disabled>
-      Select Event Type
-    </option>
-    <option value="Cultural">Cultural</option>
-    <option value="Religious">Religious</option>
-    <option value="Entertainment">Entertainment</option>
-    <option value="Food">Food</option>
-    <option value="Fashion">Fashion</option>
-    <option value="Literary">Literary</option>
-    <option value="Film">Film</option>
-  </select>
-</div>
-
+          <select
+            className="form-control"
+            name="eventType"
+            value={eventForm.eventType}
+            onChange={handleInputChange}
+            required
+          >
+            <option value="" disabled>
+              Select Event Type
+            </option>
+            <option value="Cultural">Cultural</option>
+            <option value="Religious">Religious</option>
+            <option value="Entertainment">Entertainment</option>
+            <option value="Food">Food</option>
+            <option value="Fashion">Fashion</option>
+            <option value="Literary">Literary</option>
+            <option value="Film">Film</option>
+          </select>
+        </div>
 
         <div className="form-group mb-3">
           <input
@@ -308,11 +311,15 @@ const handleEditEvent = (event) => {
         </button>
       </form>
 
- {/* Event List */}
- <h2 className="mt-4">Event List</h2>
+
+      {/* Event List show */}
+      <h2 className="mt-4">Event List</h2>
       <ul className="list-group">
         {events.map((event) => (
-          <li key={event.eventId} className="list-group-item d-flex justify-content-between align-items-center">
+          <li
+            key={event.eventId}
+            className="list-group-item d-flex justify-content-between align-items-center"
+          >
             <div>
               <h5>{event.eventName}</h5>
               <p>{event.description}</p>
@@ -339,4 +346,3 @@ const handleEditEvent = (event) => {
 };
 
 export default EventManagement;
-
