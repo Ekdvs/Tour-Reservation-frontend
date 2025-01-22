@@ -52,10 +52,16 @@ export default function Travel_Guides() {
                                             <div className="guide-img-efects">
                                                 {/* Ensure that the image is being rendered properly */}
                                                 <img
-                                                    src={`data:${guide.contentType};base64,${guide.imageData}`}
-                                                    className="img-fluid w-100 rounded-top"
-                                                    alt={`Travel Guide ${index + 1}`}
-                                                />
+                                                src={`data:${guide.contentType};base64,${guide.imageData}`}
+                                                style={{
+                                                    width: "300px", // Set fixed width
+                                                    height: "200px", // Set fixed height
+                                                     // Ensure the image covers the dimensions without distortion
+                                                    borderRadius: "8px", // Optional: Rounded corners
+                                                }}
+                                                className="img-fluid w-100 rounded-top"
+                                                alt={`Travel Guide ${index + 1}`}
+/>
                                             </div>
                                             <div className="guide-icon rounded-pill p-2">
                                                 <button

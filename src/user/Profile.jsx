@@ -244,7 +244,7 @@ export default function Profile() {
                         </div>
 
                         <button
-                            className="btn btn-outline-primary mt-4"
+                            className="btn btn-outline-primary custom-size-button"
                             onClick={() => navigate('/PasswordChange')}
                         >
                             Change Password
