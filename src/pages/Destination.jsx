@@ -68,7 +68,7 @@ const Destination = () => {
       <div className="container mt-5">
         <h2 className="text-center mb-4">Featured Destinations</h2>
         <Carousel>
-          {places.slice(0, 20).map((place) => (
+          {places.slice(0, 5).map((place) => (
             <Carousel.Item key={place.placeId}>
               <img
                 src={`data:${place.contentType};base64,${place.imageData}`}
