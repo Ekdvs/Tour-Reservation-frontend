@@ -68,17 +68,16 @@ export default function Blog() {
         {blogPosts.map((post, index) => (
           <Carousel.Item key={index}>
             <img
-              className="d-block w-100"
+              className="card-img-top img-fluid w-100"
               src={post.img}
               alt={`Slide ${index + 1}`}
               style={{ height: "500px", objectFit: "cover"  }}
             />
             <Carousel.Caption>
-              <h3>{post.title}</h3>
-              <p>{post.excerpt}</p>
-              <Button variant="light" onClick={handleReadMore}>
-                Read More
-              </Button>
+            <h3 style={{ color: 'white' }}>{post.title}</h3>
+
+              
+              
             </Carousel.Caption>
           </Carousel.Item>
         ))}
