@@ -3,6 +3,8 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 
+
+
 export default function Travel_Guides() {
     const [guides, setGuides] = useState([]);
 
@@ -112,10 +114,15 @@ export default function Travel_Guides() {
                             <p>No travel guides available at the moment.</p>
                         )}
                     </div>
+                   
+                   
+
                 </div>
             </div>
+            
 
             <Footer />
+            
         </div>
     );
 }

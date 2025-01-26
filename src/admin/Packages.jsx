@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function PackagesAdmin() {
     const [packages, setPackages] = useState([]);
@@ -18,6 +16,7 @@ function PackagesAdmin() {
         imageFile: null,
     });
     const [errors, setErrors] = useState({});
+    const [globalError, setGlobalError] = useState("");
 
     useEffect(() => {
         fetchPackages();
@@ -28,8 +27,7 @@ function PackagesAdmin() {
             const response = await axios.get("http://localhost:8080/packages/getAllPackages");
             setPackages(response.data);
         } catch (error) {
-            toast.error("Error fetching packages.");
-            console.error(error);
+            console.error("Error fetching packages:", error);
         }
     };
 
@@ -58,18 +56,17 @@ function PackagesAdmin() {
 
     const handleSearch = async () => {
         if (!searchQuery.trim()) {
-            toast.error("Search query cannot be empty.");
+            setGlobalError("Search query cannot be empty.");
             return;
         }
+        setGlobalError("");
         try {
             const response = await axios.get(
                 `http://localhost:8080/packages/searchPackage?name=${searchQuery}`
             );
             setPackages(response.data);
-            toast.success("Search successful!");
         } catch (error) {
-            toast.error("Error searching packages.");
-            console.error(error);
+            console.error("Error searching packages:", error);
         }
     };
 
@@ -92,10 +89,8 @@ function PackagesAdmin() {
                     `http://localhost:8080/packages/updatePackage/${selectedPackage.packageId}`,
                     formData
                 );
-                toast.success("Package updated successfully!");
             } else {
                 await axios.post("http://localhost:8080/packages/addPackage", formData);
-                toast.success("Package added successfully!");
             }
             fetchPackages();
             setNewPackage({
@@ -109,8 +104,7 @@ function PackagesAdmin() {
             });
             setSelectedPackage(null);
         } catch (error) {
-            toast.error("Error adding/updating package.");
-            console.error(error);
+            console.error("Error adding/updating package:", error);
         }
     };
 
@@ -123,16 +117,13 @@ function PackagesAdmin() {
         try {
             await axios.delete(`http://localhost:8080/packages/deletePackage/${packageId}`);
             fetchPackages();
-            toast.success("Package deleted successfully!");
         } catch (error) {
-            toast.error("Error deleting package.");
-            console.error(error);
+            console.error("Error deleting package:", error);
         }
     };
 
     return (
         <div className="container mt-4">
-            <ToastContainer />
             <h1 className="text-center">Package Management</h1>
 
             <div className="mb-3">
@@ -146,6 +137,7 @@ function PackagesAdmin() {
                 <button className="btn btn-primary mt-2" onClick={handleSearch}>
                     Search
                 </button>
+                {globalError && <div className="text-danger mt-2">{globalError}</div>}
             </div>
 
             <form className="mb-4">
@@ -162,8 +154,88 @@ function PackagesAdmin() {
                     />
                     {errors.packageName && <small className="text-danger">{errors.packageName}</small>}
                 </div>
-                {/* Additional fields */}
-                {/* ... */}
+
+                <div className="form-group">
+                    <label>Description</label>
+                    <textarea
+                        className="form-control"
+                        value={newPackage.description}
+                        onChange={(e) =>
+                            setNewPackage({ ...newPackage, description: e.target.value })
+                        }
+                    ></textarea>
+                    {errors.description && (
+                        <small className="text-danger">{errors.description}</small>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <label>Price per Person</label>
+                    <input
+                        type="number"
+                        className="form-control"
+                        value={newPackage.onePersonPrice}
+                        onChange={(e) =>
+                            setNewPackage({ ...newPackage, onePersonPrice: e.target.value })
+                        }
+                    />
+                    {errors.onePersonPrice && (
+                        <small className="text-danger">{errors.onePersonPrice}</small>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <label>Duration (Days)</label>
+                    <input
+                        type="number"
+                        className="form-control"
+                        value={newPackage.duration}
+                        onChange={(e) =>
+                            setNewPackage({ ...newPackage, duration: e.target.value })
+                        }
+                    />
+                    {errors.duration && (
+                        <small className="text-danger">{errors.duration}</small>
+                    )}
+                </div>
+
+                <div className="form-group">
+                    <label>Location</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={newPackage.location}
+                        onChange={(e) =>
+                            setNewPackage({ ...newPackage, location: e.target.value })
+                        }
+                    />
+                    {errors.location && <small className="text-danger">{errors.location}</small>}
+                </div>
+
+                <div className="form-group">
+                    <label>Package Type</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        value={newPackage.packageType}
+                        onChange={(e) =>
+                            setNewPackage({ ...newPackage, packageType: e.target.value })
+                        }
+                    />
+                    {errors.packageType && <small className="text-danger">{errors.packageType}</small>}
+                </div>
+
+                <div className="form-group">
+                    <label>Package Image</label>
+                    <input
+                        type="file"
+                        className="form-control"
+                        onChange={(e) =>
+                            setNewPackage({ ...newPackage, imageFile: e.target.files[0] })
+                        }
+                    />
+                </div>
+
                 <button
                     type="button"
                     className="btn btn-success mt-3"

@@ -86,6 +86,13 @@ export default function Sidebar() {
                 <p>Event Show</p>
             </Link>
             </li>
+            
+            <li className="nav-item">
+            <Link className="nav-link" to="/addPackages">
+                <i className="fas fa-bars"></i>
+                <p>Add Packages</p>
+            </Link>
+            </li>
 
           </ul>
         </div>
