@@ -235,4 +235,5 @@ const PackageManagement = () => {
               <button
                 className="btn btn-warning me-2 w-100"
                 onClick={() => handleEditPackage(pkg)}
-              ></button>
+              > Edit
+              </button>
