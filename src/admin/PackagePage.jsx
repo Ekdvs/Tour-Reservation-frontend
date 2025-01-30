@@ -16,4 +16,9 @@ const PackageManagement = () => {
     location: "",
     });
      const [packageImage, setPackageImage] = useState(null);
-  const [editPackage, setEditPackage] = useState(null); // Store the package being edited
+    const [editPackage, setEditPackage] = useState(null); // Store the package being edited
+    // Fetch all packages
+  const fetchPackages = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/packages/getAllPackages");
+      setPackages(response.data);
