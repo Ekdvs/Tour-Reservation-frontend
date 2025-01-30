@@ -1,200 +1,141 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-const Bloga = () => {
+const BlogManagement = () => {
   const [blogs, setBlogs] = useState([]);
-  const [blogData, setBlogData] = useState({
-    title: '',
-    description: '',
-    author: '',
-    imageData: null,
+  const [blogForm, setBlogForm] = useState({
+    title: "",
+    description: "",
+    author: "",
   });
-  const [imagePreview, setImagePreview] = useState(null);
-  const [isEditing, setIsEditing] = useState(false);
-  const [currentBlogId, setCurrentBlogId] = useState('');
+  const [blogImage, setBlogImage] = useState(null);
+  const [editBlog, setEditBlog] = useState(null);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get("http://localhost:8080/blog/getAllBlogs");
+      setBlogs(response.data);
+    } catch (error) {
+      toast.error("Error fetching blogs!");
+    }
+  };
 
   useEffect(() => {
     fetchBlogs();
   }, []);
 
-  const fetchBlogs = async () => {
+  const handleAddBlog = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("blog", JSON.stringify(blogForm));
+    formData.append("imageFile", blogImage);
+
     try {
-      const response = await axios.get('http://localhost:8080/blog/getAllBlogs');
-      setBlogs(response.data);
+      await axios.post("http://localhost:8080/blog/addBlog", formData);
+      fetchBlogs();
+      toast.success("Blog added successfully!");
+      setBlogForm({ title: "", description: "", author: "" });
     } catch (error) {
-      toast.error('Error fetching blogs');
+      toast.error("Error adding blog!");
+    }
+  };
+
+  const handleUpdateBlog = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("blog", JSON.stringify(blogForm));
+    if (blogImage) formData.append("imageFile", blogImage);
+
+    try {
+      await axios.put(`http://localhost:8080/blog/updateBlog/${editBlog.blogId}`, formData);
+      fetchBlogs();
+      toast.success("Blog updated successfully!");
+      setEditBlog(null);
+      setBlogForm({ title: "", description: "", author: "" });
+    } catch (error) {
+      toast.error("Error updating blog!");
+    }
+  };
+
+  const handleDeleteBlog = async (blogId) => {
+    try {
+      await axios.delete(`http://localhost:8080/blog/deleteBlog/${blogId}`);
+      fetchBlogs();
+      toast.success("Blog deleted successfully!");
+    } catch (error) {
+      toast.error("Error deleting blog!");
     }
   };
 
   const handleInputChange = (e) => {
-    setBlogData({
-      ...blogData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setBlogForm({ ...blogForm, [name]: value });
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    setBlogData({ ...blogData, imageData: file });
-    setImagePreview(URL.createObjectURL(file));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append('blog', JSON.stringify(blogData));
-    formData.append('imageFile', blogData.imageData);
-
-    try {
-      if (isEditing) {
-        await axios.put(`http://localhost:8080/blog/updateBlog/${currentBlogId}`, formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
-        toast.success('Blog updated successfully');
-      } else {
-        await axios.post('http://localhost:8080/blog/addBlog', formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
-        toast.success('Blog added successfully');
-      }
-      setIsEditing(false);
-      fetchBlogs();
-      clearForm();
-    } catch (error) {
-      toast.error('Error saving blog');
-    }
-  };
-
-  const handleEdit = (blog) => {
-    setBlogData({
+  const handleEditBlog = (blog) => {
+    setEditBlog(blog);
+    setBlogForm({
       title: blog.title,
       description: blog.description,
       author: blog.author,
-      imageData: null,
     });
-    setImagePreview(`http://localhost:8080/images/${blog.imagePath}`);
-    setIsEditing(true);
-    setCurrentBlogId(blog.blogId);
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`http://localhost:8080/blog/deleteBlog/${id}`);
-      toast.success('Blog deleted successfully');
-      fetchBlogs();
-    } catch (error) {
-      toast.error('Error deleting blog');
-    }
-  };
-
-  const clearForm = () => {
-    setBlogData({
-      title: '',
-      description: '',
-      author: '',
-      imageData: null,
-    });
-    setImagePreview(null);
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Blog Management</h1>
       <ToastContainer />
-      <h2>{isEditing ? 'Edit Blog' : 'Add Blog'}</h2>
-      <form onSubmit={handleSubmit} encType="multipart/form-data">
-        <div className="form-group">
-          <label>Title</label>
-          <input
-            type="text"
-            className="form-control"
-            name="title"
-            value={blogData.title}
-            onChange={handleInputChange}
-            required
-          />
+
+      <form onSubmit={editBlog ? handleUpdateBlog : handleAddBlog} className="border p-4 rounded mb-4">
+        <h2>{editBlog ? "Edit Blog" : "Add Blog"}</h2>
+        <div className="form-group mb-3">
+          <input type="text" className="form-control" name="title" placeholder="Title" value={blogForm.title} onChange={handleInputChange} required />
         </div>
-        <div className="form-group">
-          <label>Description</label>
-          <input
-            type="text"
-            className="form-control"
-            name="description"
-            value={blogData.description}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="form-group mb-3">
+          <textarea className="form-control" name="description" placeholder="Description" value={blogForm.description} onChange={handleInputChange} required></textarea>
         </div>
-        <div className="form-group">
-          <label>Author</label>
-          <input
-            type="text"
-            className="form-control"
-            name="author"
-            value={blogData.author}
-            onChange={handleInputChange}
-            required
-          />
+        <div className="form-group mb-3">
+          <input type="text" className="form-control" name="author" placeholder="Author" value={blogForm.author} onChange={handleInputChange} required />
         </div>
-        <div className="form-group">
-          <label>Image</label>
-          <input
-            type="file"
-            className="form-control"
-            accept="image/*"
-            onChange={handleImageChange}
-          />
-          {imagePreview && <img src={imagePreview} alt="Preview" className="mt-2" style={{ width: '200px' }} />}
+        <div className="form-group mb-3">
+          <input type="file" className="form-control" onChange={(e) => setBlogImage(e.target.files[0])} />
         </div>
-        <div className="form-group">
-          <button type="submit" className="btn btn-primary">
-            {isEditing ? 'Update Blog' : 'Add Blog'}
-          </button>
-          <button
-            type="button"
-            className="btn btn-secondary ml-2"
-            onClick={() => {
-              clearForm();
-              setIsEditing(false);
-            }}
-          >
-            Cancel
-          </button>
-        </div>
+        <button type="submit" className="btn btn-success w-100">{editBlog ? "Update Blog" : "Add Blog"}</button>
       </form>
 
-      <h3 className="mt-5">All Blogs</h3>
-      <div className="row">
-        {blogs.map((blog) => (
-          <div className="col-md-4" key={blog.blogId}>
-            <div className="card mb-4">
-              <img
-                src={`http://localhost:8080/images/${blog.imagePath}`}
-                alt="Blog"
-                className="card-img-top"
-                style={{ height: '200px', objectFit: 'cover' }}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{blog.title}</h5>
-                <p className="card-text">{blog.description}</p>
-                <button className="btn btn-warning" onClick={() => handleEdit(blog)}>
-                  Edit
-                </button>
-                <button
-                  className="btn btn-danger ml-2"
-                  onClick={() => handleDelete(blog.blogId)}
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      <h2 className="mt-4">Blog List</h2>
+      <table className="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Image</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {blogs.map((blog) => (
+            <tr key={blog.blogId}>
+              <td>{blog.title}</td>
+              <td>{blog.description}</td>
+              <td>{blog.author}</td>
+              <td>
+                {blog.imagePath && <img src={`http://localhost:8080/${blog.imagePath}`} alt={blog.title} style={{ width: "50px", height: "50px" }} />}
+              </td>
+              <td>
+                <button className="btn btn-warning me-2" onClick={() => handleEditBlog(blog)}>Edit</button>
+                <button className="btn btn-danger" onClick={() => handleDeleteBlog(blog.blogId)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
 
-export default Bloga;
+export default BlogManagement;

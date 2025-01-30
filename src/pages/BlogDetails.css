@@ -1,0 +1,46 @@
+/* BlogDetails.css */
+
+.bg-breadcrumb {
+    background-color: #343a40;
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .sidebar h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .list-group-item {
+    border: none;
+    background-color: transparent;
+  }
+  
+  .list-group-item a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .list-group-item a:hover {
+    color: #0056b3;
+  }
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  

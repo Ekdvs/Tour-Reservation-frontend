@@ -2,300 +2,154 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const PackageManagement = () => {
   const [packages, setPackages] = useState([]);
-  const [newPackage, setNewPackage] = useState({
+  const [searchQuery, setSearchQuery] = useState("");
+  const [packageForm, setPackageForm] = useState({
     packageName: "",
-    packageType: "",
     description: "",
     onePersonPrice: "",
     duration: "",
     location: "",
-    imageFile: null,
+    packageType: "",
   });
-  const [imagePreview, setImagePreview] = useState(null);
-  const [editingPackageId, setEditingPackageId] = useState(null);
-  const [errors, setErrors] = useState({});
-  const [searchTerm, setSearchTerm] = useState("");
+  const [packageImage, setPackageImage] = useState(null);
+  const [editPackage, setEditPackage] = useState(null);
 
-  useEffect(() => {
-    fetchPackages();
-  }, []);
+  const packageTypes = ["Luxury", "Budget", "Adventure", "Family", "Honeymoon"];
 
   const fetchPackages = async () => {
     try {
       const response = await axios.get("http://localhost:8080/packages/getAllPackages");
       setPackages(response.data);
     } catch (error) {
-      toast.error("Failed to fetch packages.");
+      toast.error("Error fetching packages!");
     }
   };
 
-  const validateForm = () => {
-    const validationErrors = {};
-    if (!newPackage.packageName) validationErrors.packageName = "Package name is required.";
-    if (!newPackage.packageType) validationErrors.packageType = "Package type is required.";
-    if (!newPackage.description) validationErrors.description = "Description is required.";
-    if (!newPackage.onePersonPrice) validationErrors.onePersonPrice = "Price is required.";
-    if (!newPackage.duration) validationErrors.duration = "Duration is required.";
-    if (!newPackage.location) validationErrors.location = "Location is required.";
-    return validationErrors;
+  useEffect(() => {
+    fetchPackages();
+  }, []);
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(`http://localhost:8080/packages/searchPackage?name=${searchQuery}`);
+      setPackages(response.data);
+    } catch (error) {
+      toast.error("Error searching packages!");
+    }
+  };
+
+  const handleAddOrUpdatePackage = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("package", JSON.stringify(packageForm));
+    if (packageImage) formData.append("imageFile", packageImage);
+
+    try {
+      if (editPackage) {
+        await axios.put(`http://localhost:8080/packages/updatePackage/${editPackage.packageId}`, formData);
+        toast.success("Package updated successfully!");
+      } else {
+        await axios.post("http://localhost:8080/packages/addPackage", formData);
+        toast.success("Package added successfully!");
+      }
+      fetchPackages();
+      setEditPackage(null);
+      setPackageForm({
+        packageName: "",
+        description: "",
+        onePersonPrice: "",
+        duration: "",
+        location: "",
+        packageType: "",
+      });
+    } catch (error) {
+      toast.error("Error adding/updating package!");
+    }
+  };
+
+  const handleDeletePackage = async (packageId) => {
+    try {
+      await axios.delete(`http://localhost:8080/packages/deletePackage/${packageId}`);
+      fetchPackages();
+      toast.success("Package deleted successfully!");
+    } catch (error) {
+      toast.error("Error deleting package!");
+    }
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setNewPackage((prev) => ({ ...prev, [name]: value }));
+    setPackageForm({ ...packageForm, [name]: value });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    setNewPackage((prev) => ({ ...prev, imageFile: file }));
-    setImagePreview(URL.createObjectURL(file));
-  };
-
-  const resetForm = () => {
-    setNewPackage({
-      packageName: "",
-      packageType: "",
-      description: "",
-      onePersonPrice: "",
-      duration: "",
-      location: "",
-      imageFile: null,
+  const handleEditPackage = (pkg) => {
+    setEditPackage(pkg);
+    setPackageForm({
+      packageName: pkg.packageName,
+      description: pkg.description,
+      onePersonPrice: pkg.onePersonPrice,
+      duration: pkg.duration,
+      location: pkg.location,
+      packageType: pkg.packageType,
     });
-    setImagePreview(null);
-    setEditingPackageId(null);
-    setErrors({});
   };
-
-  const handleAddPackage = async () => {
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    const formData = new FormData();
-    const { imageFile, ...packageData } = newPackage;
-    formData.append("package", JSON.stringify(packageData));
-    if (imageFile) formData.append("imageFile", imageFile);
-
-    try {
-      await axios.post("http://localhost:8080/packages/addPackage", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      toast.success("Package added successfully!");
-      fetchPackages();
-      resetForm();
-    } catch (error) {
-      toast.error("Failed to add package.");
-    }
-  };
-
-  const handleEditPackage = (packageData) => {
-    setNewPackage(packageData);
-    setEditingPackageId(packageData.id);
-    setImagePreview(packageData.imageUrl); // Assuming the backend provides an image URL
-    toast.info("Editing package: " + packageData.packageName);
-  };
-
-  const handleUpdatePackage = async () => {
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-
-    const formData = new FormData();
-    const { imageFile, ...packageData } = newPackage;
-    formData.append("package", JSON.stringify(packageData));
-    if (imageFile) formData.append("imageFile", imageFile);
-
-    try {
-      await axios.put(`http://localhost:8080/packages/updatePackage/${editingPackageId}`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
-      toast.success("Package updated successfully!");
-      fetchPackages();
-      resetForm();
-    } catch (error) {
-      toast.error("Failed to update package.");
-    }
-  };
-
-  const handleDeletePackage = async (id) => {
-    try {
-      await axios.delete(`http://localhost:8080/packages/deletePackage/${id}`);
-      toast.success("Package deleted successfully!");
-      fetchPackages();
-    } catch (error) {
-      toast.error("Failed to delete package.");
-    }
-  };
-
-  const filteredPackages = packages.filter((pkg) =>
-    pkg.packageName.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Package Management</h1>
       <ToastContainer />
-      <h2>Package Management</h2>
 
-      <div className="form-group mt-3">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search packages..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+      <div className="mb-4">
+        <input type="text" className="form-control mb-2" placeholder="Search by package name" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+        <button className="btn btn-primary w-100" onClick={handleSearch}>Search</button>
       </div>
 
-      <div className="form-group">
-        <label>Package Name</label>
-        <input
-          type="text"
-          className={`form-control ${errors.packageName ? "is-invalid" : ""}`}
-          name="packageName"
-          value={newPackage.packageName}
-          onChange={handleInputChange}
-        />
-        <div className="invalid-feedback">{errors.packageName}</div>
-      </div>
+      <form onSubmit={handleAddOrUpdatePackage} className="border p-4 rounded mb-4">
+        <h2>{editPackage ? "Edit Package" : "Add Package"}</h2>
+        <input type="text" className="form-control mb-2" name="packageName" placeholder="Package Name" value={packageForm.packageName} onChange={handleInputChange} required />
+        <textarea className="form-control mb-2" name="description" placeholder="Description" value={packageForm.description} onChange={handleInputChange} required></textarea>
+        <input type="number" className="form-control mb-2" name="onePersonPrice" placeholder="Price Per Person" value={packageForm.onePersonPrice} onChange={handleInputChange} required />
+        <input type="number" className="form-control mb-2" name="duration" placeholder="Duration (Days)" value={packageForm.duration} onChange={handleInputChange} required />
+        <input type="text" className="form-control mb-2" name="location" placeholder="Location" value={packageForm.location} onChange={handleInputChange} required />
+        <select className="form-control mb-2" name="packageType" value={packageForm.packageType} onChange={handleInputChange} required>
+          <option value="">Select Package Type</option>
+          {packageTypes.map((type) => (
+            <option key={type} value={type}>{type}</option>
+          ))}
+        </select>
+        <input type="file" className="form-control mb-2" onChange={(e) => setPackageImage(e.target.files[0])} />
+        <button type="submit" className="btn btn-success w-100">{editPackage ? "Update Package" : "Add Package"}</button>
+      </form>
 
-      <div className="form-group">
-        <label>Package Type</label>
-        <input
-          type="text"
-          className={`form-control ${errors.packageType ? "is-invalid" : ""}`}
-          name="packageType"
-          value={newPackage.packageType}
-          onChange={handleInputChange}
-        />
-        <div className="invalid-feedback">{errors.packageType}</div>
-      </div>
-
-      <div className="form-group">
-        <label>Description</label>
-        <textarea
-          className={`form-control ${errors.description ? "is-invalid" : ""}`}
-          name="description"
-          value={newPackage.description}
-          onChange={handleInputChange}
-        ></textarea>
-        <div className="invalid-feedback">{errors.description}</div>
-      </div>
-
-      <div className="form-group">
-        <label>One Person Price</label>
-        <input
-          type="number"
-          className={`form-control ${errors.onePersonPrice ? "is-invalid" : ""}`}
-          name="onePersonPrice"
-          value={newPackage.onePersonPrice}
-          onChange={handleInputChange}
-        />
-        <div className="invalid-feedback">{errors.onePersonPrice}</div>
-      </div>
-
-      <div className="form-group">
-        <label>Duration</label>
-        <input
-          type="text"
-          className={`form-control ${errors.duration ? "is-invalid" : ""}`}
-          name="duration"
-          value={newPackage.duration}
-          onChange={handleInputChange}
-        />
-        <div className="invalid-feedback">{errors.duration}</div>
-      </div>
-
-      <div className="form-group">
-        <label>Location</label>
-        <input
-          type="text"
-          className={`form-control ${errors.location ? "is-invalid" : ""}`}
-          name="location"
-          value={newPackage.location}
-          onChange={handleInputChange}
-        />
-        <div className="invalid-feedback">{errors.location}</div>
-      </div>
-
-      <div className="form-group">
-        <label>Package Image</label>
-        <input
-          type="file"
-          className="form-control"
-          onChange={handleFileChange}
-        />
-        {imagePreview && (
-          <img
-            src={imagePreview}
-            alt="Preview"
-            className="mt-3"
-            style={{ width: "100px", height: "100px", objectFit: "cover" }}
-          />
-        )}
-      </div>
-
-      <button
-  className="btn btn-success mt-3"
-  onClick={editingPackageId ? handleUpdatePackage : handleAddPackage}
->
-  {editingPackageId ? "Update Package" : "Add Package"}
-</button>
-{editingPackageId && (
-  <button
-    className="btn btn-secondary mt-3 ml-2"
-    onClick={() => {
-      resetForm();
-      toast.info("Editing canceled.");
-    }}
-  >
-    Cancel
-  </button>
-)}
-
-      
-
-      <table className="table table-striped mt-5">
+      <h2 className="mt-4">Package List</h2>
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>Name</th>
-            <th>Type</th>
             <th>Description</th>
             <th>Price</th>
             <th>Duration</th>
             <th>Location</th>
+            <th>Type</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {filteredPackages.map((pkg) => (
-            <tr key={pkg.id}>
+          {packages.map((pkg) => (
+            <tr key={pkg.packageId}>
               <td>{pkg.packageName}</td>
-              <td>{pkg.packageType}</td>
               <td>{pkg.description}</td>
               <td>{pkg.onePersonPrice}</td>
-              <td>{pkg.duration}</td>
+              <td>{pkg.duration} Days</td>
               <td>{pkg.location}</td>
+              <td>{pkg.packageType}</td>
               <td>
-                <button
-                  className="btn btn-primary btn-sm mr-2"
-                  onClick={() => handleEditPackage(pkg)}
-                >
-                  Edit
-                </button>
-                <button
-                  className="btn btn-danger btn-sm"
-                  onClick={() => handleDeletePackage(pkg.id)}
-                >
-                  Delete
-                </button>
+                <button className="btn btn-warning me-2" onClick={() => handleEditPackage(pkg)}>Edit</button>
+                <button className="btn btn-danger" onClick={() => handleDeletePackage(pkg.packageId)}>Delete</button>
               </td>
             </tr>
           ))}
