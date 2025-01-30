@@ -142,4 +142,13 @@ const PackageManagement = () => {
         className="border p-4 rounded mb-4"
             >
                 <h2>{editPackage ? "Edit Package" : "Add Package"}</h2>
-        <div className="form-group mb-3">
+                <div className="form-group mb-3">
+                    <input
+            type="text"
+            className="form-control"
+            name="packageName"
+            placeholder="Package Name"
+            value={packageForm.packageName}
+            onChange={handleInputChange}
+            required
+          />
