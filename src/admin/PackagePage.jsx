@@ -230,4 +230,9 @@ const PackageManagement = () => {
                     <div>
               <h5>{pkg.packageName}</h5>
               <p>{pkg.description}</p>
-            </div>
+                        </div>
+                    <div className="d-flex">
+              <button
+                className="btn btn-warning me-2 w-100"
+                onClick={() => handleEditPackage(pkg)}
+              ></button>
