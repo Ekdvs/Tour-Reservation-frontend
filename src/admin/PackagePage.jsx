@@ -63,3 +63,8 @@ const PackageManagement = () => {
       toast.error("Error adding package!");
     }
   };
+    // Update Package
+  const handleUpdatePackage = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("package", JSON.stringify(packageForm));
