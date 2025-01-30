@@ -218,4 +218,7 @@ const PackageManagement = () => {
                 <button type="submit" className="btn btn-success w-100">
           {editPackage ? "Update Package" : "Add Package"}
         </button>
-      </form>
+            </form>
+            {/* Package List */}
+      <h2 className="mt-4">Package List</h2>
+      <ul className="list-group"></ul>
