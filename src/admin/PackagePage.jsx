@@ -117,3 +117,6 @@ const PackageManagement = () => {
       location: pkg.location,
     });
   };
+    return (
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Package Management</h1>
