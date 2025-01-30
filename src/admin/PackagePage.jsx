@@ -236,4 +236,10 @@ const PackageManagement = () => {
                 className="btn btn-warning me-2 w-100"
                 onClick={() => handleEditPackage(pkg)}
               > Edit
+                            </button>
+                    <button
+                className="btn btn-danger w-100"
+                onClick={() => handleDeletePackage(pkg.id)}
+              >
+                Delete
               </button>
