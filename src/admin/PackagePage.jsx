@@ -124,4 +124,12 @@ const PackageManagement = () => {
       <ToastContainer />
 
       {/* Search Bar */}
-      <div className="mb-4"></div>
+            <div className="mb-4">
+                <input
+          type="text"
+          className="form-control mb-2"
+          placeholder="Search by package name"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+        
