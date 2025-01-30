@@ -135,4 +135,9 @@ const PackageManagement = () => {
         <button className="btn btn-primary w-100" onClick={handleSearch}>
           Search
         </button>
-      </div>
+            </div>
+            {/* Add or Edit Package Form */}
+      <form
+        onSubmit={editPackage ? handleUpdatePackage : handleAddPackage}
+        className="border p-4 rounded mb-4"
+      ></form>
