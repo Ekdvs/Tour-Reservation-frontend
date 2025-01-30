@@ -40,3 +40,7 @@ const PackageManagement = () => {
       toast.error("Error searching packages!");
     }
   };
+    // Add Package
+  const handleAddPackage = async (e) => {
+    e.preventDefault();
+    const formData = new FormData();
