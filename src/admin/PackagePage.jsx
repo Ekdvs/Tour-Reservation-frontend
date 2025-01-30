@@ -196,4 +196,15 @@ const PackageManagement = () => {
             onChange={handleInputChange}
             required
           />
+                </div>
+                <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="location"
+            placeholder="Location"
+            value={packageForm.location}
+            onChange={handleInputChange}
+            required
+          />
         </div>
