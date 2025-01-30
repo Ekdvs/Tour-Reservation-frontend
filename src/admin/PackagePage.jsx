@@ -74,3 +74,6 @@ const PackageManagement = () => {
         `http://localhost:8080/packages/updatePackage/${editPackage.id}`,
         formData
       );
+           fetchPackages();
+      toast.success("Package updated successfully!");
+      setEditPackage(null); // Clear the editing state
