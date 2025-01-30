@@ -140,4 +140,6 @@ const PackageManagement = () => {
       <form
         onSubmit={editPackage ? handleUpdatePackage : handleAddPackage}
         className="border p-4 rounded mb-4"
-      ></form>
+            >
+                <h2>{editPackage ? "Edit Package" : "Add Package"}</h2>
+        <div className="form-group mb-3">
