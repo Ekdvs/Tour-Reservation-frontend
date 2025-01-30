@@ -132,4 +132,7 @@ const PackageManagement = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        
+        <button className="btn btn-primary w-100" onClick={handleSearch}>
+          Search
+        </button>
+      </div>
