@@ -35,3 +35,8 @@ const PackageManagement = () => {
       const response = await axios.get(
         `http://localhost:8080/packages/searchPackages?name=${searchQuery}`
       );
+        setPackages(response.data);
+    } catch (error) {
+      toast.error("Error searching packages!");
+    }
+  };
