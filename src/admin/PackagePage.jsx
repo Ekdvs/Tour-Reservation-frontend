@@ -58,4 +58,8 @@ const PackageManagement = () => {
         duration: "",
         location: "",
       }); // Clear the form after adding a package
-      setPackageImage(null); // Clear the image state
+            setPackageImage(null); // Clear the image state
+          } catch (error) {
+      toast.error("Error adding package!");
+    }
+  };
