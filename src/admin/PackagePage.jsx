@@ -221,4 +221,9 @@ const PackageManagement = () => {
             </form>
             {/* Package List */}
       <h2 className="mt-4">Package List</h2>
-      <ul className="list-group"></ul>
+            <ul className="list-group">
+                {packages.map((pkg) => (
+          <li
+            key={pkg.id}
+            className="list-group-item d-flex justify-content-between align-items-center"
+          ></li>
