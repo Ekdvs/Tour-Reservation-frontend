@@ -185,4 +185,15 @@ const PackageManagement = () => {
             onChange={handleInputChange}
             required
           />
+                </div>
+                <div className="form-group mb-3">
+          <input
+            type="text"
+            className="form-control"
+            name="duration"
+            placeholder="Duration"
+            value={packageForm.duration}
+            onChange={handleInputChange}
+            required
+          />
         </div>
