@@ -242,4 +242,8 @@ const PackageManagement = () => {
                 onClick={() => handleDeletePackage(pkg.id)}
               >
                 Delete
-              </button>
+                            </button>
+                    </div>
+          </li>
+                ))}
+        
