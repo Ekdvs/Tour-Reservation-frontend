@@ -207,4 +207,11 @@ const PackageManagement = () => {
             onChange={handleInputChange}
             required
           />
+                </div>
+                <div className="form-group mb-3">
+          <input
+            type="file"
+            className="form-control"
+            onChange={(e) => setPackageImage(e.target.files[0])}
+          />
         </div>
