@@ -76,4 +76,12 @@ const PackageManagement = () => {
       );
            fetchPackages();
       toast.success("Package updated successfully!");
-      setEditPackage(null); // Clear the editing state
+            setEditPackage(null); // Clear the editing state
+          setPackageForm({
+        packageName: "",
+        packageType: "",
+        description: "",
+        onePersonPrice: "",
+        duration: "",
+        location: "",
+      }); // Clear the form
