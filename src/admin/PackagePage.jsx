@@ -84,4 +84,9 @@ const PackageManagement = () => {
         onePersonPrice: "",
         duration: "",
         location: "",
-      }); // Clear the form
+          }); // Clear the form
+           setPackageImage(null); // Clear the image state
+    } catch (error) {
+      toast.error("Error updating package!");
+    }
+  };
