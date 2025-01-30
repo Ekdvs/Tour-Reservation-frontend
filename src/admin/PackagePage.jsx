@@ -104,4 +104,7 @@ const PackageManagement = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setPackageForm({ ...packageForm, [name]: value });
-  }; 
+  };
+    // Set Package for Editing
+  const handleEditPackage = (pkg) => {
+    setEditPackage(pkg);
