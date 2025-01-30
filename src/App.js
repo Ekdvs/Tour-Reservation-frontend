@@ -32,6 +32,7 @@ import ReadMorePage from './pages/ReadMorePage';
 import PlaceDetail from './pages/PlaceDetail';
 import PackagesAdmin from './admin/Packages';
 import AuroraEffect from './pages/AuroraEffect';
+import Bloga from './admin/addBlog';
 
 
 
@@ -77,6 +78,7 @@ function App() {
           <Route path="/place-detail"read-more element={<PlaceDetail />} />
           <Route path="/addPackages"read-more element={<PackagesAdmin/>} />
           <Route path="/AuroraEffect"read-more element={<AuroraEffect/>} />
+          <Route path="/addBlog" element={<Bloga/>} />
         </Routes>
       </Router>
     </div>
