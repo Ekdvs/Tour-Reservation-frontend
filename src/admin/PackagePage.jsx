@@ -45,4 +45,8 @@ const PackageManagement = () => {
     e.preventDefault();
     const formData = new FormData();
  formData.append("package", JSON.stringify(packageForm));
-    formData.append("imageFile", packageImage);
+      formData.append("imageFile", packageImage);
+      try {
+      await axios.post("http://localhost:8080/packages/addPackage", formData);
+      fetchPackages();
+      toast.success("Package added successfully!");
