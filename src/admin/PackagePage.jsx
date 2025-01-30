@@ -28,4 +28,10 @@ const PackageManagement = () => {
   };
     useEffect(() => {
     fetchPackages();
-  }, []);
+    }, []);
+    // Search Packages by Name
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/packages/searchPackages?name=${searchQuery}`
+      );
