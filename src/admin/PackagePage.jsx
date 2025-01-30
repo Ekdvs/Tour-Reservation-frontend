@@ -26,3 +26,6 @@ const PackageManagement = () => {
       toast.error("Error fetching packages!");
     }
   };
+    useEffect(() => {
+    fetchPackages();
+  }, []);
