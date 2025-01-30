@@ -100,4 +100,8 @@ const PackageManagement = () => {
       toast.error("Error deleting package!");
     }
   };
-    
+   // Form Change Handler
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setPackageForm({ ...packageForm, [name]: value });
+  }; 
