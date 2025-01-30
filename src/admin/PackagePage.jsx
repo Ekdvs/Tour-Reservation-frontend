@@ -95,4 +95,9 @@ const PackageManagement = () => {
     try {
       await axios.delete(`http://localhost:8080/packages/deletePackage/${packageId}`);
       fetchPackages();
-      toast.success("Package deleted successfully!");
+        toast.success("Package deleted successfully!");
+        } catch (error) {
+      toast.error("Error deleting package!");
+    }
+  };
+    
