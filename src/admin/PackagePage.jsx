@@ -90,3 +90,9 @@ const PackageManagement = () => {
       toast.error("Error updating package!");
     }
   };
+     // Delete Package
+  const handleDeletePackage = async (packageId) => {
+    try {
+      await axios.delete(`http://localhost:8080/packages/deletePackage/${packageId}`);
+      fetchPackages();
+      toast.success("Package deleted successfully!");
