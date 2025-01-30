@@ -21,4 +21,8 @@ const PackageManagement = () => {
   const fetchPackages = async () => {
     try {
       const response = await axios.get("http://localhost:8080/packages/getAllPackages");
-      setPackages(response.data);
+        setPackages(response.data);
+        } catch (error) {
+      toast.error("Error fetching packages!");
+    }
+  };
