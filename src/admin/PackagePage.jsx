@@ -214,4 +214,8 @@ const PackageManagement = () => {
             className="form-control"
             onChange={(e) => setPackageImage(e.target.files[0])}
           />
-        </div>
+                </div>
+                <button type="submit" className="btn btn-success w-100">
+          {editPackage ? "Update Package" : "Add Package"}
+        </button>
+      </form>
