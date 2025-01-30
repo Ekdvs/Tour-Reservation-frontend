@@ -49,4 +49,13 @@ const PackageManagement = () => {
       try {
       await axios.post("http://localhost:8080/packages/addPackage", formData);
       fetchPackages();
-      toast.success("Package added successfully!");
+          toast.success("Package added successfully!");
+          setPackageForm({
+        packageName: "",
+        packageType: "",
+        description: "",
+        onePersonPrice: "",
+        duration: "",
+        location: "",
+      }); // Clear the form after adding a package
+      setPackageImage(null); // Clear the image state
