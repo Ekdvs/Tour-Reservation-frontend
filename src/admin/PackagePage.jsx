@@ -14,4 +14,6 @@ const PackageManagement = () => {
     onePersonPrice: "",
     duration: "",
     location: "",
-  });
+    });
+     const [packageImage, setPackageImage] = useState(null);
+  const [editPackage, setEditPackage] = useState(null); // Store the package being edited
