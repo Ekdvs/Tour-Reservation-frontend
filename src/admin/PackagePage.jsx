@@ -69,3 +69,8 @@ const PackageManagement = () => {
     const formData = new FormData();
       formData.append("package", JSON.stringify(packageForm));
       if (packageImage) formData.append("imageFile", packageImage);
+      try {
+      await axios.put(
+        `http://localhost:8080/packages/updatePackage/${editPackage.id}`,
+        formData
+      );
