@@ -164,4 +164,14 @@ const PackageManagement = () => {
             onChange={handleInputChange}
             required
           />
+                </div>
+                 <div className="form-group mb-3">
+          <textarea
+            className="form-control"
+            name="description"
+            placeholder="Description"
+            value={packageForm.description}
+            onChange={handleInputChange}
+            required
+          ></textarea>
         </div>
