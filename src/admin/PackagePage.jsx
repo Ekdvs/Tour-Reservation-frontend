@@ -107,4 +107,13 @@ const PackageManagement = () => {
   };
     // Set Package for Editing
   const handleEditPackage = (pkg) => {
-    setEditPackage(pkg);
+      setEditPackage(pkg);
+      setPackageForm({
+      packageName: pkg.packageName,
+      packageType: pkg.packageType,
+      description: pkg.description,
+      onePersonPrice: pkg.onePersonPrice,
+      duration: pkg.duration,
+      location: pkg.location,
+    });
+  };
