@@ -111,7 +111,7 @@ const Cart = () => {
             <div className="card mb-4 shadow-lg">
               <img
                 src={`data:${selectedEvent.contentType};base64,${selectedEvent.imageData}`}
-                className="card-img-top"
+               className="card-img-top img-fluid w-100"
                 alt={selectedEvent.eventName}
               />
               <div className="card-body">

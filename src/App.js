@@ -30,6 +30,10 @@ import Our_Gallery from './pages/Our_Gallery';
 import Blog from './pages/Blog';
 import ReadMorePage from './pages/ReadMorePage';
 import PlaceDetail from './pages/PlaceDetail';
+import PackagesAdmin from './admin/Packages';
+import AuroraEffect from './pages/AuroraEffect';
+import Bloga from './admin/addBlog';
+
 
 
 
@@ -72,6 +76,9 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
           <Route path="/read-more" element={<ReadMorePage />} />
           <Route path="/place-detail"read-more element={<PlaceDetail />} />
+          <Route path="/addPackages"read-more element={<PackagesAdmin/>} />
+          <Route path="/AuroraEffect"read-more element={<AuroraEffect/>} />
+          <Route path="/addBlog" element={<Bloga/>} />
         </Routes>
       </Router>
     </div>

@@ -31,20 +31,17 @@ export default function Footer() {
                             <a href=""><i className="fas fa-angle-right me-2"></i> About</a>
                             <a href=""><i className="fas fa-angle-right me-2"></i> Careers</a>
                             <a href=""><i className="fas fa-angle-right me-2"></i> Blog</a>
-                            <a href=""><i className="fas fa-angle-right me-2"></i> Press</a>
-                            <a href=""><i className="fas fa-angle-right me-2"></i> Gift Cards</a>
-                            <a href=""><i className="fas fa-angle-right me-2"></i> Magazine</a>
+                            
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-6 col-xl-3">
                         <div className="footer-item d-flex flex-column">
                             <h4 className="mb-4 text-white">Support</h4>
                             <a href=""><i className="fas fa-angle-right me-2"></i> Contact</a>
-                            <a href=""><i className="fas fa-angle-right me-2"></i> Legal Notice</a>
                             <a href=""><i className="fas fa-angle-right me-2"></i> Privacy Policy</a>
                             <a href=""><i className="fas fa-angle-right me-2"></i> Terms and Conditions</a>
                             <a href=""><i className="fas fa-angle-right me-2"></i> Sitemap</a>
-                            <a href=""><i className="fas fa-angle-right me-2"></i> Cookie policy</a>
+                            
                         </div>
                     </div>
                     <div className="col-md-6 col-lg-6 col-xl-3">
