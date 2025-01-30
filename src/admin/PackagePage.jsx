@@ -67,4 +67,5 @@ const PackageManagement = () => {
   const handleUpdatePackage = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append("package", JSON.stringify(packageForm));
+      formData.append("package", JSON.stringify(packageForm));
+      if (packageImage) formData.append("imageFile", packageImage);
