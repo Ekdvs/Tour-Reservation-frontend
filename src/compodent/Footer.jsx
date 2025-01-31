@@ -20,7 +20,7 @@ export default function Footer() {
                   <i className="fas fa-envelope me-2"></i>{" "}
                   ceylontravelplanning@gmail.com
                 </a>
-                <a href="https://x.com/ceylon_trav">
+                <a href="">
                   <i className="fas fa-phone me-2"></i> +9471 897 4153
                 </a>
                 <a href="" className="mb-3">
@@ -36,7 +36,7 @@ export default function Footer() {
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://x.com/ceylon_trav"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
