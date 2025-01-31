@@ -17,7 +17,7 @@ const Places = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [editingPlace, setEditingPlace] = useState(null);
     const [isAddingPlace, setIsAddingPlace] = useState(false);
-  
+    const [expandedDescription, setExpandedDescription] = useState({});
     const API_BASE_URL = 'http://localhost:8080/place';
   
     
@@ -31,7 +31,12 @@ const Places = () => {
       toast.error('Error fetching places!');
     }
   };
-
+  const toggleDescription = (placeName) => {
+    setExpandedDescription(prevState => ({
+        ...prevState,
+        [placeName]: !prevState[placeName]
+    }));
+};
   useEffect(() => {
     fetchPlaces();
   }, []);
@@ -252,8 +257,6 @@ const handleAddPlace = () => {
             <th>Description</th>
             <th>Location</th>
             <th>Category</th>
-            <th>Price</th>
-            <th>Image</th> {/* Added column for Image */}
             <th>Actions</th>
           </tr>
         </thead>
@@ -261,15 +264,35 @@ const handleAddPlace = () => {
           {filteredPlaces.map((place) => (
             <tr key={place.placeName}>
               <td>{place.placeName}</td>
-              <td>{place.description}</td>
+              <td>
+                {expandedDescription[place.placeName] ? (
+                    <>
+                        {place.description}{' '}
+                        <button
+                            type="button"
+                            className="btn btn-link p-0"
+                            onClick={() => toggleDescription(place.placeName)}
+                        >
+                            Read Less
+                        </button>
+                    </>
+                ) : (
+                    <>
+                        {place.description.substring(0, 100)}...{' '}
+                        <button
+                            type="button"
+                            className="btn btn-link p-0"
+                            onClick={() => toggleDescription(place.placeName)}
+                        >
+                            Read More
+                        </button>
+                    </>
+                )}
+            </td>
               <td>{place.location}</td>
               <td>{place.category}</td>
-              <td>{place.price}</td>
-              <td>
-                {place.imagePath && (
-                  <img src={place.imagePath} alt="Place" style={{ maxWidth: '100px', height: 'auto' }} />
-                )}
-              </td>
+              
+              
               <td>
                 <div className="d-flex">
                   <button

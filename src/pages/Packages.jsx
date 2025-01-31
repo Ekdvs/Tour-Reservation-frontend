@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import "./PackagesPage.css"; // Import custom CSS for additional styling
+import "./PackagesPage.css"; 
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 
