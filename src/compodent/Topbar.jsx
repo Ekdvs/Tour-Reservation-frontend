@@ -21,7 +21,7 @@ export default function Topbar() {
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://facebook.com"
+                href="https://web.facebook.com/profile.php?id=61572509287749"
               >
                 <i className="fab fa-facebook-f fw-normal"></i>
               </a>
