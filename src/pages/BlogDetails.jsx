@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
-import { Navigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 
 const BlogDetail = () => {
   const [blog, setBlog] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedBlog = localStorage.getItem("selectedBlog");
@@ -24,7 +25,7 @@ const BlogDetail = () => {
 
   const handleBackToBlogs = () => {
     setTimeout(() => {
-      Navigate("/Blogs");
+      navigate("/Blog");
       localStorage.removeItem("selectedBlog");
     }, 2000);
   };
@@ -91,9 +92,7 @@ const BlogDetail = () => {
                   <li className="list-group-item">
                     <strong>Author:</strong> {blog.author || "N/A"}
                   </li>
-                  <li className="list-group-item">
-                    <strong>Category:</strong> {blog.category || "N/A"}
-                  </li>
+                  
                 </ul>
               </div>
             </div>
@@ -101,7 +100,7 @@ const BlogDetail = () => {
             {/* Description Section */}
             <div className="mt-4">
               <h4 className="text-primary">Description</h4>
-              <p className="text-muted">{blog.content || "Content not provided."}</p>
+              <p className="text-muted">{blog.description || "Content not provided."}</p>
             </div>
             <button
               className="btn btn-primary btn-lg w-100"

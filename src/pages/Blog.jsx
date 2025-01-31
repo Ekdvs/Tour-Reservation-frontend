@@ -9,8 +9,8 @@ import { Link } from "react-router-dom";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-  const API_BASE_URL = "http://localhost:8080/blog"; // Change to your blog API endpoint
+  
+  const API_BASE_URL = "http://localhost:8080/blog"; 
 
   // Fetch all blogs
   const fetchBlogs = async () => {
@@ -23,16 +23,7 @@ const BlogPage = () => {
   };
 
   // Search blogs by title
-  const searchBlogs = async () => {
-    try {
-      const response = await axios.get(`${API_BASE_URL}/searchBlog`, {
-        params: { title: searchTerm },
-      });
-      setBlogs(response.data);
-    } catch (error) {
-      console.error("Error searching blogs:", error);
-    }
-  };
+
 
   useEffect(() => {
     fetchBlogs();
@@ -96,53 +87,37 @@ const BlogPage = () => {
       {/* Content Section */}
       <div className="container mt-5">
         <h2 className="text-center mb-4">Explore Blogs</h2>
-
-        {/* Search Bar */}
-        <div className="container mt-4">
-          <div className="row justify-content-center mb-4">
-            <div className="col-md-8">
-              <div className="input-group">
-                <input
-                  type="text"
-                  className="form-control"
-                  placeholder="Search blogs..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <button className="btn btn-primary" onClick={searchBlogs}>
-                  Search
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* List of Blogs */}
-        <div className="blog-grid mb-5">
-          {blogs.map((blog) => (
-            <div key={blog.blogId} className="blog-card">
+        <div className="container mb-5">
+      <div className="row">
+        {blogs.map((blog) => (
+          <div key={blog.blogId} className="col-md-4 mb-4">
+            <div className="card h-100">
               {blog.imageData ? (
                 <img
                   src={`data:${blog.contentType};base64,${blog.imageData}`}
                   alt={blog.title}
-                  className="blog-img"
+                  className="card-img-top"
+                  style={{ height: "200px", objectFit: "cover" }}
                 />
               ) : (
-                <div className="blog-img" style={{ height: "200px", backgroundColor: "#f0f0f0" }}>
-                  <p className="text-center text-muted">Image Not Available</p>
+                <div
+                  className="card-img-top d-flex align-items-center justify-content-center"
+                  style={{ height: "200px", backgroundColor: "#f0f0f0" }}
+                >
+                  <p className="text-muted">Image Not Available</p>
                 </div>
               )}
-              <div className="blog-info" style={{ textAlign: "center" }}>
-                <h5>{blog.title}</h5>
+              <div className="card-body text-center">
+                <h5 className="card-title">{blog.title}</h5>
               </div>
-              <div className="blog-info">
-                <p>
+              <div className="card-body">
+                <p className="card-text">
                   <strong>Author:</strong> {blog.author} <br />
-                  <strong>Category:</strong> {blog.category}
+                  
                 </p>
-                <p>
-                  {blog.content && blog.content.length > 100
-                    ? `${blog.content.substring(0, 100)}...`
+                <p className="card-text">
+                  {blog.description && blog.description.length > 100
+                    ? `${blog.description.substring(0, 100)}...`
                     : blog.content || "No content available"}
                 </p>
                 <Link
@@ -154,8 +129,13 @@ const BlogPage = () => {
                 </Link>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
+    </div>
+        
+
+        
       </div>
 
       <Footer />
