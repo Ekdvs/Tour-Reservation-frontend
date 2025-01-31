@@ -39,7 +39,7 @@ export default function Topbar() {
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle"
-                href="https://youtube.com"
+                href="https://www.youtube.com/@TheCeylonTraveler-j8s"
               >
                 <i className="fab fa-youtube fw-normal"></i>
               </a>
