@@ -131,6 +131,7 @@ const handleAddPlace = () => {
         <Nav/>
     
     <div className="container mt-5">
+    <h1 className="text-center mb-4">Place Management</h1>
       <ToastContainer />
       <h3>{editingPlace ? 'Edit Travel Place' : isAddingPlace ? 'Add New Place' : 'All Travel Places'}</h3>
 
