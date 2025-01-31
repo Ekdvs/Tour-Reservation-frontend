@@ -27,7 +27,7 @@ export default function Topbar() {
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/106320117/admin/page-posts/published/"
               >
                 <i className="fab fa-linkedin-in fw-normal"></i>
               </a>
