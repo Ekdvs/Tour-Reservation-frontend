@@ -23,6 +23,7 @@ const EventManagement = () => {
   });
   const [eventImage, setEventImage] = useState(null);
   const [editEvent, setEditEvent] = useState(null); // Store the event being edited
+  const [expandedEvents, setExpandedEvents] = useState({});
 
   // Fetch all events
   const fetchEvents = async () => {
@@ -51,6 +52,14 @@ const EventManagement = () => {
       toast.error("Error searching events!");
     }
   };
+
+  const toggleReadMore = (eventId) => {
+    setExpandedEvents((prevState) => ({
+      ...prevState,
+      [eventId]: !prevState[eventId],
+    }));
+  };
+  
 
   // Add Event
   const handleAddEvent = async (e) => {
@@ -318,34 +327,56 @@ const EventManagement = () => {
 
 
       {/* Event List show */}
+     
       <h2 className="mt-4">Event List</h2>
-      <ul className="list-group">
-        {events.map((event) => (
-          <li
-            key={event.eventId}
-            className="list-group-item d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <h5>{event.eventName}</h5>
-              <p>{event.description}</p>
-            </div>
-            <div className="d-flex">
-              <button
-                className="btn btn-warning me-2 w-100"
-                onClick={() => handleEditEvent(event)}
-              >
-                Edit
-              </button>
-              <button
-                className="btn btn-danger w-100"
-                onClick={() => handleDeleteEvent(event.eventId)}
-              >
-                Delete
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+<table className="table table-striped">
+  <thead>
+    <tr>
+      <th>Event Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {events.map((event) => (
+      <tr key={event.eventId}>
+        <td>{event.eventName}</td>
+        <td>
+          {expandedEvents[event.eventId]
+            ? event.description
+            : `${event.description.substring(0, 100)}...`}
+          {event.description.length > 100 && (
+            <button
+              className="btn btn-link p-0"
+              onClick={() => toggleReadMore(event.eventId)}
+            >
+              {expandedEvents[event.eventId] ? "Read Less" : "Read More"}
+            </button>
+          )}
+        </td>
+        <td>
+          <div className="d-flex">
+            <button
+              className="btn btn-warning me-2 w-100"
+              onClick={() => handleEditEvent(event)}
+            >
+              Edit
+            </button>
+            <button
+              className="btn btn-danger w-100"
+              onClick={() => handleDeleteEvent(event.eventId)}
+            >
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+
+
     </div></div>
   );
 };
