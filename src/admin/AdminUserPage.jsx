@@ -4,6 +4,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Sidebar from "./Sidebar";
+import Nav from "./Nav";
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
@@ -106,6 +108,9 @@ const AdminUserPage = () => {
   }, []);
 
   return (
+     <div>
+            <Sidebar/>
+            <Nav/>
     <div className="container mt-4">
       <ToastContainer />
       <h2 className="text-center">Admin User Management</h2>
@@ -196,7 +201,7 @@ const AdminUserPage = () => {
         user={selectedUser}
         onClose={() => setShowModal(false)}
       />
-    </div>
+    </div></div>
   );
 };
 

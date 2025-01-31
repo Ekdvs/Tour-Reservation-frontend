@@ -3,16 +3,19 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Sidebar from "./Sidebar";
+import Nav from "./Nav";
 
 const BlogManagement = () => {
   const [blogs, setBlogs] = useState([]);
-  const [blogForm, setBlogForm] = useState({
-    title: "",
-    description: "",
-    author: "",
-  });
+  const [blogForm, setBlogForm] = useState({ title: "", description: "", author: "" });
   const [blogImage, setBlogImage] = useState(null);
   const [editBlog, setEditBlog] = useState(null);
+  const [expandedBlogs, setExpandedBlogs] = useState({});
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
 
   const fetchBlogs = async () => {
     try {
@@ -22,10 +25,6 @@ const BlogManagement = () => {
       toast.error("Error fetching blogs!");
     }
   };
-
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
 
   const handleAddBlog = async (e) => {
     e.preventDefault();
@@ -84,56 +83,71 @@ const BlogManagement = () => {
     });
   };
 
+  const toggleReadMore = (blogId) => {
+    setExpandedBlogs((prev) => ({ ...prev, [blogId]: !prev[blogId] }));
+  };
+
   return (
-    <div className="container mt-4">
-      <h1 className="text-center mb-4">Blog Management</h1>
-      <ToastContainer />
+    <div>
+      <Sidebar />
+      <Nav />
+      <div className="container mt-4">
+        <h1 className="text-center mb-4">Blog Management</h1>
+        <ToastContainer />
 
-      <form onSubmit={editBlog ? handleUpdateBlog : handleAddBlog} className="border p-4 rounded mb-4">
-        <h2>{editBlog ? "Edit Blog" : "Add Blog"}</h2>
-        <div className="form-group mb-3">
-          <input type="text" className="form-control" name="title" placeholder="Title" value={blogForm.title} onChange={handleInputChange} required />
-        </div>
-        <div className="form-group mb-3">
-          <textarea className="form-control" name="description" placeholder="Description" value={blogForm.description} onChange={handleInputChange} required></textarea>
-        </div>
-        <div className="form-group mb-3">
-          <input type="text" className="form-control" name="author" placeholder="Author" value={blogForm.author} onChange={handleInputChange} required />
-        </div>
-        <div className="form-group mb-3">
-          <input type="file" className="form-control" onChange={(e) => setBlogImage(e.target.files[0])} />
-        </div>
-        <button type="submit" className="btn btn-success w-100">{editBlog ? "Update Blog" : "Add Blog"}</button>
-      </form>
+        <form onSubmit={editBlog ? handleUpdateBlog : handleAddBlog} className="border p-4 rounded mb-4">
+          <h2>{editBlog ? "Edit Blog" : "Add Blog"}</h2>
+          <div className="form-group mb-3">
+            <input type="text" className="form-control" name="title" placeholder="Title" value={blogForm.title} onChange={handleInputChange} required />
+          </div>
+          <div className="form-group mb-3">
+            <textarea className="form-control" name="description" placeholder="Description" value={blogForm.description} onChange={handleInputChange} required></textarea>
+          </div>
+          <div className="form-group mb-3">
+            <input type="text" className="form-control" name="author" placeholder="Author" value={blogForm.author} onChange={handleInputChange} required />
+          </div>
+          <div className="form-group mb-3">
+            <input type="file" className="form-control" onChange={(e) => setBlogImage(e.target.files[0])} />
+          </div>
+          <button type="submit" className="btn btn-success w-100">{editBlog ? "Update Blog" : "Add Blog"}</button>
+        </form>
 
-      <h2 className="mt-4">Blog List</h2>
-      <table className="table table-bordered table-striped">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Author</th>
-            <th>Image</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {blogs.map((blog) => (
-            <tr key={blog.blogId}>
-              <td>{blog.title}</td>
-              <td>{blog.description}</td>
-              <td>{blog.author}</td>
-              <td>
-                {blog.imagePath && <img src={`http://localhost:8080/${blog.imagePath}`} alt={blog.title} style={{ width: "50px", height: "50px" }} />}
-              </td>
-              <td>
-                <button className="btn btn-warning me-2" onClick={() => handleEditBlog(blog)}>Edit</button>
-                <button className="btn btn-danger" onClick={() => handleDeleteBlog(blog.blogId)}>Delete</button>
-              </td>
+        <h2 className="mt-4">Blog List</h2>
+        <table className="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Author</th>
+              <th>Image</th>
+              <th>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {blogs.map((blog) => (
+              <tr key={blog.blogId}>
+                <td>{blog.title}</td>
+                <td>
+                  {expandedBlogs[blog.blogId] ? blog.description : `${blog.description.substring(0, 100)}...`}
+                  {blog.description.length > 100 && (
+                    <button className="btn btn-link p-0" onClick={() => toggleReadMore(blog.blogId)}>
+                      {expandedBlogs[blog.blogId] ? "Read Less" : "Read More"}
+                    </button>
+                  )}
+                </td>
+                <td>{blog.author}</td>
+                <td>
+                  {blog.imagePath && <img src={`http://localhost:8080/${blog.imagePath}`} alt={blog.title} style={{ width: "50px", height: "50px" }} />}
+                </td>
+                <td>
+                  <button className="btn btn-warning me-2 w-100" onClick={() => handleEditBlog(blog)}>Edit</button>
+                  <button className="btn btn-danger w-100" onClick={() => handleDeleteBlog(blog.blogId)}>Delete</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

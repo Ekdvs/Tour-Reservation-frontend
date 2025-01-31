@@ -3,6 +3,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Sidebar from "./Sidebar";
+import Nav from "./Nav";
 
 const PackageManagement = () => {
   const [packages, setPackages] = useState([]);
@@ -99,6 +101,9 @@ const PackageManagement = () => {
   };
 
   return (
+     <div>
+            <Sidebar/>
+            <Nav/>
     <div className="container mt-4">
       <h1 className="text-center mb-4">Package Management</h1>
       <ToastContainer />
@@ -155,7 +160,7 @@ const PackageManagement = () => {
           ))}
         </tbody>
       </table>
-    </div>
+    </div></div>
   );
 };
 

@@ -3,6 +3,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Sidebar from "./Sidebar";
+import Nav from "./Nav";
 
 const EventManagement = () => {
   const [events, setEvents] = useState([]);
@@ -145,6 +147,9 @@ const EventManagement = () => {
   };
 
   return (
+     <div>
+            <Sidebar/>
+            <Nav/>
     <div className="container mt-4">
       <h1 className="text-center mb-4">Event Management</h1>
 
@@ -341,7 +346,7 @@ const EventManagement = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </div></div>
   );
 };
 

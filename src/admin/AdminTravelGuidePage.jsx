@@ -5,6 +5,8 @@ import Modal from 'react-bootstrap/Modal';
 import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Sidebar from './Sidebar';
+import Nav from './Nav';
 
 const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
@@ -99,6 +101,9 @@ const AdminTravelGuidePage = () => {
   }, []);
 
   return (
+     <div>
+            <Sidebar/>
+            <Nav/>
     <div className="container mt-4">
       <ToastContainer />
       <h2 className="text-center">Admin Travel Guide Management</h2>
@@ -159,7 +164,7 @@ const AdminTravelGuidePage = () => {
       )}
 
       <UserHistoryModal show={showModal} user={selectedUser} onClose={() => setShowModal(false)} />
-    </div>
+    </div></div>
   );
 };
 
