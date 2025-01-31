@@ -33,7 +33,7 @@ export default function Topbar() {
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://instagram.com"
+                href="https://www.instagram.com/theceylontrav/"
               >
                 <i className="fab fa-instagram fw-normal"></i>
               </a>
