@@ -94,6 +94,13 @@ export default function Sidebar() {
             </Link>
             </li>
 
+            <li className="nav-item">
+            <Link className="nav-link" to="/addBlog">
+                <i className="fas fa-bars"></i>
+                <p>Add Blog</p>
+            </Link>
+            </li>
+
           </ul>
         </div>
       </div>

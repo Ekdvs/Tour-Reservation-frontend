@@ -42,8 +42,20 @@ export default function Navbar() {
                             </div>
                         </div>  
                         <a href="/Contact" className="nav-item nav-link">Contact</a>
+                        <a href="/Register" className="nav-item nav-link"><i className="fa fa-user me-2"></i>Register</a>
+                        <a href="/Login"className="nav-item nav-link"><i className="fa fa-sign-in-alt me-2"></i>Login</a>
+                        <div className="nav-item dropdown">
+                            <a href="/" className="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i className="fa fa-home me-2"></i> My Dashboard</a>
+                            <div className="dropdown-menu m-0">
+                                <a href="/My_Profile" className="dropdown-item"><i className="fas fa-user-alt me-2"></i> My Profile</a>
+                                <a href="/" className="dropdown-item"><i className="fas fa-comment-alt me-2"></i> Inbox</a>
+                                <a href="/" className="dropdown-item"><i className="fas fa-bell me-2"></i> Notifications</a>
+                                <a href="/" className="dropdown-item"><i className="fas fa-cog me-2"></i> Account Settings</a>
+                                <a href="/" className="dropdown-item"><i className="fas fa-power-off me-2"></i> Log Out</a>
+                                </div>
+                        </div> 
                     </div>
-                    <a href="/Travel_Booking" className="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                    
                 </div>
             </nav>
             </div>
