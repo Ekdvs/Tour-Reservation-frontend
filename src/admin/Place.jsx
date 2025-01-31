@@ -3,6 +3,8 @@ import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Sidebar from "./Sidebar";
+import Nav from "./Nav";
 
 function PackagesAdmin() {
     const [packages, setPackages] = useState([]);
@@ -131,6 +133,9 @@ function PackagesAdmin() {
     };
 
     return (
+        <div>
+            <Sidebar />
+                  <Nav/>
         <div className="container mt-4">
             <ToastContainer />
             <h1 className="text-center">Package Management</h1>
@@ -213,6 +218,7 @@ function PackagesAdmin() {
                     ))}
                 </tbody>
             </table>
+        </div>
         </div>
     );
 }
