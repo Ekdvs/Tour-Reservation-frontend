@@ -3,8 +3,30 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import Subscribe from "./Subscribe";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+
 
 export default function Contact() {
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Prevent page refresh
+    
+        // Simulating email sending process
+        const isSuccess = Math.random() > 0.2; // 80% chance of success
+    
+        if (isSuccess) {
+          toast.success("Message sent successfully!", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+        } else {
+          toast.error("Failed to send message. Please try again!", {
+            position: "top-right",
+            autoClose: 3000,
+          });
+        }
+      };
     return (
     <div>
         <Topbar />
@@ -45,79 +67,87 @@ export default function Contact() {
                     <div className="text-center mb-4">
                     <i className="fa fa-phone-alt fa-3x text-primary mb-3"></i>
                     <h4 className="text-primary">Mobile</h4>
-                    <p className="mb-0">+9471 897 4153</p>
-                    <p className="mb-0">+9477 603 2660</p>
+                    <p style={{ color: "black" }}>+9471 897 4153</p>
+                    <p className=""style={{ color: "black" }}>+9477 603 2660</p>
                     </div>
                     <div className="text-center">
                     <i className="fa fa-envelope-open fa-3x text-primary mb-3"></i>
                     <h4 className="text-primary">Email</h4>
-                    <p className="mb-0">info@example.com</p>
-                    <p className="mb-0">info@example.com</p>
+                    <p className="mb-0"style={{ color: "black" }}>ceylontravelplanning@gmail.com</p>
+                   
                     </div>
                 </div>
                 </div>
             </div>
+            
             <div className="col-lg-8">
-                <h3 className="mb-2">Send us a message</h3>
-                <p className="mb-4">
-                The contact form is currently inactive. Get a functional and
-                working contact form with Ajax & PHP in a few minutes. Just
-                copy and paste the files, add a little code and you're done.{" "}
-                </p>
-                <form>
-                <div className="row g-3">
-                    <div className="col-md-6">
-                    <div className="form-floating">
-                        <input
-                        type="text"
-                        className="form-control border-0"
-                        id="name"
-                        placeholder="Your Name"
-                        />
-                        <label for="name">Your Name</label>
-                    </div>
-                    </div>
-                    <div className="col-md-6">
-                    <div className="form-floating">
-                        <input
-                        type="email"
-                        className="form-control border-0"
-                        id="email"
-                        placeholder="Your Email"
-                        />
-                        <label for="email">Your Email</label>
-                    </div>
-                    </div>
-                    <div className="col-12">
-                    <div className="form-floating">
-                        <input
-                        type="text"
-                        className="form-control border-0"
-                        id="subject"
-                        placeholder="Subject"
-                        />
-                        <label for="subject">Subject</label>
-                    </div>
-                    </div>
-                    <div className="col-12">
-                    <div className="form-floating">
-                        <textarea
-                        className="form-control border-0"
-                        placeholder="Leave a message here"
-                        id="message"
-                        style={{ height: "160px" }}
-                        ></textarea>
-                        <label for="message">Message</label>
-                    </div>
-                    </div>
-                    <div className="col-12">
-                    <button className="btn btn-primary w-100 py-3" type="submit">
-                        Send Message
-                    </button>
-                    </div>
-                </div>
-                </form>
+      <h3 className="mb-2">Send us a message</h3>
+      <p className="mb-4"style={{ color: "black" }}>
+        The contact form is currently inactive. Get a functional and working
+        contact form with Ajax & PHP in a few minutes. Just copy and paste the
+        files, add a little code, and you're done.
+      </p>
+      <form onSubmit={handleSubmit}>
+        <div className="row g-3"style={{ color: "black" }}>
+          <div className="col-md-6">
+            <div className="form-floating">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                id="name"
+                placeholder="Your Name"
+                required
+              />
+              <label htmlFor="name">Your Name</label>
             </div>
+          </div>
+          <div className="col-md-6">
+            <div className="form-floating">
+              <input
+                type="email"
+                className="form-control form-control-lg"
+                id="email"
+                placeholder="Your Email"
+                required
+              />
+              <label htmlFor="email">Your Email</label>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="form-floating">
+              <input
+                type="text"
+                className="form-control form-control-lg"
+                id="subject"
+                placeholder="Subject"
+                required
+              />
+              <label htmlFor="subject">Subject</label>
+            </div>
+          </div>
+          <div className="col-12">
+            <div className="form-floating">
+              <textarea
+                className="form-control form-control-lg"
+                placeholder="Leave a message here"
+                id="message"
+                style={{ height: "160px" }}
+                required
+              ></textarea>
+              <label htmlFor="message">Message</label>
+            </div>
+          </div>
+          <div className="col-12">
+            <button className="btn btn-primary w-100 py-3" type="submit">
+              Send Message
+            </button>
+          </div>
+        </div>
+      </form>
+      <ToastContainer />
+    </div>
+
+
             <div className="col-12">
                 <div className="rounded">
                 <iframe
