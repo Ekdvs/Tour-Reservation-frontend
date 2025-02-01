@@ -107,7 +107,17 @@ export default function PackagesPage() {
                       {pkg.description.substring(0, 100)}...
                     </p>
                     <p className="price-tag">${pkg.price}</p>
-                    <a href={`/package/${pkg.id}`} className="btn btn-primary">
+                    <a
+                      href={`/packagedeatails/${pkg.id}`}
+                      className="btn btn-primary"
+                      onClick={() =>{
+                        if(pkg.id) {
+                          localStorage.setItem("selectedPackageId", pkg.id);
+                        } else {
+                          console.error("Package ID is undefined");
+                        }
+                      }}
+                    >
                       View Details
                     </a>
                   </div>

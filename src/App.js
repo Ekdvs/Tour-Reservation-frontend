@@ -35,6 +35,8 @@ import AuroraEffect from './pages/AuroraEffect';
 import BlogManagement from './admin/addBlog';
 import Packages from './pages/Packages';
 import BlogDetails from './pages/BlogDetails';
+import Packageview from './pages/PackagePage';
+
 
 
 
@@ -84,6 +86,8 @@ function App() {
           <Route path="/addBlog" element={<BlogManagement/>} />
           <Route path="/Packages" element={<Packages/>} />
           <Route path="/blog-detail" element={<BlogDetails/>} />
+          <Route path="/packagedeatail" element={<Packageview/>} />
+          
         </Routes>
       </Router>
     </div>

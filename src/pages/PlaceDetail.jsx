@@ -2,16 +2,28 @@ import React, { useEffect, useState } from "react";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PlaceDetail = () => {
   const [place, setPlace] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedPlace = localStorage.getItem("selectedPlace");
     if (storedPlace) {
       setPlace(JSON.parse(storedPlace));
     }
+
+    const handleBackButton = () => {
+      localStorage.removeItem("selectedPlace"); // Remove localStorage when back button is clicked
+      console.log("selectedPlace removed from localStorage");
+    };
+
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      window.removeEventListener("popstate", handleBackButton);
+    };
   }, []);
 
   if (!place) {
@@ -23,10 +35,11 @@ const PlaceDetail = () => {
       </div>
     );
   }
+
   const handleBackToPlaces = () => {
     setTimeout(() => {
-      Navigate("/Destination");
-      localStorage.removeItem("selectedPlace");
+      localStorage.removeItem("selectedPlace"); // Remove data before navigating
+      navigate("/Destination");
     }, 2000);
   };
 
@@ -59,7 +72,12 @@ const PlaceDetail = () => {
         </div>
       </div>
 
-      <div className="container mt-5 mb-5">
+    <div  style={{
+          backgroundImage: `linear-gradient(rgba(19, 53, 123, 0.6), rgba(19, 53, 123, 0.6)), url("data:${place.contentType};base64,${place.imageData}")`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
+      <div className="container mt-5 mb-5z">
         <div className="card shadow-lg border-0">
           <div className="card-header bg-primary text-white text-center py-4">
             <h2 className="mb-0">{place.placeName || "Place Name"}</h2>
@@ -122,6 +140,7 @@ const PlaceDetail = () => {
             </button>
           </div>
         </div>
+      </div>
       </div>
       <Footer />
     </div>

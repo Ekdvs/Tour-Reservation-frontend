@@ -101,8 +101,14 @@ const Cart = () => {
           </ol>
         </div>
       </div>
-      <div className="container mt-5">
-        <h1 className="text-center mb-4">Event Booking</h1>
+      <div style={{
+         backgroundImage: `linear-gradient(rgba(28, 86, 202, 0.6), rgba(19, 53, 123, 0.6)), url("data:${selectedEvent.contentType};base64,${selectedEvent.imageData}")`,
+
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}>
+      <div className="container ">
+        <h1 className="text-center mb-4"><br></br>Event Booking</h1>
         <ToastContainer />
 
         {loading ? (
@@ -112,7 +118,7 @@ const Cart = () => {
         ) : (
           <div>
             <h3>Event Details</h3>
-            <div className="card mb-4 shadow-lg">
+            <div className="card  shadow-lg">
               <img
                 src={`data:${selectedEvent.contentType};base64,${selectedEvent.imageData}`}
                 className="card-img-top img-fluid w-100"
@@ -173,6 +179,7 @@ const Cart = () => {
             </div>
           </div>
         )}
+      </div>
       </div>
       <Footer />
     </div>
