@@ -96,7 +96,7 @@ export default function Navbar() {
                   <i className="fa fa-home me-2"></i> My Dashboard
                 </a>
                 <div className="dropdown-menu m-0">
-                  <a href="/My_Profile" className="dropdown-item">
+                  <a href="/Profile" className="dropdown-item">
                     <i className="fas fa-user-alt me-2"></i> My Profile
                   </a>
                   <a href="/" className="dropdown-item">
@@ -108,7 +108,7 @@ export default function Navbar() {
                   <a href="/" className="dropdown-item">
                     <i className="fas fa-cog me-2"></i> Account Settings
                   </a>
-                  <a href="/" className="dropdown-item">
+                  <a href="/logout" className="dropdown-item">
                     <i className="fas fa-power-off me-2"></i> Log Out
                   </a>
                 </div>

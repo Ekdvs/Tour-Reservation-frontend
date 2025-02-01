@@ -2,8 +2,9 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Make sure to import the Toastify styles
 
-export default function LogOut() {
+const LogOut = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function LogOut() {
         // Call the logout API and pass the token in the Authorization header
         const response = await axios.post(
           "http://localhost:8080/logout",
-          {},
+          {}, // Body is empty as we are just invalidating the session
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -59,9 +60,9 @@ export default function LogOut() {
   return (
     <div
       className="logout-container"
-      style={{ textAlign: "center", marginTop: "50px", fontSize: "50px" }}
+      style={{ textAlign: "center", marginTop: "50px", fontSize: "30px" }}
     >
-      <h2>Logging out...</h2>
+      <h2>Logging Out...</h2>
       <p>You are being logged out. Please wait.</p>
       <ToastContainer
         position="top-right"
@@ -76,4 +77,6 @@ export default function LogOut() {
       />
     </div>
   );
-}
+};
+
+export default LogOut;

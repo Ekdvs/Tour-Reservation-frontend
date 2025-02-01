@@ -9,7 +9,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 
 const Cart = () => {
-  const userEmail = localStorage.getItem("userEmail");
+  const userEmail = localStorage.getItem("userEmail"); // Check if user is logged in
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [numOfTickets, setNumOfTickets] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -56,37 +56,37 @@ const Cart = () => {
   };
 
   const handlePayment = () => {
-    const userToken = localStorage.getItem("userToken"); // Replace with your actual authentication method
-
+    // Check if user is logged in
     if (!userEmail) {
+      // If user is not logged in, show an error message and navigate to login
       toast.error("Please log in to proceed with the payment.");
       setTimeout(() => {
-        navigate("/login");
+        navigate("/login"); // Redirect to login page
       }, 2000);
     } else {
-      // Call backend to update available tickets
+      // If user is logged in, proceed with the booking and payment flow
       axios
-  .post("http://localhost:8080/event/bookEvent", {
-    eventId: selectedEvent.eventId,
-    numOfTickets,
-    userEmail, // Optional, if you want to track bookings per user
-  })
-  .then((response) => {
-    toast.success("Booking successful, proceeding to payment...");
-    setTimeout(() => {
-      navigate("/payment", {
-        state: {
+        .post("http://localhost:8080/event/bookEvent", {
           eventId: selectedEvent.eventId,
-          eventName: selectedEvent.eventName,
-          totalPrice: calculateTotalPrice(),
           numOfTickets,
-        },
-      });
-    }, 2000);
-  })
-  .catch((error) => {
-    toast.error("Error booking event: " + (error.response?.data || "Try again later"));
-  });
+          userEmail, // Optional, if you want to track bookings per user
+        })
+        .then((response) => {
+          toast.success("Booking successful, proceeding to payment...");
+          setTimeout(() => {
+            navigate("/payment", {
+              state: {
+                eventId: selectedEvent.eventId,
+                eventName: selectedEvent.eventName,
+                totalPrice: calculateTotalPrice(),
+                numOfTickets,
+              },
+            });
+          }, 2000);
+        })
+        .catch((error) => {
+          toast.error("Error booking event: " + (error.response?.data || "Try again later"));
+        });
     }
   };
 
@@ -102,10 +102,7 @@ const Cart = () => {
       <Topbar />
       <Navbar />
       <div className="container-fluid bg-breadcrumb">
-        <div
-          className="container text-center py-5"
-          style={{ maxWidth: "900px" }}
-        >
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
           <h3 className="text-white display-3 mb-4">Event Booking</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
@@ -157,10 +154,7 @@ const Cart = () => {
                   <div className="mb-3">
                     <label className="form-label">Number of Tickets:</label>
                     <div className="d-flex align-items-center">
-                      <button
-                        className="btn btn-outline-primary me-2"
-                        onClick={decrementTickets}
-                      >
+                      <button className="btn btn-outline-primary me-2" onClick={decrementTickets}>
                         -
                       </button>
                       <input
@@ -171,26 +165,17 @@ const Cart = () => {
                         min="1"
                         style={{ width: "80px" }}
                       />
-                      <button
-                        className="btn btn-outline-primary ms-2"
-                        onClick={incrementTickets}
-                      >
+                      <button className="btn btn-outline-primary ms-2" onClick={incrementTickets}>
                         +
                       </button>
                     </div>
                   </div>
                   <h5>Total Price: ${calculateTotalPrice()}</h5>
                   <div className="d-flex justify-content-center mt-4">
-                    <button
-                      className="btn btn-success me-3"
-                      onClick={handlePayment}
-                    >
+                    <button className="btn btn-success me-3" onClick={handlePayment}>
                       Proceed to Payment
                     </button>
-                    <button
-                      className="btn btn-secondary"
-                      onClick={handleBackToEvents}
-                    >
+                    <button className="btn btn-secondary" onClick={handleBackToEvents}>
                       Back to Events
                     </button>
                   </div>
