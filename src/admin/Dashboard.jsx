@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react'
-import Sidebar from './Sidebar'
-import Nav from './Nav'
-import OnlineUsersCard from './OnlineUserCard'
-import NewCustomers from './NewCustomer'
-import { useNavigate } from 'react-router-dom'
-
-
-
+import React, { useEffect, useState } from "react";
+import Sidebar from "./Sidebar";
+import Nav from "./Nav";
+import OnlineUsersCard from "./OnlineUserCard";
+import NewCustomers from "./NewCustomer";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
-  
   return (
     <div>
       <Sidebar />
@@ -22,8 +18,12 @@ export default function Dashboard() {
               <h6 class="op-7 mb-2"></h6>
             </div>
             <div class="ms-md-auto py-2 py-md-0">
-              <a href="manage" class="btn btn-label-info btn-round me-2">Manage</a>
-              <a href="addtravelguide" class="btn btn-primary btn-round">Add Travel Guide</a>
+              <a href="manage" class="btn btn-label-info btn-round me-2">
+                Manage
+              </a>
+              <a href="addtravelguide" class="btn btn-primary btn-round">
+                Add Travel Guide
+              </a>
             </div>
           </div>
           <div class="row">
@@ -109,11 +109,12 @@ export default function Dashboard() {
               <div class="card card-round">
                 <div class="card-header">
                   <div class="card-head-row">
-                    <div class="card-title">
-                      User Statistics
-                    </div>
+                    <div class="card-title">User Statistics</div>
                     <div class="card-tools">
-                      <a href="#" class="btn btn-label-success btn-round btn-sm me-2">
+                      <a
+                        href="#"
+                        class="btn btn-label-success btn-round btn-sm me-2"
+                      >
                         <span class="btn-label">
                           <i class="fa fa-pencil"></i>
                         </span>
@@ -129,7 +130,7 @@ export default function Dashboard() {
                   </div>
                 </div>
                 <div class="card-body">
-                  <div class="chart-container" style={{ minHeight: '375px' }}>
+                  <div class="chart-container" style={{ minHeight: "375px" }}>
                     <canvas id="statisticsChart"></canvas>
                   </div>
                   <div id="myChartLegend"></div>
@@ -157,11 +158,15 @@ export default function Dashboard() {
                           class="dropdown-menu"
                           aria-labelledby="dropdownMenuButton"
                         >
-                          <a class="dropdown-item" href="#">Action</a>
-                          <a class="dropdown-item" href="#">Another action</a>
-                          <a class="dropdown-item" href="#"
-                          >Something else here</a
-                          >
+                          <a class="dropdown-item" href="#">
+                            Action
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Another action
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Something else here
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -182,62 +187,70 @@ export default function Dashboard() {
           </div>
           <div class="row">
             <div class="col-md-4">
-              <NewCustomers/>
-              </div></div>
-            
-              <div class="col-md-8">
-                <div class="card card-round">
-                  <div class="card-header">
-                    <div class="card-head-row card-tools-still-right">
-                      <div class="card-title">Transaction History</div>
-                      <div class="card-tools">
-                        <div class="dropdown">
-                          <button
-                            class="btn btn-icon btn-clean me-0"
-                            type="button"
-                            id="dropdownMenuButton"
-                            data-bs-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                            <i class="fas fa-ellipsis-h"></i>
-                          </button>
-                          <div
-                            class="dropdown-menu"
-                            aria-labelledby="dropdownMenuButton"
-                          >
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#"
-                            >Something else here</a
-                            >
-                          </div>
-                        </div>
+              <NewCustomers />
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="card card-round">
+              <div class="card-header">
+                <div class="card-head-row card-tools-still-right">
+                  <div class="card-title">Transaction History</div>
+                  <div class="card-tools">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-icon btn-clean me-0"
+                        type="button"
+                        id="dropdownMenuButton"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                      >
+                        <i class="fas fa-ellipsis-h"></i>
+                      </button>
+                      <div
+                        class="dropdown-menu"
+                        aria-labelledby="dropdownMenuButton"
+                      >
+                        <a class="dropdown-item" href="#">
+                          Action
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          Another action
+                        </a>
+                        <a class="dropdown-item" href="#">
+                          Something else here
+                        </a>
                       </div>
                     </div>
                   </div>
-                  <div class="card-body p-0">
-                    <div class="table-responsive">
-                      <table class="table align-items-center mb-0">
-                        <thead class="thead-light">
-                          <tr>
-                            <th scope="col">Payment Number</th>
-                            <th scope="col" class="text-end">Date & Time</th>
-                            <th scope="col" class="text-end">Amount</th>
-                            <th scope="col" class="text-end">Status</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                         
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <div class="table-responsive">
+                  <table class="table align-items-center mb-0">
+                    <thead class="thead-light">
+                      <tr>
+                        <th scope="col">Payment Number</th>
+                        <th scope="col" class="text-end">
+                          Date & Time
+                        </th>
+                        <th scope="col" class="text-end">
+                          Amount
+                        </th>
+                        <th scope="col" class="text-end">
+                          Status
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody></tbody>
+                  </table>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      
-      )
+      </div>
+    </div>
+  );
 }

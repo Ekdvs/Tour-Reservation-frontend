@@ -46,13 +46,13 @@ const Cart = () => {
 
   const handlePayment = () => {
     // Check if the user is logged in by checking for a token in localStorage (or any other storage mechanism you're using)
-    const userToken = localStorage.getItem("userToken");  // Replace with your actual authentication method
+    const userToken = localStorage.getItem("userToken"); // Replace with your actual authentication method
 
-    if (!userEmail ) {
+    if (!userEmail) {
       // If not logged in, redirect to login page
       toast.error("Please log in to proceed with the payment.");
       setTimeout(() => {
-        navigate("/login");  // Redirect to login page
+        navigate("/login"); // Redirect to login page
       }, 2000);
     } else {
       // If logged in, proceed with payment
@@ -83,7 +83,10 @@ const Cart = () => {
       <Topbar />
       <Navbar />
       <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: '900px' }}>
+        <div
+          className="container text-center py-5"
+          style={{ maxWidth: "900px" }}
+        >
           <h3 className="text-white display-3 mb-4">Event Booking</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
@@ -92,8 +95,9 @@ const Cart = () => {
             <li className="breadcrumb-item">
               <a href="/events">Events</a>
             </li>
-            <li className="breadcrumb-item active text-white"><a href="/EventShowPage">Event Booking</a></li>
-            
+            <li className="breadcrumb-item active text-white">
+              <a href="/EventShowPage">Event Booking</a>
+            </li>
           </ol>
         </div>
       </div>
@@ -111,7 +115,7 @@ const Cart = () => {
             <div className="card mb-4 shadow-lg">
               <img
                 src={`data:${selectedEvent.contentType};base64,${selectedEvent.imageData}`}
-               className="card-img-top img-fluid w-100"
+                className="card-img-top img-fluid w-100"
                 alt={selectedEvent.eventName}
               />
               <div className="card-body">
@@ -152,14 +156,19 @@ const Cart = () => {
                 </div>
                 <h5>Total Price: ${calculateTotalPrice()}</h5>
                 <div className="d-flex justify-content-center mt-4">
-                  <button className="btn btn-success me-3" onClick={handlePayment}>
+                  <button
+                    className="btn btn-success me-3"
+                    onClick={handlePayment}
+                  >
                     Proceed to Payment
                   </button>
-                  <button className="btn btn-secondary" onClick={handleBackToEvents}>
+                  <button
+                    className="btn btn-secondary"
+                    onClick={handleBackToEvents}
+                  >
                     Back to Events
                   </button>
                 </div>
-
               </div>
             </div>
           </div>

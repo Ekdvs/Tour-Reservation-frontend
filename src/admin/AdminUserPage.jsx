@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Button, Form, Modal, Spinner, Table } from "react-bootstrap";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-toastify/dist/ReactToastify.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Sidebar from "./Sidebar";
 import Nav from "./Nav";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+const API_BASE_URL =
+  process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
 
 // Modal for viewing user history
 const UserHistoryModal = ({ show, user, onClose }) => (
@@ -18,18 +19,30 @@ const UserHistoryModal = ({ show, user, onClose }) => (
     <Modal.Body>
       {user ? (
         <div>
-          <p><strong>Name:</strong> {user.firstName} {user.lastName}</p>
-          <p><strong>Email:</strong> {user.userEmail}</p>
-          <p><strong>Role:</strong> {user.userRole}</p>
-          <p><strong>Date Registered:</strong> {user.dateRegistered}</p>
-          <p><strong>Last Login:</strong> {user.lastLogin}</p>
+          <p>
+            <strong>Name:</strong> {user.firstName} {user.lastName}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.userEmail}
+          </p>
+          <p>
+            <strong>Role:</strong> {user.userRole}
+          </p>
+          <p>
+            <strong>Date Registered:</strong> {user.dateRegistered}
+          </p>
+          <p>
+            <strong>Last Login:</strong> {user.lastLogin}
+          </p>
         </div>
       ) : (
         <p>No user selected</p>
       )}
     </Modal.Body>
     <Modal.Footer>
-      <Button variant="secondary" onClick={onClose}>Close</Button>
+      <Button variant="secondary" onClick={onClose}>
+        Close
+      </Button>
     </Modal.Footer>
   </Modal>
 );
@@ -63,7 +76,9 @@ const AdminUserPage = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.get(`${API_BASE_URL}/user/getUserByEmail/${searchEmail}`);
+      const response = await axios.get(
+        `${API_BASE_URL}/user/getUserByEmail/${searchEmail}`
+      );
       setSearchResult(response.data || null);
       if (!response.data) {
         toast.error("User not found");
@@ -90,7 +105,9 @@ const AdminUserPage = () => {
   // Promote user to Travel Guide
   const promoteToGuide = async (userId) => {
     try {
-      await axios.put(`${API_BASE_URL}/user/travelgudie/${userId}`, { userRole: "travelGuide" });
+      await axios.put(`${API_BASE_URL}/user/travelgudie/${userId}`, {
+        userRole: "travelGuide",
+      });
       toast.success("User promoted to Travel Guide");
       fetchUsers();
     } catch (error) {
@@ -108,100 +125,104 @@ const AdminUserPage = () => {
   }, []);
 
   return (
-     <div>
-            <Sidebar/>
-            <Nav/>
-    <div className="container mt-4">
-      <ToastContainer />
-      <h2 className="text-center">Admin User Management</h2>
-      <br />
-      <div className="mb-4 search-container">
-        <Form.Group className="d-flex w-50">
-          <Form.Control
-            type="email"
-            placeholder="Search user by email"
-            value={searchEmail}
-            onChange={(e) => setSearchEmail(e.target.value)}
-          />
-          <Button variant="primary" onClick={searchUserByEmail}>
-            Search
-          </Button>
-        </Form.Group>
-        {searchResult === null && searchEmail && (
-          <div className="mt-3">
-            <h5>No user found with that email address</h5>
-          </div>
-        )}
-        {searchResult && (
-          <div className="mt-3">
-            <h5>Search Result:</h5>
-            <p>
-              {searchResult.firstName} {searchResult.lastName} - {searchResult.userEmail}
-            </p>
-          </div>
-        )}
-      </div>
+    <div>
+      <Sidebar />
+      <Nav />
+      <div className="container mt-4">
+        <ToastContainer />
+        <h2 className="text-center">Admin User Management</h2>
+        <br />
+        <div className="mb-4 search-container">
+          <Form.Group className="d-flex w-50">
+            <Form.Control
+              type="email"
+              placeholder="Search user by email"
+              value={searchEmail}
+              onChange={(e) => setSearchEmail(e.target.value)}
+            />
+            <Button variant="primary" onClick={searchUserByEmail}>
+              Search
+            </Button>
+          </Form.Group>
+          {searchResult === null && searchEmail && (
+            <div className="mt-3">
+              <h5>No user found with that email address</h5>
+            </div>
+          )}
+          {searchResult && (
+            <div className="mt-3">
+              <h5>Search Result:</h5>
+              <p>
+                {searchResult.firstName} {searchResult.lastName} -{" "}
+                {searchResult.userEmail}
+              </p>
+            </div>
+          )}
+        </div>
 
-      {/* Show loading spinner if users are being fetched */}
-      {loading ? (
-        <Spinner animation="border" className="d-block mx-auto" />
-      ) : (
-        <Table striped bordered hover responsive>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Email</th>
-              <th>Role</th>
-              <th>Date Registered</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {(searchResult ? [searchResult] : users).map((user, index) => (
-              <tr key={user.userId}>
-                <td>{index + 1}</td>
-                <td>{user.firstName} {user.lastName}</td>
-                <td>{user.userEmail}</td>
-                <td>{user.userRole}</td>
-                <td>{user.dateRegistered}</td>
-                <td className="d-flex justify-content-center">
-                  <Button
-                    variant="danger"
-                    size="sm"
-                    onClick={() => deleteUser(user.userId)}
-                  >
-                    Delete
-                  </Button>{" "}
-                  {user.userRole !== "travelGuide" && (
-                    <Button
-                      variant="warning"
-                      size="sm"
-                      onClick={() => promoteToGuide(user.userId)}
-                    >
-                      Promote to Guide
-                    </Button>
-                  )}{" "}
-                  <Button
-                    variant="info"
-                    size="sm"
-                    onClick={() => handleViewHistory(user)}
-                  >
-                    View History
-                  </Button>
-                </td>
+        {/* Show loading spinner if users are being fetched */}
+        {loading ? (
+          <Spinner animation="border" className="d-block mx-auto" />
+        ) : (
+          <Table striped bordered hover responsive>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Date Registered</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
-      )}
+            </thead>
+            <tbody>
+              {(searchResult ? [searchResult] : users).map((user, index) => (
+                <tr key={user.userId}>
+                  <td>{index + 1}</td>
+                  <td>
+                    {user.firstName} {user.lastName}
+                  </td>
+                  <td>{user.userEmail}</td>
+                  <td>{user.userRole}</td>
+                  <td>{user.dateRegistered}</td>
+                  <td className="d-flex justify-content-center">
+                    <Button
+                      variant="danger"
+                      size="sm"
+                      onClick={() => deleteUser(user.userId)}
+                    >
+                      Delete
+                    </Button>{" "}
+                    {user.userRole !== "travelGuide" && (
+                      <Button
+                        variant="warning"
+                        size="sm"
+                        onClick={() => promoteToGuide(user.userId)}
+                      >
+                        Promote to Guide
+                      </Button>
+                    )}{" "}
+                    <Button
+                      variant="info"
+                      size="sm"
+                      onClick={() => handleViewHistory(user)}
+                    >
+                      View History
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
 
-      <UserHistoryModal
-        show={showModal}
-        user={selectedUser}
-        onClose={() => setShowModal(false)}
-      />
-    </div></div>
+        <UserHistoryModal
+          show={showModal}
+          user={selectedUser}
+          onClose={() => setShowModal(false)}
+        />
+      </div>
+    </div>
   );
 };
 

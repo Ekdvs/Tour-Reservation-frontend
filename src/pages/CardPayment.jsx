@@ -17,7 +17,8 @@ export default function CardPayment() {
   // Validate Visa and MasterCard number
   const validateCardNumber = (number) => {
     const visaRegex = /^4\d{12}(\d{3})?$/;
-    const masterCardRegex = /^(5[1-5]\d{14}|222[1-9]\d{12}|22[3-9]\d{13}|23[0-9]\d{12}|24[0-9]\d{12}|25[0-9]\d{12}|26[0-9]\d{12}|27[0-9]\d{12}|2720\d{12})$/;
+    const masterCardRegex =
+      /^(5[1-5]\d{14}|222[1-9]\d{12}|22[3-9]\d{13}|23[0-9]\d{12}|24[0-9]\d{12}|25[0-9]\d{12}|26[0-9]\d{12}|27[0-9]\d{12}|2720\d{12})$/;
     return visaRegex.test(number) || masterCardRegex.test(number);
   };
 
@@ -36,7 +37,8 @@ export default function CardPayment() {
     const newErrors = {};
 
     if (!validateCardNumber(cardNumber)) {
-      newErrors.cardNumber = "Card number must be valid for Visa or MasterCard.";
+      newErrors.cardNumber =
+        "Card number must be valid for Visa or MasterCard.";
     }
     if (!validateExpiry(expiry)) {
       newErrors.expiry = "Expiry date must be valid and in the future.";
@@ -64,7 +66,10 @@ export default function CardPayment() {
         console.log("Sending payment data:", paymentData); // Debugging
 
         // Make an API request to process payment
-        const response = await axios.post("http://localhost:8080/payment/process", paymentData);
+        const response = await axios.post(
+          "http://localhost:8080/payment/process",
+          paymentData
+        );
 
         console.log("Payment response:", response); // Debugging
 
@@ -80,7 +85,11 @@ export default function CardPayment() {
         console.error("Payment error:", error); // Log the error for debugging
         if (error.response) {
           // Handle errors from the backend
-          alert(`Payment failed: ${error.response.data.message || "Please try again."}`);
+          alert(
+            `Payment failed: ${
+              error.response.data.message || "Please try again."
+            }`
+          );
         } else {
           // Handle other types of errors (e.g., network issues)
           alert("Payment failed due to a network error. Please try again.");
@@ -96,12 +105,21 @@ export default function CardPayment() {
       <Topbar />
       <Navbar />
       <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+        <div
+          className="container text-center py-5"
+          style={{ maxWidth: "900px" }}
+        >
           <h3 className="text-white display-3 mb-4">Online Payment</h3>
           <ol className="breadcrumb justify-content-center mb-0">
-            <li className="breadcrumb-item"><a href="/">Home</a></li>
-            <li className="breadcrumb-item"><a href="/Travel_Booking">Pages</a></li>
-            <li className="breadcrumb-item active text-white">Online Booking</li>
+            <li className="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li className="breadcrumb-item">
+              <a href="/Travel_Booking">Pages</a>
+            </li>
+            <li className="breadcrumb-item active text-white">
+              Online Booking
+            </li>
           </ol>
         </div>
       </div>
@@ -116,15 +134,26 @@ export default function CardPayment() {
                       <span>CREDIT/DEBIT CARD PAYMENT</span>
                     </div>
                     <div className="col-md-5 text-right">
-                      <img src="https://img.icons8.com/color/36/000000/visa.png" alt="Visa" />
-                      <img src="https://img.icons8.com/color/36/000000/mastercard.png" alt="Mastercard" />
-                      <img src="https://img.icons8.com/color/36/000000/amex.png" alt="Amex" />
+                      <img
+                        src="https://img.icons8.com/color/36/000000/visa.png"
+                        alt="Visa"
+                      />
+                      <img
+                        src="https://img.icons8.com/color/36/000000/mastercard.png"
+                        alt="Mastercard"
+                      />
+                      <img
+                        src="https://img.icons8.com/color/36/000000/amex.png"
+                        alt="Amex"
+                      />
                     </div>
                   </div>
                 </div>
                 <div className="card-body">
                   <div className="form-group">
-                    <label htmlFor="cc-number" className="control-label">CARD NUMBER</label>
+                    <label htmlFor="cc-number" className="control-label">
+                      CARD NUMBER
+                    </label>
                     <input
                       id="cc-number"
                       type="tel"
@@ -136,24 +165,35 @@ export default function CardPayment() {
                       onChange={(e) => setCardNumber(e.target.value)}
                       required
                     />
-                    {errors.cardNumber && <small className="text-danger">{errors.cardNumber}</small>}
+                    {errors.cardNumber && (
+                      <small className="text-danger">{errors.cardNumber}</small>
+                    )}
                   </div>
                   <div className="row">
                     <div className="col-md-6">
                       <div className="form-group">
-                        <label htmlFor="cc-exp" className="control-label">CARD EXPIRY</label>
+                        <label htmlFor="cc-exp" className="control-label">
+                          CARD EXPIRY
+                        </label>
                         <div className="d-flex">
                           <select
                             id="cc-exp-month"
                             className="form-control"
                             style={{ marginRight: "10px" }}
                             value={expiry.month}
-                            onChange={(e) => setExpiry({ ...expiry, month: e.target.value })}
+                            onChange={(e) =>
+                              setExpiry({ ...expiry, month: e.target.value })
+                            }
                             required
                           >
-                            <option value="" disabled>Month</option>
+                            <option value="" disabled>
+                              Month
+                            </option>
                             {Array.from({ length: 12 }, (_, i) => (
-                              <option key={i + 1} value={String(i + 1).padStart(2, "0")}>
+                              <option
+                                key={i + 1}
+                                value={String(i + 1).padStart(2, "0")}
+                              >
                                 {String(i + 1).padStart(2, "0")}
                               </option>
                             ))}
@@ -162,23 +202,34 @@ export default function CardPayment() {
                             id="cc-exp-year"
                             className="form-control"
                             value={expiry.year}
-                            onChange={(e) => setExpiry({ ...expiry, year: e.target.value })}
+                            onChange={(e) =>
+                              setExpiry({ ...expiry, year: e.target.value })
+                            }
                             required
                           >
-                            <option value="" disabled>Year</option>
+                            <option value="" disabled>
+                              Year
+                            </option>
                             {Array.from({ length: 10 }, (_, i) => (
-                              <option key={i} value={new Date().getFullYear() + i}>
+                              <option
+                                key={i}
+                                value={new Date().getFullYear() + i}
+                              >
                                 {new Date().getFullYear() + i}
                               </option>
                             ))}
                           </select>
                         </div>
-                        {errors.expiry && <small className="text-danger">{errors.expiry}</small>}
+                        {errors.expiry && (
+                          <small className="text-danger">{errors.expiry}</small>
+                        )}
                       </div>
                     </div>
                     <div className="col-md-6">
                       <div className="form-group">
-                        <label htmlFor="cc-cvc" className="control-label">CARD / CVC</label>
+                        <label htmlFor="cc-cvc" className="control-label">
+                          CARD / CVC
+                        </label>
                         <input
                           id="cc-cvc"
                           type="tel"
@@ -190,12 +241,16 @@ export default function CardPayment() {
                           onChange={(e) => setCvc(e.target.value)}
                           required
                         />
-                        {errors.cvc && <small className="text-danger">{errors.cvc}</small>}
+                        {errors.cvc && (
+                          <small className="text-danger">{errors.cvc}</small>
+                        )}
                       </div>
                     </div>
                   </div>
                   <div className="form-group">
-                    <label htmlFor="card-holder" className="control-label">CARD HOLDER NAME</label>
+                    <label htmlFor="card-holder" className="control-label">
+                      CARD HOLDER NAME
+                    </label>
                     <input
                       id="card-holder"
                       type="text"
@@ -204,7 +259,9 @@ export default function CardPayment() {
                       onChange={(e) => setCardHolder(e.target.value)}
                       required
                     />
-                    {errors.cardHolder && <small className="text-danger">{errors.cardHolder}</small>}
+                    {errors.cardHolder && (
+                      <small className="text-danger">{errors.cardHolder}</small>
+                    )}
                   </div>
                   <div className="form-control">
                     <button

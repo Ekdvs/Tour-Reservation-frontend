@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const BlogDetail = () => {
   const [blog, setBlog] = useState(null);
@@ -18,7 +18,9 @@ const BlogDetail = () => {
   if (!blog) {
     return (
       <div className="container text-center mt-5">
-        <p className="text-muted">No blog details available. Please try again.</p>
+        <p className="text-muted">
+          No blog details available. Please try again.
+        </p>
       </div>
     );
   }
@@ -37,7 +39,10 @@ const BlogDetail = () => {
         <Navbar />
       </div>
       <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+        <div
+          className="container text-center py-5"
+          style={{ maxWidth: "900px" }}
+        >
           <h3 className="text-white display-3 mb-4">Blogs</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
@@ -46,7 +51,9 @@ const BlogDetail = () => {
             <li className="breadcrumb-item">
               <a href="/Blogs">Pages</a>
             </li>
-            <li className="breadcrumb-item"><a href="">Blogs</a></li>
+            <li className="breadcrumb-item">
+              <a href="">Blogs</a>
+            </li>
             <li className="breadcrumb-item active text-white">{blog.title}</li>
           </ol>
         </div>
@@ -92,7 +99,6 @@ const BlogDetail = () => {
                   <li className="list-group-item">
                     <strong>Author:</strong> {blog.author || "N/A"}
                   </li>
-                  
                 </ul>
               </div>
             </div>
@@ -100,7 +106,9 @@ const BlogDetail = () => {
             {/* Description Section */}
             <div className="mt-4">
               <h4 className="text-primary">Description</h4>
-              <p className="text-muted">{blog.description || "Content not provided."}</p>
+              <p className="text-muted">
+                {blog.description || "Content not provided."}
+              </p>
             </div>
             <button
               className="btn btn-primary btn-lg w-100"

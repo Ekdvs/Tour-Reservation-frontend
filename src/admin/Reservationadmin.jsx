@@ -5,7 +5,10 @@ const Reservationadmin = () => {
   const [reservations, setReservations] = useState([]);
   const [totalCharge, setTotalCharge] = useState(0);
   const [totalTickets, setTotalTickets] = useState(0);
-  const [newReservation, setNewReservation] = useState({ userId: "", details: "" });
+  const [newReservation, setNewReservation] = useState({
+    userId: "",
+    details: "",
+  });
   const [editReservation, setEditReservation] = useState(null);
 
   // Fetch all reservations
@@ -91,14 +94,18 @@ const Reservationadmin = () => {
             type="text"
             placeholder="User ID"
             value={newReservation.userId}
-            onChange={(e) => setNewReservation({ ...newReservation, userId: e.target.value })}
+            onChange={(e) =>
+              setNewReservation({ ...newReservation, userId: e.target.value })
+            }
             required
           />
           <input
             type="text"
             placeholder="Details"
             value={newReservation.details}
-            onChange={(e) => setNewReservation({ ...newReservation, details: e.target.value })}
+            onChange={(e) =>
+              setNewReservation({ ...newReservation, details: e.target.value })
+            }
             required
           />
           <button type="submit">Add</button>
@@ -114,18 +121,30 @@ const Reservationadmin = () => {
               type="text"
               placeholder="User ID"
               value={editReservation.userId}
-              onChange={(e) => setEditReservation({ ...editReservation, userId: e.target.value })}
+              onChange={(e) =>
+                setEditReservation({
+                  ...editReservation,
+                  userId: e.target.value,
+                })
+              }
               required
             />
             <input
               type="text"
               placeholder="Details"
               value={editReservation.details}
-              onChange={(e) => setEditReservation({ ...editReservation, details: e.target.value })}
+              onChange={(e) =>
+                setEditReservation({
+                  ...editReservation,
+                  details: e.target.value,
+                })
+              }
               required
             />
             <button type="submit">Update</button>
-            <button type="button" onClick={() => setEditReservation(null)}>Cancel</button>
+            <button type="button" onClick={() => setEditReservation(null)}>
+              Cancel
+            </button>
           </form>
         </div>
       )}
@@ -149,8 +168,12 @@ const Reservationadmin = () => {
                 <td>{reservation.userId}</td>
                 <td>{reservation.details}</td>
                 <td>
-                  <button onClick={() => setEditReservation(reservation)}>Edit</button>
-                  <button onClick={() => deleteReservation(reservation.id)}>Delete</button>
+                  <button onClick={() => setEditReservation(reservation)}>
+                    Edit
+                  </button>
+                  <button onClick={() => deleteReservation(reservation.id)}>
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}
@@ -161,4 +184,4 @@ const Reservationadmin = () => {
   );
 };
 
-export default Reservationadmin ;
+export default Reservationadmin;

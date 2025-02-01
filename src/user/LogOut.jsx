@@ -57,7 +57,10 @@ export default function LogOut() {
   }, [navigate]);
 
   return (
-    <div className="logout-container" style={{ textAlign: "center", marginTop: "50px",fontSize:"50px" }}>
+    <div
+      className="logout-container"
+      style={{ textAlign: "center", marginTop: "50px", fontSize: "50px" }}
+    >
       <h2>Logging out...</h2>
       <p>You are being logged out. Please wait.</p>
       <ToastContainer
