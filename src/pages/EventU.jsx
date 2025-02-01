@@ -47,11 +47,14 @@ const EventShowPage = () => {
 
   // Save event to local storage
   const saveToLocalStorage = (event) => {
-    localStorage.setItem("selectedEvent", JSON.stringify(event));
-    setTimeout(() => {
-      navigate("/cart");
-    }, 3000);
+    if (event && event.eventId) {
+      localStorage.setItem("selectedEventId", event.eventId);
+      setTimeout(() => {
+        navigate("/cart");
+      }, 3000);
+    }
   };
+  
 
   return (
     <div>

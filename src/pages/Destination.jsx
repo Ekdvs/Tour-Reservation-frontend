@@ -41,7 +41,9 @@ const Destination = () => {
 
   // Save place data to localStorage
   const saveToLocalStorage = (place) => {
-    localStorage.setItem("selectedPlace", JSON.stringify(place));
+    if (place && place.placeId) {
+      localStorage.setItem("selectedPlaceId", place.placeId);
+    }
   };
 
   return (
@@ -74,8 +76,8 @@ const Destination = () => {
         }}
       >
         {/* Carousel Section */}
-        <div className="container mt-5">
-          <h2 className="text-center mb-4">Featured Destinations</h2>
+        <div className="container ">
+          <h2 className="text-center mb-4"><br></br>Featured Destinations</h2>
           <Carousel>
             {places.slice(0, 10).map((place) => (
               <Carousel.Item key={place.placeId}>
@@ -124,7 +126,7 @@ const Destination = () => {
           </div>
 
           {/* List of Places */}
-          <div className="place-grid mb-5">
+          <div className="place-grid ">
             {places.map((place) => (
               <div key={place.placeId} className="place-card">
                 <img

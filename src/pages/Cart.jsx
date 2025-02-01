@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import axios from 'axios'; // Make sure you have axios installed
 
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
@@ -16,11 +17,21 @@ const Cart = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Retrieve selected event from localStorage
-    const eventData = JSON.parse(localStorage.getItem("selectedEvent"));
-    if (eventData) {
-      setSelectedEvent(eventData);
-      setLoading(false);
+    // Retrieve event ID from localStorage and fetch event details via API
+    const eventId = localStorage.getItem("selectedEventId");
+    
+    if (eventId) {
+      // Fetch event details by ID
+      axios
+        .get(`http://localhost:8080/event/getEventById/${eventId}`)
+        .then((response) => {
+          setSelectedEvent(response.data); // Assuming response.data contains event data
+          setLoading(false);
+        })
+        .catch((err) => {
+          setLoading(false);
+          setError("Error fetching event details.");
+        });
     } else {
       setLoading(false);
       setError("No event selected. Please go back to the events page.");
@@ -45,17 +56,14 @@ const Cart = () => {
   };
 
   const handlePayment = () => {
-    // Check if the user is logged in by checking for a token in localStorage (or any other storage mechanism you're using)
     const userToken = localStorage.getItem("userToken"); // Replace with your actual authentication method
 
     if (!userEmail) {
-      // If not logged in, redirect to login page
       toast.error("Please log in to proceed with the payment.");
       setTimeout(() => {
-        navigate("/login"); // Redirect to login page
+        navigate("/login");
       }, 2000);
     } else {
-      // If logged in, proceed with payment
       toast.success("Proceeding to payment...");
       setTimeout(() => {
         navigate("/payment", {
@@ -66,15 +74,14 @@ const Cart = () => {
             numOfTickets,
           },
         });
-      }, 2000); // Simulate a delay before navigating to the payment page
+      }, 2000);
     }
   };
 
-  // Navigate back to the events page after 2000ms delay
   const handleBackToEvents = () => {
     setTimeout(() => {
       navigate("/EventShowPage");
-      localStorage.removeItem("selectedEvent");
+      localStorage.removeItem("selectedEventId");
     }, 2000);
   };
 
@@ -102,15 +109,13 @@ const Cart = () => {
         </div>
       </div>
       <div style={{
-         backgroundImage: `linear-gradient(rgba(28, 86, 202, 0.6), rgba(19, 53, 123, 0.6)), url("data:${selectedEvent.contentType};base64,${selectedEvent.imageData}")`,
-
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}>
-      <div className="container ">
+         backgroundImage: `linear-gradient(rgba(28, 86, 202, 0.6), rgba(19, 53, 123, 0.6)), url("data:${selectedEvent?.contentType};base64,${selectedEvent?.imageData}")`,
+         backgroundSize: "cover",
+         backgroundPosition: "center",
+      }}>
+      <div className="container">
         <h1 className="text-center mb-4"><br></br>Event Booking</h1>
         <ToastContainer />
-
         {loading ? (
           <p className="text-center">Loading event details...</p>
         ) : error ? (
@@ -118,7 +123,7 @@ const Cart = () => {
         ) : (
           <div>
             <h3>Event Details</h3>
-            <div className="card  shadow-lg">
+            <div className="card shadow-lg">
               <img
                 src={`data:${selectedEvent.contentType};base64,${selectedEvent.imageData}`}
                 className="card-img-top img-fluid w-100"
