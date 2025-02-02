@@ -24,8 +24,17 @@ export default function Profile() {
     imageData: "",
   });
 
+  
+
   // Fetch profile data
   useEffect(() => {
+
+    if (!userEmail) {
+      toast.error("User is not logged in!");
+      
+      navigate("/login");
+      return;
+    }
     axios
       .get(`http://localhost:8080/user/getUserByEmail/${userEmail}`)
       .then((response) => {

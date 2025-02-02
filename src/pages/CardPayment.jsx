@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -14,12 +14,40 @@ export default function CardPayment() {
   const [cvc, setCvc] = useState("");
   const [cardHolder, setCardHolder] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [userId, setUserId] = useState("");
+  const [reservationId, setReservationId] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const amount = localStorage.getItem("totalPrice");
+    const user = localStorage.getItem("userEmail");
+    const reservation = localStorage.getItem("reservationId");
+
+    if (amount) {
+      setTotalPrice(parseFloat(amount));
+    }
+    if (user) {
+      setUserId(user);
+    }
+    if (reservation !== null) {
+      setReservationId(reservation);
+    } else {
+      toast.error("Reservation ID not found.");
+    }
+  }, []);
+
+  // Function to validate Visa or MasterCard card number
+  const getPaymentMethod = (number) => {
+    const visaRegex = /^4\d{12}(\d{3})?$/; // Visa card pattern
+    const masterCardRegex = /^(5[1-5]\d{14}|2[2-7]\d{14})$/; // MasterCard pattern
+    if (visaRegex.test(number)) return "Visa";
+    if (masterCardRegex.test(number)) return "MasterCard";
+    return null; // Return null if card is not valid
+  };
+
   const validateCardNumber = (number) => {
-    const visaRegex = /^4\d{12}(\d{3})?$/;
-    const masterCardRegex = /^(5[1-5]\d{14}|2[2-7]\d{14})$/;
-    return visaRegex.test(number) || masterCardRegex.test(number);
+    return getPaymentMethod(number) !== null;
   };
 
   const validateExpiry = ({ month, year }) => {
@@ -34,7 +62,7 @@ export default function CardPayment() {
 
   const handlePayment = async (e) => {
     e.preventDefault();
-    
+
     if (!validateCardNumber(cardNumber)) {
       toast.error("Invalid Visa or MasterCard number.");
       return;
@@ -52,15 +80,30 @@ export default function CardPayment() {
       return;
     }
 
+    const paymentMethod = getPaymentMethod(cardNumber); // Get the payment method (Visa/MasterCard)
+
     setIsProcessing(true);
     try {
-      const response = await axios.post("http://localhost:8080/payments/process", {
-        cardNumber, expiry, cvc, cardHolder,
+      const response = await axios.post("http://localhost:8080/payment/create", {
+        userEmail: userId, // Send user email from state
+        reservationId,
+        amount: totalPrice,
+        paymentMethod, // Send Visa/MasterCard as payment method
       });
 
-      if (response.status === 201) {
-        toast.success("Payment Successful!");
-        setTimeout(() => navigate("/"), 2000);
+      if (response.status === 200) {
+        toast.success(`Payment of $${totalPrice} Successful!`);
+
+        // Clear localStorage after successful payment
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("reservationId");
+        localStorage.removeItem("totalPrice");
+
+        // Show total price message before navigating
+        setTimeout(() => {
+          toast.info(`You have successfully paid $${totalPrice}. Navigating to home page...`);
+          navigate("/");  // Redirect to home page after 2 seconds
+        }, 2000);
       }
     } catch (error) {
       toast.error("Payment failed. Please try again.");
@@ -72,34 +115,90 @@ export default function CardPayment() {
     <div>
       <Topbar />
       <Navbar />
+      <div className="container-fluid bg-breadcrumb">
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+          <h3 className="text-white display-3 mb-4">Online Payment</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item"><a href="/">Home</a></li>
+            <li className="breadcrumb-item"><a href="/Travel_Booking">Pages</a></li>
+            <li className="breadcrumb-item active text-white">Online Booking</li>
+          </ol>
+        </div>
+      </div>
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
       <div className="container mt-5 p-4 shadow rounded bg-light" style={{ maxWidth: "500px" }}>
         <h2 className="text-center mb-4">Secure Payment</h2>
         <form onSubmit={handlePayment}>
           <div className="mb-3">
-            <label className="form-label">Card Number</label>
-            <input type="text" className="form-control" value={cardNumber} onChange={(e) => setCardNumber(e.target.value)} placeholder="Enter Visa/MasterCard number" />
+            <label className="form-label" style={{ color: 'blue', fontSize: '16px' }}>Card Number</label>
+            <input
+              type="text"
+              className="form-control"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+              placeholder="Enter Visa/MasterCard number"
+              maxLength="16"
+            />
           </div>
           <div className="mb-3 d-flex">
             <div className="me-2">
-              <label className="form-label">Expiry Month</label>
-              <input type="text" className="form-control" value={expiry.month} onChange={(e) => setExpiry({ ...expiry, month: e.target.value })} placeholder="MM" />
+              <label className="form-label" style={{ color: 'blue', fontSize: '16px' }}>Expiry Month</label>
+              <select
+                className="form-control"
+                value={expiry.month}
+                onChange={(e) => setExpiry({ ...expiry, month: e.target.value })}
+                style={{ color: 'blue', fontSize: '16px' }}
+              >
+                <option value="">MM</option>
+                {Array.from({ length: 12 }, (_, i) => i + 1).map((month) => (
+                  <option key={month} value={month < 10 ? `0${month}` : month}>
+                    {month < 10 ? `0${month}` : month}
+                  </option>
+                ))}
+              </select>
             </div>
             <div>
-              <label className="form-label">Expiry Year</label>
-              <input type="text" className="form-control" value={expiry.year} onChange={(e) => setExpiry({ ...expiry, year: e.target.value })} placeholder="YY" />
+              <label className="form-label" style={{ color: 'blue', fontSize: '16px' }}>Expiry Year</label>
+              <select
+                className="form-control"
+                value={expiry.year}
+                onChange={(e) => setExpiry({ ...expiry, year: e.target.value })}
+                style={{ color: 'blue', fontSize: '16px' }}
+              >
+                <option value="">YY</option>
+                {Array.from({ length: 10 }, (_, i) => 2025 + i).map((year) => (
+                  <option key={year} value={year}>{year}</option>
+                ))}
+              </select>
             </div>
           </div>
           <div className="mb-3">
-            <label className="form-label">CVC</label>
-            <input type="text" className="form-control" value={cvc} onChange={(e) => setCvc(e.target.value)} placeholder="3-digit CVC" />
+            <label className="form-label" style={{ color: 'blue', fontSize: '16px' }}>CVC</label>
+            <input
+              type="text"
+              className="form-control"
+              value={cvc}
+              onChange={(e) => setCvc(e.target.value)}
+              placeholder="3-digit CVC"
+              maxLength="3"
+            />
           </div>
           <div className="mb-3">
-            <label className="form-label">Cardholder Name</label>
-            <input type="text" className="form-control" value={cardHolder} onChange={(e) => setCardHolder(e.target.value)} placeholder="Enter cardholder name" />
+            <label className="form-label" style={{ color: 'blue', fontSize: '16px' }}>Cardholder Name</label>
+            <input
+              type="text"
+              className="form-control"
+              value={cardHolder}
+              onChange={(e) => setCardHolder(e.target.value)}
+              placeholder="Enter cardholder name"
+            />
           </div>
-          <button type="submit" className="btn btn-primary w-100" disabled={isProcessing}>
-            {isProcessing ? "Processing..." : "Pay Now"}
+          <button
+            type="submit"
+            className="btn btn-primary w-100 mt-4"
+            disabled={isProcessing}
+          >
+            {isProcessing ? 'Processing...' : 'Pay Now'}
           </button>
         </form>
       </div>

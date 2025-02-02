@@ -5,7 +5,7 @@ const AuroraEffect = () => {
   return (
     <div className="contente">
       <h1 className="title">
-        Vishwa Sampath
+        Maldi Neshama
         <div className="aurora">
           <div className="aurora__item"></div>
           <div className="aurora__item"></div>

@@ -57,13 +57,11 @@ export default function Footer() {
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="mb-4 text-white">Company</h4>
-                <a href="">
+                <a href="/about">
                   <i className="fas fa-angle-right me-2"></i> About
                 </a>
-                <a href="">
-                  <i className="fas fa-angle-right me-2"></i> Careers
-                </a>
-                <a href="">
+                
+                <a href="/blog">
                   <i className="fas fa-angle-right me-2"></i> Blog
                 </a>
               </div>
@@ -71,19 +69,18 @@ export default function Footer() {
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="mb-4 text-white">Support</h4>
-                <a href="">
+                <a href="/contact">
                   <i className="fas fa-angle-right me-2"></i> Contact
                 </a>
-                <a href="">
+                
+                <a href="/privacy-policy">
                   <i className="fas fa-angle-right me-2"></i> Privacy Policy
                 </a>
-                <a href="">
+                <a href="/TermsAndConditions">
                   <i className="fas fa-angle-right me-2"></i> Terms and
                   Conditions
                 </a>
-                <a href="">
-                  <i className="fas fa-angle-right me-2"></i> Sitemap
-                </a>
+                
               </div>
             </div>
             <div className="col-md-6 col-lg-6 col-xl-3">

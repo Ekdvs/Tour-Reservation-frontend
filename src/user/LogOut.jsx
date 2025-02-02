@@ -36,6 +36,7 @@ const LogOut = () => {
           localStorage.removeItem("userToken");
           localStorage.removeItem("userEmail");
           localStorage.removeItem("userRole");
+          localStorage.clear();
 
           // Show success message
           toast.success("Logged out successfully!");
