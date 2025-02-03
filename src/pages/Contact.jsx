@@ -52,6 +52,8 @@ export default function Contact() {
           backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/R.jpeg)`,
           backgroundSize: "cover",
           background_attachment: "fixed",
+          borderRadius: "15px",
+          borderTop: "2px solid #fff",
         }}
       >
         <div className="container py-5">
