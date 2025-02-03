@@ -60,6 +60,8 @@ const BlogPage = () => {
           backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/subscribe-img.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          borderRadius: "15px",
+          borderTop: "2px solid #fff",
         }}
       >
         {/* Carousel Section for Featured Blogs */}
