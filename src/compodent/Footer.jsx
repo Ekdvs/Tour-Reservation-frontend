@@ -41,7 +41,7 @@ export default function Footer() {
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://www.instagram.com/theceylontrav/"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
