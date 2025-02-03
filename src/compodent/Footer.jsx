@@ -47,7 +47,7 @@ export default function Footer() {
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://www.linkedin.com/company/106320117/admin/page-posts/published/"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
