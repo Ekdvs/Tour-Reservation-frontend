@@ -29,7 +29,7 @@ export default function Footer() {
                   <i className="fas fa-share fa-2x text-white me-2"></i>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://web.facebook.com/profile.php?id=61572509287749"
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
@@ -60,7 +60,7 @@ export default function Footer() {
                 <a href="/about">
                   <i className="fas fa-angle-right me-2"></i> About
                 </a>
-                
+
                 <a href="/blog">
                   <i className="fas fa-angle-right me-2"></i> Blog
                 </a>
@@ -72,7 +72,7 @@ export default function Footer() {
                 <a href="/contact">
                   <i className="fas fa-angle-right me-2"></i> Contact
                 </a>
-                
+
                 <a href="/privacy-policy">
                   <i className="fas fa-angle-right me-2"></i> Privacy Policy
                 </a>
@@ -80,7 +80,6 @@ export default function Footer() {
                   <i className="fas fa-angle-right me-2"></i> Terms and
                   Conditions
                 </a>
-                
               </div>
             </div>
             <div className="col-md-6 col-lg-6 col-xl-3">
