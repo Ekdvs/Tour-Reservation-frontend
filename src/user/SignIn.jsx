@@ -63,7 +63,10 @@ export default function SignIn() {
       <Topbar />
       <Navbar />
       <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+        <div
+          className="container text-center py-5"
+          style={{ maxWidth: "900px" }}
+        >
           <h3 className="text-white display-3 mb-4">Login</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
@@ -78,84 +81,87 @@ export default function SignIn() {
       </div>
 
       <div
-  style={{
-    backgroundImage: "url('../img/R.jpeg')",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    height: "100vh", 
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }}
->
-      <div className="container my-5">
-        <div className="card mx-auto" style={{ maxWidth: "500px" }}>
-          <div className="card-body">
-            <h5 className="card-title text-center">Sign In</h5>
-            <form onSubmit={handleSignIn}>
-              <div className="form-group mb-3">
-                <label htmlFor="email" className="form-label">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="form-control"
-                  id="email"
-                  value={userEmail}
-                  onChange={(e) => setUserEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  required
-                />
-              </div>
-
-              <div className="form-group mb-3">
-                <label htmlFor="password" className="form-label">
-                  Password
-                </label>
-                <div className="input-group">
+        style={{
+          backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/R.jpeg)`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <div className="container my-5">
+          <div className="card mx-auto" style={{ maxWidth: "500px" }}>
+            <div className="card-body">
+              <h5 className="card-title text-center">Sign In</h5>
+              <form onSubmit={handleSignIn}>
+                <div className="form-group mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
                   <input
-                    type={showPassword ? "text" : "password"}
+                    type="email"
                     className="form-control"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Enter your password"
+                    id="email"
+                    value={userEmail}
+                    onChange={(e) => setUserEmail(e.target.value)}
+                    placeholder="Enter your email"
                     required
                   />
+                </div>
+
+                <div className="form-group mb-3">
+                  <label htmlFor="password" className="form-label">
+                    Password
+                  </label>
+                  <div className="input-group">
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      className="form-control"
+                      id="password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="input-group-text"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    </button>
+                  </div>
+                </div>
+
+                <div className="d-grid">
                   <button
-                    type="button"
-                    className="input-group-text"
-                    onClick={() => setShowPassword(!showPassword)}
+                    type="submit"
+                    className="btn btn-primary rounded-pill"
                   >
-                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+                    Sign In
                   </button>
                 </div>
-              </div>
+              </form>
 
-              <div className="d-grid">
-                <button type="submit" className="btn btn-primary rounded-pill">
-                  Sign In
-                </button>
+              <div className="text-center mt-3">
+                <a href="/ForgotPassword" className="text-decoration-none">
+                  Forgot Password?
+                </a>
               </div>
-            </form>
-
-            <div className="text-center mt-3">
-              <a href="/ForgotPassword" className="text-decoration-none">
-                Forgot Password?
-              </a>
-            </div>
-            <div className="text-center mt-3">
-              <span>Don't have an account? </span>
-              <a href="/register" className="text-decoration-none">
-                Sign Up
-              </a>
+              <div className="text-center mt-3">
+                <span>Don't have an account? </span>
+                <a href="/register" className="text-decoration-none">
+                  Sign Up
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      </div>
-      <Footer/>
+      <Footer />
       <ToastContainer
         position="top-right"
         autoClose={5000}

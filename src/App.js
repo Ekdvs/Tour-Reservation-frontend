@@ -28,7 +28,20 @@ import Explore_Tour from './pages/Explore_Tour';
 import Travel_Guides from './pages/Travel_Guides';
 import Our_Gallery from './pages/Our_Gallery';
 import Blog from './pages/Blog';
-import ReadMorePage from './pages/ReadMorePage';
+
+import PlaceDetail from './pages/PlaceDetail';
+import PackagesAdmin from './admin/Packages';
+import AuroraEffect from './pages/AuroraEffect';
+import BlogManagement from './admin/addBlog';
+import Packages from './pages/Packages';
+import BlogDetails from './pages/BlogDetails';
+import Packageview from './pages/PackagePage';
+import BuyTravelGuide from './pages/BuyTravelGuide';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsAndConditions from './pages/TermsAndConditions';
+
+
+
 
 
 
@@ -69,7 +82,17 @@ function App() {
           <Route path="/Travel_Guides" element={<Travel_Guides />} />
           <Route path="/Our_Gallery" element={<Our_Gallery />} />
           <Route path="/Blog" element={<Blog />} />
-          <Route path="/read-more" element={<ReadMorePage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/place-detail"read-more element={<PlaceDetail />} />
+          <Route path="/addPackages"read-more element={<PackagesAdmin/>} />
+          <Route path="/AuroraEffect"read-more element={<AuroraEffect/>} />
+          <Route path="/addBlog" element={<BlogManagement/>} />
+          <Route path="/Packages" element={<Packages/>} />
+          <Route path="/blog-detail" element={<BlogDetails/>} />
+          <Route path="/packagedeatail" element={<Packageview/>} />
+          <Route path="/travel-guide-booking" element={<BuyTravelGuide />} />
+          <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+
         </Routes>
       </Router>
     </div>

@@ -1,57 +1,113 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Row, Col, Image } from "react-bootstrap";
-import Topbar from "../compodent/Topbar";
-import Navbar from "../compodent/Navbar";
-import Footer from "../compodent/Footer";
-// Image paths from the public folder
-const images = [
-  "/img/gallery-1.jpg",
-  "/img/gallery-2.jpg",
-  "/img/gallery-3.jpg",
-  "/img/gallery-4.jpg",
-  "/img/gallery-5.jpg",
-  "/img/gallery-6.jpg",
-  "/img/gallery-7.jpg",
-  "/img/gallery-8.jpg",
-  "/img/gallery-9.jpg",
-  "/img/gallery-10.jpg",
-  "/img/gallery-11.jpg",
-  "/img/gallery-12.jpg",
-];
+import { Carousel } from "react-bootstrap";
+import Topbar from "../compodent/Topbar"; // Corrected the spelling of 'components'
+import Navbar from "../compodent/Navbar"; // Corrected the spelling of 'components'
+import Footer from "../compodent/Footer"; // Corrected the spelling of 'components'
+import axios from "axios";
+import "./Gallery.css";
 
 export default function Our_Gallery() {
+  const [places, setPlaces] = useState([]);
+
+  const API_BASE_URL = "http://localhost:8080/place";
+
+  // Fetch all places
+  const fetchPlaces = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/allplaces`);
+      setPlaces(response.data);
+    } catch (error) {
+      console.error("Error fetching places:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPlaces();
+  }, []);
+
   return (
     <div>
       <Topbar />
       <div className="navbar-container">
         <Navbar />
       </div>
-      <div class="container-fluid bg-breadcrumb">
-        <div class="container text-center py-5" style={{ maxwidth: "900px" }}>
-          <h3 class="text-white display-3 mb-4">Travel Gallery</h3>
-          <ol class="breadcrumb justify-content-center mb-0">
-            <li class="breadcrumb-item">
-              <a href="index.html">Home</a>
+
+      {/* Breadcrumb Section */}
+      <div className="container-fluid bg-breadcrumb">
+        <div
+          className="container text-center py-5"
+          style={{ maxWidth: "900px" }}
+        >
+          <h3 className="text-white display-3 mb-4">Travel Gallery</h3>
+          <ol className="breadcrumb justify-content-center mb-0">
+            <li className="breadcrumb-item">
+              <a href="/Home">Home</a>
             </li>
-            <li class="breadcrumb-item">
+            <li className="breadcrumb-item">
               <a href="#">Pages</a>
             </li>
-            <li class="breadcrumb-item active text-white">Gallery</li>
+            <li className="breadcrumb-item active text-white">Gallery</li>
           </ol>
         </div>
       </div>
-      <Container className="my-4">
-        <h1 className="text-center mb-4">Capture the Essence of Sri Lanka</h1>
-        <Row>
-          {images.map((src, index) => (
-            <Col xs={6} md={4} key={index} className="mb-4">
-              <Image src={src} rounded fluid className="zoom" />
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <div
+        style={{
+          backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/R.jpeg)`,
+          backgroundSize: "cover",
+          background_attachment: "fixed",
+          borderRadius: "15px",
+          borderTop: "2px solid #fff",
+        }}
+      >
+        {/* Carousel Section */}
+        <div className="container ">
+          <h2 className="text-center mb-4">
+            <br></br>Our Gallery
+          </h2>
+          <Carousel>
+            {places.slice(0, 20).map((place) => (
+              <Carousel.Item key={place.placeId}>
+                <img
+                  src={`data:${place.contentType};base64,${place.imageData}`}
+                  alt={place.placeName}
+                  className="d-block w-100"
+                  style={{
+                    height: "600px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+
+        {/* Grid of Images */}
+        <div className="container mt-5">
+          <h2 className="text-center mb-4">Explore More</h2>
+          <div className="row g-4">
+            {places.map((place) => (
+              <div className="col-lg-4 col-md-10 col-sm-6" key={place.placeId}>
+                <div className="card border-0 shadow">
+                  <div className="zoom-container">
+                    <img
+                      src={`data:${place.contentType};base64,${place.imageData}`}
+                      alt={place.placeName}
+                      className="card-img-top"
+                    />
+                  </div>
+                  <div className="card-body text-center">
+                    <h6 className="card-title">{place.placeName}</h6>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

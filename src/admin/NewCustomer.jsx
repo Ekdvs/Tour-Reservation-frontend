@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const NewCustomers = () => {
   const [newCustomers, setNewCustomers] = useState([]);
 
   useEffect(() => {
     // Fetch new customers from the backend
-    fetch('http://localhost:8080/user/allUsers')
+    fetch("http://localhost:8080/user/allUsers")
       .then((response) => response.json())
       .then((data) => setNewCustomers(data))
-      .catch((error) => console.error('Error fetching new customers:', error));
+      .catch((error) => console.error("Error fetching new customers:", error));
   }, []);
 
   return (
@@ -28,7 +28,10 @@ const NewCustomers = () => {
               >
                 <i className="fas fa-ellipsis-h"></i>
               </button>
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              >
                 <a className="dropdown-item" href="#">
                   Action
                 </a>
@@ -50,7 +53,7 @@ const NewCustomers = () => {
                   src={
                     customer.imageData
                       ? `data:${customer.contentType};base64,${customer.imageData}`
-                      : '../img/profile.jpeg' // Use a default avatar if not available
+                      : "../img/profile.jpeg" // Use a default avatar if not available
                   }
                   alt="..."
                   className="avatar-img rounded-circle"
