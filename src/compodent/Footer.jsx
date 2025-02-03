@@ -35,7 +35,7 @@ export default function Footer() {
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://x.com/ceylon_trav"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
