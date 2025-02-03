@@ -1,6 +1,5 @@
-import React from 'react'
-import Header from './Header'
-
+import React from "react";
+import Header from "./Header";
 
 export default function Footer() {
   return (
@@ -30,25 +29,25 @@ export default function Footer() {
                   <i className="fas fa-share fa-2x text-white me-2"></i>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href="https://web.facebook.com/profile.php?id=61572509287749"
+                    href=""
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href="https://x.com/ceylon_trav"
+                    href=""
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href="https://www.instagram.com/theceylontrav/"
+                    href=""
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href="https://www.linkedin.com/company/106320117/admin/page-posts/published/"
+                    href=""
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
@@ -58,13 +57,11 @@ export default function Footer() {
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="mb-4 text-white">Company</h4>
-                <a href="">
+                <a href="/about">
                   <i className="fas fa-angle-right me-2"></i> About
                 </a>
-                <a href="">
-                  <i className="fas fa-angle-right me-2"></i> Careers
-                </a>
-                <a href="">
+                
+                <a href="/blog">
                   <i className="fas fa-angle-right me-2"></i> Blog
                 </a>
               </div>
@@ -72,19 +69,18 @@ export default function Footer() {
             <div className="col-md-6 col-lg-6 col-xl-3">
               <div className="footer-item d-flex flex-column">
                 <h4 className="mb-4 text-white">Support</h4>
-                <a href="">
+                <a href="/contact">
                   <i className="fas fa-angle-right me-2"></i> Contact
                 </a>
-                <a href="">
+                
+                <a href="/privacy-policy">
                   <i className="fas fa-angle-right me-2"></i> Privacy Policy
                 </a>
-                <a href="">
+                <a href="/TermsAndConditions">
                   <i className="fas fa-angle-right me-2"></i> Terms and
                   Conditions
                 </a>
-                <a href="">
-                  <i className="fas fa-angle-right me-2"></i> Sitemap
-                </a>
+                
               </div>
             </div>
             <div className="col-md-6 col-lg-6 col-xl-3">

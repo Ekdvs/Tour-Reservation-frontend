@@ -25,8 +25,6 @@ const EventShowPage = () => {
     }
   };
 
-  
-
   // Search events by name
   const searchEvents = async () => {
     try {
@@ -45,18 +43,18 @@ const EventShowPage = () => {
 
   useEffect(() => {
     fetchEvents();
-    
   }, []);
 
   // Save event to local storage
   const saveToLocalStorage = (event) => {
-   
-    localStorage.setItem("selectedEvent", JSON.stringify(event));
-  setTimeout(() => {
-      navigate("/cart"); 
-    }, 3000); 
+    if (event && event.eventId) {
+      localStorage.setItem("selectedEventId", event.eventId);
+      setTimeout(() => {
+        navigate("/cart");
+      }, 3000);
+    }
   };
- 
+  
 
   return (
     <div>
@@ -65,7 +63,10 @@ const EventShowPage = () => {
 
       {/* Header Section */}
       <div className="container-fluid bg-breadcrumb">
-        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+        <div
+          className="container text-center py-5"
+          style={{ maxWidth: "900px" }}
+        >
           <h3 className="text-white display-3 mb-4">Upcoming Events</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
@@ -74,59 +75,70 @@ const EventShowPage = () => {
             <li className="breadcrumb-item">
               <a href="/Contact">Pages</a>
             </li>
-            <li className="breadcrumb-item active text-white">Upcoming Events</li>
+            <li className="breadcrumb-item active text-white">
+              Upcoming Events
+            </li>
           </ol>
         </div>
       </div>
 
-      
-
-      {/* Carousel Section */}
-      <div className="container mt-5">
-        <h2 className="text-center mb-4">Featured Events</h2>
-        <Carousel>
-          {events.slice(0, 20).map((event) => (
-            <Carousel.Item key={event.eventId}>
-              <img
-                src={`data:${event.contentType};base64,${event.imageData}`}
-                alt={event.eventName}
-                className="d-block w-100"
-                style={{
-                  height: "600px",
-                  objectFit: "cover",
-                  borderRadius: "10px",
-                }}
-              />
-              <Carousel.Caption>
-                <h3 className="bg-dark text-white p-2 rounded">{event.eventName}</h3>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </div>
-      {/* Search Bar */}
-      <div className="container mt-4">
-        <div className="row justify-content-center mb-4">
-          <div className="col-md-8">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Search events by name..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-              <button className="btn btn-primary" onClick={searchEvents}>
-                Search
-              </button>
+      <div
+        style={{
+          backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/R.jpeg)`,
+          backgroundSize: "cover",
+          background_attachment: "fixed",
+        }}
+      >
+        {/* Carousel Section */}
+        <div className="container ">
+          <h2 className="text-center mb-4">
+            <br></br>Featured Events
+          </h2>
+          <Carousel>
+            {events.slice(0, 20).map((event) => (
+              <Carousel.Item key={event.eventId}>
+                <img
+                  src={`data:${event.contentType};base64,${event.imageData}`}
+                  alt={event.eventName}
+                  className="d-block w-100"
+                  style={{
+                    height: "600px",
+                    objectFit: "cover",
+                    borderRadius: "10px",
+                  }}
+                />
+                <Carousel.Caption>
+                  <h3 className="bg-dark text-white p-2 rounded">
+                    {event.eventName}
+                  </h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+        {/* Search Bar */}
+        <div className="container mt-4">
+          <div className="row justify-content-center mb-4">
+            <div className="col-md-8">
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Search events by name..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+                <button className="btn btn-primary" onClick={searchEvents}>
+                  Search
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      {/* Events Section */}
+        {/* Events Section */}
         <div className="container mt-5">
           <h2 className="text-center mb-4">Upcoming Events</h2>
-          <div className="row mb-5">
+          <div className="row ">
             {events.length > 0 ? (
               events.map((event) => (
                 <div key={event.eventId} className="col-md-6 col-lg-4 mb-4">
@@ -136,13 +148,15 @@ const EventShowPage = () => {
                       alt="event"
                       className="card-img-top"
                       style={{
-                        height: '200px',
-                        objectFit: 'cover',
-                        borderRadius: '10px 10px 0 0',
+                        height: "200px",
+                        objectFit: "cover",
+                        borderRadius: "10px 10px 0 0",
                       }}
                     />
                     <div className="card-body d-flex flex-column">
-                      <h5 className="card-title event-title">{event.eventName}</h5>
+                      <h5 className="card-title event-title">
+                        {event.eventName}
+                      </h5>
                       <p className="card-text event-description">
                         {event.description.length > 100
                           ? `${event.description.substring(0, 100)}...`
@@ -160,7 +174,8 @@ const EventShowPage = () => {
                         <strong>Date:</strong> {event.eventDate} <br />
                         <strong>Time:</strong> {event.eventTime} <br />
                         <strong>Venue:</strong> {event.eventVenue} <br />
-                        <strong>Ticket Price:</strong> ${event.oneTicketPrice} <br />
+                        <strong>Ticket Price:</strong> ${event.oneTicketPrice}{" "}
+                        <br />
                       </p>
                       {/* Book Tickets Button */}
                       <button
@@ -178,11 +193,7 @@ const EventShowPage = () => {
             )}
           </div>
         </div>
-
-
-
-
-      
+      </div>
 
       <Footer />
     </div>

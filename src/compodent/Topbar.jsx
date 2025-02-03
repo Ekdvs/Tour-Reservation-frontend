@@ -1,5 +1,5 @@
-import React from 'react'
-import Header from './Header'
+import React from "react";
+import Header from "./Header";
 
 export default function Topbar() {
   return (
@@ -14,32 +14,32 @@ export default function Topbar() {
             >
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://x.com/ceylon_trav"
+                href="https://twitter.com"
                 target="_blank"
               >
                 <i className="fab fa-twitter fw-normal"></i>
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://web.facebook.com/profile.php?id=61572509287749"
+                href="https://facebook.com"
               >
                 <i className="fab fa-facebook-f fw-normal"></i>
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://www.linkedin.com/company/106320117/admin/page-posts/published/"
+                href="https://linkedin.com"
               >
                 <i className="fab fa-linkedin-in fw-normal"></i>
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2"
-                href="https://www.instagram.com/theceylontrav/"
+                href="https://instagram.com"
               >
                 <i className="fab fa-instagram fw-normal"></i>
               </a>
               <a
                 className="btn btn-sm btn-outline-light btn-sm-square rounded-circle"
-                href="https://www.youtube.com/@TheCeylonTraveler-j8s"
+                href="https://youtube.com"
               >
                 <i className="fab fa-youtube fw-normal"></i>
               </a>
