@@ -73,11 +73,15 @@ const Destination = () => {
           backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/R.jpeg)`,
           backgroundSize: "cover",
           background_attachment: "fixed",
+          borderRadius: "15px",
+          borderTop: "2px solid #fff",
         }}
       >
         {/* Carousel Section */}
         <div className="container ">
-          <h2 className="text-center mb-4"><br></br>Featured Destinations</h2>
+          <h2 className="text-center mb-4">
+            <br></br>Featured Destinations
+          </h2>
           <Carousel>
             {places.slice(0, 10).map((place) => (
               <Carousel.Item key={place.placeId}>
