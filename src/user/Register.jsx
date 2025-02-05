@@ -79,7 +79,7 @@ export default function Register() {
     try {
       // Sending request to backend
       const response = await axios.post(
-        "https://online-travel-planning.up.railway.app//user/register",
+        "online-travel-planning-production.up.railway.app/user/register",
         formData,
         {
           headers: {
