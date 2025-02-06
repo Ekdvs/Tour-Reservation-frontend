@@ -84,22 +84,22 @@ export default function PackagesPage() {
         <div className="container py-5">
           {/* Package Type Filters */}
           <div className="row justify-content-center mb-5">
-  {packageNames.map((name, index) => (
-    <div key={index} className="col-md-2 col-sm-4 col-6 text-center">
-      <button
-        className={`btn filter-btn ${selectedType === name ? "active" : ""}`}
-        onClick={() => handleFilter(name)}
-      >
-        <img
-          src={`/img/${packageImages[index]}`}
-          alt={name}
-          className="img-fluid rounded-circle shadow"
-        />
-        <span className="filter-text">{name}</span>
-      </button>
-    </div>
-  ))}
-</div>;
+            {packageNames.map((name, index) => (
+              <div key={index} className="col-md-2 col-sm-4 col-6 text-center">
+                <button
+                  className={`btn filter-btn ${selectedType === name ? "active" : ""}`}
+                  onClick={() => handleFilter(name)}
+                >
+                  <img
+                    src={`/img/${packageImages[index]}`}
+                    alt={name}
+                    className="img-fluid rounded-circle shadow"
+                  />
+                  <span className="filter-text">{name}</span>
+                </button>
+              </div>
+            ))}
+          </div>;
 
           <h3 className="text-center text-secondary mb-4">
             {selectedType} Packages
