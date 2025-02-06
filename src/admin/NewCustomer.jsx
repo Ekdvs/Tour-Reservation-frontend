@@ -5,7 +5,7 @@ const NewCustomers = () => {
 
   useEffect(() => {
     // Fetch new customers from the backend
-    fetch("http://localhost:8080/user/allUsers")
+    fetch("https://online-travel-planning-production.up.railway.app/user/allUsers")
       .then((response) => response.json())
       .then((data) => setNewCustomers(data))
       .catch((error) => console.error("Error fetching new customers:", error));

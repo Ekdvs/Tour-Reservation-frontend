@@ -29,7 +29,7 @@ const EventManagement = () => {
   const fetchEvents = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/event/getAllEvents"
+        "https://online-travel-planning-production.up.railway.app/event/getAllEvents"
       );
       setEvents(response.data);
     } catch (error) {
@@ -45,7 +45,7 @@ const EventManagement = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/event/searchEvents?name=${searchQuery}`
+        `https://online-travel-planning-production.up.railway.app/event/searchEvents?name=${searchQuery}`
       );
       setEvents(response.data);
     } catch (error) {
@@ -68,7 +68,7 @@ const EventManagement = () => {
     formData.append("imageFile", eventImage);
 
     try {
-      await axios.post("http://localhost:8080/event/addEvent", formData);
+      await axios.post("https://online-travel-planning-production.up.railway.app/event/addEvent", formData);
       fetchEvents();
       toast.success("Event added successfully!");
       setEventForm({
@@ -97,7 +97,7 @@ const EventManagement = () => {
 
     try {
       await axios.put(
-        `http://localhost:8080/event/updateEvent/${editEvent.eventId}`,
+        `https://online-travel-planning-production.up.railway.app/event/updateEvent/${editEvent.eventId}`,
         formData
       );
       fetchEvents();
@@ -123,7 +123,7 @@ const EventManagement = () => {
   // Delete Event
   const handleDeleteEvent = async (eventId) => {
     try {
-      await axios.delete(`http://localhost:8080/event/deleteEvent/${eventId}`);
+      await axios.delete(`https://online-travel-planning-production.up.railway.app/event/deleteEvent/${eventId}`);
       fetchEvents();
       toast.success("Event deleted successfully!");
     } catch (error) {

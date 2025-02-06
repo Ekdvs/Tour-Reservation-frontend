@@ -12,7 +12,7 @@ const LogOut = () => {
       try {
         // Call the logout API to destroy the session in the backend
         await axios.post(
-          "http://localhost:8080/user/logout", // Corrected endpoint
+          "https://online-travel-planning-production.up.railway.app/user/logout", // Corrected endpoint
           {},
           { withCredentials: true } // Ensures session cookies are included
         );

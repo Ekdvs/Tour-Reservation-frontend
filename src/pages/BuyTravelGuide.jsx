@@ -12,7 +12,7 @@ const BuyTravelGuide = () => {
     // Fetch all travel guides
     const fetchAllGuides = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/user/travel-guides");
+        const response = await axios.get("https://online-travel-planning-production.up.railway.app/user/travel-guides");
         setGuideList(response.data); // Assuming the API returns an array of guides
       } catch (error) {
         console.error("Error fetching travel guides:", error);
@@ -24,7 +24,7 @@ const BuyTravelGuide = () => {
 
   const handleBuyGuide = async (packageId) => {
     try {
-      const response = await axios.post("http://localhost:8080/guide/buy", {
+      const response = await axios.post("https://online-travel-planning-production.up.railway.app/guide/buy", {
         userId: "user123", // Example userId; replace with actual user information
         packageId: packageId,
       });

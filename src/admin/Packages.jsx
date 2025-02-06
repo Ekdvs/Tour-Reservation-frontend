@@ -25,7 +25,7 @@ const PackageManagement = () => {
   const fetchPackages = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/packages/getAllPackages"
+        "https://online-travel-planning-production.up.railway.app/packages/getAllPackages"
       );
       setPackages(response.data);
     } catch (error) {
@@ -40,7 +40,7 @@ const PackageManagement = () => {
   const handleSearch = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/packages/searchPackage?name=${searchQuery}`
+        `https://online-travel-planning-production.up.railway.app/packages/searchPackage?name=${searchQuery}`
       );
       setPackages(response.data);
     } catch (error) {
@@ -57,12 +57,12 @@ const PackageManagement = () => {
     try {
       if (editPackage) {
         await axios.put(
-          `http://localhost:8080/packages/updatePackage/${editPackage.packageId}`,
+          `https://online-travel-planning-production.up.railway.app/packages/updatePackage/${editPackage.packageId}`,
           formData
         );
         toast.success("Package updated successfully!");
       } else {
-        await axios.post("http://localhost:8080/packages/addPackage", formData);
+        await axios.post("https://online-travel-planning-production.up.railway.app/packages/addPackage", formData);
         toast.success("Package added successfully!");
       }
       fetchPackages();
@@ -83,7 +83,7 @@ const PackageManagement = () => {
   const handleDeletePackage = async (packageId) => {
     try {
       await axios.delete(
-        `http://localhost:8080/packages/deletePackage/${packageId}`
+        `https://online-travel-planning-production.up.railway.app/packages/deletePackage/${packageId}`
       );
       fetchPackages();
       toast.success("Package deleted successfully!");

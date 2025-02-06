@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);
 
-  const API_BASE_URL = "http://localhost:8080/blog";
+  const API_BASE_URL = "https://online-travel-planning-production.up.railway.app/blog";
 
   // Fetch all blogs
   const fetchBlogs = async () => {

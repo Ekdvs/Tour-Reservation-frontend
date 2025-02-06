@@ -37,7 +37,7 @@ export default function VerifyOTP() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/user/verify-code`,
+        `https://online-travel-planning-production.up.railway.app/user/verify-code`,
         {
           userEmail: email,
           recoveryCode: otp,

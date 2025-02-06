@@ -16,7 +16,7 @@ export default function PackagesPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/packages/getAllPackages")
+      .get("https://online-travel-planning-production.up.railway.app/packages/getAllPackages")
       .then((response) => {
         console.log(response.data); // Log the response to check package structure
         setPackages(response.data);

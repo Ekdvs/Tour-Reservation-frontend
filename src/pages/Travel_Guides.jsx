@@ -8,7 +8,7 @@ export default function Travel_Guides() {
 
   useEffect(() => {
     // Fetch travel guides data from backend
-    fetch("http://localhost:8080/user/travel-guides") // Ensure this is the correct endpoint
+    fetch("https://online-travel-planning-production.up.railway.app/user/travel-guides") // Ensure this is the correct endpoint
       .then((response) => response.json())
       .then((data) => {
         console.log(data); // Log the data to check the structure

@@ -23,7 +23,7 @@ const Cart = () => {
     if (eventId) {
       // Fetch event details by ID
       axios
-        .get(`http://localhost:8080/event/getEventById/${eventId}`)
+        .get(`https://online-travel-planning-production.up.railway.app/event/getEventById/${eventId}`)
         .then((response) => {
           setSelectedEvent(response.data); // Assuming response.data contains event data
           setLoading(false);
@@ -73,7 +73,7 @@ const Cart = () => {
     };
   
     try {
-      const response = await axios.post("http://localhost:8080/reservation/create", reservationData, {
+      const response = await axios.post("https://online-travel-planning-production.up.railway.app/reservation/create", reservationData, {
         headers: { "Content-Type": "application/json" }
       });
   

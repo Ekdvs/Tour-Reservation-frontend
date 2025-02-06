@@ -12,7 +12,7 @@ const EventShowPage = () => {
   const [events, setEvents] = useState([]);
   const [places, setPlaces] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const API_BASE_URL = "http://localhost:8080";
+  const API_BASE_URL = "https://online-travel-planning-production.up.railway.app";
   const navigate = useNavigate();
 
   // Fetch all events

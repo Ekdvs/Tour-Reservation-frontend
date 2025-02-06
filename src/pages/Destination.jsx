@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"; // Import Link
 const Destination = () => {
   const [places, setPlaces] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const API_BASE_URL = "http://localhost:8080/place";
+  const API_BASE_URL = "https://online-travel-planning-production.up.railway.app/place";
 
   // Fetch all places
   const fetchPlaces = async () => {

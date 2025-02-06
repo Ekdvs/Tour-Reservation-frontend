@@ -19,19 +19,19 @@ const Reservationadmin = () => {
 
   const fetchReservations = () => {
     axios
-      .get("http://localhost:8080/reservation/getAllReservations")
+      .get("https://online-travel-planning-production.up.railway.app/reservation/getAllReservations")
       .then((res) => setReservations(res.data))
       .catch((err) => console.error(err));
   };
 
   const fetchSummaryData = () => {
     axios
-      .get("http://localhost:8080/reservation/totalCharge")
+      .get("https://online-travel-planning-production.up.railway.app/reservation/totalCharge")
       .then((res) => setTotalCharge(res.data))
       .catch((err) => console.error(err));
 
     axios
-      .get("http://localhost:8080/reservation/totalTickets")
+      .get("https://online-travel-planning-production.up.railway.app/reservation/totalTickets")
       .then((res) => setTotalTickets(res.data))
       .catch((err) => console.error(err));
   };
@@ -39,7 +39,7 @@ const Reservationadmin = () => {
   const handleAddReservation = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/reservation/addReservation", newReservation)
+      .post("https://online-travel-planning-production.up.railway.app/reservation/addReservation", newReservation)
       .then(() => {
         alert("Reservation added successfully!");
         setNewReservation({ userId: "", details: "" });
@@ -54,7 +54,7 @@ const Reservationadmin = () => {
 
     axios
       .put(
-        `http://localhost:8080/reservation/updateReservation/${editReservation.id}`,
+        `https://online-travel-planning-production.up.railway.app/reservation/updateReservation/${editReservation.id}`,
         editReservation
       )
       .then(() => {
@@ -67,7 +67,7 @@ const Reservationadmin = () => {
 
   const deleteReservation = (id) => {
     axios
-      .delete(`http://localhost:8080/reservation/deleteReservation/${id}`)
+      .delete(`https://online-travel-planning-production.up.railway.app/reservation/deleteReservation/${id}`)
       .then(() => {
         alert("Reservation deleted successfully!");
         fetchReservations();

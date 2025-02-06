@@ -11,7 +11,7 @@ export default function Nav() {
       if (userEmail) {
         try {
           const response = await axios.get(
-            `http://localhost:8080/user/${userEmail}`
+            `https://online-travel-planning-production.up.railway.app/user/${userEmail}`
           );
           setUserData(response.data);
         } catch (error) {

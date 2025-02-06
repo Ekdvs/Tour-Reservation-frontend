@@ -84,7 +84,7 @@ export default function CardPayment() {
 
     setIsProcessing(true);
     try {
-      const response = await axios.post("http://localhost:8080/payment/create", {
+      const response = await axios.post("https://online-travel-planning-production.up.railway.app/payment/create", {
         userEmail: userId, // Send user email from state
         reservationId,
         amount: totalPrice,
