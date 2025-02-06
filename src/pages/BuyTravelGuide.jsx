@@ -23,20 +23,44 @@ const BuyTravelGuide = () => {
     fetchAllGuides();
   }, []);
 
-  const handleBuyGuide = async (packageId) => {
+  const handleBuyGuide = async (guide) => {
+    const userId = guide.userId; // Assuming each guide has a `userId` attribute
+
     try {
+      // Step 1: Purchase the guide
       const response = await axios.post("https://online-travel-planning-production.up.railway.app/guide/buy", {
-        userId: "user123", // Example userId; replace with actual user information
-        packageId: packageId,
+        userId: userId, // Use the dynamic userId from the selected guide
+        packageId: guide.id, // Pass the packageId for the selected guide
       });
 
       if (response.data.success) {
-        setPurchaseStatus("success");
+        // Step 2: Create a reservation
+        const reservationData = {
+          userEmail: "user@example.com", // Replace with actual user email
+          packageId: guide.id,
+          eventId: "someEventId", // If you have an event ID
+          numOfPerson: 1, // Replace with the actual number of people
+          totalCharge: price, // Total charge for the reservation
+          travelGuideId: guide.id,
+          perPersonCharge: price, // You can adjust this if needed
+        };
+
+        // Send the reservation data to the backend
+        const reservationResponse = await axios.post("https://online-travel-planning-production.up.railway.app/reservation/create", reservationData);
+
+        if (reservationResponse.data) {
+          // Step 3: Store the total price in local storage
+          localStorage.setItem("totalPrice", price);
+
+          // Step 4: Navigate to the payment page
+          navigate("/payment");
+          setPurchaseStatus("success");
+        }
       } else {
         setPurchaseStatus("failure");
       }
     } catch (error) {
-      console.error("Error purchasing guide:", error);
+      console.error("Error purchasing guide or creating reservation:", error);
       setPurchaseStatus("failure");
     }
   };
@@ -72,7 +96,7 @@ const BuyTravelGuide = () => {
 
                   {/* Purchase Button */}
                   <div className="d-flex justify-content-between mt-4">
-                    <button className="btn btn-primary" onClick={() => handleBuyGuide(guide.id)}>
+                    <button className="btn btn-primary" onClick={() => handleBuyGuide(guide)}>
                       Buy Travel Guide
                     </button>
                   </div>
