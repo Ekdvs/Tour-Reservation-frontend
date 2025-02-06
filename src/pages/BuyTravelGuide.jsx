@@ -24,43 +24,36 @@ const BuyTravelGuide = () => {
   }, []);
 
   const handleBuyGuide = async (guide) => {
-    const userId = guide.userId; // Assuming each guide has a `userId` attribute
+    const userId = localStorage.getItem("userId"); // Retrieve userId from localStorage
+    const userEmail = localStorage.getItem("userEmail"); // Retrieve userEmail from localStorage
+
+    // Assuming the eventId is static or you are getting it dynamically
+    const eventId = "someEventId"; 
+
+    // Prepare the reservation data
+    const reservationData = {
+      userEmail: userEmail, // Using the email from localStorage
+      eventId: eventId, // Add actual event ID here
+      numOfPerson: 1, // You can change this based on user input
+      totalCharge: price, // Total charge for the reservation
+      travelGuideId: guide.id, // Attach the guide's ID
+      perPersonCharge: price, // This can be adjusted as needed
+    };
 
     try {
-      // Step 1: Purchase the guide
-      const response = await axios.post("https://online-travel-planning-production.up.railway.app/guide/buy", {
-        userId: userId, // Use the dynamic userId from the selected guide
-        packageId: guide.id, // Pass the packageId for the selected guide
-      });
+      // Step 1: Create the reservation
+      const reservationResponse = await axios.post("https://online-travel-planning-production.up.railway.app/reservation/create", reservationData);
 
-      if (response.data.success) {
-        // Step 2: Create a reservation
-        const reservationData = {
-          userEmail: "user@example.com", // Replace with actual user email
-          packageId: guide.id,
-          eventId: "someEventId", // If you have an event ID
-          numOfPerson: 1, // Replace with the actual number of people
-          totalCharge: price, // Total charge for the reservation
-          travelGuideId: guide.id,
-          perPersonCharge: price, // You can adjust this if needed
-        };
+      if (reservationResponse.data) {
+        // Step 2: Store the total price in localStorage
+        localStorage.setItem("totalPrice", price);
 
-        // Send the reservation data to the backend
-        const reservationResponse = await axios.post("https://online-travel-planning-production.up.railway.app/reservation/create", reservationData);
-
-        if (reservationResponse.data) {
-          // Step 3: Store the total price in local storage
-          localStorage.setItem("totalPrice", price);
-
-          // Step 4: Navigate to the payment page
-          navigate("/payment");
-          setPurchaseStatus("success");
-        }
-      } else {
-        setPurchaseStatus("failure");
+        // Step 3: Navigate to the payment page
+        navigate("/payment");
+        setPurchaseStatus("success");
       }
     } catch (error) {
-      console.error("Error purchasing guide or creating reservation:", error);
+      console.error("Error creating reservation:", error);
       setPurchaseStatus("failure");
     }
   };
@@ -97,7 +90,7 @@ const BuyTravelGuide = () => {
                   {/* Purchase Button */}
                   <div className="d-flex justify-content-between mt-4">
                     <button className="btn btn-primary" onClick={() => handleBuyGuide(guide)}>
-                      Buy Travel Guide
+                      Reserve Travel Guide
                     </button>
                   </div>
                 </div>
@@ -114,11 +107,11 @@ const BuyTravelGuide = () => {
         <div className="alert alert-info mt-4" role="alert">
           {purchaseStatus === "success" ? (
             <div className="d-flex align-items-center">
-              <FaCheckCircle className="me-2" /> Your travel guide purchase was successful!
+              <FaCheckCircle className="me-2" /> Your reservation was successful!
             </div>
           ) : (
             <div className="d-flex align-items-center">
-              <FaTimesCircle className="me-2" /> There was an error processing your purchase. Please try again.
+              <FaTimesCircle className="me-2" /> There was an error processing your reservation. Please try again.
             </div>
           )}
         </div>
