@@ -7,6 +7,7 @@ const BuyTravelGuide = () => {
   const [guideList, setGuideList] = useState([]); // Store the list of travel guides
   const [purchaseStatus, setPurchaseStatus] = useState(null); // Store purchase status (success/failure)
   const navigate = useNavigate();
+  const price = 1000; // Price of the travel guide
 
   useEffect(() => {
     // Fetch all travel guides
@@ -67,7 +68,7 @@ const BuyTravelGuide = () => {
                   <p className="card-text">{guide.description}</p>
                   <p><strong>Name:</strong> {guide.firstName}</p>
                   <p><strong>Duration:</strong> {guide.duration} Days</p>
-                  <p><strong>Price:</strong> ${guide.onePersonPrice}</p>
+                  <p><strong>Price:</strong> ${price}</p>
 
                   {/* Purchase Button */}
                   <div className="d-flex justify-content-between mt-4">
