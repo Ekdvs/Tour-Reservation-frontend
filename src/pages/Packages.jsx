@@ -25,21 +25,24 @@ export default function PackagesPage() {
       .catch((error) => console.error("Error fetching packages:", error));
   }, []);
 
-  const packageTypes = [
-    "All",
-    "Honeymoon",
-    "Family",
-    "Adventure",
-    "Budget",
-    "Luxury",
+  const packageImages = [
+    "all.jpg",
+    "honeymoon.jpg",
+    "family.jpg",
+    "adventure.jpg",
+    "budget.jpg",
+    "luxury.jpg",
   ];
+  
+  const packageNames = ["All", "Honeymoon", "Family", "Adventure", "Budget", "Luxury"];
+  
 
-  const handleFilter = (type) => {
-    setSelectedType(type);
-    if (type === "All") {
+  const handleFilter = (name) => {
+    setSelectedType(name);
+    if (name === "All") {
       setFilteredPackages(packages);
     } else {
-      setFilteredPackages(packages.filter((pkg) => pkg.packageType === type));
+      setFilteredPackages(packages.filter((pkg) => pkg.packageType === name));
     }
   };
 
@@ -81,23 +84,22 @@ export default function PackagesPage() {
         <div className="container py-5">
           {/* Package Type Filters */}
           <div className="row justify-content-center mb-5">
-            {packageTypes.map((type) => (
-              <div key={type} className="col-md-2 col-sm-4 col-6 text-center">
-                <button
-                  className={`btn filter-btn ${selectedType === type ? "active" : ""}`}
-                  onClick={() => handleFilter(type)}
-                >
-                  <img
-                    src={`../img/${type.toLowerCase()}.jpg`}
-                    alt={type}
-                    className="img-fluid rounded-circle shadow"
-                  />
-                  <span className="filter-text">{type}</span>
-                </button>
-              </div>
-              
-            ))}
-          </div>
+  {packageNames.map((name, index) => (
+    <div key={index} className="col-md-2 col-sm-4 col-6 text-center">
+      <button
+        className={`btn filter-btn ${selectedType === name ? "active" : ""}`}
+        onClick={() => handleFilter(name)}
+      >
+        <img
+          src={`/img/${packageImages[index]}`}
+          alt={name}
+          className="img-fluid rounded-circle shadow"
+        />
+        <span className="filter-text">{name}</span>
+      </button>
+    </div>
+  ))}
+</div>;
 
           <h3 className="text-center text-secondary mb-4">
             {selectedType} Packages
