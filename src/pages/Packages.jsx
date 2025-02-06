@@ -25,21 +25,24 @@ export default function PackagesPage() {
       .catch((error) => console.error("Error fetching packages:", error));
   }, []);
 
-  const packageTypes = [
-    "All",
-    "Honeymoon",
-    "Family",
-    "Adventure",
-    "Budget",
-    "Luxury",
+  const packageImages = [
+    "all.jpg",
+    "honeymoon.jpg",
+    "family.jpg",
+    "adventure.jpg",
+    "budget.jpg",
+    "luxury.jpg",
   ];
+  
+  const packageNames = ["All", "Honeymoon", "Family", "Adventure", "Budget", "Luxury"];
+  
 
-  const handleFilter = (type) => {
-    setSelectedType(type);
-    if (type === "All") {
+  const handleFilter = (name) => {
+    setSelectedType(name);
+    if (name === "All") {
       setFilteredPackages(packages);
     } else {
-      setFilteredPackages(packages.filter((pkg) => pkg.packageType === type));
+      setFilteredPackages(packages.filter((pkg) => pkg.packageType === name));
     }
   };
 
@@ -58,13 +61,8 @@ export default function PackagesPage() {
       <Topbar />
       <Navbar />
       <div className="container-fluid bg-breadcrumb">
-        <div
-          className="container text-center py-5"
-          style={{ maxWidth: "900px" }}
-        >
-          <h3 className="text-white display-3 mb-4">
-            Explore Our Travel Packages
-          </h3>
+        <div className="container text-center py-5" style={{ maxWidth: "900px" }}>
+          <h3 className="text-white display-3 mb-4">Explore Our Travel Packages</h3>
           <ol className="breadcrumb justify-content-center mb-0">
             <li className="breadcrumb-item">
               <a href="/">Home</a>
@@ -81,31 +79,53 @@ export default function PackagesPage() {
           backgroundImage: `linear-gradient(rgba(19, 53, 123, .6), rgba(19, 53, 123, .6)), url(../img/subscribe-img.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          borderRadius: "15px",
-          borderTop: "2px solid #fff",
         }}
       >
         <div className="container py-5">
           {/* Package Type Filters */}
           <div className="row justify-content-center mb-5">
-            {packageTypes.map((type) => (
-              <div key={type} className="col-md-2 col-sm-4 col-6 text-center">
-                <button
-                  className={`btn filter-btn ${
-                    selectedType === type ? "active" : ""
-                  }`}
-                  onClick={() => handleFilter(type)}
-                >
-                  <img
-                    src={`img/${type.toLowerCase()}.jpg`}
-                    alt={type}
-                    className="img-fluid rounded-circle shadow"
-                  />
-                  <span className="filter-text">{type}</span>
-                </button>
-              </div>
-            ))}
-          </div>
+  <div className="col-md-2 col-sm-4 col-6 text-center">
+    <button className={`btn filter-btn ${selectedType === "All" ? "active" : ""}`} onClick={() => handleFilter("All")}>
+      <img src="img/all.jpg" alt="All" className="img-fluid rounded-circle shadow" />
+      <span className="filter-text">All</span>
+    </button>
+  </div>
+
+  <div className="col-md-2 col-sm-4 col-6 text-center">
+    <button className={`btn filter-btn ${selectedType === "Honeymoon" ? "active" : ""}`} onClick={() => handleFilter("Honeymoon")}>
+      <img src="img/honeymoon.jpg" alt="Honeymoon" className="img-fluid rounded-circle shadow" />
+      <span className="filter-text">Honeymoon</span>
+    </button>
+  </div>
+
+  <div className="col-md-2 col-sm-4 col-6 text-center">
+    <button className={`btn filter-btn ${selectedType === "Family" ? "active" : ""}`} onClick={() => handleFilter("Family")}>
+      <img src="img/family.jpg" alt="Family" className="img-fluid rounded-circle shadow" />
+      <span className="filter-text">Family</span>
+    </button>
+  </div>
+
+  <div className="col-md-2 col-sm-4 col-6 text-center">
+    <button className={`btn filter-btn ${selectedType === "Adventure" ? "active" : ""}`} onClick={() => handleFilter("Adventure")}>
+      <img src="img/adventure.jpg" alt="Adventure" className="img-fluid rounded-circle shadow" />
+      <span className="filter-text">Adventure</span>
+    </button>
+  </div>
+
+  <div className="col-md-2 col-sm-4 col-6 text-center">
+    <button className={`btn filter-btn ${selectedType === "Budget" ? "active" : ""}`} onClick={() => handleFilter("Budget")}>
+      <img src="img/budget.jpg" alt="Budget" className="img-fluid rounded-circle shadow" />
+      <span className="filter-text">Budget</span>
+    </button>
+  </div>
+
+  <div className="col-md-2 col-sm-4 col-6 text-center">
+    <button className={`btn filter-btn ${selectedType === "Luxury" ? "active" : ""}`} onClick={() => handleFilter("Luxury")}>
+      <img src="img/luxury.jpg" alt="Luxury" className="img-fluid rounded-circle shadow" />
+      <span className="filter-text">Luxury</span>
+    </button>
+  </div>
+</div>;
 
           <h3 className="text-center text-secondary mb-4">
             {selectedType} Packages
