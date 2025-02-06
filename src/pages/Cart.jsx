@@ -23,7 +23,7 @@ const Cart = () => {
     if (eventId) {
       // Fetch event details by ID
       axios
-        .get(`http://localhost:8080/event/getEventById/${eventId}`)
+        .get(`https://online-travel-planning-production.up.railway.app/event/getEventById/${eventId}`)
         .then((response) => {
           setSelectedEvent(response.data); // Assuming response.data contains event data
           setLoading(false);
@@ -55,40 +55,53 @@ const Cart = () => {
     return selectedEvent ? numOfTickets * selectedEvent.oneTicketPrice : 0;
   };
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
     // Check if user is logged in
     if (!userEmail) {
-      // If user is not logged in, show an error message and navigate to login
       toast.error("Please log in to proceed with the payment.");
       setTimeout(() => {
         navigate("/login"); // Redirect to login page
       }, 2000);
-    } else {
-      // If user is logged in, proceed with the booking and payment flow
-      axios
-        .post("http://localhost:8080/event/bookEvent", {
-          eventId: selectedEvent.eventId,
-          numOfTickets,
-          userEmail, // Optional, if you want to track bookings per user
-        })
-        .then((response) => {
-          toast.success("Booking successful, proceeding to payment...");
-          setTimeout(() => {
-            navigate("/payment", {
-              state: {
-                eventId: selectedEvent.eventId,
-                eventName: selectedEvent.eventName,
-                totalPrice: calculateTotalPrice(),
-                numOfTickets,
-              },
-            });
-          }, 2000);
-        })
-        .catch((error) => {
-          toast.error("Error booking event: " + (error.response?.data || "Try again later"));
-        });
+      return; // Stop execution
+    }
+  
+    const reservationData = {
+      userEmail,
+      totalCharge: calculateTotalPrice(), // Use function to get total price dynamically
+      eventId: selectedEvent?.eventId || "", // Ensure eventId is defined
+      numOfPerson: numOfTickets
+    };
+  
+    try {
+      const response = await axios.post("https://online-travel-planning-production.up.railway.app/reservation/create", reservationData, {
+        headers: { "Content-Type": "application/json" }
+      });
+  
+      if (response.data && response.data.reservationId) {
+        localStorage.setItem("reservationId", response.data.reservationId);
+        localStorage.setItem("totalPrice", calculateTotalPrice());
+        console.log("Reservation ID saved:", response.data.reservationId);
+        toast.success("Booking successful, proceeding to payment...");
+        
+        setTimeout(() => {
+          navigate("/payment", {
+            state: {
+              reservationId: response.data.reservationId,
+              totalPrice: calculateTotalPrice(),
+              numOfTickets
+            }
+          });
+        }, 2000);
+      } else {
+        toast.warn("No reservationId received in response.");
+        console.warn("No reservationId received in response.");
+      }
+    } catch (error) {
+      console.error("Error creating reservation:", error);
+      toast.error("Booking failed. Please try again.");
     }
   };
+  
 
   const handleBackToEvents = () => {
     setTimeout(() => {

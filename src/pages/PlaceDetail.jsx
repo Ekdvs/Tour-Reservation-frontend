@@ -16,7 +16,7 @@ const PlaceDetail = () => {
     // Fetch place details from the backend
     const fetchPlaceDetails = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/place/getPlaceById/${placeId}`);
+        const response = await fetch(`https://online-travel-planning-production.up.railway.app/place/getPlaceById/${placeId}`);
         if (!response.ok) {
           throw new Error("Failed to fetch place details");
         }

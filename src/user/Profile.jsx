@@ -36,7 +36,7 @@ export default function Profile() {
       return;
     }
     axios
-      .get(`http://localhost:8080/user/getUserByEmail/${userEmail}`)
+      .get(`https://online-travel-planning-production.up.railway.app/user/getUserByEmail/${userEmail}`)
       .then((response) => {
         const data = response.data;
         setProfileData(data);
@@ -97,7 +97,7 @@ export default function Profile() {
       }
 
       axios
-        .put(`http://localhost:8080/user/${userEmail}`, formDataToSend, {
+        .put(`https://online-travel-planning-production.up.railway.app/user/${userEmail}`, formDataToSend, {
           headers: {
             "Content-Type": "multipart/form-data",
           },

@@ -9,7 +9,7 @@ const OnlineUsersCard = () => {
     const fetchOnlineUsers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/user/onlineUsers"
+          "https://online-travel-planning-production.up.railway.app/user/onlineUsers"
         );
         setOnlineUsers(response.data.count);
       } catch (error) {

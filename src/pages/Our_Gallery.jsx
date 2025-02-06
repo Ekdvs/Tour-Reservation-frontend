@@ -11,7 +11,7 @@ import "./Gallery.css";
 export default function Our_Gallery() {
   const [places, setPlaces] = useState([]);
 
-  const API_BASE_URL = "http://localhost:8080/place";
+  const API_BASE_URL = "https://online-travel-planning-production.up.railway.app/place";
 
   // Fetch all places
   const fetchPlaces = async () => {

@@ -21,7 +21,7 @@ const PackageView = () => {
       if (!packageId) return;
 
       try {
-        const response = await axios.get(`http://localhost:8080/packages/getPackageById/${packageId}`);
+        const response = await axios.get(`https://online-travel-planning-production.up.railway.app/packages/getPackageById/${packageId}`);
         setPackageDetails(response.data);
         setTotalPrice(response.data.onePersonPrice);
       } catch (error) {
@@ -63,7 +63,7 @@ const PackageView = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:8080/reservation/create", reservationData, {
+      const response = await axios.post("https://online-travel-planning-production.up.railway.app/reservation/create", reservationData, {
         headers: {
           "Content-Type": "application/json"
         }

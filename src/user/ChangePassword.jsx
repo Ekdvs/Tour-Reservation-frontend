@@ -47,7 +47,7 @@ export default function ChangePassword() {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/user/update-password/${userEmail}`,
+        `https://online-travel-planning-production.up.railway.app/user/update-password/${userEmail}`,
         { Password }
       );
 

@@ -29,7 +29,7 @@ export default function ForgotPassword() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/user/sendotpcode",
+        "https://online-travel-planning-production.up.railway.app/user/sendotpcode",
         { userEmail }
       );
 

@@ -9,7 +9,7 @@ import Sidebar from "./Sidebar";
 import Nav from "./Nav";
 
 const API_BASE_URL =
-  process.env.REACT_APP_API_BASE_URL || "http://localhost:8080";
+  process.env.REACT_APP_API_BASE_URL || "https://online-travel-planning-production.up.railway.app";
 
 // Modal for viewing travel guide history
 const UserHistoryModal = ({ show, user, onClose }) => (

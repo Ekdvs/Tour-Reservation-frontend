@@ -24,7 +24,7 @@ const BlogManagement = () => {
   const fetchBlogs = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:8080/blog/getAllBlogs"
+        "https://online-travel-planning-production.up.railway.app/blog/getAllBlogs"
       );
       setBlogs(response.data);
     } catch (error) {
@@ -39,7 +39,7 @@ const BlogManagement = () => {
     formData.append("imageFile", blogImage);
 
     try {
-      await axios.post("http://localhost:8080/blog/addBlog", formData);
+      await axios.post("https://online-travel-planning-production.up.railway.app/blog/addBlog", formData);
       fetchBlogs();
       toast.success("Blog added successfully!");
       setBlogForm({ title: "", description: "", author: "" });
@@ -56,7 +56,7 @@ const BlogManagement = () => {
 
     try {
       await axios.put(
-        `http://localhost:8080/blog/updateBlog/${editBlog.blogId}`,
+        `https://online-travel-planning-production.up.railway.app/blog/updateBlog/${editBlog.blogId}`,
         formData
       );
       fetchBlogs();
@@ -70,7 +70,7 @@ const BlogManagement = () => {
 
   const handleDeleteBlog = async (blogId) => {
     try {
-      await axios.delete(`http://localhost:8080/blog/deleteBlog/${blogId}`);
+      await axios.delete(`https://online-travel-planning-production.up.railway.app/blog/deleteBlog/${blogId}`);
       fetchBlogs();
       toast.success("Blog deleted successfully!");
     } catch (error) {
@@ -185,7 +185,7 @@ const BlogManagement = () => {
                 <td>
                   {blog.imagePath && (
                     <img
-                      src={`http://localhost:8080/${blog.imagePath}`}
+                      src={`https://online-travel-planning-production.up.railway.app/${blog.imagePath}`}
                       alt={blog.title}
                       style={{ width: "50px", height: "50px" }}
                     />

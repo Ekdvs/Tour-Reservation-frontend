@@ -15,7 +15,7 @@ export default function ReservationUser() {
       return;
     }
     axios
-      .get(`http://localhost:8080/reservation/getReservationByUserId/${userId}`)
+      .get(`https://online-travel-planning-production.up.railway.app/reservation/getReservationByUserId/${userId}`)
       .then((res) => setReservations(res.data))
       .catch((err) => console.error(err));
   };
@@ -23,7 +23,7 @@ export default function ReservationUser() {
   const handleAddReservation = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:8080/reservation/addReservation", newReservation)
+      .post("https://online-travel-planning-production.up.railway.app/reservation/addReservation", newReservation)
       .then(() => {
         alert("Reservation added successfully!");
         setNewReservation({ userId: "", details: "" });

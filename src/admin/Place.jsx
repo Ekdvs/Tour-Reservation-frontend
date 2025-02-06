@@ -18,7 +18,7 @@ const Places = () => {
   const [editingPlace, setEditingPlace] = useState(null);
   const [isAddingPlace, setIsAddingPlace] = useState(false);
   const [expandedDescription, setExpandedDescription] = useState({});
-  const API_BASE_URL = "http://localhost:8080/place";
+  const API_BASE_URL = "https://online-travel-planning-production.up.railway.app/place";
 
   // Fetch all places
   const fetchPlaces = async () => {
