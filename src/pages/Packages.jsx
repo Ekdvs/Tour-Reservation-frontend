@@ -88,7 +88,7 @@ export default function PackagesPage() {
                   onClick={() => handleFilter(type)}
                 >
                   <img
-                    src={`img/${type.toLowerCase()}.jpg`}
+                    src={"img/honeymoon.jpg"}
                     alt={type}
                     className="img-fluid rounded-circle shadow"
                   />
