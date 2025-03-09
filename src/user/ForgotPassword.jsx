@@ -5,6 +5,7 @@ import Footer from "../compodent/Footer";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaCheckCircle, FaTimesCircle, FaArrowLeft, FaCalendarAlt, FaMoneyBillWave, FaUser, FaClock } from "react-icons/fa";
 
 export default function ForgotPassword() {
   const [userEmail, setUserEmail] = useState("");
@@ -59,17 +60,9 @@ export default function ForgotPassword() {
           style={{ maxWidth: "900px" }}
         >
           <h3 className="text-white display-3 mb-4">Password Reset</h3>
-          <ol className="breadcrumb justify-content-center mb-0">
-            <li className="breadcrumb-item">
-              <a href="/">Home</a>
-            </li>
-            <li className="breadcrumb-item">
-              <a href="/Contact">Pages</a>
-            </li>
-            <li className="breadcrumb-item active text-white">
-              Password Reset
-            </li>
-          </ol>
+           <a href="/" className="text-white"><button className="btn btn-outline-light btn-lg" >
+                            <FaArrowLeft className="me-2" /> Home
+                          </button></a>
         </div>
       </div>
       <div

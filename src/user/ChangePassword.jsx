@@ -6,6 +6,7 @@ import Footer from "../compodent/Footer";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { FaCheckCircle, FaTimesCircle, FaArrowLeft, FaCalendarAlt, FaMoneyBillWave, FaUser, FaClock } from "react-icons/fa";
 
 export default function ChangePassword() {
   const [Password, setPassword] = useState("");

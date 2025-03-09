@@ -31,7 +31,6 @@ import Blog from './pages/Blog';
 
 import PlaceDetail from './pages/PlaceDetail';
 import PackagesAdmin from './admin/Packages';
-import AuroraEffect from './pages/AuroraEffect';
 import BlogManagement from './admin/addBlog';
 import Packages from './pages/Packages';
 import BlogDetails from './pages/BlogDetails';
@@ -85,13 +84,14 @@ function App() {
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/place-detail"read-more element={<PlaceDetail />} />
           <Route path="/addPackages"read-more element={<PackagesAdmin/>} />
-          <Route path="/AuroraEffect"read-more element={<AuroraEffect/>} />
+      
           <Route path="/addBlog" element={<BlogManagement/>} />
           <Route path="/Packages" element={<Packages/>} />
           <Route path="/blog-detail" element={<BlogDetails/>} />
           <Route path="/packagedeatail" element={<Packageview/>} />
           <Route path="/travel-guide-booking" element={<BuyTravelGuide />} />
           <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+          
 
         </Routes>
       </Router>

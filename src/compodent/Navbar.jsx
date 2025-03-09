@@ -73,9 +73,7 @@ export default function Navbar() {
                   <a href="/Testimonial" className="dropdown-item">
                     Testimonial
                   </a>
-                  <a href="/Pageerror" className="dropdown-item">
-                    404 Page
-                  </a>
+                  
                 </div>
               </div>
               <a href="/Contact" className="nav-item nav-link">
