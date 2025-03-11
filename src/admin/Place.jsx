@@ -222,7 +222,21 @@ const Places = () => {
               <label htmlFor="category" className="form-label">
                 Category
               </label>
-              category
+              <select
+    className="form-control"
+    id="category"
+    value={category}
+    onChange={(e) => setCategory(e.target.value)}
+    required
+  >
+    <option value="">Select Category</option>
+    <option value="Beach">Beach</option>
+    <option value="Historical">Historical</option>
+    <option value="Mountain">Mountain</option>
+    <option value="Adventure">Adventure</option>
+    <option value="Cultural">Cultural</option>
+    {/* Add more categories as needed */}
+  </select>
             </div>
 
             

@@ -61,7 +61,7 @@ export default function Navbar() {
                   <a href="/EventShowPage" className="dropdown-item">
                     Explore Tour
                   </a>
-                  <a href="/Travel_Booking" className="dropdown-item">
+                  <a href="/Packages" className="dropdown-item">
                     Travel Booking
                   </a>
                   <a href="/Our_Gallery" className="dropdown-item">

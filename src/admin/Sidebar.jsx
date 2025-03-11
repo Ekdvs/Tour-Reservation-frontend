@@ -56,7 +56,7 @@ const Sidebar = () => {
                   <li className="nav-item">
                     <Link className="nav-link" to="/">
                       <i className="fas fa-eye"></i>
-                      <p>Event Show</p>
+                      <p>Home Page</p>
                     </Link>
                   </li>
         </ul>
