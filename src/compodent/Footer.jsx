@@ -29,25 +29,25 @@ export default function Footer() {
                   <i className="fas fa-share fa-2x text-white me-2"></i>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://web.facebook.com/profile.php?id=61572509287749"
                   >
                     <i className="fab fa-facebook-f"></i>
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://x.com/ceylon_trav"
                   >
                     <i className="fab fa-twitter"></i>
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://www.instagram.com/theceylontrav/"
                   >
                     <i className="fab fa-instagram"></i>
                   </a>
                   <a
                     className="btn-square btn btn-primary rounded-circle mx-1"
-                    href=""
+                    href="https://www.linkedin.com/company/106320117/admin/page-posts/published/"
                   >
                     <i className="fab fa-linkedin-in"></i>
                   </a>
