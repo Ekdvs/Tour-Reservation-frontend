@@ -7,6 +7,7 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { useNavigate } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function PackagesPage() {
   const [packages, setPackages] = useState([]);

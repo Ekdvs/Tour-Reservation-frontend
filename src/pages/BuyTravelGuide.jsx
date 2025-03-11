@@ -6,6 +6,7 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 
+
 const BuyTravelGuide = () => {
   const [guideList, setGuideList] = useState([]); 
   const [purchaseStatus, setPurchaseStatus] = useState(null);

@@ -2,6 +2,7 @@ import React from "react";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Explore_Tour() {
   return (

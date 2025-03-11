@@ -6,6 +6,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
 
 const BlogPage = () => {
   const [blogs, setBlogs] = useState([]);

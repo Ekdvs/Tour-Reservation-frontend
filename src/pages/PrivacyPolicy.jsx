@@ -3,6 +3,7 @@ import Topbar from "../compodent/Topbar";
 import Nav from "../admin/Nav";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { FaArrowLeft } from "react-icons/fa";
 
 const PrivacyPolicy = () => {
   const currentDate = new Date().toLocaleDateString();

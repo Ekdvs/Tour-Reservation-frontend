@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { FaArrowLeft } from "react-icons/fa";
 
 const PlaceDetail = () => {
   const { id } = useParams(); // Get place ID from URL

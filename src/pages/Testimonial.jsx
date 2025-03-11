@@ -5,13 +5,14 @@ import "slick-carousel/slick/slick-theme.css";
 import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
+import { FaArrowLeft } from "react-icons/fa";
 
 const Testimonial = () => {
   const testimonials = [
     {
       id: 1,
       comment:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis.",
+        "The booking process was smooth and hassle-free! I loved how easy it was to select my tour dates and make a reservation.",
       img: "img/testimonial-1.jpg",
       name: "John Abraham",
       location: "New York, USA",
@@ -19,7 +20,7 @@ const Testimonial = () => {
     {
       id: 2,
       comment:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis.",
+        "Great user-friendly interface! I found all the details I needed about my trip in one place.",
       img: "img/testimonial-2.jpg",
       name: "Sarah Connor",
       location: "Los Angeles, USA",
@@ -27,7 +28,7 @@ const Testimonial = () => {
     {
       id: 3,
       comment:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis.",
+        "The customer support team was very responsive and helped me modify my reservation without any issues.",
       img: "img/testimonial-3.jpg",
       name: "Michael Smith",
       location: "Chicago, USA",
@@ -35,7 +36,7 @@ const Testimonial = () => {
     {
       id: 4,
       comment:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis nostrum cupiditate, eligendi repellendus saepe illum earum architecto dicta quisquam quasi porro officiis. Vero reiciendis.",
+        "I appreciated the real-time availability updates—it made choosing the right tour much easier.",
       img: "img/testimonial-4.jpg",
       name: "Emily Davis",
       location: "Houston, USA",

@@ -2,10 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Headeradmin from "../compodent/Headeradmin";
 
+
 export default function Sidebar() {
   return (
     <div>
-      <Headeradmin />
+      <Headeradmin/>
       <div className="sidebar" data-background-color="dark">
         <div className="sidebar-logo"></div>
         <div className="sidebar-wrapper scrollbar scrollbar-inner">
@@ -25,9 +26,9 @@ export default function Sidebar() {
                 <div className="collapse" id="dashboard">
                   <ul className="nav nav-collapse">
                     <li>
-                      <a href="../demo1/index.html">
+                      <Link to="/dashboard1">
                         <span className="sub-item">Dashboard 1</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -38,62 +39,23 @@ export default function Sidebar() {
                 </span>
                 <h4 className="text-section">Components</h4>
               </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/place">
-                  <i className="fas fa-bars"></i>
-                  <p>Add Place</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/EventManagement">
-                  <i className="fas fa-bars"></i>
-                  <p>Add Event</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/addtravelguide">
-                  <i className="fas fa-bars"></i>
-                  <p>Add Travel Guide</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/EvenPage">
-                  <i className="fas fa-bars"></i>
-                  <p>Order</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/EvenPage">
-                  <i className="fas fa-bars"></i>
-                  <p>User</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/EventShowPage">
-                  <i className="fas fa-bars"></i>
-                  <p>Event Show</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/addPackages">
-                  <i className="fas fa-bars"></i>
-                  <p>Add Packages</p>
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/addBlog">
-                  <i className="fas fa-bars"></i>
-                  <p>Add Blog</p>
-                </Link>
-              </li>
+              {[
+                { path: "/place", label: "Add Place" },
+                { path: "/EventManagement", label: "Add Event" },
+                { path: "/addtravelguide", label: "Add Travel Guide" },
+                { path: "/EvenPage", label: "Order" },
+                { path: "/UserPage", label: "User" },
+                { path: "/EventShowPage", label: "Event Show" },
+                { path: "/addPackages", label: "Add Packages" },
+                { path: "/addBlog", label: "Add Blog" },
+              ].map((item, index) => (
+                <li className="nav-item" key={index}>
+                  <Link className="nav-link" to={item.path}>
+                    <i className="fas fa-bars"></i>
+                    <p>{item.label}</p>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>

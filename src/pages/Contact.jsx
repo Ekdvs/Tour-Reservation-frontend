@@ -5,6 +5,7 @@ import Footer from "../compodent/Footer";
 import Subscribe from "./Subscribe";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Contact() {
   const handleSubmit = (e) => {

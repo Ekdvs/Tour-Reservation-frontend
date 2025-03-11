@@ -7,6 +7,7 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function CardPayment() {
   const [cardNumber, setCardNumber] = useState("");

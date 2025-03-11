@@ -5,6 +5,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import Subscribe from "./Subscribe";
 import { toast } from "react-toastify";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");  // 1. Define the search term state

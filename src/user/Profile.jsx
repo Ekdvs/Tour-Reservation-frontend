@@ -7,7 +7,6 @@ import Topbar from "../compodent/Topbar";
 import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { FaCheckCircle, FaTimesCircle, FaArrowLeft, FaCalendarAlt, FaMoneyBillWave, FaUser, FaClock } from "react-icons/fa";
-
 export default function Profile() {
   const userEmail = localStorage.getItem("userEmail");
   const [profileData, setProfileData] = useState(null);

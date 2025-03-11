@@ -7,6 +7,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { Link, useNavigate } from "react-router-dom";
 import { Carousel } from "react-bootstrap";
+import { FaArrowLeft } from "react-icons/fa";
 
 const EventShowPage = () => {
   const [events, setEvents] = useState([]);

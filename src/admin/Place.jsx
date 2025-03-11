@@ -13,7 +13,7 @@ const Places = () => {
   const [location, setLocation] = useState("");
   const [image, setImage] = useState(null); // Store the image file
   const [category, setCategory] = useState("");
-  const [price, setPrice] = useState("");
+
   const [searchTerm, setSearchTerm] = useState("");
   const [editingPlace, setEditingPlace] = useState(null);
   const [isAddingPlace, setIsAddingPlace] = useState(false);
@@ -23,7 +23,7 @@ const Places = () => {
   // Fetch all places
   const fetchPlaces = async () => {
     try {
-      const response = await axios.get(`${API_BASE_URL}/allplaces`);
+      const response = await axios.get("https://online-travel-planning-production.up.railway.app/place/allplaces");
       setPlaces(response.data);
       setFilteredPlaces(response.data);
     } catch (error) {
@@ -44,7 +44,7 @@ const Places = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newPlace = { placeName, description, location, category, price };
+    const newPlace = { placeName, description, location, category,};
 
     // If an image was selected, append it to the form data
     const formData = new FormData();
@@ -52,7 +52,7 @@ const Places = () => {
     formData.append("description", description);
     formData.append("location", location);
     formData.append("category", category);
-    formData.append("price", price);
+    
     if (image) formData.append("image", image);
 
     try {
@@ -96,7 +96,7 @@ const Places = () => {
     setLocation("");
     setImage(null); // Reset the image field
     setCategory("");
-    setPrice("");
+    
     setEditingPlace(null);
     setIsAddingPlace(false);
   };
@@ -124,7 +124,7 @@ const Places = () => {
     setLocation(place.location);
     setImage(null); // Reset the image in case it's being edited
     setCategory(place.category);
-    setPrice(place.price);
+    
     setEditingPlace(place);
     setIsAddingPlace(false);
   };
@@ -232,19 +232,7 @@ const Places = () => {
               />
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="price" className="form-label">
-                Price
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                required
-              />
-            </div>
+            
             <button type="submit" className="btn btn-primary">
               {editingPlace ? "Update Place" : "Add Place"}
             </button>

@@ -7,6 +7,7 @@ import Navbar from "../compodent/Navbar";
 import Footer from "../compodent/Footer";
 import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom"; // Import Link
+import { FaArrowLeft } from "react-icons/fa";
 
 const Destination = () => {
   const [places, setPlaces] = useState([]);

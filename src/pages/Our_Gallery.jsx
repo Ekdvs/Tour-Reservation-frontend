@@ -7,6 +7,7 @@ import Navbar from "../compodent/Navbar"; // Corrected the spelling of 'componen
 import Footer from "../compodent/Footer"; // Corrected the spelling of 'components'
 import axios from "axios";
 import "./Gallery.css";
+import { FaArrowLeft } from "react-icons/fa";
 
 export default function Our_Gallery() {
   const [places, setPlaces] = useState([]);
