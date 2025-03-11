@@ -171,7 +171,7 @@ export default function Contact() {
                 <iframe
                   className="rounded w-100"
                   style={{ height: "450px", border: "0" }}
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15841.786123967167!2d79.9101437895392!3d6.956536388568587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25789f736ff2f%3A0x7b61e230dd11e6ec!2sKelaniya%2C%20Peliyagoda!5e0!3m2!1sen!2slk!4v1732291183089!5m2!1sen!2slk"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3000601219314!2d79.91573400676374!3d6.973881594802682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2581cbe3d06f5%3A0x17c98045f95e4fe2!2sFaculty%20of%20Science%20University%20of%20Kelaniya!5e0!3m2!1sen!2slk!4v1741655908312!5m2!1sen!2slk"
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
