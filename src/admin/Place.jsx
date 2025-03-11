@@ -222,29 +222,10 @@ const Places = () => {
               <label htmlFor="category" className="form-label">
                 Category
               </label>
-              <input
-                type="text"
-                className="form-control"
-                id="category"
-                value={category}
-                onChange={(e) => setCategory(e.target.value)}
-                required
-              />
+              category
             </div>
 
-            <div className="mb-3">
-              <label htmlFor="price" className="form-label">
-                Price
-              </label>
-              <input
-                type="number"
-                className="form-control"
-                id="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-                required
-              />
-            </div>
+            
             <button type="submit" className="btn btn-primary">
               {editingPlace ? "Update Place" : "Add Place"}
             </button>
